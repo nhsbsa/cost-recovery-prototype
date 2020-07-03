@@ -9,6 +9,5 @@ const router = express.Router();
 // current sprint, remember to add older sprint when adding a new folder!
 router.use('/current', require('./views/current/_routes'));
 
-router.use('/sprint1', require('./views/sprint1/_routes'));
 
 module.exports = router;
