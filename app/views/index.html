@@ -1,78 +1,53 @@
-<!-- Use this page as the index for your project -->
-
-<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
-
-<!-- Extends the layout from /views/layout.html -->
 {% extends 'layout.html' %}
-<!-- 
-  In /views/layout.html you can:
-    - change the header and footer 
-    - add custom CSS and JavaScript
--->
 
-<!-- Set the page title inside the pageTitle block -->
 {% block pageTitle %}
-  NHS.UK prototype kit
+Cost recovery prototype
 {% endblock %}
 
-<!-- Breadcrumb goes inside the beforeContent block -->
 {% block beforeContent %}    
+<div class="app-phase-banner">
+   <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+         <strong class="nhsuk-tag app-phase-banner__tag">
+         Prototype
+         </strong>
+         <span class="app-phase-banner__text">
+         This is a prototype - your <a href="#">feedback</a> will help us improve it. <!-- mailto: lakshmi.karuppiah@nhs.net -->
+         </span>
+      </p>
+   </div>
+</div>
 {% endblock %}  
 
-<!-- Your page content goes inside the content block -->
-<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
-  <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
+<h1>
+   Cost Recovery Prototype
+</h1>
 
-      <!-- Change the page title here -->
-      <h1>
-        NHS.UK prototype kit
-        <span class="nhsuk-caption-xl nhsuk-caption--bottom">Version {{version}}</span>
-      </h1>
-
-      <!-- Add your content here -->
-      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
-
-      <p class="nhsuk-lede-text">
-        This kit lets you rapidly create HTML prototypes of NHS services.
-      </p>
-
-      <hr>
-
-      <h2>
-        About this Page
-      </h2>
-
-      <p>
-        Use this page as the index for your project.
-      </p>
-      
-      <p>
-        You'll find the code for this page at <strong>/app/views/index.html</strong>.
-      </p>
-
-      <p>
-        There is also an <a href="/page-example">example page</a>, which contains a selection of NHS.UK frontend styles and components.
-      </p>
-
-      <hr>
-
-      <h2>
-        Documentation
-      </h2>
-
+<details class="nhsuk-details nhsuk-expander">
+   <summary class="nhsuk-details__summary">
+      <span class="nhsuk-details__summary-text">
+      Sprint 1
+      </span>
+   </summary>
+   <div class="nhsuk-details__text">
+     <p>Added MVP of OVT portal</p>
       <ul>
-        <li>
-          Get started with <a href="/docs">how to guides and page templates</a>
-        </li>
-        <li>
-          Copy and paste styles and components from the <a href="https://service-manual.nhs.uk/design-system">NHS digital service manual</a>
-        </li>
+         <li><a href="">OVT portal</a></li>
       </ul>
+   </div>
+</details>
 
-      <!-- End of content -->
-
-    </div>
+<details class="nhsuk-details nhsuk-expander">
+  <summary class="nhsuk-details__summary">
+     <span class="nhsuk-details__summary-text">
+     Sprint 2
+     </span>
+  </summary>
+  <div class="nhsuk-details__text">
+     <ul>
+        <li><a href="">OVT portal</a></li>
+     </ul>
   </div>
+</details>
 {% endblock %}

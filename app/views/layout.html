@@ -14,7 +14,7 @@
 
 <!-- Set the page title inside the pageTitle block -->
 {% block pageTitle %}
-  NHS.UK prototype kit
+  Cost recovery prototype
 {% endblock %}
 
 <!-- Header goes inside the header block -->
@@ -22,7 +22,7 @@
 {% block header %}
   {{ header({
     "service": {
-        "name": "Prototype kit",
+        "name": "Cost Recovery",
         "href": "/"
       },
       "showNav": "false",
@@ -34,18 +34,22 @@
 <!-- Footer goes inside the footer block -->
 <!-- More info and code for the footer can be found at https://service-manual.nhs.uk/design-system/components/footer -->
 {% block footer %}
-  {{ footer({
-    "links": [
-      {
-        "URL": "/",
-        "label": "Home"
-      },
-      {
-        "URL": "/page-example",
-        "label": "Example page"
-      }
-    ]
-  })}}
+<footer role="contentinfo">
+  <div class="nhsuk-footer" id="nhsuk-footer">
+    <div class="nhsuk-width-container">
+      <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+      <ul class="nhsuk-footer__list">
+        <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="https://www.nhsbsa.nhs.uk/our-policies/privacy">Privacy policy</a></li>
+        <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="https://www.nhsbsa.nhs.uk/our-policies/terms-and-conditions">Terms and conditions</a></li>
+      </ul>
+      <p class="nhsuk-footer__copyright">&copy; Crown copyright</p>
+      <ul class="nhsuk-footer__list">
+        <br>
+        <li class="nhsuk-footer__list-item nhsuk-footer__list-item-link">Build by the <a class="nhsuk-footer__list-item-link" href="https://www.nhsbsa.nhs.uk/">NHS Business Services Authority</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
 {% endblock %}
 
 {% block bodyEnd %}
