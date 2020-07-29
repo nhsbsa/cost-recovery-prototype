@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+{% block pageTitle %}
+Request a new account
+{% endblock %}
+{% block content %}
+<div class="nhsuk-grid-row">
+   <div class="nhsuk-grid-column-two-thirds">
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          Request a new account 
+        </h1>
+      </legend>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="input-width-20">
+          First name
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="input-width-20">
+          Last name
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text"> <br>
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="input-width-20">
+          Email address
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text"> <br>
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="input-width-20">
+          Phone number
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text"> <br>
+      </div>
+      
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="select-1">
+          Region
+        </label>
+        <select class="nhsuk-select" id="select-1" name="select-1">
+          <option value="1" selected>Select region</option>
+          <option value="1">Region option 1</option>
+          <option value="2">Region option 2</option>
+          <option value="3">Region option 3</option>
+        </select>
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="select-1">
+          Trust
+        </label>
+        <select class="nhsuk-select" id="select-1" name="select-1">
+          <option value="1" selected>Select trust</option>
+          <option value="1">Trust option 1</option>
+          <option value="2">Trust option 2</option>
+          <option value="3">Trust option 3</option>
+        </select>
+      </div>
+     
+    </fieldset>
+
+    <button class="nhsuk-button" type="submit">
+      Request account
+    </button>
+
+   </div>
+</div>
+{% endblock %}

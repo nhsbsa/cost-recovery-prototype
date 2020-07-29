@@ -1,15 +1,15 @@
 {% extends 'layout.html' %}
 {% block pageTitle %}
-Content page example - NHS.UK prototype kit
+Radio button sample page
 {% endblock %}
 {% block content %}
 <div class="nhsuk-grid-row">
    <div class="nhsuk-grid-column-two-thirds">
-      <form action=“test” method=“post”>
+      <form action="test" method="post">
 
          {{ radios({
             "idPrefix": "example",
-            "name": "example",
+            "name": "age",
             "fieldset": {
               "legend": {
                 "text": "Are you 18 or over?",
