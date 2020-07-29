@@ -13,8 +13,7 @@ router.get('/', function(req , res){
 
 // Start folder specific routes
 
-// current sprint, remember to add older sprint when adding a new folder!
-router.use('/current', require('./views/current/_routes'));
+router.use('/sprint-1', require('./views/sprint-1/_routes'));
 
 
 module.exports = router;

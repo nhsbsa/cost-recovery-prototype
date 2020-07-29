@@ -10,3 +10,14 @@
 ///////////////////////////////////////////
 // Add your custom CSS/Sass styles below... 
 ///////////////////////////////////////////
+.no-top-padding {
+    th.nhsuk-table__header {
+        padding-top: 0; } }
+    ​
+.side-nav-heading {
+  color: $nhsuk-secondary-text-color;
+  font-size: 1.1875rem;
+  line-height: 1.47368; }
+
+  .app-header__navigation-item__item--current .nhsuk-header__navigation-link {
+    font-weight: 600; }

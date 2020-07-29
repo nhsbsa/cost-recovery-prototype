@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block pageTitle %}
-Incentives
+Sent forms
 {% endblock %}
 
 {% block header %}
@@ -83,7 +83,7 @@ Incentives
             </svg>
           </a>
         </li>
-        <li class="nhsuk-header__navigation-item">
+        <li class="nhsuk-header__navigation-item app-header__navigation-item__item--current">
           <a class="nhsuk-header__navigation-link" href="">
             Sent forms
             <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
@@ -99,7 +99,7 @@ Incentives
             </svg>
           </a>
         </li>
-        <li class="nhsuk-header__navigation-item app-header__navigation-item__item--current">
+        <li class="nhsuk-header__navigation-item">
           <a class="nhsuk-header__navigation-link" href="incentives">
             Incentives
             <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
@@ -134,91 +134,108 @@ Incentives
 {% endblock %}
 
 {% block content %}
-<div class="nhsuk-table-responsive">
-  <table class="nhsuk-table">
-    <caption class="nhsuk-table__caption">Incentives</caption>
-    <thead class="nhsuk-table__head">
-      <tr class="nhsuk-table__row">
-        <th class="nhsuk-table__header" scope="col">Dates</th>
-        <th class="nhsuk-table__header" scope="col">EHIC</th>
-        <th class="nhsuk-table__header" scope="col">PRC</th>
-        <th class="nhsuk-table__header" scope="col">Total cost</th>
-        <th class="nhsuk-table__header" scope="col">Incentive</th>
-      </tr>
-    </thead>
-    <tbody class="nhsuk-table__body">
-      <tr class="nhsuk-table__row">
-        <td class="nhsuk-table__cell"><a href="#">1 Apr to 30 Jun 2020</a></td>
-        <td class="nhsuk-table__cell ">5</td>
-        <td class="nhsuk-table__cell ">2</td>
-        <td class="nhsuk-table__cell ">£534.55</td>
-        <td class="nhsuk-table__cell ">£133.63</td>
-      </tr>
-      <tr class="nhsuk-table__row">
-        <td class="nhsuk-table__cell"><a href="#">1 Jan to 31 Mar 2020</a></td>
-        <td class="nhsuk-table__cell ">3</td>
-        <td class="nhsuk-table__cell ">4</td>
-        <td class="nhsuk-table__cell ">£12,454.56</td>
-        <td class="nhsuk-table__cell ">£3,113.64</td>
-      </tr>
-      <tr class="nhsuk-table__row">
-        <td class="nhsuk-table__cell"><a href="#">1 Oct to 31 Dec 2019</a></td>
-        <td class="nhsuk-table__cell ">2</td>
-        <td class="nhsuk-table__cell ">0</td>
-        <td class="nhsuk-table__cell ">£450.00</td>
-        <td class="nhsuk-table__cell ">£112.50</td>
-      </tr>
-      <tr class="nhsuk-table__row">
-        <td class="nhsuk-table__cell"><a href="#">1 Jul to 30 Sep 2019</a></td>
-        <td class="nhsuk-table__cell ">0</td>
-        <td class="nhsuk-table__cell ">5</td>
-        <td class="nhsuk-table__cell ">£987.55</td>
-        <td class="nhsuk-table__cell ">£246.88</td>
-      </tr>
-      <tr class="nhsuk-table__row">
-        <td class="nhsuk-table__cell"><a href="#">1 Apr to 30 Jun 2019</a></td>
-        <td class="nhsuk-table__cell ">8</td>
-        <td class="nhsuk-table__cell ">5</td>
-        <td class="nhsuk-table__cell ">£16,876.34</td>
-        <td class="nhsuk-table__cell ">£4,196.58</td>
-      </tr>
-      <tr class="nhsuk-table__row">
-        <td class="nhsuk-table__cell"><a href="#">1 Jan to 31 Mar 2019</a></td>
-        <td class="nhsuk-table__cell ">3</td>
-        <td class="nhsuk-table__cell ">6</td>
-        <td class="nhsuk-table__cell ">£11,987.33</td>
-        <td class="nhsuk-table__cell ">£2,996.83</td>
-      </tr>
-      <tr class="nhsuk-table__row">
-        <td class="nhsuk-table__cell"><a href="#">1 Oct to 31 Dec 2018</a></td>
-        <td class="nhsuk-table__cell ">2</td>
-        <td class="nhsuk-table__cell ">2</td>
-        <td class="nhsuk-table__cell ">£656.68</td>
-        <td class="nhsuk-table__cell ">£164.17</td>
-      </tr>
-      <tr class="nhsuk-table__row">
-        <td class="nhsuk-table__cell"><a href="#">1 Jul to 30 Sep 2018</a></td>
-        <td class="nhsuk-table__cell ">0</td>
-        <td class="nhsuk-table__cell ">3</td>
-        <td class="nhsuk-table__cell ">£400.00</td>
-        <td class="nhsuk-table__cell ">£100.00</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-one-third">
+      <nav>
+         <h2 class="side-nav-heading">Entitlements</h2>
+         <ul class="nhsuk-list">
+            <li><a href="/design-system/design-principles">EHIC - Temporary visitor</a></li>
+            <li><a href="/design-system/design-principles">PRC - Temporary visitor</a></li>
+            <li><a href="/design-system/design-principles">S2 - Planned treatment</a></li>
+            <li><a href="/design-system/design-principles">S1 - Works in UK</a></li>
+         </ul>
+      </nav>
+   </div>
 
-<nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
-  <ul class="nhsuk-list nhsuk-pagination__list">
-    <li class="nhsuk-pagination-item--next">
-      <a class="nhsuk-pagination__link nhsuk-pagination__link--next" href="#">
-        <span class="nhsuk-pagination__title">Next</span>
-        <span class="nhsuk-u-visually-hidden">:</span>
-        <span class="nhsuk-pagination__page">Page 2 of 5</span>
-        <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
-        </svg>
-      </a>
-    </li>
-  </ul>
-</nav>
+  <div class="nhsuk-grid-column-two-thirds">
+      <div class="nhsuk-table-responsive">
+         <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption">Incentives</caption>
+            <thead class="nhsuk-table__head">
+               <tr class="nhsuk-table__row no-top-padding">
+                  <th class="nhsuk-table__header" scope="col">Dates</th>
+                  <th class="nhsuk-table__header" scope="col">EHIC</th>
+                  <th class="nhsuk-table__header" scope="col">PRC</th>
+                  <th class="nhsuk-table__header" scope="col">Total cost</th>
+                  <th class="nhsuk-table__header" scope="col">Incentive</th>
+               </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+               <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><a href="#">1 Apr to 30 Jun 2020</a></td>
+                  <td class="nhsuk-table__cell ">5</td>
+                  <td class="nhsuk-table__cell ">2</td>
+                  <td class="nhsuk-table__cell ">£534.55</td>
+                  <td class="nhsuk-table__cell ">£133.63</td>
+               </tr>
+               <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><a href="#">1 Jan to 31 Mar 2020</a></td>
+                  <td class="nhsuk-table__cell ">3</td>
+                  <td class="nhsuk-table__cell ">4</td>
+                  <td class="nhsuk-table__cell ">£12,454.56</td>
+                  <td class="nhsuk-table__cell ">£3,113.64</td>
+               </tr>
+               <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><a href="#">1 Oct to 31 Dec 2019</a></td>
+                  <td class="nhsuk-table__cell ">2</td>
+                  <td class="nhsuk-table__cell ">0</td>
+                  <td class="nhsuk-table__cell ">£450.00</td>
+                  <td class="nhsuk-table__cell ">£112.50</td>
+               </tr>
+               <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><a href="#">1 Jul to 30 Sep 2019</a></td>
+                  <td class="nhsuk-table__cell ">0</td>
+                  <td class="nhsuk-table__cell ">5</td>
+                  <td class="nhsuk-table__cell ">£987.55</td>
+                  <td class="nhsuk-table__cell ">£246.88</td>
+               </tr>
+               <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><a href="#">1 Apr to 30 Jun 2019</a></td>
+                  <td class="nhsuk-table__cell ">8</td>
+                  <td class="nhsuk-table__cell ">5</td>
+                  <td class="nhsuk-table__cell ">£16,876.34</td>
+                  <td class="nhsuk-table__cell ">£4,196.58</td>
+               </tr>
+               <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><a href="#">1 Jan to 31 Mar 2019</a></td>
+                  <td class="nhsuk-table__cell ">3</td>
+                  <td class="nhsuk-table__cell ">6</td>
+                  <td class="nhsuk-table__cell ">£11,987.33</td>
+                  <td class="nhsuk-table__cell ">£2,996.83</td>
+               </tr>
+               <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><a href="#">1 Oct to 31 Dec 2018</a></td>
+                  <td class="nhsuk-table__cell ">2</td>
+                  <td class="nhsuk-table__cell ">2</td>
+                  <td class="nhsuk-table__cell ">£656.68</td>
+                  <td class="nhsuk-table__cell ">£164.17</td>
+               </tr>
+               <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><a href="#">1 Jul to 30 Sep 2018</a></td>
+                  <td class="nhsuk-table__cell ">0</td>
+                  <td class="nhsuk-table__cell ">3</td>
+                  <td class="nhsuk-table__cell ">£400.00</td>
+                  <td class="nhsuk-table__cell ">£100.00</td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+
+      <nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
+        <ul class="nhsuk-list nhsuk-pagination__list">
+           <li class="nhsuk-pagination-item--next">
+              <a class="nhsuk-pagination__link nhsuk-pagination__link--next" href="#">
+                 <span class="nhsuk-pagination__title">Next</span>
+                 <span class="nhsuk-u-visually-hidden">:</span>
+                 <span class="nhsuk-pagination__page">Page 2 of 5</span>
+                 <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
+                 </svg>
+              </a>
+           </li>
+        </ul>
+      </nav>
+      
+  </div>
+</div>
 {% endblock %}
