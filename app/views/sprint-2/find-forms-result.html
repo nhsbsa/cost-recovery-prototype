@@ -217,6 +217,33 @@ Find forms results
     padding: 0 16px;
     width: 100%;
 }
+
+.processed {
+  border-radius: 15px;
+  background-color: #73AD21;
+  color: #ffffff;
+  vertical-align: baseline;
+	padding: 2px 15px 2px;
+	font-weight: 700;
+	font-size: 14px;
+  display: inline-block;
+	position: relative;
+	top: -0.05em; 
+}
+
+.draft {
+  border-radius: 15px;
+  background-color: #F47738;
+  color: #ffffff;
+  vertical-align: baseline;
+	padding: 2px 15px 2px;
+	font-weight: 700;
+	font-size: 14px;
+  display: inline-block;
+	position: relative;
+	top: -0.05em; 
+}
+
 </style>
 
 <div class="nhsuk-grid-row">
@@ -250,14 +277,12 @@ Find forms results
 
     <div class="nhsuk-form-group select-inline">
       <!--<label class="nhsuk-label" for="select-2">
-        Country
+        Status
       </label> -->
       <select class="nhsuk-select" id="select-2" name="select-2">
-        <option value="0" selected>Country</option>
-        <option value="1" >Country 1</option>
-        <option value="2">Country 2</option>
-        <option value="3">Country 3</option>  
-        <option value="4">Country 4</option>  
+        <option value="0" selected>Status</option>
+        <option value="1" >Processed</option>
+        <option value="2">Draft</option> 
       </select>
     </div>
 
@@ -276,26 +301,26 @@ Find forms results
             <th class="nhsuk-table__header" scope="col">First name</th>
             <th class="nhsuk-table__header" scope="col">Last name</th>
             <th class="nhsuk-table__header" scope="col">Entitlement</th>
-            <th class="nhsuk-table__header" scope="col">Country</th>
-            <th class="nhsuk-table__header" scope="col">Cost</th>
+            <th class="nhsuk-table__header" scope="col">Status</th>
+            <th class="nhsuk-table__header" scope="col"></th>
           </tr>
         </thead>
         <tbody class="nhsuk-table__body">
           <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell"><a href="#">63874</a></td>
+            <td class="nhsuk-table__cell">63874</td>
             <td class="nhsuk-table__cell ">Julia</td>
             <td class="nhsuk-table__cell ">Laurent</td>
             <td class="nhsuk-table__cell ">PRC</td>
-            <td class="nhsuk-table__cell ">France</td>
-            <td class="nhsuk-table__cell ">£450.00</td>
+            <td class="nhsuk-table__cell "><span class="processed">Processed</span></td>
+            <td class="nhsuk-table__cell "><a href="#">View record</a></td>
           </tr>
           <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell"><a href="#">63778</a></td>
+            <td class="nhsuk-table__cell">63778</td>
             <td class="nhsuk-table__cell ">Julia</td>
             <td class="nhsuk-table__cell ">Sebastián</td>
             <td class="nhsuk-table__cell ">PRC</td>
-            <td class="nhsuk-table__cell ">Spain</td>
-            <td class="nhsuk-table__cell ">£954.55</td>
+            <td class="nhsuk-table__cell "><span class="draft">Draft</span></td>
+            <td class="nhsuk-table__cell "><a href="#">View record</a></td>
           </tr>
 
         </tbody>
