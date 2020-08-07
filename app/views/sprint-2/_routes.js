@@ -1,4 +1,3 @@
-// External dependencies
 const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
@@ -8,14 +7,25 @@ router.use(bodyParser.urlencoded({ extended: true })); // to support URL-encoded
 
 // Add your routes here - above the module.exports line
 router.get('/', function(req , res){ 
-    res.render('index');
-   });
+  res.render('index');
+ });
 
-// Start folder specific routes
+ router.post('/role', function (req, res) {
 
-router.use('/sprint-1', require('./views/sprint-1/_routes'));
+  const selectedRadio = req.body.age;
 
-router.use('/sprint-2', require('./views/sprint-2/_routes'));
+  if (selectedRadio === "overseas visitor manager"){
+    res.redirect('ovm-sign-in')
+  }
+  if (selectedRadio === "operations team"){
+    res.redirect('admin-sign-in')
+  }
+  else {
+    res.redirect('select-role')
+  }
+
+})
 
 
-module.exports = router;
+
+  module.exports = router

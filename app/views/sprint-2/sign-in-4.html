@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% block pageTitle %}
+Sign in
+{% endblock %}
+
+{% block content %}
+<style>
+  .vl {
+    border-left: 1px solid #D8DDE0;
+    height: 150px;
+    position: absolute;
+    left: 43%;
+    top: 20;
+  }
+</style>
+
+<div class="nhsuk-width-container">
+  <main class="nhsuk-main-wrapper" id="maincontent" role="main">
+    
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+         <h3><a href="ovm-sign-in">Sign in as Overseas visitor manager</a></h3>
+         <br>
+         <div style="width: 69%; height: 20px; border-bottom: 1px solid #D8DDE0; text-align: center">
+          <span style="font-size: 20px; background-color: #F0F4F5; padding: 0 10px;">
+            or
+          </span>
+         </div>
+         <br><br>
+
+         <h3><a href="admin-sign-in">Sign in as Operations team</a></h3>
+      </div>
+   </div>
+   <br> <br>
+
+  </main>
+</div>
+{% endblock %}

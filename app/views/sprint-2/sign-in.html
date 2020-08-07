@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+{% block pageTitle %}
+Sign in
+{% endblock %}
+{% block content %}
+<style>
+</style>
+<div class="nhsuk-width-container">
+  <main class="nhsuk-main-wrapper" id="maincontent" role="main">
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+       <div class="nhsuk-action-link">
+         <a class="nhsuk-action-link__link" href="ovm-sign-in">
+           <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+             <path d="M0 0h24v24H0z" fill="none"></path>
+             <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+           </svg>
+           <span class="nhsuk-action-link__text">Sign in as Overseas visitor manager</span>
+         </a>
+       </div>
+
+       <div style="width: 70%; height: 20px; border-bottom: 1px solid #D8DDE0; text-align: center">
+        <span style="font-size: 20px; background-color: #F0F4F5; padding: 0 10px;">
+          or
+        </span>
+       </div>
+       <br><br>
+
+       <div class="nhsuk-action-link">
+         <a class="nhsuk-action-link__link" href="admin-sign-in">
+           <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+             <path d="M0 0h24v24H0z" fill="none"></path>
+             <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+           </svg>
+           <span class="nhsuk-action-link__text">Sign in as Operations team</span>
+         </a>
+       </div>
+       <br>
+       <!--<p><a href="sign-up"> Don't have an account?</a></p> -->
+      <br>
+      </div>
+   </div>
+
+  </main>
+</div>   
+{% endblock %}

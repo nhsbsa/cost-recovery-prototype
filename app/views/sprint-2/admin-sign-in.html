@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+{% block pageTitle %}
+Sign in as admin
+{% endblock %}
+{% block content %}
+<div class="nhsuk-grid-row">
+   <div class="nhsuk-grid-column-two-thirds">
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          Sign in as Operations Team
+        </h1>
+      </legend>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="input-width-20">
+          Email address
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
+      </div>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="input-width-20">
+          Password
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text"> <br>
+      </div>
+      <p><a href="password-reset">Forgot your password?</a></p>
+    </fieldset>
+
+    <a class="nhsuk-button" href="#">Sign in</a>
+
+    <!--<p><a href="ovm-sign-in">Sign in as overseas visitor manager</a></p> -->
+
+    <hr>
+
+    <p>Don't have an account?</p>
+    <a class="nhsuk-button nhsuk-button--secondary" href="create-account">Create account</a>
+   </div>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% block pageTitle %}
+Sign in
+{% endblock %}
+
+{% block content %}
+<style>
+  .vl {
+    border-left: 1px solid #D8DDE0;
+    height: 150px;
+    position: absolute;
+    left: 43%;
+    top: 20;
+  }
+</style>
+
+<div class="nhsuk-width-container">
+  <main class="nhsuk-main-wrapper" id="maincontent" role="main">
+    
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+        <h3>Are you an Overseas visitor manager?</h3>
+        <a class="nhsuk-button" href="ovm-sign-in">Sign in</a> 
+      <hr>
+        <h3>Are you a part of the Operations team?</h3>
+        <a class="nhsuk-button nhsuk-button--secondary" href="admin-sign-in">Sign in</a>
+      </div>
+    </div>
+
+  </main>
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% block pageTitle %}
+What is your role?
+{% endblock %}
+{% block content %}
+<div class="nhsuk-grid-row">
+   <div class="nhsuk-grid-column-two-thirds">
+      <form action="role" method="post">
+
+         {{ radios({
+            "idPrefix": "example",
+            "name": "age",
+            "fieldset": {
+              "legend": {
+                "text": "What is your role?",
+                "classes": "nhsuk-fieldset__legend--l",
+                "isPageHeading": true
+              }
+            },
+            "items": [
+              {
+                "value": "overseas visitor manager",
+                "text": "Overseas visitor manager"
+              },
+              {
+                "value": "operations team",
+                "text": "Operations Team"
+              }
+            ]
+          }) }}
+
+         {{ button({
+         "text": "Next"
+         }) }}
+
+      </form>
+   </div>
+</div>
+{% endblock %}
