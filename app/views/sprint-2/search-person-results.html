@@ -92,8 +92,8 @@ Find forms results
           </a>
         </li>
         <li class="nhsuk-header__navigation-item app-header__navigation-item__item--current">
-          <a class="nhsuk-header__navigation-link" href="find-forms">
-            Find forms
+          <a class="nhsuk-header__navigation-link" href="search-person">
+            Search person
             <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
             </svg>
@@ -134,118 +134,6 @@ Find forms results
 {% endblock %}
 
 {% block content %}
-<style>
-  .select-inline{
-   display: inline-block;
-   padding-right: 30px;
-}
-
-  .nhsuk-header__search-form--search-results {
-    margin-bottom: 40px;
-    background-color: transparent;
-    display: -ms-flexbox;
-    display: flex;
-    padding: 0;
-    width: 100%;
-}
-
-.nhsuk-header__search-form--search-results .nhsuk-search__submit {
-    background-color: #007f3b;
-    border: 0;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 4px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 4px;
-    float: right;
-    font-size: inherit;
-    height: 52px;
-    line-height: inherit;
-    margin: 0;
-    outline: none;
-    padding: 8px 8px 0;
-    width: 52px;
-}
-
-@media (min-width: 40.0625em){
-.nhsuk-search__submit {
-    background-color: #f0f4f5;
-    border: 0;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 4px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 4px;
-    display: block;
-    float: right;
-    font-size: inherit;
-    height: 40px;
-    line-height: inherit;
-    outline: none;
-    padding-left: 9px;
-    padding-top: 2px;
-    width: 44px;
-}}
-
-.nhsuk-header__search-form--search-results .nhsuk-search__submit .nhsuk-icon__search {
-    fill: #fff;
-    height: 38px;
-    width: 38px;
-}
-
-@media (min-width: 40.0625em){
-.nhsuk-search__submit .nhsuk-icon__search {
-    height: 27px;
-    width: 27px;
-}}
-
-.nhsuk-header__search-form--search-results .autocomplete__input, .nhsuk-header__search-form--search-results .nhsuk-search__input {
-    -ms-flex-positive: 2;
-    -webkit-appearance: listbox;
-    background-color: #fff !important;
-    border-bottom: 1px solid #aeb7bd;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 0;
-    border-left: 1px solid #aeb7bd;
-    border-right: 0;
-    border-top: 1px solid #aeb7bd;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 0;
-    flex-grow: 2;
-    font-size: inherit;
-    height: 52px;
-    margin: 0;
-    outline: none;
-    padding: 0 16px;
-    width: 100%;
-}
-
-.processed {
-  border-radius: 15px;
-  background-color: #73AD21;
-  color: #ffffff;
-  vertical-align: baseline;
-	padding: 2px 15px 2px;
-	font-weight: 700;
-	font-size: 14px;
-  display: inline-block;
-	position: relative;
-	top: -0.05em; 
-}
-
-.draft {
-  border-radius: 15px;
-  background-color: #F47738;
-  color: #ffffff;
-  vertical-align: baseline;
-	padding: 2px 15px 2px;
-	font-weight: 700;
-	font-size: 14px;
-  display: inline-block;
-	position: relative;
-	top: -0.05em; 
-}
-
-</style>
-
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-column-full">
 
@@ -253,12 +141,12 @@ Find forms results
       <form class="nhsuk-header__search-form nhsuk-header__search-form--search-results" id="search" action="/search/" method="get" role="search">
         <label class="nhsuk-u-visually-hidden" for="search-results-field">Search the NHS digital service manual</label>
         <input class="nhsuk-search__input" id="search-results-field" name="search-field" type="search" placeholder="Search by form ID, first name or last name" value="" autocomplete="off">
-        <button class="nhsuk-search__submit" type="submit">
+        <a class="nhsuk-search__submit" >
           <svg class="nhsuk-icon nhsuk-icon__search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <path d="M19.71 18.29l-4.11-4.1a7 7 0 1 0-1.41 1.41l4.1 4.11a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42zM5 10a5 5 0 1 1 5 5 5 5 0 0 1-5-5z"></path>
           </svg>
           <span class="nhsuk-u-visually-hidden">Search</span>
-        </button>
+          </a>
       </form>
 
       <p class="nhsuk-u-margin-bottom-4 select-inline">Filter by:</p>
@@ -267,11 +155,11 @@ Find forms results
         Entitlement
       </label> -->
       <select class="nhsuk-select" id="select-1" name="select-1">
-          <option value="0" selected>Entitlement</option>
-          <option value="1">EHIC - Temporary visitor</option>
-          <option value="2">PRC - Temporary visitor</option>
-          <option value="3">S2 - Planned treatment</option>
-          <option value="4">S1 - Planned treatment</option>
+          <option value="entitlement" selected>Entitlement</option>
+          <option value="ehic">EHIC - Temporary visitor</option>
+          <option value="prc">PRC - Temporary visitor</option>
+          <option value="s2">S2 - Planned treatment</option>
+          <option value="s1">S1 - Planned treatment</option>
         </select>
     </div>
 
@@ -280,20 +168,20 @@ Find forms results
         Status
       </label> -->
       <select class="nhsuk-select" id="select-2" name="select-2">
-        <option value="0" selected>Status</option>
-        <option value="1" >Processed</option>
-        <option value="2">Draft</option> 
+        <option value="status" selected>Status</option>
+        <option value="processed" >Processed</option>
+        <option value="draft">Draft</option> 
       </select>
     </div>
 
-    <a class="select-inline" href="#">Clear filters</a>
+    <a class="select-inline" href="search-person-results">Clear filters</a>
 
     <br>
     <br>
-    <h3>2 results found</h3>
+    <h3>5 results found</h3>
 
-    <div class="nhsuk-table-responsive">
-      <table class="nhsuk-table">
+    <div class="nhsuk-table-responsive new-filtered-table">
+      <table class="nhsuk-table new-table">
         <caption class="nhsuk-table__caption">Sent forms</caption>
         <thead class="nhsuk-table__head">
           <tr class="nhsuk-table__row">
@@ -306,20 +194,44 @@ Find forms results
           </tr>
         </thead>
         <tbody class="nhsuk-table__body">
-          <tr class="nhsuk-table__row">
+          <tr class="nhsuk-table__row processed">
             <td class="nhsuk-table__cell">63874</td>
             <td class="nhsuk-table__cell ">Julia</td>
             <td class="nhsuk-table__cell ">Laurent</td>
-            <td class="nhsuk-table__cell ">PRC</td>
-            <td class="nhsuk-table__cell "><span class="processed">Processed</span></td>
-            <td class="nhsuk-table__cell "><a href="#">View record</a></td>
+            <td class="nhsuk-table__cell ">EHIC</td>
+            <td class="nhsuk-table__cell "><span class="processed-status">Processed</span></td>
+            <td class="nhsuk-table__cell "><a href="person-record-view-ehic">View record</a></td>
           </tr>
-          <tr class="nhsuk-table__row">
+          <tr class="nhsuk-table__row draft">
             <td class="nhsuk-table__cell">63778</td>
             <td class="nhsuk-table__cell ">Julia</td>
             <td class="nhsuk-table__cell ">Sebastián</td>
             <td class="nhsuk-table__cell ">PRC</td>
-            <td class="nhsuk-table__cell "><span class="draft">Draft</span></td>
+            <td class="nhsuk-table__cell "><span class="draft-status">Draft</span></td>
+            <td class="nhsuk-table__cell "><a href="#">View record</a></td>
+          </tr>
+          <tr class="nhsuk-table__row processed">
+            <td class="nhsuk-table__cell">63779</td>
+            <td class="nhsuk-table__cell ">Julia</td>
+            <td class="nhsuk-table__cell ">Smith</td>
+            <td class="nhsuk-table__cell ">S2</td>
+            <td class="nhsuk-table__cell "><span class="processed-status">Processed</span></td>
+            <td class="nhsuk-table__cell "><a href="#">View record</a></td>
+          </tr>
+          <tr class="nhsuk-table__row processed">
+            <td class="nhsuk-table__cell">63780</td>
+            <td class="nhsuk-table__cell ">Julia</td>
+            <td class="nhsuk-table__cell ">Stark</td>
+            <td class="nhsuk-table__cell ">S1</td>
+            <td class="nhsuk-table__cell "><span class="processed-status">Processed</span></td>
+            <td class="nhsuk-table__cell "><a href="#">View record</a></td>
+          </tr>
+          <tr class="nhsuk-table__row draft">
+            <td class="nhsuk-table__cell">63781</td>
+            <td class="nhsuk-table__cell ">Julia</td>
+            <td class="nhsuk-table__cell ">Seb</td>
+            <td class="nhsuk-table__cell ">PRC</td>
+            <td class="nhsuk-table__cell "><span class="draft-status">Draft</span></td>
             <td class="nhsuk-table__cell "><a href="#">View record</a></td>
           </tr>
 

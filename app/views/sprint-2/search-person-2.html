@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block pageTitle %}
-Incentives
+Find forms
 {% endblock %}
 
 {% block header %}
@@ -91,7 +91,7 @@ Incentives
             </svg>
           </a>
         </li>
-        <li class="nhsuk-header__navigation-item">
+        <li class="nhsuk-header__navigation-item app-header__navigation-item__item--current">
           <a class="nhsuk-header__navigation-link" href="search-person">
             Search person
             <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
@@ -99,7 +99,7 @@ Incentives
             </svg>
           </a>
         </li>
-        <li class="nhsuk-header__navigation-item app-header__navigation-item__item--current">
+        <li class="nhsuk-header__navigation-item">
           <a class="nhsuk-header__navigation-link" href="incentives">
             Incentives
             <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
@@ -134,97 +134,192 @@ Incentives
 {% endblock %}
 
 {% block content %}
+<style>
+  .select-inline{
+   display: inline-block;
+   padding-right: 30px;
+}
+
+  .nhsuk-header__search-form--search-results {
+    margin-bottom: 40px;
+    background-color: transparent;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0;
+    width: 100%;
+}
+
+.nhsuk-header__search-form--search-results .nhsuk-search__submit {
+    background-color: #007f3b;
+    border: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 4px;
+    float: right;
+    font-size: inherit;
+    height: 52px;
+    line-height: inherit;
+    margin: 0;
+    outline: none;
+    padding: 8px 8px 0;
+    width: 52px;
+}
+
+@media (min-width: 40.0625em){
+.nhsuk-search__submit {
+    background-color: #f0f4f5;
+    border: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 4px;
+    display: block;
+    float: right;
+    font-size: inherit;
+    height: 40px;
+    line-height: inherit;
+    outline: none;
+    padding-left: 9px;
+    padding-top: 2px;
+    width: 44px;
+}}
+
+.nhsuk-header__search-form--search-results .nhsuk-search__submit .nhsuk-icon__search {
+    fill: #fff;
+    height: 38px;
+    width: 38px;
+}
+
+@media (min-width: 40.0625em){
+.nhsuk-search__submit .nhsuk-icon__search {
+    height: 27px;
+    width: 27px;
+}}
+
+.nhsuk-header__search-form--search-results .autocomplete__input, .nhsuk-header__search-form--search-results .nhsuk-search__input {
+    -ms-flex-positive: 2;
+    -webkit-appearance: listbox;
+    background-color: #fff !important;
+    border-bottom: 1px solid #aeb7bd;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 0;
+    border-left: 1px solid #aeb7bd;
+    border-right: 0;
+    border-top: 1px solid #aeb7bd;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 0;
+    flex-grow: 2;
+    font-size: inherit;
+    height: 52px;
+    margin: 0;
+    outline: none;
+    padding: 0 16px;
+    width: 100%;
+}
+</style>
+
 <div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-full>
-    <div class="nhsuk-table-responsive">
-      <table class="nhsuk-table">
-        <caption class="nhsuk-table__caption">Incentives</caption>
+  <div class="nhsuk-grid-column-column-full">
+
+    <!--<h3 class="nhsuk-u-margin-bottom-4">Search</h3> -->
+      <form class="nhsuk-header__search-form nhsuk-header__search-form--search-results" id="search" action="/search/" method="get" role="search">
+        <label class="nhsuk-u-visually-hidden" for="search-results-field">Search the NHS digital service manual</label>
+        <input class="nhsuk-search__input" id="search-results-field" name="search-field" type="search" placeholder="Search by form ID, first name or last name" value="" autocomplete="off">
+        <a class="nhsuk-search__submit" >
+          <svg class="nhsuk-icon nhsuk-icon__search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M19.71 18.29l-4.11-4.1a7 7 0 1 0-1.41 1.41l4.1 4.11a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42zM5 10a5 5 0 1 1 5 5 5 5 0 0 1-5-5z"></path>
+          </svg>
+          <span class="nhsuk-u-visually-hidden">Search</span>
+          </a>
+      </form>
+
+      <p class="nhsuk-u-margin-bottom-4 select-inline">Filter by:</p>
+    <div class="nhsuk-form-group select-inline">
+      <!--<label class="nhsuk-label" for="select-1">
+        Entitlement
+      </label> -->
+      <select class="nhsuk-select" id="select-1" name="select-1">
+          <option value="entitlement" selected>Entitlement</option>
+          <option value="ehic">EHIC - Temporary visitor</option>
+          <option value="prc">PRC - Temporary visitor</option>
+          <option value="s2">S2 - Planned treatment</option>
+          <option value="s1">S1 - Planned treatment</option>
+        </select>
+    </div>
+
+    <div class="nhsuk-form-group select-inline">
+      <!--<label class="nhsuk-label" for="select-2">
+        Status
+      </label> -->
+      <select class="nhsuk-select" id="select-2" name="select-2">
+        <option value="status" selected>Status</option>
+        <option value="processed" >Processed</option>
+        <option value="draft">Draft</option> 
+      </select>
+    </div>
+
+    <div class="nhsuk-table-responsive new-filtered-table">
+      <table class="nhsuk-table new-table">
+        <caption class="nhsuk-table__caption">Sent forms</caption>
         <thead class="nhsuk-table__head">
           <tr class="nhsuk-table__row">
-            <th class="nhsuk-table__header" scope="col">Dates</th>
-            <th class="nhsuk-table__header" scope="col">EHIC</th>
-            <th class="nhsuk-table__header" scope="col">PRC</th>
-            <th class="nhsuk-table__header" scope="col">Total cost</th>
-            <th class="nhsuk-table__header" scope="col">Incentive</th>
+            <th class="nhsuk-table__header" scope="col">Form ID</th>
+            <th class="nhsuk-table__header" scope="col">First name</th>
+            <th class="nhsuk-table__header" scope="col">Last name</th>
+            <th class="nhsuk-table__header" scope="col">Entitlement</th>
+            <th class="nhsuk-table__header" scope="col">Status</th>
+            <th class="nhsuk-table__header" scope="col"></th>
           </tr>
         </thead>
         <tbody class="nhsuk-table__body">
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell"><a href="#">1 Apr to 30 Jun 2020</a></td>
-            <td class="nhsuk-table__cell ">5</td>
-            <td class="nhsuk-table__cell ">2</td>
-            <td class="nhsuk-table__cell ">£534.55</td>
-            <td class="nhsuk-table__cell ">£133.63</td>
+          <tr class="nhsuk-table__row processed">
+            <td class="nhsuk-table__cell">63874</td>
+            <td class="nhsuk-table__cell ">Julia</td>
+            <td class="nhsuk-table__cell ">Laurent</td>
+            <td class="nhsuk-table__cell ">EHIC</td>
+            <td class="nhsuk-table__cell "><span class="processed-status">Processed</span></td>
+            <td class="nhsuk-table__cell "><a href="#">View record</a></td>
           </tr>
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell"><a href="#">1 Jan to 31 Mar 2020</a></td>
-            <td class="nhsuk-table__cell ">3</td>
-            <td class="nhsuk-table__cell ">4</td>
-            <td class="nhsuk-table__cell ">£12,454.56</td>
-            <td class="nhsuk-table__cell ">£3,113.64</td>
+          <tr class="nhsuk-table__row draft">
+            <td class="nhsuk-table__cell">63778</td>
+            <td class="nhsuk-table__cell ">Julia</td>
+            <td class="nhsuk-table__cell ">Sebastián</td>
+            <td class="nhsuk-table__cell ">PRC</td>
+            <td class="nhsuk-table__cell "><span class="draft-status">Draft</span></td>
+            <td class="nhsuk-table__cell "><a href="#">View record</a></td>
           </tr>
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell"><a href="#">1 Oct to 31 Dec 2019</a></td>
-            <td class="nhsuk-table__cell ">2</td>
-            <td class="nhsuk-table__cell ">0</td>
-            <td class="nhsuk-table__cell ">£450.00</td>
-            <td class="nhsuk-table__cell ">£112.50</td>
+          <tr class="nhsuk-table__row processed">
+            <td class="nhsuk-table__cell">63779</td>
+            <td class="nhsuk-table__cell ">John</td>
+            <td class="nhsuk-table__cell ">Smith</td>
+            <td class="nhsuk-table__cell ">S2</td>
+            <td class="nhsuk-table__cell "><span class="processed-status">Processed</span></td>
+            <td class="nhsuk-table__cell "><a href="#">View record</a></td>
           </tr>
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell"><a href="#">1 Jul to 30 Sep 2019</a></td>
-            <td class="nhsuk-table__cell ">0</td>
-            <td class="nhsuk-table__cell ">5</td>
-            <td class="nhsuk-table__cell ">£987.55</td>
-            <td class="nhsuk-table__cell ">£246.88</td>
+          <tr class="nhsuk-table__row processed">
+            <td class="nhsuk-table__cell">63780</td>
+            <td class="nhsuk-table__cell ">Tony</td>
+            <td class="nhsuk-table__cell ">Stark</td>
+            <td class="nhsuk-table__cell ">S1</td>
+            <td class="nhsuk-table__cell "><span class="processed-status">Processed</span></td>
+            <td class="nhsuk-table__cell "><a href="#">View record</a></td>
           </tr>
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell"><a href="#">1 Apr to 30 Jun 2019</a></td>
-            <td class="nhsuk-table__cell ">8</td>
-            <td class="nhsuk-table__cell ">5</td>
-            <td class="nhsuk-table__cell ">£16,876.34</td>
-            <td class="nhsuk-table__cell ">£4,196.58</td>
+          <tr class="nhsuk-table__row draft">
+            <td class="nhsuk-table__cell">63781</td>
+            <td class="nhsuk-table__cell ">Julia</td>
+            <td class="nhsuk-table__cell ">Seb</td>
+            <td class="nhsuk-table__cell ">PRC</td>
+            <td class="nhsuk-table__cell "><span class="draft-status">Draft</span></td>
+            <td class="nhsuk-table__cell "><a href="#">View record</a></td>
           </tr>
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell"><a href="#">1 Jan to 31 Mar 2019</a></td>
-            <td class="nhsuk-table__cell ">3</td>
-            <td class="nhsuk-table__cell ">6</td>
-            <td class="nhsuk-table__cell ">£11,987.33</td>
-            <td class="nhsuk-table__cell ">£2,996.83</td>
-          </tr>
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell"><a href="#">1 Oct to 31 Dec 2018</a></td>
-            <td class="nhsuk-table__cell ">2</td>
-            <td class="nhsuk-table__cell ">2</td>
-            <td class="nhsuk-table__cell ">£656.68</td>
-            <td class="nhsuk-table__cell ">£164.17</td>
-          </tr>
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell"><a href="#">1 Jul to 30 Sep 2018</a></td>
-            <td class="nhsuk-table__cell ">0</td>
-            <td class="nhsuk-table__cell ">3</td>
-            <td class="nhsuk-table__cell ">£400.00</td>
-            <td class="nhsuk-table__cell ">£100.00</td>
-          </tr>
+
         </tbody>
       </table>
     </div>
-    
-    <nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
-      <ul class="nhsuk-list nhsuk-pagination__list">
-        <li class="nhsuk-pagination-item--next">
-          <a class="nhsuk-pagination__link nhsuk-pagination__link--next" href="#">
-            <span class="nhsuk-pagination__title">Next</span>
-            <span class="nhsuk-u-visually-hidden">:</span>
-            <span class="nhsuk-pagination__page">Page 2 of 5</span>
-            <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
-            </svg>
-          </a>
-        </li>
-      </ul>
-    </nav>
   
   </div>
 </div>
+
 
 {% endblock %}
