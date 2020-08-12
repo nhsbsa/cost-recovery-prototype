@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block pageTitle %}
-Person record view
+Approve request details
 {% endblock %}
 
 {% block header %}
@@ -79,14 +79,6 @@ Person record view
         </li>
         <li class="nhsuk-header__navigation-item">
           <a class="nhsuk-header__navigation-link" href="">
-            Drafts
-            <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
-            </svg>
-          </a>
-        </li>
-        <li class="nhsuk-header__navigation-item">
-          <a class="nhsuk-header__navigation-link" href="">
             Bulk upload
             <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
@@ -94,16 +86,8 @@ Person record view
           </a>
         </li>
         <li class="nhsuk-header__navigation-item app-header__navigation-item__item--current">
-          <a class="nhsuk-header__navigation-link" href="search-person">
-            Search person
-            <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
-            </svg>
-          </a>
-        </li>
-        <li class="nhsuk-header__navigation-item">
-          <a class="nhsuk-header__navigation-link" href="incentives">
-            Incentives
+          <a class="nhsuk-header__navigation-link" href="approved-requests">
+            Approve request
             <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
             </svg>
@@ -111,7 +95,7 @@ Person record view
         </li>
         <li class="nhsuk-header__navigation-item">
           <a class="nhsuk-header__navigation-link" href="">
-            Account
+            Add treatment
             <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
             </svg>
@@ -129,64 +113,80 @@ Person record view
   <div class="nhsuk-width-container">
     <ol class="nhsuk-breadcrumb__list">
       <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="#">Home</a></li>
-      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="search-person">Search person</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="approved-requests">Approve request</a></li>
     </ol>
-    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="search-person">Back to Search person</a></p>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="approved-requests">Back to approve request</a></p>
   </div>
 </nav>
 {% endblock %}
 
 {% block content %}
 <div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-full">
-    <div class="banner-information-without-action">
-      <p class="banner-message">
-        Julia Laurent
-        <span class="vertical-bar">|</span>
-        63874
-      </p>
-    <p style="text-align: center;"><a href="#">View address details</a><span class="vertical-bar">|</span><a href="#">View entitlement details</a></p>
-    </div>
-    <br><br>
-  </div>
-  
-  <div class="nhsuk-grid-column-one-third">
-    <nav class="app-side-nav">
-      <h2 class="app-side-nav__heading">Entitlements</h2>
-      <ul class="nhsuk-list app-side-nav__list">
-      
-        <li class="app-side-nav__item"><a class="app-side-nav__link" href="person-record-view-ehic">EHIC - valid until 4 Aug 2021</a></li>
-      
-        <li class="app-side-nav__item app-side-nav__item--current"><a class="app-side-nav__link" href="person-record-view-PRC">PRC - expired 5 Jun 2020</a></li>
-      
-      </ul>
-    </nav>
-  </div>    
   <div class="nhsuk-grid-column-two-thirds">
-    <div class="nhsuk-table-responsive">
-       <table class="nhsuk-table">
-          <caption class="nhsuk-table__caption">Treatments</caption>
-          <h2 class="app-side-nav__heading">Treatments</h2>
-          <thead class="nhsuk-table__head">
-                <th class="nhsuk-table__header" scope="col">Start date</th>
-                <th class="nhsuk-table__header" scope="col">End date</th>
-                <th class="nhsuk-table__header" scope="col">Cost</th>
-                <th class="nhsuk-table__header" scope="col">Status</th>
-             </tr>
-          </thead>
-          <tbody class="nhsuk-table__body">
-             <tr class="nhsuk-table__row">
-                <td class="nhsuk-table__cell ">14 Feb 2019</td>
-                <td class="nhsuk-table__cell ">16 Feb 2019</td>
-                <td class="nhsuk-table__cell ">£534.55</td>
-                <td class="nhsuk-table__cell "><span class="processed-status">Processed</span></td>
-             </tr>
-          </tbody>
-       </table>
-    </div> 
-  </div> 
-  <!--<h2 class="app-side-nav__heading">View details</h2>
-  <a href="#">View address details</a><br>
-  <a href="#">View entitlement details</a> -->
-</div>
+    <dl class="nhsuk-summary-list">
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          First name
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Mathew
+        </dd>
+      </div>
+    
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Last name
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Clark
+        </dd>
+      </div>
+    
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Email Address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          mathew.clark@email.com
+        </dd>
+      </div>
+    
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Phone number
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <p>07700 900536</p>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Region
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <p>England</p>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Trust
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <p>Bedford Hospital NHS Trust</p>
+        </dd>
+      </div>
+    
+    </dl>
+    
+    <h3>Approved
+      <svg style="vertical-align: text-bottom" class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12"></path>
+    </svg></h3>
+  </div>
+  </div>
+</div>  
+
 {% endblock %}

@@ -24,6 +24,8 @@ Processed status records
         <button class="nhsuk-header__menu-toggle" id="toggle-menu" aria-controls="header-navigation" aria-label="Open menu">Menu</button>
       </div>
 
+      <a style="color: #ffffff; display: inline-block; padding-top:10px;" href="sign-in-2">Sign out</a>
+
       <!--<div class="nhsuk-header__search">
         <button class="nhsuk-header__search-toggle" id="toggle-search" aria-controls="search" aria-label="Open search">
           <svg class="nhsuk-icon nhsuk-icon__search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -134,90 +136,6 @@ Processed status records
 {% endblock %}
 
 {% block content %}
-<style>
-  .select-inline{
-   display: inline-block;
-   padding-right: 30px;
-}
-
-  .nhsuk-header__search-form--search-results {
-    margin-bottom: 40px;
-    background-color: transparent;
-    display: -ms-flexbox;
-    display: flex;
-    padding: 0;
-    width: 100%;
-}
-
-.nhsuk-header__search-form--search-results .nhsuk-search__submit {
-    background-color: #007f3b;
-    border: 0;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 4px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 4px;
-    float: right;
-    font-size: inherit;
-    height: 52px;
-    line-height: inherit;
-    margin: 0;
-    outline: none;
-    padding: 8px 8px 0;
-    width: 52px;
-}
-
-@media (min-width: 40.0625em){
-.nhsuk-search__submit {
-    background-color: #f0f4f5;
-    border: 0;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 4px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 4px;
-    display: block;
-    float: right;
-    font-size: inherit;
-    height: 40px;
-    line-height: inherit;
-    outline: none;
-    padding-left: 9px;
-    padding-top: 2px;
-    width: 44px;
-}}
-
-.nhsuk-header__search-form--search-results .nhsuk-search__submit .nhsuk-icon__search {
-    fill: #fff;
-    height: 38px;
-    width: 38px;
-}
-
-@media (min-width: 40.0625em){
-.nhsuk-search__submit .nhsuk-icon__search {
-    height: 27px;
-    width: 27px;
-}}
-
-.nhsuk-header__search-form--search-results .autocomplete__input, .nhsuk-header__search-form--search-results .nhsuk-search__input {
-    -ms-flex-positive: 2;
-    -webkit-appearance: listbox;
-    background-color: #fff !important;
-    border-bottom: 1px solid #aeb7bd;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 0;
-    border-left: 1px solid #aeb7bd;
-    border-right: 0;
-    border-top: 1px solid #aeb7bd;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 0;
-    flex-grow: 2;
-    font-size: inherit;
-    height: 52px;
-    margin: 0;
-    outline: none;
-    padding: 0 16px;
-    width: 100%;
-}
-</style>
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-column-full">
@@ -235,18 +153,18 @@ Processed status records
       </form>
 
       <p class="nhsuk-u-margin-bottom-4 select-inline">Filter by:</p>
-    <div class="nhsuk-form-group select-inline">
-      <!--<label class="nhsuk-label" for="select-1">
-        Entitlement
-      </label> -->
-      <select class="nhsuk-select" id="select-1" name="select-1">
-          <option value="entitlement" selected>Entitlement</option>
-          <option value="ehic">EHIC - Temporary visitor</option>
-          <option value="prc">PRC - Temporary visitor</option>
-          <option value="s2">S2 - Planned treatment</option>
-          <option value="s1">S1 - Planned treatment</option>
-        </select>
-    </div>
+      <div class="nhsuk-form-group select-inline">
+        <!--<label class="nhsuk-label" for="select-1">
+          Entitlement
+        </label> -->
+        <select class="nhsuk-select" id="select-1" name="select-1">
+            <option value="0" selected>Entitlement</option>
+            <option value="1">EHIC</option>
+            <option value="2">PRC</option>
+            <option value="3">S2</option>
+            <option value="4">S1</option>
+          </select>
+      </div>
 
     <div class="nhsuk-form-group select-inline">
       <!--<label class="nhsuk-label" for="select-2">
@@ -257,6 +175,41 @@ Processed status records
         <option value="processed-records" selected>Processed</option>
         <option value="draft-records">Draft</option> 
       </select>
+    </div>
+
+    <div class="nhsuk-form-group select-inline">
+      <!--<label class="nhsuk-label" for="select-3">
+        Year
+      </label> -->
+      <select class="nhsuk-select" id="select-3" name="select-3">
+          <option value="0" selected>Year</option>
+          <option value="1">2020</option>
+          <option value="2">2019</option>
+          <option value="3">2018</option>
+          <option value="4">2017</option>
+          <option value="5">2016</option>
+        </select>
+    </div>
+
+    <div class="nhsuk-form-group select-inline">
+      <!--<label class="nhsuk-label" for="select-4">
+        Month
+      </label> -->
+      <select class="nhsuk-select" id="select-4" name="select-4">
+          <option value="0" selected>Month</option>
+          <option value="1">January</option>
+          <option value="2">February</option>
+          <option value="3">March</option>
+          <option value="4">April</option>
+          <option value="5">May</option>
+          <option value="6">June</option>
+          <option value="7">July</option>
+          <option value="8">August</option>
+          <option value="9">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
     </div>
 
     <a class="select-inline" href="search-person">Clear filters</a>

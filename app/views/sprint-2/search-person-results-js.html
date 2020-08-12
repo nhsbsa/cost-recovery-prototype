@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block pageTitle %}
-Person record view
+Find forms results
 {% endblock %}
 
 {% block header %}
@@ -129,64 +129,153 @@ Person record view
   <div class="nhsuk-width-container">
     <ol class="nhsuk-breadcrumb__list">
       <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="#">Home</a></li>
-      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="search-person">Search person</a></li>
     </ol>
-    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="search-person">Back to Search person</a></p>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="#">Back to Home</a></p>
   </div>
 </nav>
 {% endblock %}
 
 {% block content %}
 <div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-full">
-    <div class="banner-information-without-action">
-      <p class="banner-message">
-        Julia Laurent
-        <span class="vertical-bar">|</span>
-        63874
-      </p>
-    <p style="text-align: center;"><a href="#">View address details</a><span class="vertical-bar">|</span><a href="#">View entitlement details</a></p>
+  <div class="nhsuk-grid-column-column-full">
+
+    <!--<h3 class="nhsuk-u-margin-bottom-4">Search</h3> -->
+      <form class="nhsuk-header__search-form nhsuk-header__search-form--search-results" id="search" action="/search/" method="get" role="search">
+        <label class="nhsuk-u-visually-hidden" for="search-results-field">Search the NHS digital service manual</label>
+        <input class="nhsuk-search__input" id="search-results-field" name="search-field" type="search" value="julia" autocomplete="off">
+        <a class="nhsuk-search__submit" >
+          <svg class="nhsuk-icon nhsuk-icon__search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M19.71 18.29l-4.11-4.1a7 7 0 1 0-1.41 1.41l4.1 4.11a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42zM5 10a5 5 0 1 1 5 5 5 5 0 0 1-5-5z"></path>
+          </svg>
+          <span class="nhsuk-u-visually-hidden">Search</span>
+          </a>
+      </form>
+
+      <p class="nhsuk-u-margin-bottom-4 select-inline">Filter by:</p>
+      <div class="nhsuk-form-group select-inline">
+        <!--<label class="nhsuk-label" for="select-1">
+          Entitlement
+        </label> -->
+        <select class="nhsuk-select" id="select-1" name="select-1">
+            <option value="0" selected>Entitlement</option>
+            <option value="1">EHIC</option>
+            <option value="2">PRC</option>
+            <option value="3">S2</option>
+            <option value="4">S1</option>
+          </select>
+      </div>
+
+    <div class="nhsuk-form-group select-inline">
+      <!--<label class="nhsuk-label" for="select-2">
+        Status
+      </label> -->
+      <select class="nhsuk-select" id="select-2" name="select-2">
+        <option value="status" selected>Status</option>
+        <option value="processed" >Processed</option>
+        <option value="draft">Draft</option> 
+      </select>
     </div>
-    <br><br>
-  </div>
+
+    <div class="nhsuk-form-group select-inline">
+      <!--<label class="nhsuk-label" for="select-3">
+        Year
+      </label> -->
+      <select class="nhsuk-select" id="select-3" name="select-3">
+          <option value="0" selected>Year</option>
+          <option value="1">2020</option>
+          <option value="2">2019</option>
+          <option value="3">2018</option>
+          <option value="4">2017</option>
+          <option value="5">2016</option>
+        </select>
+    </div>
+
+    <div class="nhsuk-form-group select-inline">
+      <!--<label class="nhsuk-label" for="select-4">
+        Month
+      </label> -->
+      <select class="nhsuk-select" id="select-4" name="select-4">
+          <option value="0" selected>Month</option>
+          <option value="1">January</option>
+          <option value="2">February</option>
+          <option value="3">March</option>
+          <option value="4">April</option>
+          <option value="5">May</option>
+          <option value="6">June</option>
+          <option value="7">July</option>
+          <option value="8">August</option>
+          <option value="9">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
+    </div>
+
+    <a class="select-inline" href="search-person-results">Clear filters</a>
+
+    <br>
+    <br>
+    <h3>5 results found</h3>
+
+    <div class="nhsuk-table-responsive new-filtered-table">
+      <table class="nhsuk-table new-table">
+        <caption class="nhsuk-table__caption">Sent forms</caption>
+        <thead class="nhsuk-table__head">
+          <tr class="nhsuk-table__row">
+            <th class="nhsuk-table__header" scope="col">Form ID</th>
+            <th class="nhsuk-table__header" scope="col">First name</th>
+            <th class="nhsuk-table__header" scope="col">Last name</th>
+            <th class="nhsuk-table__header" scope="col">Entitlement</th>
+            <th class="nhsuk-table__header" scope="col">Status</th>
+            <th class="nhsuk-table__header" scope="col"></th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr class="nhsuk-table__row processed">
+            <td class="nhsuk-table__cell">63874</td>
+            <td class="nhsuk-table__cell ">Julia</td>
+            <td class="nhsuk-table__cell ">Laurent</td>
+            <td class="nhsuk-table__cell ">EHIC</td>
+            <td class="nhsuk-table__cell "><span class="processed-status">Processed</span></td>
+            <td class="nhsuk-table__cell "><a href="person-record-view-ehic">View record</a></td>
+          </tr>
+          <tr class="nhsuk-table__row draft">
+            <td class="nhsuk-table__cell">63778</td>
+            <td class="nhsuk-table__cell ">Julia</td>
+            <td class="nhsuk-table__cell ">Sebastián</td>
+            <td class="nhsuk-table__cell ">PRC</td>
+            <td class="nhsuk-table__cell "><span class="draft-status">Draft</span></td>
+            <td class="nhsuk-table__cell "><a href="#">View record</a></td>
+          </tr>
+          <tr class="nhsuk-table__row processed">
+            <td class="nhsuk-table__cell">63779</td>
+            <td class="nhsuk-table__cell ">Julia</td>
+            <td class="nhsuk-table__cell ">Smith</td>
+            <td class="nhsuk-table__cell ">S2</td>
+            <td class="nhsuk-table__cell "><span class="processed-status">Processed</span></td>
+            <td class="nhsuk-table__cell "><a href="#">View record</a></td>
+          </tr>
+          <tr class="nhsuk-table__row processed">
+            <td class="nhsuk-table__cell">63780</td>
+            <td class="nhsuk-table__cell ">Julia</td>
+            <td class="nhsuk-table__cell ">Stark</td>
+            <td class="nhsuk-table__cell ">S1</td>
+            <td class="nhsuk-table__cell "><span class="processed-status">Processed</span></td>
+            <td class="nhsuk-table__cell "><a href="#">View record</a></td>
+          </tr>
+          <tr class="nhsuk-table__row draft">
+            <td class="nhsuk-table__cell">63781</td>
+            <td class="nhsuk-table__cell ">Mathew</td>
+            <td class="nhsuk-table__cell ">Julian</td>
+            <td class="nhsuk-table__cell ">PRC</td>
+            <td class="nhsuk-table__cell "><span class="draft-status">Draft</span></td>
+            <td class="nhsuk-table__cell "><a href="#">View record</a></td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
   
-  <div class="nhsuk-grid-column-one-third">
-    <nav class="app-side-nav">
-      <h2 class="app-side-nav__heading">Entitlements</h2>
-      <ul class="nhsuk-list app-side-nav__list">
-      
-        <li class="app-side-nav__item"><a class="app-side-nav__link" href="person-record-view-ehic">EHIC - valid until 4 Aug 2021</a></li>
-      
-        <li class="app-side-nav__item app-side-nav__item--current"><a class="app-side-nav__link" href="person-record-view-PRC">PRC - expired 5 Jun 2020</a></li>
-      
-      </ul>
-    </nav>
-  </div>    
-  <div class="nhsuk-grid-column-two-thirds">
-    <div class="nhsuk-table-responsive">
-       <table class="nhsuk-table">
-          <caption class="nhsuk-table__caption">Treatments</caption>
-          <h2 class="app-side-nav__heading">Treatments</h2>
-          <thead class="nhsuk-table__head">
-                <th class="nhsuk-table__header" scope="col">Start date</th>
-                <th class="nhsuk-table__header" scope="col">End date</th>
-                <th class="nhsuk-table__header" scope="col">Cost</th>
-                <th class="nhsuk-table__header" scope="col">Status</th>
-             </tr>
-          </thead>
-          <tbody class="nhsuk-table__body">
-             <tr class="nhsuk-table__row">
-                <td class="nhsuk-table__cell ">14 Feb 2019</td>
-                <td class="nhsuk-table__cell ">16 Feb 2019</td>
-                <td class="nhsuk-table__cell ">£534.55</td>
-                <td class="nhsuk-table__cell "><span class="processed-status">Processed</span></td>
-             </tr>
-          </tbody>
-       </table>
-    </div> 
-  </div> 
-  <!--<h2 class="app-side-nav__heading">View details</h2>
-  <a href="#">View address details</a><br>
-  <a href="#">View entitlement details</a> -->
+  </div>
 </div>
 {% endblock %}

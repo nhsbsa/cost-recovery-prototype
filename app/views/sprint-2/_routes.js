@@ -17,7 +17,7 @@ router.get('/', function(req , res){
   if (selectedRadio === "overseas visitor manager"){
     res.redirect('ovm-sign-in')
   }
-  if (selectedRadio === "operations team"){
+  if (selectedRadio === "NHSBSA cost recovery team"){
     res.redirect('admin-sign-in')
   }
   else {

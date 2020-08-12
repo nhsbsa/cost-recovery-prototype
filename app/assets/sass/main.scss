@@ -24,7 +24,13 @@
 
 //app header selection
 .app-header__navigation-item__item--current .nhsuk-header__navigation-link {
-  font-weight: 600; }
+  font-weight: 600;
+  border-bottom-width: 4px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(240, 244, 245);
+  margin-bottom: 0;
+  position: relative;
+ }
 
 //search  
 .nhsuk-header__search-form--search-results {
@@ -233,3 +239,9 @@ a {
 .vertical-bar {
   margin: 0px 10px;
 }
+
+//button
+.no-bottom-padding {
+  th.nhsuk-button {
+    margin-bottom: 0; } }
+
