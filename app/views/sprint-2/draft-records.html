@@ -144,7 +144,7 @@ Draft status records
       <form class="nhsuk-header__search-form nhsuk-header__search-form--search-results" id="search" action="/search/" method="get" role="search">
         <label class="nhsuk-u-visually-hidden" for="search-results-field">Search the NHS digital service manual</label>
         <input class="nhsuk-search__input" id="search-results-field" name="search-field" type="search" placeholder="Search by form ID, first name or last name" value="" autocomplete="off">
-        <a class="nhsuk-search__submit" >
+        <a class="nhsuk-search__submit" href="search-person-results">
           <svg class="nhsuk-icon nhsuk-icon__search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <path d="M19.71 18.29l-4.11-4.1a7 7 0 1 0-1.41 1.41l4.1 4.11a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42zM5 10a5 5 0 1 1 5 5 5 5 0 0 1-5-5z"></path>
           </svg>
@@ -175,41 +175,6 @@ Draft status records
         <option value="processed-records" >Processed</option>
         <option value="draft-records" selected>Draft</option> 
       </select>
-    </div>
-
-    <div class="nhsuk-form-group select-inline">
-      <!--<label class="nhsuk-label" for="select-3">
-        Year
-      </label> -->
-      <select class="nhsuk-select" id="select-3" name="select-3">
-          <option value="0" selected>Year</option>
-          <option value="1">2020</option>
-          <option value="2">2019</option>
-          <option value="3">2018</option>
-          <option value="4">2017</option>
-          <option value="5">2016</option>
-        </select>
-    </div>
-
-    <div class="nhsuk-form-group select-inline">
-      <!--<label class="nhsuk-label" for="select-4">
-        Month
-      </label> -->
-      <select class="nhsuk-select" id="select-4" name="select-4">
-          <option value="0" selected>Month</option>
-          <option value="1">January</option>
-          <option value="2">February</option>
-          <option value="3">March</option>
-          <option value="4">April</option>
-          <option value="5">May</option>
-          <option value="6">June</option>
-          <option value="7">July</option>
-          <option value="8">August</option>
-          <option value="9">September</option>
-          <option value="10">October</option>
-          <option value="11">November</option>
-          <option value="12">December</option>
-        </select>
     </div>
 
     <a class="select-inline" href="search-person">Clear filters</a>

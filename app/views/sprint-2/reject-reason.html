@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block pageTitle %}
-Approve request details
+Reason for rejection
 {% endblock %}
 
 {% block header %}
@@ -114,6 +114,7 @@ Approve request details
     <ol class="nhsuk-breadcrumb__list">
       <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="#">Home</a></li>
       <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="approve-request">Approve request</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="approve-request-details">View details</a></li>
     </ol>
     <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="approve-request">Back to approve request</a></p>
   </div>
@@ -123,68 +124,16 @@ Approve request details
 {% block content %}
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
-    <dl class="nhsuk-summary-list">
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          First name
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Mathew
-        </dd>
-      </div>
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="example">
+        <h2>
+        What is your reason for rejection?
+      </h2>
+      </label>
+      <textarea class="nhsuk-textarea" id="example" name="example" rows="5" aria-describedby="example-hint"></textarea>
+    </div>
     
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Last name
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Clark
-        </dd>
-      </div>
-    
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Email Address
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          mathew.clark@email.com
-        </dd>
-      </div>
-    
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Phone number
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          <p>07700 900536</p>
-        </dd>
-      </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Region
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          <p>England</p>
-        </dd>
-      </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Trust
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          <p>Bedford Hospital NHS Trust</p>
-        </dd>
-      </div>
-    
-    </dl>
-    
-
-    <a style="margin-right: 20px;" class="nhsuk-button" href="approval-confirmation">Approve</a>
-    <a class="nhsuk-button nhsuk-button--secondary" href="reject-reason">Reject</a>
-
+    <a class="nhsuk-button" href="rejection-confirmation">Submit</a>
 
   </div>
 </div>
