@@ -159,7 +159,7 @@ article, aside, footer, header, nav, section {
 }}
 .app-side-nav__heading {
     font-weight: 600;
-    font-size: 22px;
+    font-size: 24px;
     line-height: 1.25;
     color:#212b32;
     margin-bottom: 12px;
@@ -245,3 +245,8 @@ a {
   th.nhsuk-button {
     margin-bottom: 0; } }
 
+//hide radio content
+.hide {
+  display: none;
+}
+    

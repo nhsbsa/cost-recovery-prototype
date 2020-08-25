@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Confirmation that EHIC treatment form is submitted
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-panel nhsuk-panel--confirmation nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-4">
+
+        <h1 class="nhsuk-panel__title">
+            Treatment form processed for <br>Maria Rodríguez
+          </h1>
+
+          <div class="nhsuk-panel__body">
+            Form ID
+            <br>
+            <strong>63878</strong>
+          </div>
+
+      </div>
+
+      <a style="margin-right: 20px;" class="nhsuk-button" href="add-another-treatment-ehic">Add another treatment</a>
+      <a class="nhsuk-button nhsuk-button--secondary" href="home">Done</a>
+
+    </div>
+  </div>
+{% endblock %}
