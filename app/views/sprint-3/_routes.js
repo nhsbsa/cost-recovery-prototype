@@ -50,7 +50,7 @@ router.post('/another-treatment', function (req, res) {
   const selectedRadio = req.body.another;
 
   if (selectedRadio === "maria rodríguez"){
-    res.redirect('treatment-dates-ehic-aat')
+    res.redirect('treatment-start-date-ehic-aat')
   }
   if (selectedRadio === "different person"){
     res.redirect('add-treatment')
