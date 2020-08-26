@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block pageTitle %}
-Check your answers
+Address details
 {% endblock %}
 
 {% block header %}
@@ -36,62 +36,46 @@ Check your answers
 </div>
 
 <div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-three-quarters">
-    <h1 class="nhsuk-label-wrapper">
-      <label class="nhsuk-label nhsuk-label--l" for="country">
-        Check these details before submitting the treatment form
-      </label></h1>
-
-    <dl class="nhsuk-summary-list">
-      <h3>Treatment details</h3>
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Treatment start date
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          15/05/2019
-        </dd>
-    
-        <dd class="nhsuk-summary-list__actions">
-          <a href="treatment-cost-ehic-aat">
-            Change<span class="nhsuk-u-visually-hidden">treatment start date</span>
-          </a>
-        </dd>
+  <div class="nhsuk-grid-column-two-thirds">
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          Louis Victor's address in France
+        </h1>
+      </legend>
+      
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="address-line-1">
+          Building and street <span class="nhsuk-u-visually-hidden">line 1 of 2</span>
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="address-line-1" name="address-line-1" type="text" value="12 Rue de Rivoli">
       </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Treatment end date
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          20/05/2019
-        </dd>
     
-        <dd class="nhsuk-summary-list__actions">
-          <a href="treatment-dates-ehic-aat">
-            Change<span class="nhsuk-u-visually-hidden"> treatment end date</span>
-          </a>
-        </dd>
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="address-line-2">
+          <span class="nhsuk-u-visually-hidden">Building and street line 2 of 2</span>
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="address-line-2" name="address-line-2" type="text">
       </div>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="address-town">
+          Town or city
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="address-town" name="address-town" type="text" value="Paris">
+      </div>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="address-postcode">
+          Postcode
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-10" id="address-postcode" name="address-postcode" type="text" value="75006">
+      </div>
+    
+    </fieldset>
 
-    <div class="nhsuk-summary-list__row">
-      <dt class="nhsuk-summary-list__key">
-        Treatment cost
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        £956.45
-      </dd>
-  
-      <dd class="nhsuk-summary-list__actions">
-        <a href="treatment-cost-ehic-aat">
-          Change<span class="nhsuk-u-visually-hidden"> treatment cost</span>
-        </a>
-      </dd>
-    </div>
+    <a class="nhsuk-button" href="check-your-answers-prc-sec1">Continue</a>
 
-  </dl>
-  
-  <a class="nhsuk-button" href="confirmation-ehic">Submit</a>
  </div>
 </div>
 {% endblock %}

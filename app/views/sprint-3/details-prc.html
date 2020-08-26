@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block pageTitle %}
-Ehic details
+PRC details
 {% endblock %}
 
 {% block header %}
@@ -39,34 +39,40 @@ Ehic details
   <div class="nhsuk-grid-column-two-thirds">
     <h1 class="nhsuk-label-wrapper">
       <label class="nhsuk-label nhsuk-label--l" for="country">
-        Maria Rodríguez's EHIC details
+        Louis Victor's PRC details
       </label></h1>
-    
+
       <dl class="nhsuk-summary-list">
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
-            Issuing member state
+            Issuing member state(2)
           </dt>
           <dd class="nhsuk-summary-list__value">
-            Spain
+            France
+          </dt>
+          </dd>
+        </div>
+      </dl>
+  
+      <h4>Card holder related information</h4>  
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            First name(3)
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Louis
+          </dt>
           </dd>
         </div>
   
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
-            Name(3)
+            Last name(4)
           </dt>
           <dd class="nhsuk-summary-list__value">
-            Maria
-          </dd>
-        </div>
-  
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Given names(4)
+            Victor
           </dt>
-          <dd class="nhsuk-summary-list__value">
-            Rodríguez
           </dd>
         </div>
   
@@ -75,7 +81,8 @@ Ehic details
            Date of birth(5) 
           </dt>
           <dd class="nhsuk-summary-list__value">
-            06/12/1988
+            20/12/1981
+          </dt>
           </dd>
         </div>
   
@@ -84,25 +91,34 @@ Ehic details
             Personal identification number(6)
           </dt>
           <dd class="nhsuk-summary-list__value">
-            280000000293
+            1 62 05 59 544 102 26
+          </dt>
           </dd>
         </div>
+      </dl>
   
+      <h4>Competent institution related information</h4>
+      <dl class="nhsuk-summary-list">
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
             Identification number of the institution(7)
           </dt>
           <dd class="nhsuk-summary-list__value">
-            2800 INSS MADRID
+            01071 - CPAM de l'ARDECH
+          </dt>
           </dd>
         </div>
+      </dl>  
   
+      <h4>Card related information</h4>
+      <dl class="nhsuk-summary-list">
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
             Identification number of the card(8)
           </dt>
           <dd class="nhsuk-summary-list__value">
-            80724028000420000098
+            80250000030100000110
+          </dt>
           </dd>
         </div>
   
@@ -111,26 +127,54 @@ Ehic details
             Expiry date(9)
           </dt>
           <dd class="nhsuk-summary-list__value">
-            04/08/2021
+            05/11/2023
+          </dt>
           </dd>
         </div>
-      
       </dl>
-
+  
+      <h4>Certificate details</h4>
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Valid period from(9a)
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            03/07/2020
+          </dt>
+          </dd>
+        </div>
+  
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Valid period to(9b)
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            05/08/2020
+          </dt>
+          </dd>
+        </div>
+  
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Delivery date(9c)
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            03/07/2020
+          </dt>
+          </dd>
+        </div>
+      </dl>
+    
       <div class="nhsuk-checkboxes__item">
         <input class="nhsuk-checkboxes__input" id="student" name="student" type="checkbox" value="student">
         <label class="nhsuk-label nhsuk-checkboxes__label" for="student">
-          Maria Rodriguez is a student
+          Louis Victor is a student
         </label>
       </div>
     <br>
-    <a class="nhsuk-button" href="address-ehic">Continue</a>
+    <a class="nhsuk-button" href="address-prc">Continue</a>
 
  </div>
-
- <div class="nhsuk-grid-column-one-third">
-      <img src="/images/ehic.png" alt="Ehic sample card" style="width:400px; height:230px; padding-top:150px; padding-left: 100px; float:right;">
- </div>
-
 </div>
 {% endblock %}
