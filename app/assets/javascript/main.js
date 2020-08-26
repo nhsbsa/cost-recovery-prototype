@@ -66,3 +66,10 @@ function display1(){
 function display2(){
     document.getElementById('div1').style.display = 'none';
   }
+
+  function display1(){
+    document.getElementById('div1').style.display ='block';
+  }
+function display2(){
+    document.getElementById('div1').style.display = 'none';
+  }
