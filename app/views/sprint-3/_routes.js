@@ -50,7 +50,7 @@ router.post('/another-treatment', function (req, res) {
   const selectedRadio = req.body.another;
 
   if (selectedRadio === "maria rodríguez"){
-    res.redirect('treatment-start-date-ehic-aat')
+    res.redirect('ehics-aat')
   }
   if (selectedRadio === "different person"){
     res.redirect('add-treatment')
@@ -111,6 +111,26 @@ router.post('/two-records-found-prc', function (req, res) {
   }
   else {
     res.redirect('two-records-found-prc')
+  }
+
+})
+
+//ehics-aat.html
+router.post('/ehics-aat', function (req, res) {
+
+  const selectedRadio = req.body.ehicTreatments;
+
+  if (selectedRadio === "ehic valid until 04/08/2021"){
+    res.redirect('treatment-start-date-ehic-aat')
+  }
+  if (selectedRadio === "ehic expired on 16/06/2017"){
+    res.redirect('details-ehic-aat')
+  }
+  if (selectedRadio === "none"){
+    res.redirect('ehics-aat')
+  }
+  else {
+    res.redirect('ehics-aat')
   }
 
 })

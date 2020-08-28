@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block pageTitle %}
-Search for an PRC
+Treatment cost 
 {% endblock %}
 
 {% block header %}
@@ -37,33 +37,16 @@ Search for an PRC
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
-    <fieldset class="nhsuk-fieldset">
-      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-        <h1 class="nhsuk-fieldset__heading">
-          Search for a PRC
-        </h1>
-      </legend>
+    <div class="nhsuk-form-group">
+      <h1 class="nhsuk-label-wrapper">
+        <label class="nhsuk-label nhsuk-label--l" for="country">
+          What is the cost of the treatment?
+        </label></h1>
+      <input class="nhsuk-input  nhsuk-input--width-20" id="country" name="country" type="text" value="£">
+    </div>
 
-      <span class="nhsuk-hint" id="example-hint">
-        Enter these details as it is in the PRC.
-      </span>
-    
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="fullname">
-          Full Name(3 and 4)
-        </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="fullname" name="fullname" type="text">
-      </div>
-    
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="dob">
-          Date of birth(5)
-        </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="dob" name="dob" type="text"> <br>
-      </div>
-    </fieldset>
+    <a class="nhsuk-button" href="check-your-answers-ehic-aat-2">Continue</a>
 
-    <a class="nhsuk-button" href="two-records-found-prc">Search</a>
 
  </div>
 </div>

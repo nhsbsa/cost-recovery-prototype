@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block pageTitle %}
-One PRC found
+EHICs
 {% endblock %}
 
 {% block header %}
@@ -37,34 +37,30 @@ One PRC found
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
-
+       
     <div class="nhsuk-form-group">
-      <form action="one-prc-found" method="post">
+      <form action="ehics-aat" method="post">
 
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-fieldset__heading">
-              One PRC found for Louis Victor
+              Which EHIC covers the treatment dates for Maria Rodríguez?
             </h1>
           </legend>
-
-          <span class="nhsuk-hint">
-            Select a PRC that covers the treatment dates.
-          </span>
-      
+        
           <div class="nhsuk-radios">
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="valid" name="prcTreatments" type="radio" value="prc valid from 03/07/2020 to 05/08/2020" aria-describedby="treatment-hint"  onclick="display1();" />
+              <input class="nhsuk-radios__input" id="valid" name="ehicTreatments" type="radio" value="ehic valid until 04/08/2021" aria-describedby="valid-treatment-hint"  onclick="show1();" />
               <label class="nhsuk-label nhsuk-radios__label" for="valid">
-                PRC valid from 03/07/2020 to 05/08/2020
+                EHIC valid until 04/08/2021
               </label>
             
               <div class="nhsuk-table-responsive hide" id="div1">
                 <table class="nhsuk-table">
                   <caption class="nhsuk-table__caption">Treatments</caption>
-                  <span class="nhsuk-hint nhsuk-radios__hint" id="treatment-hint">
-                    Treatment history for this PRC
+                  <span class="nhsuk-hint nhsuk-radios__hint" id="valid-treatment-hint">
+                    Treatment history for this EHIC
                   </span>
                   <thead class="nhsuk-table__head">
                     <tr class="nhsuk-table__row">
@@ -76,13 +72,23 @@ One PRC found
                   <tbody class="nhsuk-table__body">
                     <tr class="nhsuk-table__row">
                       <td class="nhsuk-table__cell">1</td>
-                      <td class="nhsuk-table__cell ">05/07/2020</td>
-                      <td class="nhsuk-table__cell ">15/07/2020</td>
+                      <td class="nhsuk-table__cell ">15/05/2019</td>
+                      <td class="nhsuk-table__cell ">20/05/2019</td>
                     </tr>
                     <tr class="nhsuk-table__row">
                       <td class="nhsuk-table__cell">2</td>
-                      <td class="nhsuk-table__cell ">20/07/2020</td>
-                      <td class="nhsuk-table__cell ">22/07/2020</td>
+                      <td class="nhsuk-table__cell ">14/02/2019</td>
+                      <td class="nhsuk-table__cell ">16/02/2019</td>
+                    </tr>
+                    <tr class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">3</td>
+                      <td class="nhsuk-table__cell ">26/10/2018</td>
+                      <td class="nhsuk-table__cell ">24/10/2018</td>
+                    </tr>
+                    <tr class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">4</td>
+                      <td class="nhsuk-table__cell ">15/03/2018</td>
+                      <td class="nhsuk-table__cell ">17/03/2018</td>
                     </tr>
                   </tbody>
                 </table>
@@ -90,7 +96,42 @@ One PRC found
             </div>
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="none" name="prcTreatments" type="radio" value="none" onclick="display2();" />
+              <input class="nhsuk-radios__input" id="expired" name="ehicTreatments" type="radio" value="ehic expired on 16/06/2017" aria-describedby="expired-treatments-hint" onclick="show2();" />
+              <label class="nhsuk-label nhsuk-radios__label" for="expired">
+                EHIC expired on 16/06/2017
+              </label>
+            
+              <div class="nhsuk-table-responsive hide" id="div2">
+                <table class="nhsuk-table">
+                  <caption class="nhsuk-table__caption">Treatments</caption>
+                  <span class="nhsuk-hint nhsuk-radios__hint" id="expired-treatments-hint">
+                    Treatment history for this EHIC
+                  </span>
+                  <thead class="nhsuk-table__head">
+                    <tr class="nhsuk-table__row">
+                      <th class="nhsuk-table__header" scope="col">Treatment no.</th>
+                      <th class="nhsuk-table__header" scope="col">Start date</th>
+                      <th class="nhsuk-table__header" scope="col">End date</th>
+                    </tr>
+                  </thead>
+                  <tbody class="nhsuk-table__body">
+                    <tr class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">1</td>
+                      <td class="nhsuk-table__cell ">14/02/2017</td>
+                      <td class="nhsuk-table__cell ">16/02/2017</td>
+                    </tr>
+                    <tr class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">2</td>
+                      <td class="nhsuk-table__cell ">26/11/2016</td>
+                      <td class="nhsuk-table__cell ">24/11/2016</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="none" name="ehicTreatments" type="radio" value="none" onclick="show3();" />
               <label class="nhsuk-label nhsuk-radios__label" for="none">
                 None
               </label>
@@ -103,7 +144,7 @@ One PRC found
         <button class="nhsuk-button" type="submit">
           Continue
         </button>
-
+      
       </form>
     </div>
 
