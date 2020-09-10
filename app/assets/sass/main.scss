@@ -249,3 +249,191 @@ a {
 .hide {
   display: none;
 }
+
+//hero image
+.nhsuk-hero {
+  background-color: #005eb8;
+  color: #fff;
+  position: relative
+}
+
+@media print {
+  .nhsuk-hero {
+      color: #212b32;
+      fill: #212b32
+  }
+
+  .nhsuk-hero:active,.nhsuk-hero:focus,.nhsuk-hero:visited {
+      color: #212b32
+  }
+}
+
+.nhsuk-hero .nhsuk-hero--border {
+  border-top: 1px solid rgba(255,255,255,0.2)
+}
+
+.nhsuk-hero__wrapper {
+  padding-top: 48px;
+  padding-bottom: 48px
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-hero__wrapper {
+      padding-top:56px
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-hero__wrapper {
+      padding-bottom:56px
+  }
+}
+
+@media (max-width: 48.0525em) {
+  .app-hero__wrapper {
+      padding-bottom:32px;
+      padding-top: 32px
+  }
+}
+
+//cards
+.nhsuk-card {
+  margin-bottom: 24px;
+  background: #fff;
+  border: 1px solid #d8dde0;
+  position: relative;
+  width: 100%
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-card {
+      margin-bottom:32px
+  }
+}
+
+.nhsuk-card__content {
+  padding: 24px;
+  position: relative
+}
+
+.nhsuk-card__content>*:first-child {
+  margin-top: 0
+}
+
+.nhsuk-card__content>*:last-child {
+  margin-bottom: 0
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-card__content {
+      padding:32px
+  }
+}
+
+.nhsuk-card__heading,.nhsuk-card__metadata,.nhsuk-card__description {
+  margin-bottom: 16px
+}
+
+.nhsuk-card--clickable {
+  border-bottom-width: 4px
+}
+
+.nhsuk-card--clickable:hover,.nhsuk-card--clickable:active {
+  cursor: pointer
+}
+
+.nhsuk-card--clickable:hover .nhsuk-card__heading a,.nhsuk-card--clickable:hover .nhsuk-card__link,.nhsuk-card--clickable:active .nhsuk-card__heading a,.nhsuk-card--clickable:active .nhsuk-card__link {
+  color: #7C2855;
+  text-decoration: none
+}
+
+.nhsuk-card--clickable:hover .nhsuk-card__heading a:focus,.nhsuk-card--clickable:hover .nhsuk-card__link:focus,.nhsuk-card--clickable:active .nhsuk-card__heading a:focus,.nhsuk-card--clickable:active .nhsuk-card__link:focus {
+  color: #212b32
+}
+
+.nhsuk-card--clickable:hover {
+  border-color: #aeb7bd
+}
+
+.nhsuk-card--clickable:active {
+  border-color: #aeb7bd;
+  bottom: -1px
+}
+
+.nhsuk-card-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+  padding: 0
+}
+
+@media (max-width: 48.0525em) {
+  .nhsuk-card-group {
+      margin-bottom:40px
+  }
+}
+
+.nhsuk-card-group__item {
+  display: flex;
+  list-style-type: none;
+  margin-bottom: 0
+}
+
+@media (max-width: 48.0525em) {
+  .nhsuk-card-group__item {
+      flex:0 0 100%
+  }
+}
+
+.nhsuk-card-group__item .nhsuk-card {
+  margin-bottom: 32px
+}
+
+@media (max-width: 48.0525em) {
+  .nhsuk-card-group__item .nhsuk-card {
+      margin-bottom:16px
+  }
+
+  .nhsuk-card-group__item:last-child .nhsuk-card {
+      margin-bottom: 0
+  }
+}
+
+.data-item-l {
+  font-size: 35px;
+  font-weight: 600;
+  }
+  @media (min-width: 40.0625em) {
+    .data-item-l {
+      font-size: 45px;
+      font-weight: 900;
+      }}
+
+.data-item-m {
+  font-size: 16px;
+  margin-left: 10px;
+  display: inline-block;
+  }
+  @media (min-width: 40.0625em) {
+    .data-item-m {
+      font-size: 19px;
+      }}
+
+.data-item-s {
+  font-size: 16px;
+  margin-right: 30px;
+  display: inline-block;
+  }
+  @media (min-width: 40.0625em) {
+    .data-item-s {
+      font-size: 19px;
+      }}
+
+.notification-badge{
+    margin-left: 10px ;
+    font-size: 15px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+  }

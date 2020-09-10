@@ -19,5 +19,7 @@ router.use('/sprint-2', require('./views/sprint-2/_routes'));
 
 router.use('/sprint-3', require('./views/sprint-3/_routes'));
 
+router.use('/sprint-4', require('./views/sprint-4/_routes'));
+
 
 module.exports = router;
