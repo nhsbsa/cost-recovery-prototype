@@ -162,7 +162,7 @@ router.post('/entitlements-aat', function (req, res) {
     res.redirect('ehics-aat')
   }
   if (selectedRadio === "prc"){
-    res.redirect('entitlements-aat')
+    res.redirect('enter-details-prc-aat')
   }
   else {
     res.redirect('entitlements-aat')
@@ -200,6 +200,23 @@ router.post('/have-address-prc', function (req, res) {
   }
   else {
     res.redirect('have-address-prc')
+  }
+
+})
+
+//ehic-related-prc-aat.html
+router.post('/ehic-related-aat', function (req, res) {
+
+  const selectedRadio = req.body.ehicrelated;
+
+  if (selectedRadio === "yes"){
+    res.redirect('ehic-details-prc-aat')
+  }
+  if (selectedRadio === "no"){
+    res.redirect('treatment-start-date-prc-aat')
+  }
+  else {
+    res.redirect('ehic-related-prc-aat')
   }
 
 })
