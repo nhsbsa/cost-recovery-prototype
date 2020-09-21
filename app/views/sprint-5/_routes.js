@@ -89,7 +89,7 @@ router.post('/have-address-ehic', function (req, res) {
     res.redirect('address-ehic')
   }
   if (selectedRadio === "no"){
-    res.redirect('check-your-answers-ehic-sec2')
+    res.redirect('check-your-answers-ehic-sec2-na')
   }
   else {
     res.redirect('have-address-ehic')
@@ -115,23 +115,6 @@ router.post('/entitlements-aat', function (req, res) {
 
 })
 
-//ehic-related-prc.html
-router.post('/ehic-related', function (req, res) {
-
-  const selectedRadio = req.body.ehicrelated;
-
-  if (selectedRadio === "yes"){
-    res.redirect('ehic-details-prc')
-  }
-  if (selectedRadio === "no"){
-    res.redirect('have-address-prc')
-  }
-  else {
-    res.redirect('ehic-related-prc')
-  }
-
-})
-
 //have-address-prc.html
 router.post('/have-address-prc', function (req, res) {
 
@@ -141,30 +124,12 @@ router.post('/have-address-prc', function (req, res) {
     res.redirect('address-prc')
   }
   if (selectedRadio === "no"){
-    res.redirect('check-your-answers-prc-sec2')
+    res.redirect('check-your-answers-prc-sec2-na')
   }
   else {
     res.redirect('have-address-prc')
   }
 
 })
-
-//ehic-related-prc-aat.html
-router.post('/ehic-related-aat', function (req, res) {
-
-  const selectedRadio = req.body.ehicrelated;
-
-  if (selectedRadio === "yes"){
-    res.redirect('ehic-details-prc-aat')
-  }
-  if (selectedRadio === "no"){
-    res.redirect('check-your-answers-prc-aat')
-  }
-  else {
-    res.redirect('ehic-related-prc-aat')
-  }
-
-})
-
 
   module.exports = router
