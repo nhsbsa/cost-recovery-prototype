@@ -405,7 +405,7 @@ a {
   }
   @media (min-width: 40.0625em) {
     .data-item-l {
-      font-size: 45px;
+      font-size: 40px;
       font-weight: 900;
       }}
 
@@ -437,3 +437,39 @@ a {
     background-color: red;
     color: white;
   }
+
+//file upload
+.file-upload {
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #0b0c0c;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+@media print {
+  .file-upload {
+    font-family: sans-serif;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .file-upload {
+    font-size: 19px;
+    font-size: 1.1875rem;
+    line-height: 1.31579;
+  }
+}
+
+@media print {
+  .file-upload {
+    font-size: 14pt;
+    line-height: 1.15;
+  }
+}
+

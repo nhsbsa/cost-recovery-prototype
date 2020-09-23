@@ -130,13 +130,238 @@ Reports
 
 {% block content %}
 <div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-two-thirds">
-    <div style="width:500px; border:3px solid #005eb8; padding:50px;">
-    <h3>What information on this page will be helpful?</h3>
+  <div class="nhsuk-grid-column-full">
+
+    <h1 class="nhsuk-label-wrapper">
+      <label class="nhsuk-label nhsuk-label--l" for="example-heading">
+        Filter and download your report as a spreadsheet
+      </label>
+    </h1>
+    
+    <div class="nhsuk-form-group select-inline">
+      <select class="nhsuk-select" id="select-3" name="select-3">
+          <option value="0" selected>Year</option>
+          <option value="1">2020</option>
+          <option value="2">2019</option>
+          <option value="3">2018</option>
+          <option value="4">2017</option>
+          <option value="5">2016</option>
+          <option value="5">2015</option>
+        </select>
     </div>
-    <br>
-    <br>
-    <br>
+    
+    <div class="nhsuk-form-group select-inline">
+      <select class="nhsuk-select" id="select-3" name="select-3">
+          <option value="0" selected>Quarter</option>
+          <option value="1">January - March</option>
+          <option value="2">April - June</option>
+          <option value="3">July - September</option>
+          <option value="4">October - December</option>
+        </select>
+    </div>
+    
+    <div class="nhsuk-form-group select-inline">
+      <select class="nhsuk-select" id="select-4" name="select-4">
+          <option value="0" selected>Month</option>
+          <option value="1">January</option>
+          <option value="2">February</option>
+          <option value="3">March</option>
+          <option value="4">April</option>
+          <option value="5">May</option>
+          <option value="6">June</option>
+          <option value="7">July</option>
+          <option value="8">August</option>
+          <option value="9">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
+    </div> 
+    
+    <div class="nhsuk-form-group select-inline">
+      <!--<label class="nhsuk-label" for="select-1">
+        Entitlement
+      </label> -->
+      <select class="nhsuk-select" id="select-1" name="select-1">
+          <option value="0" selected>Entitlement</option>
+          <option value="1">EHIC</option>
+          <option value="2">PRC</option>
+          <option value="3">S2</option>
+        </select>
+    </div>
+    
+    <div class="nhsuk-form-group select-inline">
+      <select class="nhsuk-select" id="select-2" name="select-2">
+        <option value="0" selected>Country</option>
+        <option value="1" >Austria</option>
+        <option value="2">Belgium</option> 
+        <option value="3">Bulgaria</option> 
+      </select>
+    </div>
+
+  </div>
+</div>
+<br> <br>
+<section>
+  <div class="nhsuk-width-container">
+    <h3>Here are the treatments you processed from April 2015</h3>
+    <div class="nhsuk-grid-row nhsuk-card-group">
+      <div class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content" style="text-align: center;">
+            <h2 class="nhsuk-card__heading nhsuk-heading-m">Processed treatments</h2>
+            <p class="data-item-l">200</p>
+            <span class="data-item-s">EHIC - 130</span>
+            <span class="data-item-s">PRC - 53</span>
+            <span class="data-item-s">S2 - 17</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content" style="text-align: center;">
+            <h2 class="nhsuk-card__heading nhsuk-heading-m">Total cost</h2>
+            <p class="nhsuk-card__description data-item-l">£80,389.55</p>
+            <span class="data-item-s">includes EHIC, PRC and S2</span>
+          </div>
+          </div>
+        </div>
+
+        <div class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          <div class="nhsuk-card">
+            <div class="nhsuk-card__content" style="text-align: center;">
+              <h2 class="nhsuk-card__heading nhsuk-heading-m">Incentives</h2>
+              <p class="nhsuk-card__description data-item-l">£20,097.38</p>
+              <span class="data-item-s">includes EHIC, PRC</span>
+            </div>
+            </div>
+          </div>
+      </div>
+    </div>
+</section>
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <div class="nhsuk-table-responsive">
+      <table class="nhsuk-table">
+        <caption class="nhsuk-table__caption">Sent forms</caption>
+        <thead class="nhsuk-table__head">
+          <tr class="nhsuk-table__row">
+            <th class="nhsuk-table__header" scope="col">Treatment ID</th>
+            <th class="nhsuk-table__header" scope="col">Full name</th>
+            <th class="nhsuk-table__header" scope="col">Entitlement</th>
+            <th class="nhsuk-table__header" scope="col">Country</th>
+            <th class="nhsuk-table__header" scope="col">Cost</th>
+            <th class="nhsuk-table__header" scope="col">Incentive</th>
+            <th class="nhsuk-table__header" scope="col">Processed date</th>
+            <th class="nhsuk-table__header" scope="col"></th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">63874</td>
+            <td class="nhsuk-table__cell ">Rapheal Laurent</td>
+            <td class="nhsuk-table__cell ">PRC</td>
+            <td class="nhsuk-table__cell ">France</td>
+            <td class="nhsuk-table__cell ">£450.00</td>
+            <td class="nhsuk-table__cell ">£112.50</td>
+            <td class="nhsuk-table__cell ">10/04/2020</td>
+            <td class="nhsuk-table__cell"><a href="#">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">63778</td>
+            <td class="nhsuk-table__cell ">Julia Sebastián</td>
+            <td class="nhsuk-table__cell ">EHIC</td>
+            <td class="nhsuk-table__cell ">Spain</td>
+            <td class="nhsuk-table__cell ">£954.55</td>
+            <td class="nhsuk-table__cell ">£238.63</td>
+            <td class="nhsuk-table__cell ">05/04/2020</td>
+            <td class="nhsuk-table__cell"><a href="#">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">63845</td>
+            <td class="nhsuk-table__cell ">Joana Fernades</td>
+            <td class="nhsuk-table__cell ">S2</td>
+            <td class="nhsuk-table__cell ">Portugal</td>
+            <td class="nhsuk-table__cell ">£1,000.00</td>
+            <td class="nhsuk-table__cell ">-</td>
+            <td class="nhsuk-table__cell ">20/03/2020</td>
+            <td class="nhsuk-table__cell"><a href="#">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">63478</td>
+            <td class="nhsuk-table__cell ">Alexandre Martin</td>
+            <td class="nhsuk-table__cell ">EHIC</td>
+            <td class="nhsuk-table__cell ">France</td>
+            <td class="nhsuk-table__cell ">£500.50</td>
+            <td class="nhsuk-table__cell ">£125.12</td>
+            <td class="nhsuk-table__cell ">10/01/2020</td>
+            <td class="nhsuk-table__cell"><a href="#">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">63546</td>
+            <td class="nhsuk-table__cell ">Daniel Aldea</td>
+            <td class="nhsuk-table__cell ">EHIC</td>
+            <td class="nhsuk-table__cell ">Romania</td>
+            <td class="nhsuk-table__cell ">£1,300.55</td>
+            <td class="nhsuk-table__cell ">£325.13</td>
+            <td class="nhsuk-table__cell ">09/04/2019</td>
+            <td class="nhsuk-table__cell"><a href="#">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">63778</td>
+            <td class="nhsuk-table__cell ">Lukas Grigas</td>
+            <td class="nhsuk-table__cell ">S2</td>
+            <td class="nhsuk-table__cell ">Lithuania</td>
+            <td class="nhsuk-table__cell ">£250.00</td>
+            <td class="nhsuk-table__cell ">-</td>
+            <td class="nhsuk-table__cell ">01/04/2019</td>
+            <td class="nhsuk-table__cell"><a href="#">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">63998</td>
+            <td class="nhsuk-table__cell ">Gianna Russo</td>
+            <td class="nhsuk-table__cell ">EHIC</td>
+            <td class="nhsuk-table__cell ">Italy</td>
+            <td class="nhsuk-table__cell ">£3,000.00</td>
+            <td class="nhsuk-table__cell ">£750.00</td>
+            <td class="nhsuk-table__cell ">20/02/2019</td>
+            <td class="nhsuk-table__cell"><a href="#">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">63220</td>
+            <td class="nhsuk-table__cell ">Romeo Eposito</td>
+            <td class="nhsuk-table__cell ">EHIC</td>
+            <td class="nhsuk-table__cell ">Italy</td>
+            <td class="nhsuk-table__cell ">£683.30</td>
+            <td class="nhsuk-table__cell ">£170.82</td>
+            <td class="nhsuk-table__cell ">20/01/2019</td>
+            <td class="nhsuk-table__cell"><a href="#">View</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
+      <ul class="nhsuk-list nhsuk-pagination__list">
+        <li class="nhsuk-pagination-item--next">
+          <a class="nhsuk-pagination__link nhsuk-pagination__link--next" href="#">
+            <span class="nhsuk-pagination__title">Next</span>
+            <span class="nhsuk-u-visually-hidden">:</span>
+            <span class="nhsuk-pagination__page">Page 2 of 5</span>
+            <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <a class="nhsuk-button" href="#">Download as a spreadsheet</a>
+  
  </div>
 </div>
 {% endblock %}

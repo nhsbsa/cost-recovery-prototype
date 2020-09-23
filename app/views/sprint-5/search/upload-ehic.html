@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block pageTitle %}
-Country
+Upload a copy of the EHIC
 {% endblock %}
 
 {% block header %}
@@ -37,15 +37,19 @@ Country
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
-    <div class="nhsuk-form-group">
-      <h1 class="nhsuk-label-wrapper">
-        <label class="nhsuk-label nhsuk-label--l" for="country">
-          Which country is the patient's EHIC issued in?
-        </label></h1>
-      <input class="nhsuk-input  nhsuk-input--width-20" id="country" name="country" type="text">
-    </div>
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          Upload a copy of the EHIC
+        </h1>
+      </legend>
 
-    <a class="nhsuk-button" href="search-ehic">Continue</a>
+      <input class="file-upload" id="file-upload" name="file-upload" type="file" aria-describedby="file-upload">
+    </fieldset> 
+
+    <br>
+      
+    <a class="nhsuk-button" href="address-ehic">Continue</a>
 
  </div>
 </div>
