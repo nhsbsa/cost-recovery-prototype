@@ -473,3 +473,25 @@ a {
   }
 }
 
+//reports filter description
+
+.filter-description {
+  font-size: 19px;
+  }
+  @media (min-width: 40.0625em) {
+    .filter-description {
+      font-size: 22px;
+      }}
+
+ .filter-description-words {
+    font-size: 19px;
+    font-weight: 600;
+    }
+    @media (min-width: 40.0625em) {
+      .filter-description-words {
+        font-size: 22px;
+        }}
+      
+
+
+
