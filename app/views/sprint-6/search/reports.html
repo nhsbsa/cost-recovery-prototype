@@ -137,6 +137,10 @@ Reports
         Filter and download your report as a spreadsheet
       </label>
     </h1>
+
+    <span class="nhsuk-hint">
+      Select any or all of the filters to arrive at desired results.
+    </span>
     
     <div class="nhsuk-form-group select-inline">
       <select class="nhsuk-select" id="select-3" name="select-3">
@@ -191,6 +195,9 @@ Reports
     </div>
     
     <div class="nhsuk-form-group select-inline">
+      <!--<label class="nhsuk-label" for="select-1">
+        Country
+      </label> -->
       <select class="nhsuk-select" id="select-2" name="select-2">
         <option value="0" selected>Country</option>
         <option value="1" >Austria</option>
@@ -207,7 +214,7 @@ Reports
 
 <section>
   <div class="nhsuk-width-container">
-    <p class="filter-description">Here are the treatments your trust processed from <span class="filter-description-words">April 2015</span>.</p>
+    <p class="filter-description">Here is the treatment and cost summary for your trust from <span class="filter-description-words">April 2015</span>.</p>
     <div class="nhsuk-grid-row nhsuk-card-group">
       <div class="nhsuk-grid-column-one-third nhsuk-card-group__item">
         <div class="nhsuk-card">
@@ -224,9 +231,9 @@ Reports
       <div class="nhsuk-grid-column-one-third nhsuk-card-group__item">
         <div class="nhsuk-card">
           <div class="nhsuk-card__content" style="text-align: center;">
-            <h2 class="nhsuk-card__heading nhsuk-heading-s">Total cost</h2>
-            <p class="nhsuk-card__description data-item-l">£80,389.55</p>
-            <span class="data-item-s">includes EHIC, PRC and S2</span>
+            <h2 class="nhsuk-card__heading nhsuk-heading-s">Total cost - EHIC, PRC </h2>
+            <p class="nhsuk-card__description data-item-l">£60,389.55</p>
+            <span class="data-item-s">includes both EHIC and PRC</span>
           </div>
           </div>
         </div>
@@ -234,18 +241,28 @@ Reports
         <div class="nhsuk-grid-column-one-third nhsuk-card-group__item">
           <div class="nhsuk-card">
             <div class="nhsuk-card__content" style="text-align: center;">
+              <h2 class="nhsuk-card__heading nhsuk-heading-s">Total cost - S2</h2>
+              <p class="nhsuk-card__description data-item-l">£20,389.55</p>
+              <span class="data-item-s">includes only S2</span>
+            </div>
+            </div>
+          </div>
+
+        <!--<div class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          <div class="nhsuk-card">
+            <div class="nhsuk-card__content" style="text-align: center;">
               <h2 class="nhsuk-card__heading nhsuk-heading-s">Incentives</h2>
               <p class="nhsuk-card__description data-item-l">£20,097.38</p>
               <span class="data-item-s">includes EHIC, PRC</span>
             </div>
             </div>
-          </div>
+          </div> -->
       </div>
     </div>
 </section>
 
 
-<div class="nhsuk-grid-row">
+<!--<div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
 
     <div class="nhsuk-table-responsive" id="table">
@@ -364,7 +381,7 @@ Reports
       </ul>
     </nav>
 
-    <a class="nhsuk-button" href="#">Download as a spreadsheet</a>
+    <a class="nhsuk-button" href="#">Download as a spreadsheet</a>-->
   
  </div>
 </div>

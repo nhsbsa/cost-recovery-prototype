@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block pageTitle %}
-Entitlement
+Process draft treatments
 {% endblock %}
 
 {% block header %}
@@ -24,6 +24,7 @@ Entitlement
         <button class="nhsuk-header__menu-toggle" id="toggle-menu" aria-controls="header-navigation" aria-label="Open menu">Menu</button>
       </div>
 
+      <!--<button onclick="window.location.href='sign-in';" class="nhsuk-button nhsuk-button--reverse" style="margin-right: 20px; margin-bottom: 0px; box-shadow: none; padding: 8px 12px; font-weight: 600; font-size: 16px;" >Add treatment form</button>-->
       <a style="color: #ffffff; display: inline-block; padding-top:10px;" href="sign-in">Sign out</a>
 
       <!--<div class="nhsuk-header__search">
@@ -117,106 +118,141 @@ Entitlement
 {% endblock %}
 
 {% block beforeContent %}
-<section class="nhsuk-hero">
-  <div class="nhsuk-width-container nhsuk-hero--border">
-    <div class="nhsuk-grid-row">
-      <div class="nhsuk-grid-column-two-thirds">
-        <div class="nhsuk-hero__wrapper app-hero__wrapper">
-          <h1 class="nhsuk-u-margin-bottom-4">Recovery of treatment costs from member states </h1>
-          <p class="nhsuk-body-l nhsuk-u-margin-bottom-1">Add an EHIC, PRC or S2</p>
-          <button onclick="window.location.href='add-treatment';" class="nhsuk-button nhsuk-button--reverse" style="margin-top: 20px; margin-bottom: 0px; box-shadow: none;" >Add treatment</button>
-        </div>
-      </div>
-    </div>
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="home">Home</a></li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="home">Back to Home</a></p>
   </div>
-</section>
+</nav>
 {% endblock %}
 
 {% block content %}
-<section>
-  <div class="nhsuk-width-container">
-    <h2>Hi Paul Mathew, here is your trust summary for this month.</h2>
-    <div class="nhsuk-grid-row nhsuk-card-group">
-      <div class="nhsuk-grid-column-one-half nhsuk-card-group__item">
-        <div class="nhsuk-card">
-          <div class="nhsuk-card__content" style="text-align: center;">
-            <h2 class="nhsuk-card__heading nhsuk-heading-m">Processed treatments</h2>
-            <p class="data-item-l">20<span class="data-item-m">this month</span></p>
-            <span class="data-item-s">EHIC - 13</span>
-            <span class="data-item-s">PRC - 4</span>
-            <span class="data-item-s">S2 - 3</span>
-          </div>
-        </div>
-      </div>
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+      <h1 class="nhsuk-fieldset__heading">
+        Process draft treatments
+      </h1>
+    </legend>
 
-      <div class="nhsuk-grid-column-one-half nhsuk-card-group__item">
-        <div class="nhsuk-card">
-          <div class="nhsuk-card__content" style="text-align: center;">
-            <h2 class="nhsuk-card__heading nhsuk-heading-m">Total cost</h2>
-            <p class="nhsuk-card__description data-item-l">£30,567.88<span class="data-item-m">this month</span></p>
-            <span class="data-item-s">includes EHIC, PRC and S2</span>
-          </div>
-          </div>
-        </div>
-      </div>
+    <div class="nhsuk-table-responsive">
+      <table class="nhsuk-table">
+        <caption class="nhsuk-table__caption">Draft treatments</caption>
+        <thead class="nhsuk-table__head">
+          <tr class="nhsuk-table__row">
+            <th class="nhsuk-table__header" scope="col">Entitlement</th>
+            <th class="nhsuk-table__header" scope="col">Name</th>
+            <th class="nhsuk-table__header" scope="col">Given names</th>
+            <th class="nhsuk-table__header" scope="col">Country</th>
+            <th class="nhsuk-table__header" scope="col">Created by</th>
+            <th class="nhsuk-table__header" scope="col">Date created</th>
+            <th class="nhsuk-table__header" scope="col"></th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">EHIC</td>
+            <td class="nhsuk-table__cell ">Rodríguez</td>
+            <td class="nhsuk-table__cell ">Maria</td>
+            <td class="nhsuk-table__cell ">Spain</td>
+            <td class="nhsuk-table__cell ">Paul Mathew</td>
+            <td class="nhsuk-table__cell ">28/06/2020</td>
+            <td class="nhsuk-table__cell "><a href="have-address-ehic">Complete</a></td>
+          </tr>
+
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">EHIC</td>
+            <td class="nhsuk-table__cell ">Laurent</td>
+            <td class="nhsuk-table__cell ">Rapheal</td>
+            <td class="nhsuk-table__cell ">France</td>
+            <td class="nhsuk-table__cell ">Paul Mathew</td>
+            <td class="nhsuk-table__cell ">20/06/2020</td>
+            <td class="nhsuk-table__cell "><a href="#">Complete</a></td>
+          </tr>
+
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">PRC</td>
+            <td class="nhsuk-table__cell ">Eposito</td>
+            <td class="nhsuk-table__cell ">Romeo</td>
+            <td class="nhsuk-table__cell ">Italy</td>
+            <td class="nhsuk-table__cell ">Sarah Jordan</td>
+            <td class="nhsuk-table__cell ">18/06/2020</td>
+            <td class="nhsuk-table__cell "><a href="#">Complete</a></td>
+          </tr>
+
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">EHIC</td>
+            <td class="nhsuk-table__cell ">Martin</td>
+            <td class="nhsuk-table__cell ">Alexandre</td>
+            <td class="nhsuk-table__cell ">France</td>
+            <td class="nhsuk-table__cell ">Edward Philips</td>
+            <td class="nhsuk-table__cell ">10/06/2020</td>
+            <td class="nhsuk-table__cell "><a href="#">Complete</a></td>
+          </tr>
+
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">PRC</td>
+            <td class="nhsuk-table__cell ">Hernández</td>
+            <td class="nhsuk-table__cell ">Daisy</td>
+            <td class="nhsuk-table__cell ">Spain</td>
+            <td class="nhsuk-table__cell ">Sarah Jordan</td>
+            <td class="nhsuk-table__cell ">08/06/2020</td>
+            <td class="nhsuk-table__cell "><a href="#">Complete</a></td>
+          </tr>
+
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">PRC</td>
+            <td class="nhsuk-table__cell ">Eduardo</td>
+            <td class="nhsuk-table__cell ">Carlos</td>
+            <td class="nhsuk-table__cell ">Portugal</td>
+            <td class="nhsuk-table__cell ">Sarah Jordan</td>
+            <td class="nhsuk-table__cell ">04/06/2020</td>
+            <td class="nhsuk-table__cell "><a href="#">Complete</a></td>
+          </tr>
+
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">EHIC</td>
+            <td class="nhsuk-table__cell ">Janssens</td>
+            <td class="nhsuk-table__cell ">Marie</td>
+            <td class="nhsuk-table__cell ">Belgium</td>
+            <td class="nhsuk-table__cell ">Paul Mathew</td>
+            <td class="nhsuk-table__cell ">11/05/2020</td>
+            <td class="nhsuk-table__cell "><a href="#">Complete</a></td>
+          </tr>
+
+          
+
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">S2</td>
+            <td class="nhsuk-table__cell ">Fernandes</td>
+            <td class="nhsuk-table__cell ">Joana</td>
+            <td class="nhsuk-table__cell ">Spain</td>
+            <td class="nhsuk-table__cell ">Edward Philips</td>
+            <td class="nhsuk-table__cell ">10/04/2020</td>
+            <td class="nhsuk-table__cell "><a href="#">Complete</a></td>
+          </tr>
+          
+        </tbody>
+      </table>
     </div>
-</section>
-  
-<hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-6">
 
-<section>
-  <div class="nhsuk-width-container">
-    <div class="nhsuk-grid-row">
-      <div class="nhsuk-grid-column-two-thirds">
-        <h2>Draft treatments</h2>
-        <p>Your trust has 9 draft treatments to process.There are 5 EHIC, 3 PRC and 1 S2 draft treatments pending.</p>
-     
-        <div class="nhsuk-action-link">
-          <a class="nhsuk-action-link__link" href="process-draft-treatments">
-            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M0 0h24v24H0z" fill="none"></path>
-              <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+    <nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
+      <ul class="nhsuk-list nhsuk-pagination__list">
+        <li class="nhsuk-pagination-item--next">
+          <a class="nhsuk-pagination__link nhsuk-pagination__link--next" href="#">
+            <span class="nhsuk-pagination__title">Next</span>
+            <span class="nhsuk-u-visually-hidden">:</span>
+            <span class="nhsuk-pagination__page">Page 2 of 2</span>
+            <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
             </svg>
-            <span class="nhsuk-action-link__text">Process draft treatments</span>
           </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+        </li>
+      </ul>
+    </nav>
 
-<hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-6">
-
-<section>
-  <div class="nhsuk-width-container">
-    <div class="nhsuk-grid-row nhsuk-card-group">
-  
-      <div class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-        <div class="nhsuk-card nhsuk-card--clickable">
-          <div class="nhsuk-card__content">
-            <h2 class="nhsuk-card__heading nhsuk-heading-m"><a href="#">Messages</a><span class="notification-badge">2 new</span></h2>
-            <p class="nhsuk-card__description">Send messages and view all your conversations with the overseas visitor team.</p>
-          </div>
-        </div>
-      </div>
-      <div class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-        <div class="nhsuk-card nhsuk-card--clickable">
-          <div class="nhsuk-card__content">
-            <h2 class="nhsuk-card__heading nhsuk-heading-m"><a href="search-person">Search person</a></h2>
-            <p class="nhsuk-card__description">Search a person to find their entitlement details, treatments and also historic information.</p>
-          </div>
-        </div>
-      </div>
-      <div class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-        <div class="nhsuk-card nhsuk-card--clickable">
-          <div class="nhsuk-card__content">
-            <h2 class="nhsuk-card__heading nhsuk-heading-m"><a href="reports">Reports</a></h2>
-            <p class="nhsuk-card__description">Custom filter an arrive at your desired results for reporting.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  
   </div>
-</section>
+</div>
 {% endblock %}
