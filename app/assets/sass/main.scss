@@ -399,30 +399,54 @@ a {
   }
 }
 
+.data-item-large {
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 10px;
+  margin-top: 40px;
+  }
+  @media (min-width: 40.0625em) {
+    .data-item-large {
+      font-size: 40px;
+      font-weight: 900;
+      line-height: 10px;
+      margin-top: 40px;
+      }}
+
 .data-item-l {
   font-size: 35px;
   font-weight: 600;
   }
   @media (min-width: 40.0625em) {
-    .data-item-l {
+    .data-item-l{
       font-size: 40px;
       font-weight: 900;
       }}
 
+
 .data-item-m {
   font-size: 16px;
-  margin-left: 10px;
-  display: inline-block;
+  font-weight: 600;
   }
   @media (min-width: 40.0625em) {
     .data-item-m {
+      font-size: 19px;
+      font-weight: 600;
+      }}
+      
+
+.data-item-small {
+  font-size: 16px;
+  margin-right: 30px;
+  display: inline-block;
+  }
+  @media (min-width: 40.0625em) {
+    .data-item-small {
       font-size: 19px;
       }}
 
 .data-item-s {
   font-size: 16px;
-  margin-right: 30px;
-  display: inline-block;
   }
   @media (min-width: 40.0625em) {
     .data-item-s {
