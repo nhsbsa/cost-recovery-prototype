@@ -29,6 +29,9 @@ router.use('/sprint-6/search', require('./views/sprint-6/_routes'));
 
 router.use('/sprint-6/search-no-results', require('./views/sprint-6/_routes'));
 
+router.use('/sprint-7/search', require('./views/sprint-7/_routes'));
+
+router.use('/sprint-7/search-no-results', require('./views/sprint-7/_routes'));
 
 
 
