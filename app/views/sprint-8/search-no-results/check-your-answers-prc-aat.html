@@ -1,0 +1,263 @@
+{% extends 'layout.html' %}
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block header %}
+<header class="nhsuk-header" role="banner">
+  <div class="nhsuk-width-container nhsuk-header__container">
+    <div class="nhsuk-header__logo nhsuk-header__logo--only"><a class="nhsuk-header__link nhsuk-header__link--service " href="home" aria-label="Overseas visitor treatment portal homepage">
+        <svg class="nhsuk-logo" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false" viewBox="0 0 40 16">
+          <path class="nhsuk-logo__background" d="M0 0h40v16H0z"></path>
+          <path class="nhsuk-logo__text" d="M3.9 1.5h4.4l2.6 9h.1l1.8-9h3.3l-2.8 13H9l-2.7-9h-.1l-1.8 9H1.1M17.3 1.5h3.6l-1 4.9h4L25 1.5h3.5l-2.7 13h-3.5l1.1-5.6h-4.1l-1.2 5.6h-3.4M37.7 4.4c-.7-.3-1.6-.6-2.9-.6-1.4 0-2.5.2-2.5 1.3 0 1.8 5.1 1.2 5.1 5.1 0 3.6-3.3 4.5-6.4 4.5-1.3 0-2.9-.3-4-.7l.8-2.7c.7.4 2.1.7 3.2.7s2.8-.2 2.8-1.5c0-2.1-5.1-1.3-5.1-5 0-3.4 2.9-4.4 5.8-4.4 1.6 0 3.1.2 4 .6"></path>
+          <image src="https://assets.nhs.uk/images/nhs-logo.png" xlink:href=""></image>
+        </svg>
+        <span class="nhsuk-header__service-name">
+          Overseas visitor treatment
+        </span>
+      </a>
+    </div>
+
+    <div class="nhsuk-header__content" id="content-header">
+      <a style="color: #ffffff; padding-top:10px; float: right;" href="sign-in">Sign out</a>
+    </div>
+  </div>
+
+</header>
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="javascript:history.back()">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back</a>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-three-quarters">
+    <h1 class="nhsuk-label-wrapper">
+      <label class="nhsuk-label nhsuk-label--l" for="CheckYourAnswers">
+        Check these details before submitting the treatment form for Maria Rodríguez
+      </label></h1>
+
+    <dl class="nhsuk-summary-list">
+      <h3>Treatment details</h3>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Treatment start date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          02/09/2020
+        </dd>
+    
+        <dd class="nhsuk-summary-list__actions">
+          <a href="treatment-start-date-ehic-prc-aat">
+            Change<span class="nhsuk-u-visually-hidden">treatment start date</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Treatment end date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          05/09/2020
+        </dd>
+    
+        <dd class="nhsuk-summary-list__actions">
+          <a href="treatment-end-date-prc-aat">
+            Change<span class="nhsuk-u-visually-hidden"> treatment end date</span>
+          </a>
+        </dd>
+      </div>
+
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Treatment cost
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        £654.66
+      </dd>
+  
+      <dd class="nhsuk-summary-list__actions">
+        <a href="treatment-cost-ehic-prc-aat">
+          Change<span class="nhsuk-u-visually-hidden"> treatment cost</span>
+        </a>
+      </dd>
+    </div>
+
+  </dl>
+
+  <dl class="nhsuk-summary-list">
+    <h3>PRC details</h3>
+     <div class="nhsuk-summary-list__row">
+       <dt class="nhsuk-summary-list__key">
+         Issuing member state(2)
+       </dt>
+       <dd class="nhsuk-summary-list__value">
+         Spain
+       </dd>
+
+       <dd class="nhsuk-summary-list__actions">
+         <a href="#">
+         </a>
+       </dd>
+     </div>
+
+     <div class="nhsuk-summary-list__row">
+       <dt class="nhsuk-summary-list__key">
+         Name(3)
+       </dt>
+       <dd class="nhsuk-summary-list__value">
+        Rodríguez
+       </dd>
+
+       <dd class="nhsuk-summary-list__actions">
+         <a href="#">
+         </a>
+       </dd>
+     </div>
+
+     <div class="nhsuk-summary-list__row">
+       <dt class="nhsuk-summary-list__key">
+         Given names(4)
+       </dt>
+       <dd class="nhsuk-summary-list__value">
+         Maria
+       </dd>
+
+       <dd class="nhsuk-summary-list__actions">
+         <a href="#">
+         </a>
+       </dd>
+     </div>
+
+     <div class="nhsuk-summary-list__row">
+       <dt class="nhsuk-summary-list__key">
+        Date of birth(5) 
+       </dt>
+       <dd class="nhsuk-summary-list__value">
+         06/12/1988
+       </dd>
+
+       <dd class="nhsuk-summary-list__actions">
+         <a href="#">
+         </a>
+       </dd>
+     </div>
+
+     <div class="nhsuk-summary-list__row">
+       <dt class="nhsuk-summary-list__key">
+         Personal identification number(6)
+       </dt>
+       <dd class="nhsuk-summary-list__value">
+         280000000293
+       </dd>
+
+       <dd class="nhsuk-summary-list__actions">
+         <a href="#">
+         </a>
+       </dd>
+     </div>
+
+     <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Identification number of the card(8)
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+       70945029000780000067
+      </dd>
+  
+      <dd class="nhsuk-summary-list__actions">
+       <a href="enter-details-prc-aat#idcard">
+         Change<span class="nhsuk-u-visually-hidden"> Identification number of the card</span>
+       </a>
+     </dd>
+   </div>
+  
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Expiry date(9)
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+       18/05/2025
+      </dd>
+  
+      <dd class="nhsuk-summary-list__actions">
+       <a href="enter-details-prc-aat#expirydate">
+         Change<span class="nhsuk-u-visually-hidden"> Expiry date</span>
+       </a>
+     </dd>
+   </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Validity period to(a)
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      01/09/2020
+    </dt>
+    <dd class="nhsuk-summary-list__actions">
+      <a href="enter-details-prc-aat#from">
+        Change<span class="nhsuk-u-visually-hidden">Validity period from</span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Validity period to(b)
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      06/09/2020
+    </dt>
+    <dd class="nhsuk-summary-list__actions">
+      <a href="enter-details-prc-aat#to">
+        Change<span class="nhsuk-u-visually-hidden">Validity period to</span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Institution code(7)
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      0819
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+     <a href="institution-prc-aat">
+       Change<span class="nhsuk-u-visually-hidden"> Institution code</span>
+     </a>
+   </dd>
+ </div>
+
+  <div class="nhsuk-summary-list__row">
+   <dt class="nhsuk-summary-list__key">
+      Institution name(7)
+   </dt>
+   <dd class="nhsuk-summary-list__value">
+     Health regional service of Murica
+   </dd>
+
+   <dd class="nhsuk-summary-list__actions">
+     <a href="institution-prc-aat">
+       Change<span class="nhsuk-u-visually-hidden"> Institution name</span>
+     </a>
+   </dd>
+ </div>
+
+</dl>
+
+<p>On submit, you are confirming that these details are correct to the best of your knowledge.</p>
+  
+  <a style="margin-right: 20px;" class="nhsuk-button" href="confirmation-ehic">Submit</a>
+  <a class="nhsuk-button nhsuk-button--secondary" href="save-as-draft-confirmation">Save as draft</a>
+  <p><a href="home">Cancel</a></p>
+ </div>
+</div>
+{% endblock %}
