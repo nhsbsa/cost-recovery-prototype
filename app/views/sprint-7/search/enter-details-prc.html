@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block pageTitle %}
-No PRC found
+Enter PRC details
 {% endblock %}
 
 {% block header %}
@@ -40,17 +40,15 @@ No PRC found
     <fieldset class="nhsuk-fieldset">
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
         <h1 class="nhsuk-fieldset__heading">
-          No PRC found that covers the treatment dates for Louis Victor.
+          What are the PRC details?
         </h1>
       </legend>
-  
-      <h3>What are the PRC details?</h3>
         
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="country">
           Issuing member state(2)
         </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="country" name="country" type="text" value="France">
+        <input class="nhsuk-input nhsuk-input--width-20" id="country" name="country" type="text" value="France" disabled>
       </div>
       
       <h4>Card holder related information</h4>
@@ -122,7 +120,7 @@ No PRC found
     </div>
     <br>
 
-    <a style="margin-right: 20px;" class="nhsuk-button" href="institution-prc">Continue</a>
+    <a style="margin-right: 20px;" class="nhsuk-button" href="#">Continue</a>
     <a class="nhsuk-button nhsuk-button--secondary" href="save-as-draft-confirmation">Save as draft</a>
     <p><a href="home">Cancel</a></p>
  </div>

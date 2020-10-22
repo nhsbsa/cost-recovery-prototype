@@ -73,6 +73,9 @@ router.post('/two-patients-found-prc', function (req, res) {
   if (selectedRadio === "pin2"){
     res.redirect('two-patients-found-prc')
   }
+  if (selectedRadio === "pin3"){
+    res.redirect('enter-details-prc')
+  }
   else {
     res.redirect('two-patients-found-prc')
   }

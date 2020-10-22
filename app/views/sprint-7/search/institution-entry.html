@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block pageTitle %}
-Search institution
+Institution
 {% endblock %}
 
 {% block header %}
@@ -43,40 +43,31 @@ Search institution
           What is the institution code?
         </h1>
       </legend>
-      <span class="nhsuk-hint" id="example-hint">
+      <span class="nhsuk-hint" id="hint">
         The institution code and name are present in field 7 on the EHIC.
       </span>
       
       <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="inscode">
+        <label class="nhsuk-label" for="institutionCode">
           Institution code
         </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="inscode" name="inscode" type="text">
+        <input class="nhsuk-input nhsuk-input--width-20" id="institutionCode" name="inscode" type="text">
       </div>
     
       <p>or<br></p>
       <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="insname">
+        <label class="nhsuk-label" for="institutionName">
           Institution name
         </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="insname" name="insname" type="text" value="UTIM">
+        <input class="nhsuk-input nhsuk-input--width-20" id="institutionName" name="insname" type="text">
       </div>
 
      
     </fieldset>
 
-    <a style="margin-right: 20px;" class="nhsuk-button" href="institution-search-manual-entry-2#result">Search</a>
+    <a style="margin-right: 20px;" class="nhsuk-button" href="institution-search-entry#result">Search</a>
     <a class="nhsuk-button nhsuk-button--secondary" href="save-as-draft-confirmation">Save as draft</a>
-  </div>
-
-  <div class="nhsuk-grid-column-full">
-    
-    <br>
-    <h3 id=result>No result found</h3>
-
-    <p><a href="institution-code-manual-entry">Enter institution code manually</a></p>
-
-  </div>
-
+    <p><a href="home">Cancel</a></p>
+ </div>
 </div>
 {% endblock %}

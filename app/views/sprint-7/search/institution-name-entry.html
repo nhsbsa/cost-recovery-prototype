@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block pageTitle %}
-Institution
+Institution name
 {% endblock %}
 
 {% block header %}
@@ -37,37 +37,36 @@ Institution
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
-    <fieldset class="nhsuk-fieldset">
-      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-        <h1 class="nhsuk-fieldset__heading">
-          What is the institution code?
-        </h1>
-      </legend>
-      <span class="nhsuk-hint" id="example-hint">
+    <div class="nhsuk-form-group">
+      <h1 class="nhsuk-label-wrapper">
+        <label class="nhsuk-label nhsuk-label--l" for="institutionName">
+          What is the institution name?
+        </label>
+      </h1>
+
+      <span class="nhsuk-hint" id="hint">
         The institution code and name are present in field 7 on the EHIC.
       </span>
-      
+    
       <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="inscode">
+        <label class="nhsuk-label" for="institutionCode">
           Institution code
         </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="inscode" name="inscode" type="text">
+        <input class="nhsuk-input nhsuk-input--width-20" id="institutionCode" name="inscode" type="text" value="2800">
       </div>
-    
-      <p>or<br></p>
+  
       <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="insname">
+        <label class="nhsuk-label" for="institutionName">
           Institution name
         </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="insname" name="insname" type="text">
+        <input class="nhsuk-input nhsuk-input--width-20" id="institutionName" name="insname" type="text">
       </div>
-
      
-    </fieldset>
+    </div>
 
-    <a style="margin-right: 20px;" class="nhsuk-button" href="institution-search-manual-entry-2#result">Search</a>
+    <a style="margin-right: 20px;" class="nhsuk-button" href="confirmation-pending">Continue</a>
     <a class="nhsuk-button nhsuk-button--secondary" href="save-as-draft-confirmation">Save as draft</a>
-
+    <p><a href="home">Cancel</a></p>
  </div>
 </div>
 {% endblock %}

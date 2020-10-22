@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block pageTitle %}
-Treatment history
+Search institution
 {% endblock %}
 
 {% block header %}
@@ -37,37 +37,47 @@ Treatment history
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
-
-    <h1 class="nhsuk-label-wrapper">
-      <label class="nhsuk-label nhsuk-label--l" for="country">
-        Treatment history for Maria Rodríguez entered by Airedale NHS Foundation Trust
-      </label></h1>
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          What is the institution code?
+        </h1>
+      </legend>
+      <span class="nhsuk-hint" id="example-hint">
+        The institution code and name are present in field 7 on the EHIC.
+      </span>
       
-      <div class="nhsuk-table-responsive">
-        <table class="nhsuk-table">
-          <caption class="nhsuk-table__caption">Historic treatments</caption>
-          <thead class="nhsuk-table__head">
-            <tr class="nhsuk-table__row">
-              <th class="nhsuk-table__header" scope="col">Treatment ID</th>
-              <th class="nhsuk-table__header" scope="col">Start date</th>
-              <th class="nhsuk-table__header" scope="col">End date</th>
-              <th class="nhsuk-table__header" scope="col">Processed date</th>
-            </tr>
-          </thead>
-          <tbody class="nhsuk-table__body">
-            <tr class="nhsuk-table__row">
-              <td class="nhsuk-table__cell">63832</td>
-              <td class="nhsuk-table__cell ">10/03/2020</td>
-              <td class="nhsuk-table__cell ">01/04/2020</td>
-              <td class="nhsuk-table__cell ">20/04/2020</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="institutionCode">
+          Institution code
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="institutionCode" name="inscode" type="text">
       </div>
     
-      <a style="margin-right: 20px;" class="nhsuk-button" href="institution-prc-aat">Continue</a>
-      <a class="nhsuk-button nhsuk-button--secondary" href="save-as-draft-confirmation">Save as draft</a>
+      <p>or<br></p>
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="institutionName">
+          Institution name
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="institutionName" name="insname" type="text" value="UTIM">
+      </div>
 
- </div>
+     
+    </fieldset>
+
+    <a style="margin-right: 20px;" class="nhsuk-button" href="institution-search-entry-2#result">Search</a>
+    <a class="nhsuk-button nhsuk-button--secondary" href="save-as-draft-confirmation">Save as draft</a>
+    <p><a href="home">Cancel</a></p>
+  </div>
+
+  <div class="nhsuk-grid-column-full">
+    
+    <br>
+    <h3 id=result>No result found</h3>
+
+    <p><a href="institution-code-entry">Enter institution code</a></p>
+
+  </div>
+
 </div>
 {% endblock %}
