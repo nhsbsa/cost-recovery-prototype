@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block pageTitle %}
-Institution
+Overlapping treatment dates
 {% endblock %}
 
 {% block header %}
@@ -37,46 +37,46 @@ Institution
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
-    <span class="nhsuk-caption-l">
-      EHIC details
-    </span>
-    <fieldset class="nhsuk-fieldset">
-      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-        <h1 class="nhsuk-fieldset__heading">
-          What is the identification number of the institution in Spain?
-        </h1>
-      </legend>
-      <span class="nhsuk-hint" id="example-hint">
-        The institution ID and acronym are present in field 7 on the EHIC.
-      </span>
-      
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="institutionID">
-          Institution ID
-        </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="institutionID" name="inscode" type="text">
-      </div>
-    
-      <p>or<br></p>
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="institutionAcronym">
-          Institution acronym
-        </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="institutionAcronym" name="insname" type="text">
-      </div>
 
-     
-    </fieldset>
+    <h1 class="nhsuk-label-wrapper">
+      <label class="nhsuk-label nhsuk-label--l" for="duplicateTreatmentEntry">
+        Overlapping treatment dates
+      </label></h1>
 
-    <a style="margin-right: 20px;" class="nhsuk-button" href="institution-no-result#result">Search</a>
+    <p>You have entered treatment dates that are overlapping with existing treatment dates.</p>
+    <div class="nhsuk-table-responsive">
+      <table class="nhsuk-table">
+        <caption class="nhsuk-table__caption">Historic treatments</caption>
+        <thead class="nhsuk-table__head">
+          <tr class="nhsuk-table__row">
+            <th class="nhsuk-table__header" scope="col">Treatment</th>
+            <th class="nhsuk-table__header" scope="col">Start date</th>
+            <th class="nhsuk-table__header" scope="col">End date</th>
+            <th class="nhsuk-table__header" scope="col">Cost</th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Entered treatment</td>
+            
+            <td class="nhsuk-table__cell ">01/04/2020</td>
+            <td class="nhsuk-table__cell ">11/04/2020</td>
+            <td class="nhsuk-table__cell ">£200.35</td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Existing treatment</td>
+            <td class="nhsuk-table__cell ">10/03/2020</td>
+            <td class="nhsuk-table__cell ">11/04/2020</td>
+            <td class="nhsuk-table__cell ">£783.45</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <a style="margin-right: 20px;" class="nhsuk-button" href="additional-cost">Continue</a>
     <a class="nhsuk-button nhsuk-button--secondary" href="save-as-draft-confirmation">Save as draft</a>
     <p><a href="home">Cancel</a></p>
-    
+
  </div>
-
- <div class="nhsuk-grid-column-one-third">
-  <img src="/images/ehic-sample.png" alt="Ehic sample card" style="width:550px; height:400px; padding-top:150px; padding-left: 50px; padding-right:100px;">
-</div>
-
 </div>
 {% endblock %}

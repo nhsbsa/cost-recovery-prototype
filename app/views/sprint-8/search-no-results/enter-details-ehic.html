@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block pageTitle %}
-No PRC found
+Enter EHIC details
 {% endblock %}
 
 {% block header %}
@@ -37,42 +37,42 @@ No PRC found
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
+    <span class="nhsuk-caption-l">
+      EHIC details
+    </span>
     <fieldset class="nhsuk-fieldset">
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
         <h1 class="nhsuk-fieldset__heading">
-          No PRC found that covers the treatment dates for Louis Victor.
+          What are the EHIC details?
         </h1>
       </legend>
-  
-      <h3>What are the PRC details?</h3>
-        
+    
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="country">
           Issuing member state(2)
         </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="country" name="country" type="text" value="France">
+        <input class="nhsuk-input nhsuk-input--width-20" id="country" name="country" type="text" value="Spain" disabled>
       </div>
-      
-      <h4>Card holder related information</h4>
+    
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="name">
           Name(3)
         </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="name" name="name" type="text" value="Victor" disabled>
+        <input class="nhsuk-input nhsuk-input--width-20" id="name" name="name" type="text" value="Rodríguez" disabled>
       </div>
 
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="givenNames">
           Given names(4)
         </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="givenNames" name="givennames" type="text" value="Louis" disabled>
+        <input class="nhsuk-input nhsuk-input--width-20" id="givenNames" name="givennames" type="text" value="Maria" disabled>
       </div>
 
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="dateOfBirth">
           Date of birth(5)
         </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="dateOfBirth" name="dob" type="text"  value="20/12/1981" disabled>
+        <input class="nhsuk-input nhsuk-input--width-20" id="dateOfBirth" name="dob" type="text"  value="06/12/1988" disabled>
       </div>
 
       <div class="nhsuk-form-group">
@@ -82,55 +82,37 @@ No PRC found
         <input class="nhsuk-input nhsuk-input--width-20" id="PersonalIdentificationNumber" name="pin" type="text">
       </div>
 
-      <h4>Card related information</h4>
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="IdentificationNumberOnCard">
-          Identification number of the card(8) (optional)
+          Identification number of the card(8)
         </label>
         <input class="nhsuk-input nhsuk-input--width-20" id="IdentificationNumberOnCard" name="idcard" type="text"> 
       </div>
 
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="expiryDate">
-          Expiry date(9) (optional)
+          Expiry date(9)
         </label>
         <input class="nhsuk-input nhsuk-input--width-20" id="expiryDate" name="expirydate" type="text"> 
       </div>
-      
-      <h4>Certificate details</h4>
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="ValidityFrom">
-          Validity period from(a)
-        </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="ValidityFrom" name="from" type="text"> 
-      </div>  
-
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="validityTo">
-          Validity period to(b)
-        </label>  
-        <input class="nhsuk-input nhsuk-input--width-20" id="validityTo" name="to" type="text"> 
-      </div>
-      
     </fieldset>
 
     <div class="nhsuk-checkboxes__item">
       <input class="nhsuk-checkboxes__input" id="student" name="student" type="checkbox" value="student">
       <label class="nhsuk-label nhsuk-checkboxes__label" for="student">
-        Louis Victor is a student
+        Maria Rodriguez is a student
       </label>
     </div>
     <br>
 
-    <a style="margin-right: 20px;" class="nhsuk-button" href="institution-prc">Continue</a>
+    <a style="margin-right: 20px;" class="nhsuk-button" href="institution-ehic">Continue</a>
     <a class="nhsuk-button nhsuk-button--secondary" href="save-as-draft-confirmation">Save as draft</a>
     <p><a href="home">Cancel</a></p>
  </div>
 
  <div class="nhsuk-grid-column-one-third">
-  <img src="/images/sample.png" alt="PRC sample" style="width:480px; height:550px; padding-top:100px; padding-left: 50px; padding-right:100px;">
+  <img src="/images/ehic-sample.png" alt="Ehic sample card" style="width:550px; height:400px; padding-top:150px; padding-left: 50px; padding-right:100px;">
 </div>
-
 
 </div>
 {% endblock %}

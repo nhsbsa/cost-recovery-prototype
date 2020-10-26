@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block pageTitle %}
-Institution
+Institution name
 {% endblock %}
 
 {% block header %}
@@ -43,10 +43,10 @@ Institution
     <fieldset class="nhsuk-fieldset">
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
         <h1 class="nhsuk-fieldset__heading">
-          What is the identification number of the institution in Spain?
+          What is the institution acronym?
         </h1>
       </legend>
-      <span class="nhsuk-hint" id="example-hint">
+      <span class="nhsuk-hint" id="hint">
         The institution ID and acronym are present in field 7 on the EHIC.
       </span>
       
@@ -54,13 +54,12 @@ Institution
         <label class="nhsuk-label" for="institutionID">
           Institution ID
         </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="institutionID" name="inscode" type="text">
+        <input class="nhsuk-input nhsuk-input--width-20" id="institutionID" name="inscode" type="text" value="2800">
       </div>
-    
-      <p>or<br></p>
+  
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="institutionAcronym">
-          Institution acronym
+          Institution Acronym
         </label>
         <input class="nhsuk-input nhsuk-input--width-20" id="institutionAcronym" name="insname" type="text">
       </div>
@@ -68,10 +67,9 @@ Institution
      
     </fieldset>
 
-    <a style="margin-right: 20px;" class="nhsuk-button" href="institution-no-result#result">Search</a>
+    <a style="margin-right: 20px;" class="nhsuk-button" href="confirmation-pending">Continue</a>
     <a class="nhsuk-button nhsuk-button--secondary" href="save-as-draft-confirmation">Save as draft</a>
     <p><a href="home">Cancel</a></p>
-    
  </div>
 
  <div class="nhsuk-grid-column-one-third">

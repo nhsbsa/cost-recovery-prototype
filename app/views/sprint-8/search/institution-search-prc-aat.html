@@ -37,77 +37,71 @@ Search institution
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
+    <span class="nhsuk-caption-l">
+      PRC details
+    </span>
     <fieldset class="nhsuk-fieldset">
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
         <h1 class="nhsuk-fieldset__heading">
-          What is the institution code?
+          What is the identification number of the institution in Spain?
         </h1>
       </legend>
-      <span class="nhsuk-hint" id="example-hint">
-        The institution code and name are present in field 7 on the EHIC.
+      <span class="nhsuk-hint" id="hint">
+        The institution ID and acronym are present in field 7 on the PRC.
       </span>
       
       <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="institutionCode">
-          Institution code
+        <label class="nhsuk-label" for="institutionID">
+          Institution ID
         </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="institutionCode" name="inscode" type="text" value="2800">
+        <input class="nhsuk-input nhsuk-input--width-20" id="institutionID" name="inscode" type="text" value="0819">
       </div>
     
       <p>or<br></p>
       <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="institutionName">
-          Institution name
+        <label class="nhsuk-label" for="institutionAcronym">
+          Institution Acronym
         </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="institutionName" name="insname" type="text">
+        <input class="nhsuk-input nhsuk-input--width-20" id="institutionAcronym" name="insname" type="text">
       </div>
 
      
     </fieldset>
 
-    <a style="margin-right: 20px;" class="nhsuk-button" href="#">Search</a>
+    <a style="margin-right: 20px;" class="nhsuk-button" href="#result">Search</a>
     <a class="nhsuk-button nhsuk-button--secondary" href="save-as-draft-confirmation">Save as draft</a>
     <p><a href="home">Cancel</a></p>
   </div>
 
+  <div class="nhsuk-grid-column-one-third">
+    <img src="/images/sample.png" alt="PRC sample" style="width:480px; height:550px; padding-top:100px; padding-left: 50px; padding-right:100px;">
+  </div> 
+
   <div class="nhsuk-grid-column-full">
     
     <br>
-    <h3 id=result>1 result found</h3>
+    <h3 id="result">1 result found</h3>
 
     <div class="nhsuk-table-responsive">
       <table class="nhsuk-table">
         <caption class="nhsuk-table__caption">Institution search results</caption>
         <thead class="nhsuk-table__head">
           <tr class="nhsuk-table__row">
-            <th class="nhsuk-table__header" scope="col">Institution code</th>
+            <th class="nhsuk-table__header" scope="col">Institution ID</th>
+            <th class="nhsuk-table__header" scope="col">Institution acronym</th>
             <th class="nhsuk-table__header" scope="col">Institution name</th>
-            <th class="nhsuk-table__header" scope="col">Country</th>
             <th class="nhsuk-table__header" scope="col"></th>
           </tr>
         </thead>
         <tbody class="nhsuk-table__body">
+    
           <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">2800</td>
-            <td class="nhsuk-table__cell ">National Institute of Social Security, Provincial Head Office of Madrid</td>
-            <td class="nhsuk-table__cell ">Spain</td>
+            <td class="nhsuk-table__cell">0819</td>
+            <td class="nhsuk-table__cell ">HRSM</td>
+            <td class="nhsuk-table__cell ">Health regional service of Murica</td>
             <td class="nhsuk-table__cell "><a href="check-your-answers-prc-aat">Select</a></td>
           </tr>
 
-          <!--<tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">0819</td>
-            <td class="nhsuk-table__cell ">Health regional service of Murica</td>
-            <td class="nhsuk-table__cell ">Spain</td>
-            <td class="nhsuk-table__cell "><a href="#">Select</a></td>
-          </tr>
-
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">0519</td>
-            <td class="nhsuk-table__cell ">HEALTH SERVICE OF NAVARRA</td>
-            <td class="nhsuk-table__cell ">Spain</td>
-            <td class="nhsuk-table__cell "><a href="#">Select</a></td>
-          </tr>-->
-          
         </tbody>
       </table>
     </div>

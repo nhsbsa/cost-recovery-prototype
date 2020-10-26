@@ -62,27 +62,6 @@ router.post('/another-treatment', function (req, res) {
 })
 
 
-//two-patients-found-prc.html
-router.post('/two-patients-found-prc', function (req, res) {
-
-  const selectedRadio = req.body.pin;
-
-  if (selectedRadio === "pin1"){
-    res.redirect('details-prc')
-  }
-  if (selectedRadio === "pin2"){
-    res.redirect('two-patients-found-prc')
-  }
-  if (selectedRadio === "pin3"){
-    res.redirect('enter-details-prc')
-  }
-  else {
-    res.redirect('two-patients-found-prc')
-  }
-
-})
-
-
 //have-address-ehic.html
 router.post('/have-address-ehic', function (req, res) {
 
