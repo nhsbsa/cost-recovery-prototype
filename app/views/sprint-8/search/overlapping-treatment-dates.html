@@ -73,7 +73,32 @@ Overlapping treatment dates
       </table>
     </div>
 
-    <a style="margin-right: 20px;" class="nhsuk-button" href="additional-cost">Continue</a>
+    {% call fieldset({
+      legend: {
+        "text": "Is the cost of the entered treatment (£200.35) an additional cost?",
+        "classes": "nhsuk-fieldset__legend--m",
+        "isPageHeading": true
+      }
+      }) %}
+    
+    {{ radios({
+       "idPrefix": "additional",
+       "name": "additional",
+       "items": [
+         {
+           "value": "yes",
+           "text": "Yes"
+         },
+         {
+           "value": "no",
+           "text": "No"
+         }
+       ]
+     }) }}
+
+     {% endcall %}
+
+    <a style="margin-right: 20px;" class="nhsuk-button" href="re-entry-treatment">Continue</a>
     <a class="nhsuk-button nhsuk-button--secondary" href="save-as-draft-confirmation">Save as draft</a>
     <p><a href="home">Cancel</a></p>
 
