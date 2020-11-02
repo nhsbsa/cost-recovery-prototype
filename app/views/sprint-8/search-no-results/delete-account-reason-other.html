@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block pageTitle %}
-Delete account
+Delete account reason
 {% endblock %}
 
 {% block header %}
@@ -131,21 +131,20 @@ Delete account
 
 {% block content %}
 <div class="nhsuk-grid-row">
-   <div class="nhsuk-grid-column-two-thirds">
-    
-    <h1 class="nhsuk-label-wrapper">
-      <label class="nhsuk-label nhsuk-label--l" for="deleteAccount">
-        Are you sure you want to delete your account?
-      </label>
-    </h1>
+  <div class="nhsuk-grid-column-two-thirds">
+   
+   <h1 class="nhsuk-label-wrapper">
+     <label class="nhsuk-label nhsuk-label--l" for="deleteAccount">
+       What is the reason for deleting Sarah Jordan's account?
+     </label>
+   </h1>
+   
+   <textarea class="nhsuk-textarea" id="deleteAccount" name="deleteAccount" rows="5"></textarea>
+   <br>
+   <p>Clicking on delete will send a delete request to the Cost Recovery Operations team. </p>
+   <a style="margin-right: 20px" class="nhsuk-button" href="delete-confirmation-other">Delete</a>
+   <a class="nhsuk-button nhsuk-button--secondary" href="account">Cancel</a>
 
-    <span class="nhsuk-hint">
-      Clicking on delete will permanently delete your account.
-    </span>
-
-    <a style="margin-right: 20px" class="nhsuk-button" href="delete-confirmation">Delete</a>
-    <a class="nhsuk-button nhsuk-button--secondary" href="account">Cancel</a>
-
-   </div>
+  </div>
 </div>
 {% endblock %}

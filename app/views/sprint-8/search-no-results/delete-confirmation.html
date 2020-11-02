@@ -117,12 +117,24 @@ Delete confirmation
 </header>
 {% endblock %}
 
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="home">Home</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="account">Account</a></li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="account">Back to Account</a></p>
+  </div>
+</nav>
+{% endblock %}
 {% block content %}
 <div class="nhsuk-grid-row">
    <div class="nhsuk-grid-column-two-thirds">
-      <h2>Your account has been deleted.</h2>
-      <p>You will no longer be able to sign in to your account.</p>
+      <h2>A delete request has been sent</h2>
+      <p>Your account will be deleted once it has been reviewed by a member of the Cost Recovery Operations team.</p>
 
+      <a class="nhsuk-button" href="account">Back to account</a>
    </div>
 </div>
 {% endblock %}

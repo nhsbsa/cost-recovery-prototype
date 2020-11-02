@@ -123,7 +123,7 @@ Home
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-two-thirds">
         <div class="nhsuk-hero__wrapper app-hero__wrapper">
-          <h2 class="nhsuk-u-margin-bottom-4">Claim for treatment costs for patients from European Economic Area(EEA) countries or Switzerland</h2>
+          <h2 class="nhsuk-u-margin-bottom-4">Claim for treatment costs for patients from the EU, Switzerland, Norway, Iceland and Liechtenstein</h2>
           <p class="nhsuk-body-l nhsuk-u-margin-bottom-1">Add an EHIC, PRC or S2</p>
           <button onclick="window.location.href='add-treatment';" class="nhsuk-button nhsuk-button--reverse" style="margin-top: 20px; margin-bottom: 0px; box-shadow: none;" >Add treatment</button>
         </div>
@@ -134,20 +134,47 @@ Home
 {% endblock %}
 
 {% block content %}
+<style>
+  dl {
+    overflow: hidden;
+    width: 60%;
+    padding: 0;
+    margin: 0;
+  }
+  dt {
+    float: left;
+    width: 50%;
+    padding: 0;
+    margin: 0
+  }
+  dd {
+    float: left;
+    width: 50%;
+    padding: 0;
+    margin: 0
+  }
+</style>
+
 <section>
   <div class="nhsuk-width-container">
-    <h3>Airedale NHS Foundation Trust treatment and cost summary for October 2020</h3>
+    <h3>Treatment and cost summary for Airedale NHS Foundation Trust</h3>
+    <h3>October 2020</h3>
     
       <div class="nhsuk-grid-row nhsuk-card-group">
         <div class="nhsuk-grid-column-one-third nhsuk-card-group__item">
           <div class="nhsuk-card">
-            <div class="nhsuk-card__content" style="text-align: center;">
-              <h2 class="nhsuk-card__heading nhsuk-heading-s">Processed treatments</h2>
-              <p class="nhsuk-card__description data-item-large">20</p>
-              <p class="data-item-m">this month</p>
-              <p><span class="data-item-small">EHIC - 13</span>
-              <span class="data-item-small">PRC - 4</span>
-              <span class="data-item-small">S2 - 3</span></p>
+            <div class="nhsuk-card__content">
+              <h2 class="nhsuk-card__heading nhsuk-heading-s" style="text-align: center;">Processed treatments</h2>
+              <p class="nhsuk-card__description data-item-large" style="text-align: center;">20</p>
+              <br>
+              <dl class="data-item-small">
+                <dt>EHIC </dt>
+                <dd>13</dd>
+                <dt>PRC</dt>
+                <dd>4</dd>
+                <dt>S2</dt>
+                <dd>3</dd>
+              </dl>
             </div>
           </div>
         </div>
@@ -155,10 +182,8 @@ Home
         <div class="nhsuk-grid-column-one-third nhsuk-card-group__item">
           <div class="nhsuk-card">
             <div class="nhsuk-card__content" style="text-align: center;">
-              <h2 class="nhsuk-card__heading nhsuk-heading-s">Total cost - EHIC, PRC</h2>
+              <h2 class="nhsuk-card__heading nhsuk-heading-s">Total cost for EHIC and PRC treatments</h2>
               <p class="nhsuk-card__description data-item-large">£20,567.88</p>
-              <p class="data-item-m">this month</p>
-              <p class="data-item-s">includes both EHIC and PRC</p>
             </div>
           </div>
         </div>
@@ -166,10 +191,8 @@ Home
         <div class="nhsuk-grid-column-one-third nhsuk-card-group__item">
           <div class="nhsuk-card">
             <div class="nhsuk-card__content" style="text-align: center;">
-              <h2 class="nhsuk-card__heading nhsuk-heading-s">Total cost - S2</h2>
+              <h2 class="nhsuk-card__heading nhsuk-heading-s">Total cost for S2 treatments</h2>
               <p class="nhsuk-card__description data-item-large">£10,267.06</p>
-              <p class="data-item-m">this month</p>
-              <p class="data-item-s">includes only S2</p>
             </div>
           </div>
        </div>
@@ -185,9 +208,18 @@ Home
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-two-thirds">
         <h3 id="draft">Draft treatments</h3>
-        <p>Your trust has 9 draft treatments to process.There are 5 EHIC, 3 PRC and 1 S2 draft treatments pending.</p>
-     
+        <p>Your trust has 9 draft treatments to process:</p>
+        <dl class="data-item-small" style="text-align: start";>
+          <dt>EHIC </dt>
+          <dd>5</dd>
+          <dt>PRC</dt>
+          <dd>3</dd>
+          <dt>S2</dt>
+          <dd>1</dd>
+        </dl>
+    
         <div class="nhsuk-action-link">
+          <br>
           <a class="nhsuk-action-link__link" href="process-draft-treatments">
             <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M0 0h24v24H0z" fill="none"></path>
@@ -219,7 +251,7 @@ Home
         <div class="nhsuk-card nhsuk-card--clickable">
           <div class="nhsuk-card__content">
             <h2 class="nhsuk-card__heading nhsuk-heading-m"><a href="search-person">Search person</a></h2>
-            <p class="nhsuk-card__description">Search a person to find their entitlement details, treatments and also historic information.</p>
+            <p class="nhsuk-card__description">Search for a person to find their entitlement details, treatments and historic information.</p>
           </div>
         </div>
       </div>
@@ -227,7 +259,7 @@ Home
         <div class="nhsuk-card nhsuk-card--clickable">
           <div class="nhsuk-card__content">
             <h2 class="nhsuk-card__heading nhsuk-heading-m"><a href="reports">Reports</a></h2>
-            <p class="nhsuk-card__description">Custom filter an arrive at your desired results for reporting.</p>
+            <p class="nhsuk-card__description">Customise your reports to meet your requirements.</p>
           </div>
         </div>
       </div>

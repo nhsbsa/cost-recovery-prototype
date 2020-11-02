@@ -135,8 +135,6 @@ Person record view
     <div class="banner-information-without-action">
       <p class="banner-message">
         Julia Laurent
-        <span class="vertical-bar">|</span>
-        63874
       </p>
     </div>
     <br>
@@ -168,8 +166,9 @@ Person record view
     <div class="nhsuk-table-responsive">
        <table class="nhsuk-table">
           <caption class="nhsuk-table__caption">Treatments</caption>
-          <h2 class="app-side-nav__heading" id="treatments">Treatments</h2>
+          <h2 class="app-side-nav__heading" id="treatments">EHIC treatments entered by Airedale NHS Foundation Trust</h2>
           <thead class="nhsuk-table__head">
+                <th class="nhsuk-table__header" scope="col">Treatment ID</th>
                 <th class="nhsuk-table__header" scope="col">Start date</th>
                 <th class="nhsuk-table__header" scope="col">End date</th>
                 <th class="nhsuk-table__header" scope="col">Cost</th>
@@ -179,17 +178,19 @@ Person record view
           </thead>
           <tbody class="nhsuk-table__body">
              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell ">63645</td>
                 <td class="nhsuk-table__cell ">16/01/2019</td>
                 <td class="nhsuk-table__cell ">16/02/2019</td>
                 <td class="nhsuk-table__cell ">£534.55</td>
-                <td class="nhsuk-table__cell "><span class="processed-status">Processed</span></td>
+                <td class="nhsuk-table__cell"><strong class="nhsuk-tag no-caps nhsuk-tag--green">Processed</strong></td>
                 <td class="nhsuk-table__cell ">17/02/2019</td>
              </tr>
              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell ">63002</td>
                 <td class="nhsuk-table__cell ">25/08/2020</td>
                 <td class="nhsuk-table__cell ">20/09/2020</td>
                 <td class="nhsuk-table__cell ">£12,454.56</td>
-                <td class="nhsuk-table__cell "><span class="processed-status">Processed</span></td>
+                <td class="nhsuk-table__cell "><strong class="nhsuk-tag no-caps nhsuk-tag--green">Processed</strong></td>
                 <td class="nhsuk-table__cell ">22/08/2020</td>
              </tr>
           </tbody>
@@ -197,5 +198,6 @@ Person record view
     </div> 
     <p><a href="entitlement-ehic-details">View EHIC details</a></p>
   </div> 
+  <a class="nhsuk-button" href="">Add Treatment</a>
 </div>
 {% endblock %}
