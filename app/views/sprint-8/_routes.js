@@ -21,6 +21,9 @@ router.get('/', function(req , res){
   if (selectedRadio === "prc"){
     res.redirect('treatment-start-date-prc')
   }
+  if (selectedRadio === "s2"){
+    res.redirect('treatment-start-date-s2')
+  }
   else {
     res.redirect('add-treatment')
   }
@@ -127,6 +130,23 @@ router.post('/have-address-ehic-draft', function (req, res) {
   }
   else {
     res.redirect('have-address-ehic-draft')
+  }
+
+})
+
+//confirm-cost-s2.html
+router.post('/confirm-cost-s2', function (req, res) {
+
+  const selectedRadio = req.body.cost;
+
+  if (selectedRadio === "yes"){
+    res.redirect('check-your-answers-s2-sec1')
+  }
+  if (selectedRadio === "no"){
+    res.redirect('treatment-cost-s2')
+  }
+  else {
+    res.redirect('confirm-cost-s2')
   }
 
 })
