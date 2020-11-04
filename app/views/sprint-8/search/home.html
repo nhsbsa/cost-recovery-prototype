@@ -137,22 +137,34 @@ Home
 <style>
   dl {
     overflow: hidden;
-    width: 60%;
+    width: 20%;
     padding: 0;
     margin: 0;
   }
+
   dt {
     float: left;
     width: 50%;
     padding: 0;
-    margin: 0
+    margin: 0;
   }
   dd {
     float: left;
     width: 50%;
     padding: 0;
-    margin: 0
+    margin: 0;
   }
+
+.left-column {
+  width: 35%;
+  float: left;
+}
+
+.right-column {
+  width: 35%;
+  float: left;
+}
+
 </style>
 
 <section>
@@ -167,14 +179,26 @@ Home
               <h2 class="nhsuk-card__heading nhsuk-heading-s" style="text-align: center;">Processed treatments</h2>
               <p class="nhsuk-card__description data-item-large" style="text-align: center;">20</p>
               <br>
-              <dl class="data-item-small">
-                <dt>EHIC </dt>
-                <dd>13</dd>
-                <dt>PRC</dt>
-                <dd>4</dd>
-                <dt>S2</dt>
-                <dd>3</dd>
-              </dl>
+              <!--<div>
+              <div class="data-item-s">
+                <span class="right-column"> EHIC</span>
+                <span  class="left-column">13</span>
+             </div>
+             <div class="data-item-s">
+                <span  class="right-column">PRC</span>
+                <span class="left-column">10</span>
+             </div>
+             <div class="data-item-s">
+                <span class="right-column">S2</span>
+                <span class="left-column">5</span>
+             </div>
+             </div> -->
+             <ul style="list-style-type: none; text-align: center; width: 87%;">
+               <li>EHIC - 13</li>
+               <li>PRC - 10</li>
+               <li>S2 - 5</li>
+             </ul>
+
             </div>
           </div>
         </div>
@@ -209,7 +233,7 @@ Home
       <div class="nhsuk-grid-column-two-thirds">
         <h3 id="draft">Draft treatments</h3>
         <p>Your trust has 9 draft treatments to process:</p>
-        <dl class="data-item-small" style="text-align: start";>
+        <dl class="data-item-s" style="text-align: start";>
           <dt>EHIC </dt>
           <dd>5</dd>
           <dt>PRC</dt>

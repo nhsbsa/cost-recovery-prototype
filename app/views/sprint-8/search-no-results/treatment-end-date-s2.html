@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block pageTitle %}
-Treatment cost above £10,000
+Treatment dates
 {% endblock %}
 
 {% block header %}
@@ -37,40 +37,53 @@ Treatment cost above £10,000
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
-    <span class="nhsuk-caption-l">
-      Treatment details
-    </span>
-    <form action="confirm-cost-s2" method="post">
+    <div class="nhsuk-form-group">
+      <span class="nhsuk-caption-l">
+        Treatment details
+      </span>
+      <fieldset class="nhsuk-fieldset" aria-describedby="hint" role="group">
+        <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+          <h1 class="nhsuk-fieldset__heading">
+            What is the end date of the treatment?
+          </h1>
+        </legend>
+        <span class="nhsuk-hint" id="hint">
+          For example, 30 04 2019
+        </span>
+    
+        <div class="nhsuk-date-input" id="example">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="day">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="day" name="day" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="month">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="month" name="month" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="year">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="year" name="year" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    
+    </div>
 
-      {{ radios({
-         "idPrefix": "cost",
-         "name": "cost",
-         "fieldset": {
-           "legend": {
-             "text": "Are you sure the treatment cost is above £10,000?",
-             "classes": "nhsuk-fieldset__legend--l",
-             "isPageHeading": true
-           }
-         },
-         "items": [
-           {
-             "value": "yes",
-             "text": "Yes"
-           },
-           {
-             "value": "no",
-             "text": "No"
-           }
-         ]
-       }) }}
 
-      {{ button({
-      "text": "Continue"
-      }) }}
-
-   </form>
-
-   <p><a href="home">Cancel</a></p>
+    <a class="nhsuk-button" href="treatment-cost-s2">Continue</a>
+    <p><a href="home">Cancel</a></p>
  </div>
 </div>
 {% endblock %}

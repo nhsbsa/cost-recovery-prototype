@@ -135,23 +135,24 @@ Home
 
 {% block content %}
 <style>
-  dl {
+   dl {
     overflow: hidden;
-    width: 60%;
+    width: 20%;
     padding: 0;
     margin: 0;
   }
+
   dt {
     float: left;
     width: 50%;
     padding: 0;
-    margin: 0
+    margin: 0;
   }
   dd {
     float: left;
     width: 50%;
     padding: 0;
-    margin: 0
+    margin: 0;
   }
 </style>
 
@@ -163,18 +164,13 @@ Home
       <div class="nhsuk-grid-row nhsuk-card-group">
         <div class="nhsuk-grid-column-one-third nhsuk-card-group__item">
           <div class="nhsuk-card">
-            <div class="nhsuk-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-s" style="text-align: center;">Processed treatments</h2>
-              <p class="nhsuk-card__description data-item-large" style="text-align: center;">20</p>
+            <div class="nhsuk-card__content" style="text-align: center;">
+              <h2 class="nhsuk-card__heading nhsuk-heading-s">Processed treatments</h2>
+              <p class="nhsuk-card__description data-item-large">20</p>
               <br>
-              <dl class="data-item-small">
-                <dt>EHIC </dt>
-                <dd>13</dd>
-                <dt>PRC</dt>
-                <dd>4</dd>
-                <dt>S2</dt>
-                <dd>3</dd>
-              </dl>
+              <p><span class="data-item-small">EHIC - 13</span>
+                <span class="data-item-small">PRC - 4</span>
+                <span class="data-item-small">S2 - 3</span></p>
             </div>
           </div>
         </div>

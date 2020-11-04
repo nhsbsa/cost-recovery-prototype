@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block pageTitle %}
-Search
+Malta quota number
 {% endblock %}
 
 {% block header %}
@@ -40,39 +40,23 @@ Search
     <span class="nhsuk-caption-l">
       S2/E112 details
     </span>
-    <fieldset class="nhsuk-fieldset">
-      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-        <h1 class="nhsuk-fieldset__heading">
-          Search for a person with a S2/E112 that covers the treatment dates
-        </h1>
-      </legend>
+    <div class="nhsuk-form-group">
+      <h1 class="nhsuk-label-wrapper">
+        <h1 class="nhsuk-label-wrapper">
+          <label class="nhsuk-label nhsuk-label--l" for="maltaQuotaNumber">
+            What is the Malta quota number?
+          </label></h1>
+  
+          <div class="nhsuk-hint">
+            For example, 20/21-001 (YY/YY-NNN)
+          </div>
+      <input class="nhsuk-input  nhsuk-input--width-20" id="maltaQuotaNumber" name="maltaquota" type="text">
+    </div>
 
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="surname">
-          Surname
-        </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="surname" name="surname" type="text">
-      </div>
-
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="forename">
-          Forenames
-        </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="forename" name="forename" type="text">
-      </div>
-    
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="dateOfBirth">
-          Date of birth
-        </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="dateOfBirth" name="dob" type="text"> <br>
-      </div>
-    </fieldset>
-
-    <a class="nhsuk-button" href="search-s2-results#result">Search</a>
+    <a class="nhsuk-button" href="#">Continue</a>
     <p><a href="home">Cancel</a></p>
 
- </div>
 
+ </div>
 </div>
 {% endblock %}

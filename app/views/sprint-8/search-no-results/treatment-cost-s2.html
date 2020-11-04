@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block pageTitle %}
-Search
+Treatment cost
 {% endblock %}
 
 {% block header %}
@@ -38,41 +38,25 @@ Search
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
     <span class="nhsuk-caption-l">
-      S2/E112 details
+      Treatment details
     </span>
-    <fieldset class="nhsuk-fieldset">
-      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-        <h1 class="nhsuk-fieldset__heading">
-          Search for a person with a S2/E112 that covers the treatment dates
-        </h1>
-      </legend>
+    <div class="nhsuk-form-group">
+      <h1 class="nhsuk-label-wrapper">
+        <h1 class="nhsuk-label-wrapper">
+          <label class="nhsuk-label nhsuk-label--l" for="cost">
+            What is the full cost of the treatment, in pounds and pence?
+          </label></h1>
+  
+          <div class="nhsuk-hint">
+            For example, £234.21
+          </div>
+      <input class="nhsuk-input  nhsuk-input--width-20" id="cost" name="cost" type="text" value="£">
+    </div>
 
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="surname">
-          Surname
-        </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="surname" name="surname" type="text">
-      </div>
-
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="forename">
-          Forenames
-        </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="forename" name="forename" type="text">
-      </div>
-    
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="dateOfBirth">
-          Date of birth
-        </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="dateOfBirth" name="dob" type="text"> <br>
-      </div>
-    </fieldset>
-
-    <a class="nhsuk-button" href="search-s2-results#result">Search</a>
+    <a class="nhsuk-button" href="check-your-answers-s2-sec1">Continue</a>
     <p><a href="home">Cancel</a></p>
 
- </div>
 
+ </div>
 </div>
 {% endblock %}
