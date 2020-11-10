@@ -151,5 +151,22 @@ router.post('/confirm-cost-s2', function (req, res) {
 
 })
 
+//cancel-confirmation.html
+router.post('/cancel-confirm', function (req, res) {
+
+  const selectedRadio = req.body.cancel;
+
+  if (selectedRadio === "yes"){
+    res.redirect('home')
+  }
+  if (selectedRadio === "no"){
+    res.redirect('treatment-start-date-ehic')
+  }
+  else {
+    res.redirect('cancel-confirmation')
+  }
+
+})
+
 
   module.exports = router

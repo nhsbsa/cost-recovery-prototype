@@ -137,20 +137,31 @@ Search person results
         </h1>
       </legend>
 
-      <span class="nhsuk-hint">
-        Enter a minimum of two fields or only treatment ID to search.
+      <span class="nhsuk-hint" >
+        Enter the treatment ID if you have it:
+      </span>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="treatmentID">
+          Treatment ID
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="treatmentID" name="treatmentID" type="text"> <br>
+      </div>
+
+      <span class="nhsuk-hint" >
+        You can also search by completing at least two of the following fields:
       </span>
     
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="name">
-          Name or Surname
+          Name (Surname)
         </label>
         <input class="nhsuk-input nhsuk-input--width-20" id="name" name="name" type="text" value="laurent">
       </div>
 
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="givenName">
-          Given names or Forenames
+          Given names (Forenames)
         </label>
         <input class="nhsuk-input nhsuk-input--width-20" id="givenName" name="givenname" type="text" value="julia">
       </div>
@@ -164,19 +175,11 @@ Search person results
 
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="country">
-          Country
+          Country of issue
         </label>
         <input class="nhsuk-input nhsuk-input--width-20" id="country" name="country" type="text"> <br>
       </div>
 
-      <p>or</p>
-
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="treatmentID">
-          Treatment ID
-        </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="treatmentID" name="treatmentID" type="text"> <br>
-      </div>
     </fieldset>
 
     <a class="nhsuk-button" href="search-person-results#results">Search</a>
@@ -195,7 +198,7 @@ Search person results
             <th class="nhsuk-table__header" scope="col">Name</th>
             <th class="nhsuk-table__header" scope="col">Given names</th>
             <th class="nhsuk-table__header" scope="col">Date of birth</th>
-            <th class="nhsuk-table__header" scope="col">Country</th>
+            <th class="nhsuk-table__header" scope="col">Country of issue</th>
             <th class="nhsuk-table__header" scope="col"></th>
           </tr>
         </thead>
