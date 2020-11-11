@@ -102,7 +102,7 @@ PRC details
           </a>
         </li>
         <li class="nhsuk-header__navigation-item">
-          <a class="nhsuk-header__navigation-link" href="account">
+          <a class="nhsuk-header__navigation-link" href="">
             Account
             <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
@@ -131,20 +131,16 @@ PRC details
 {% block content %}
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
-    <div class="banner-information-without-action">
-      <p class="banner-message">
+    <span class="nhsuk-caption-m">
+      EHIC details
+    </span>
+      <h1 class="nhsuk-label--l ">
         Julia Laurent
-      </p>
-    </div>
-    <br><br>
+      </h1>
   </div>
 
   <div class="nhsuk-grid-column-two-thirds">
-    <h1 class="nhsuk-label-wrapper">
-      <label class="nhsuk-label nhsuk-label--m" for="ehicDetails">
-        EHIC details
-      </label></h1>
-
+  
     <dl class="nhsuk-summary-list">
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
@@ -178,7 +174,7 @@ PRC details
 
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-         Date of birth
+         Date of birth 
         </dt>
         <dd class="nhsuk-summary-list__value">
           06/12/1988
@@ -226,9 +222,7 @@ PRC details
       </div>
     
     </dl>
-
     <a class="nhsuk-button" href="person-record-view-ehic">Back to record</a>
-
   </div>
 </div>
 {% endblock %}

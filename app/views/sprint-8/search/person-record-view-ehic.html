@@ -132,98 +132,145 @@ Person record view
 {% block content %}
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
-    <div class="banner-information-without-action">
-      <p class="banner-message">
+    <span class="nhsuk-caption-m">
+      Person record
+    </span>
+      <h1 class="nhsuk-label--l ">
         Julia Laurent
+      </h1>
+      <hr>
+    </div>
+ 
+    <div class="nhsuk-grid-column-one-third">
+      <h2 class="nhsuk-label--m" >Date of birth</h2>
+      <p>06/12/1988
       </p>
     </div>
-    <br>
-    <h3>Date of birth</h3>
-    <p>06/12/1988
-    </p>
-    <hr>
-    <h3>Home address</h3>
+
+    <div class="nhsuk-grid-column-two-thirds">
+    <h2 class="nhsuk-label--m">Home address</h2>
     <p>Alcala street<br>
       24006 Madrid<br>
       Spain
     </p>
-    <hr>
-  </div>
-  
-  <div class="nhsuk-grid-column-one-third">
-    <nav class="app-side-nav">
-      <h3 class="app-side-nav__heading">Entitlements</h3>
+    </div>
+    
 
-      <span class="nhsuk-hint" >
-        Select the entitlement to see details of any treatments recorded on it.
-      </span>
+    <div class="nhsuk-grid-column-full">
+      <hr>
+      <h2 class="nhsuk-label--m">Entitlements</h2>
 
-      <ul class="nhsuk-list app-side-nav__list">
-      
-        <li class="app-side-nav__item app-side-nav__item--current"><a class="app-side-nav__link" href="person-record-view-ehic#treatments">EHIC - valid until 04/08/2021</a></li>
-      
-        <li class="app-side-nav__item"><a class="app-side-nav__link" href="person-record-view-prc#treatments">PRC - valid from 12/08/2020 to 14/08/2020</a></li>
-      
-      </ul>
-    </nav>
-  </div>    
-  <div class="nhsuk-grid-column-two-thirds">
-    <div class="nhsuk-table-responsive">
-       <table class="nhsuk-table">
-          <caption class="nhsuk-table__caption">Treatments</caption>
-          <h3 class="app-side-nav__heading" id="treatments">EHIC treatments entered by Airedale NHS Foundation Trust</h3>
-          <thead class="nhsuk-table__head">
-                <th class="nhsuk-table__header" scope="col">Treatment ID</th>
-                <th class="nhsuk-table__header" scope="col">Start date</th>
-                <th class="nhsuk-table__header" scope="col">End date</th>
-                <th class="nhsuk-table__header" scope="col">Cost</th>
-                <th class="nhsuk-table__header" scope="col">Status</th>
-                <th class="nhsuk-table__header" scope="col">Processed date</th>
-                <th class="nhsuk-table__header" scope="col">Action</th>
-             </tr>
-          </thead>
-          <tbody class="nhsuk-table__body">
-            <tr class="nhsuk-table__row">
-              <td class="nhsuk-table__cell ">-</td>
-              <td class="nhsuk-table__cell ">15/10/2020</td>
-              <td class="nhsuk-table__cell ">20/10/2020</td>
-              <td class="nhsuk-table__cell ">-</td>
-              <td class="nhsuk-table__cell "><strong style="color: #354550"; class="nhsuk-tag no-caps nhsuk-tag--yellow">Draft</strong></td>
-              <td class="nhsuk-table__cell ">-</td>
-              <td class="nhsuk-table__cell "><a href="#">Complete treatment form</a></td>
-           </tr>
-            <tr class="nhsuk-table__row">
-              <td class="nhsuk-table__cell ">62998</td>
-              <td class="nhsuk-table__cell ">03/10/2020</td>
-              <td class="nhsuk-table__cell ">10/10/2020</td>
-              <td class="nhsuk-table__cell ">£3,234.88</td>
-              <td class="nhsuk-table__cell "><strong style="color: #354550"; class="nhsuk-tag no-caps nhsuk-tag--blue">Pending</strong></td>
-              <td class="nhsuk-table__cell ">-</td>
-              <td class="nhsuk-table__cell "></td>
-           </tr>
-            <tr class="nhsuk-table__row">
-              <td class="nhsuk-table__cell ">63002</td>
-              <td class="nhsuk-table__cell ">25/08/2020</td>
-              <td class="nhsuk-table__cell ">20/09/2020</td>
-              <td class="nhsuk-table__cell ">£12,454.56</td>
-              <td class="nhsuk-table__cell "><strong style="color: #354550"; class="nhsuk-tag no-caps nhsuk-tag--green">Processed</strong></td>
-              <td class="nhsuk-table__cell ">22/08/2020</td>
-              <td class="nhsuk-table__cell "></td>
-           </tr>
-             <tr class="nhsuk-table__row">
-                <td class="nhsuk-table__cell ">63645</td>
-                <td class="nhsuk-table__cell ">16/01/2019</td>
-                <td class="nhsuk-table__cell ">16/02/2019</td>
-                <td class="nhsuk-table__cell ">£534.55</td>
-                <td class="nhsuk-table__cell"><strong style="color: #354550"; class="nhsuk-tag no-caps nhsuk-tag--green">Processed</strong></td>
-                <td class="nhsuk-table__cell ">17/02/2019</td>
-                <td class="nhsuk-table__cell "></td>
-             </tr>
-          </tbody>
-       </table>
-    </div> 
-    <p><a href="entitlement-ehic-details">View EHIC details</a></p>
-  </div> 
+    <div class="nhsuk-expander-group">
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            EHIC - valid until 04/08/2021
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <div class="nhsuk-table-responsive">
+            <table class="nhsuk-table">
+               <caption class="nhsuk-table__caption">Treatments</caption>
+               <h2 class="nhsuk-label--m" id="treatments">EHIC treatments</h2>
+               <span class="nhsuk-hint">Added by Airedale NHS Foundation Trust</span>
+               <thead class="nhsuk-table__head">
+                     <th class="nhsuk-table__header" scope="col">Treatment ID</th>
+                     <th class="nhsuk-table__header" scope="col">Start date</th>
+                     <th class="nhsuk-table__header" scope="col">End date</th>
+                     <th class="nhsuk-table__header" scope="col">Cost</th>
+                     <th class="nhsuk-table__header" scope="col">Status</th>
+                     <th class="nhsuk-table__header" scope="col">Processed date</th>
+                     <th class="nhsuk-table__header" scope="col">Action</th>
+                  </tr>
+               </thead>
+               <tbody class="nhsuk-table__body">
+                 <tr class="nhsuk-table__row">
+                   <td class="nhsuk-table__cell ">-</td>
+                   <td class="nhsuk-table__cell ">15/10/2020</td>
+                   <td class="nhsuk-table__cell ">20/10/2020</td>
+                   <td class="nhsuk-table__cell ">-</td>
+                   <td class="nhsuk-table__cell "><strong style="color: #354550"; class="nhsuk-tag no-caps nhsuk-tag--yellow">Draft</strong></td>
+                   <td class="nhsuk-table__cell ">-</td>
+                   <td class="nhsuk-table__cell "><a href="#">Complete treatment form</a></td>
+                </tr>
+                 <tr class="nhsuk-table__row">
+                   <td class="nhsuk-table__cell ">62998</td>
+                   <td class="nhsuk-table__cell ">03/10/2020</td>
+                   <td class="nhsuk-table__cell ">10/10/2020</td>
+                   <td class="nhsuk-table__cell ">£3,234.88</td>
+                   <td class="nhsuk-table__cell "><strong style="color: #354550"; class="nhsuk-tag no-caps nhsuk-tag--blue">Pending</strong></td>
+                   <td class="nhsuk-table__cell ">-</td>
+                   <td class="nhsuk-table__cell ">-</td>
+                </tr>
+                 <tr class="nhsuk-table__row">
+                   <td class="nhsuk-table__cell ">63002</td>
+                   <td class="nhsuk-table__cell ">25/08/2020</td>
+                   <td class="nhsuk-table__cell ">20/09/2020</td>
+                   <td class="nhsuk-table__cell ">£12,454.56</td>
+                   <td class="nhsuk-table__cell "><strong style="color: #354550"; class="nhsuk-tag no-caps nhsuk-tag--green">Processed</strong></td>
+                   <td class="nhsuk-table__cell ">22/08/2020</td>
+                   <td class="nhsuk-table__cell ">-</td>
+                </tr>
+                  <tr class="nhsuk-table__row">
+                     <td class="nhsuk-table__cell ">63645</td>
+                     <td class="nhsuk-table__cell ">16/01/2019</td>
+                     <td class="nhsuk-table__cell ">16/02/2019</td>
+                     <td class="nhsuk-table__cell ">£534.55</td>
+                     <td class="nhsuk-table__cell"><strong style="color: #354550"; class="nhsuk-tag no-caps nhsuk-tag--green">Processed</strong></td>
+                     <td class="nhsuk-table__cell ">17/02/2019</td>
+                     <td class="nhsuk-table__cell ">-</td>
+                  </tr>
+               </tbody>
+            </table>
+         </div> 
+         <p><a href="entitlement-ehic-details">View EHIC details</a></p>
+        </div>
+      </details>
+
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            PRC - valid from 12/08/2020 to 14/08/2020
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <div class="nhsuk-table-responsive">
+            <table class="nhsuk-table">
+               <caption class="nhsuk-table__caption">Treatments</caption>
+               <h2 class="app-side-nav__heading" id="treatments">PRC treatments</h2>
+               <span class="nhsuk-hint">Added by Airedale NHS Foundation Trust</span>
+               <thead class="nhsuk-table__head">
+                     <th class="nhsuk-table__header" scope="col">Treatment ID</th>
+                     <th class="nhsuk-table__header" scope="col">Start date</th>
+                     <th class="nhsuk-table__header" scope="col">End date</th>
+                     <th class="nhsuk-table__header" scope="col">Cost</th>
+                     <th class="nhsuk-table__header" scope="col">Status</th>
+                     <th class="nhsuk-table__header" scope="col">Processed date</th>
+                     <th class="nhsuk-table__header" scope="col">Action</th>
+                  </tr>
+               </thead>
+               <tbody class="nhsuk-table__body">
+                  <tr class="nhsuk-table__row">
+                     <td class="nhsuk-table__cell ">63933</td>
+                     <td class="nhsuk-table__cell ">12/08/2019</td>
+                     <td class="nhsuk-table__cell ">13/08/2019</td>
+                     <td class="nhsuk-table__cell ">£534.55</td>
+                     <td class="nhsuk-table__cell "><strong style="color: #354550"; class="nhsuk-tag no-caps nhsuk-tag--green">Processed</strong></td>
+                     <td class="nhsuk-table__cell ">28/08/2019</td>
+                     <td class="nhsuk-table__cell ">-</td>
+                  </tr>
+               </tbody>
+            </table>
+         </div> 
+         <p><a href="entitlement-prc-details">View PRC details</a></p>
+    
+        </div>
+      </details>
+    
+    </div>
+
+ 
   <a class="nhsuk-button" href="">Add Treatment</a>
+  </div>
 </div>
 {% endblock %}
