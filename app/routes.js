@@ -37,6 +37,10 @@ router.use('/sprint-8/search', require('./views/sprint-8/_routes'));
 
 router.use('/sprint-8/search-no-results', require('./views/sprint-8/_routes'));
 
+router.use('/sprint-9/search', require('./views/sprint-9/_routes'));
+
+router.use('/sprint-9/search-no-results', require('./views/sprint-9/_routes'));
+
 
 
 module.exports = router;

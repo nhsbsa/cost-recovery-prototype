@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block pageTitle %}
-Process draft treatments
+Delete account reason
 {% endblock %}
 
 {% block header %}
@@ -102,7 +102,7 @@ Process draft treatments
             </svg>
           </a>
         </li>
-        <li class="nhsuk-header__navigation-item">
+        <li class="nhsuk-header__navigation-item app-header__navigation-item__item--current">
           <a class="nhsuk-header__navigation-link" href="account">
             Account
             <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
@@ -122,134 +122,28 @@ Process draft treatments
   <div class="nhsuk-width-container">
     <ol class="nhsuk-breadcrumb__list">
       <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="home">Home</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="account">Account</a></li>
     </ol>
-    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="home">Back to Home</a></p>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="account">Back to Account</a></p>
   </div>
 </nav>
 {% endblock %}
 
 {% block content %}
 <div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-full">
-    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-      <h1 class="nhsuk-fieldset__heading">
-        Process draft treatments
-      </h1>
-    </legend>
-
-    <div class="nhsuk-table-responsive">
-      <table class="nhsuk-table">
-        <caption class="nhsuk-table__caption">Draft treatments</caption>
-        <thead class="nhsuk-table__head">
-          <tr class="nhsuk-table__row">
-            <th class="nhsuk-table__header" scope="col">Entitlement</th>
-            <th class="nhsuk-table__header" scope="col">Name</th>
-            <th class="nhsuk-table__header" scope="col">Given names</th>
-            <th class="nhsuk-table__header" scope="col">Country</th>
-            <th class="nhsuk-table__header" scope="col">Created by</th>
-            <th class="nhsuk-table__header" scope="col">Date created</th>
-            <th class="nhsuk-table__header" scope="col"></th>
-          </tr>
-        </thead>
-        <tbody class="nhsuk-table__body">
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">S2</td>
-            <td class="nhsuk-table__cell ">Cruz</td>
-            <td class="nhsuk-table__cell ">Antonio</td>
-            <td class="nhsuk-table__cell ">Spain</td>
-            <td class="nhsuk-table__cell ">Paul Mathew</td>
-            <td class="nhsuk-table__cell ">09/11/2020</td>
-            <td class="nhsuk-table__cell "><a href="check-your-answers-s2-sec2-draft">Continue</a></td>
-          </tr>
-
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">EHIC</td>
-            <td class="nhsuk-table__cell ">Rodríguez</td>
-            <td class="nhsuk-table__cell ">Maria</td>
-            <td class="nhsuk-table__cell ">Spain</td>
-            <td class="nhsuk-table__cell ">Paul Mathew</td>
-            <td class="nhsuk-table__cell ">28/06/2020</td>
-            <td class="nhsuk-table__cell "><a href="details-ehic-draft">Continue</a></td>
-          </tr>
-
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">EHIC</td>
-            <td class="nhsuk-table__cell ">Laurent</td>
-            <td class="nhsuk-table__cell ">Rapheal</td>
-            <td class="nhsuk-table__cell ">France</td>
-            <td class="nhsuk-table__cell ">Paul Mathew</td>
-            <td class="nhsuk-table__cell ">20/06/2020</td>
-            <td class="nhsuk-table__cell "><a href="#">Continue</a></td>
-          </tr>
-
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">PRC</td>
-            <td class="nhsuk-table__cell ">Eposito</td>
-            <td class="nhsuk-table__cell ">Romeo</td>
-            <td class="nhsuk-table__cell ">Italy</td>
-            <td class="nhsuk-table__cell ">Sarah Jordan</td>
-            <td class="nhsuk-table__cell ">18/06/2020</td>
-            <td class="nhsuk-table__cell "><a href="#">Continue</a></td>
-          </tr>
-
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">EHIC</td>
-            <td class="nhsuk-table__cell ">Martin</td>
-            <td class="nhsuk-table__cell ">Alexandre</td>
-            <td class="nhsuk-table__cell ">France</td>
-            <td class="nhsuk-table__cell ">Edward Philips</td>
-            <td class="nhsuk-table__cell ">10/06/2020</td>
-            <td class="nhsuk-table__cell "><a href="#">Continue</a></td>
-          </tr>
-
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">PRC</td>
-            <td class="nhsuk-table__cell ">Hernández</td>
-            <td class="nhsuk-table__cell ">Daisy</td>
-            <td class="nhsuk-table__cell ">Spain</td>
-            <td class="nhsuk-table__cell ">Sarah Jordan</td>
-            <td class="nhsuk-table__cell ">08/06/2020</td>
-            <td class="nhsuk-table__cell "><a href="#">Continue</a></td>
-          </tr>
-
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">PRC</td>
-            <td class="nhsuk-table__cell ">Eduardo</td>
-            <td class="nhsuk-table__cell ">Carlos</td>
-            <td class="nhsuk-table__cell ">Portugal</td>
-            <td class="nhsuk-table__cell ">Sarah Jordan</td>
-            <td class="nhsuk-table__cell ">04/06/2020</td>
-            <td class="nhsuk-table__cell "><a href="#">Continue</a></td>
-          </tr>
-
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">EHIC</td>
-            <td class="nhsuk-table__cell ">Janssens</td>
-            <td class="nhsuk-table__cell ">Marie</td>
-            <td class="nhsuk-table__cell ">Belgium</td>
-            <td class="nhsuk-table__cell ">Paul Mathew</td>
-            <td class="nhsuk-table__cell ">11/05/2020</td>
-            <td class="nhsuk-table__cell "><a href="#">Continue</a></td>
-          </tr>
-          
-        </tbody>
-      </table>
-    </div>
-
-    <nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
-      <ul class="nhsuk-list nhsuk-pagination__list">
-        <li class="nhsuk-pagination-item--next">
-          <a class="nhsuk-pagination__link nhsuk-pagination__link--next" href="#">
-            <span class="nhsuk-pagination__title">Next</span>
-            <span class="nhsuk-u-visually-hidden">:</span>
-            <span class="nhsuk-pagination__page">Page 2 of 2</span>
-            <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
-            </svg>
-          </a>
-        </li>
-      </ul>
-    </nav>
+  <div class="nhsuk-grid-column-two-thirds">
+   
+   <h1 class="nhsuk-label-wrapper">
+     <label class="nhsuk-label nhsuk-label--l" for="deleteAccount">
+       What is the reason for deleting Sarah Jordan's account?
+     </label>
+   </h1>
+   
+   <textarea class="nhsuk-textarea" id="deleteAccount" name="deleteAccount" rows="5"></textarea>
+   <br>
+   <p>Clicking on delete will send a delete request to the Cost Recovery Operations team. </p>
+   <a style="margin-right: 20px" class="nhsuk-button" href="delete-confirmation-other">Delete</a>
+   <a class="nhsuk-button nhsuk-button--secondary" href="account">Cancel</a>
 
   </div>
 </div>

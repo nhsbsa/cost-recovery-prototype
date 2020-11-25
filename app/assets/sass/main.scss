@@ -577,3 +577,78 @@ a {
   ========================================================================== */
 .nhsuk-tag--no-border {
   border: 0; }
+
+//Pagination
+
+  @media (min-width: 40.0625em) {
+    .nhsuk-pagination {
+      font-size: 0;
+      text-align: justify; }
+      .nhsuk-pagination:after {
+        content: '';
+        display: inline-block;
+        width: 100%; } }
+  
+  .nhsuk-pagination__list {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    @media (min-width: 40.0625em) {
+      .nhsuk-pagination__list {
+        display: inline-block;
+        margin-bottom: 0;
+        vertical-align: middle; } }
+  
+  @media (min-width: 40.0625em) {
+    .nhsuk-pagination__results {
+      display: inline-block;
+      margin-bottom: 0;
+      vertical-align: middle; } }
+  
+  .nhsuk-pagination__item {
+    display: inline-block; }
+  
+  .nhsuk-pagination__item--active,
+  .nhsuk-pagination__item--dots {
+    font-weight: bold;
+    height: 25px;
+    padding: 4px 8px;
+    text-align: center; }
+  
+  .nhsuk-pagination__item--dots {
+    padding-left: 0;
+    padding-right: 0; }
+  
+  .nhsuk-pagination__item--prev .nhsuk-pagination__link:before,
+  .nhsuk-pagination__item--next .nhsuk-pagination__link:after {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border-style: solid;
+    color: govuk-colour("black");
+    background: transparent;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    content: ""; }
+  
+  .nhsuk-pagination__item--prev .nhsuk-pagination__link:before {
+    border-width: 3px 0 0 3px;
+    margin-right: 4px; }
+  
+  .nhsuk-pagination__item--next .nhsuk-pagination__link:after {
+    border-width: 0 3px 3px 0;
+    margin-left: 4px; }
+  
+  .nhsuk-pagination__link {
+    display: block;
+    padding: 4px;
+    text-align: center;
+    text-decoration: none;
+    min-width: 25px; }
+    .nhsuk-pagination__link:link, .nhsuk-pagination__link:visited {
+      color: govuk-colour("blue"); }
+    .nhsuk-pagination__link:hover {
+      color: govuk-colour("light-blue"); }
+    .nhsuk-pagination__link:focus {
+      color: govuk-colour("black"); }
