@@ -39,16 +39,21 @@ confirmation on cancel
   <div class="nhsuk-grid-column-two-thirds">
     <form action="cancel-confirm" method="post">
 
+       {% call fieldset({
+        legend: {
+          "text": "Are you sure you want to cancel the treatment?",
+          "classes": "nhsuk-fieldset__legend--l",
+          "isPageHeading": true
+        }
+        }) %}
+        {{ hint({
+          "text": "The data that you have entered will not be saved.",
+          "classes": "nhsuk-u-margin-bottom-2"
+        }) }}
+      
       {{ radios({
          "idPrefix": "cancel",
          "name": "cancel",
-         "fieldset": {
-           "legend": {
-             "text": "Are you sure you want to cancel the treatment?",
-             "classes": "nhsuk-fieldset__legend--l",
-             "isPageHeading": true
-           }
-         },
          "items": [
            {
              "value": "yes",
@@ -60,6 +65,8 @@ confirmation on cancel
            }
          ]
        }) }}
+
+       {% endcall %}
 
       {{ button({
       "text": "Submit"

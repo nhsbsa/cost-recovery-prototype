@@ -19,7 +19,7 @@ Reports filtered results
     </div>
 
     <div class="nhsuk-header__content" id="content-header">
-      <p style="color: #ffffff; font-size: 16px; margin-top: 10px; margin-bottom: 0px">Signed in as Paul Mathew (<a style="color: #ffffff;" href="sign-in">Sign out</a>)</p>
+      <p style="color: #ffffff; display: inline-block;font-size: 16px; padding-top:10px; margin-bottom: 0px;">Signed in as <a href="account" style="color: #ffffff;" >Paul Mathew</a> (<a style="color: #ffffff;" href="sign-in">Sign out</a>)</p>
     </div>
   </div>
 
@@ -31,6 +31,7 @@ Reports filtered results
   <div class="nhsuk-width-container">
     <ol class="nhsuk-breadcrumb__list">
       <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="home">Home</a></li>
+      <li class="nhsuk-breadcrumb__item">Reports</li>
     </ol>
     <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="home">Back to Home</a></p>
   </div>
@@ -131,6 +132,7 @@ Reports filtered results
     </div>
 </section>
 
+<p><a href="#">Download as a spreadsheet</a></p>
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
@@ -226,35 +228,33 @@ Reports filtered results
       </table>
     </div>
     
-    <nav class="nhsuk-pagination" id="pagination-label">
+    <nav class="pagination" id="pagination-label">
 
       <p class="nhsuk-u-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
 
-      <ul class="nhsuk-pagination__list">
-        <li class="nhsuk-pagination__item  nhsuk-pagination__item--prev">
-          <a class="nhsuk-pagination__link" href="">Previous<span class="nhsuk-u-visually-hidden"> set of
+      <ul class="pagination__list">
+       <!-- <li class="pagination__item  pagination__item--prev">
+          <a class="pagination__link" href="">Previous<span class="nhsuk-u-visually-hidden"> set of
               pages</span></a>
-        </li>
+        </li>-->
 
-        <li class="nhsuk-pagination__item nhsuk-pagination__item--active">1</li>
+        <li class="pagination__item pagination__item--active">1</li>
 
-        <li class="nhsuk-pagination__item"><a class="nhsuk-pagination__link" href="reports-filter-pg2#table">2</a></li>
+        <li class="pagination__item"><a class="pagination__link" href="reports-filter-pg2#table">2</a></li>
 
-        <li class="nhsuk-pagination__item"><a class="nhsuk-pagination__link" href="/page=3">3</a></li>
+        <li class="pagination__item"><a class="pagination__link" href="/page=3">3</a></li>
 
-        <li class="nhsuk-pagination__item"><a class="nhsuk-pagination__link" href="/page=4">4</a></li>
+        <li class="pagination__item"><a class="pagination__link" href="/page=4">4</a></li>
 
-        <li class="nhsuk-pagination__item"><a class="nhsuk-pagination__link" href="/page=5">5</a></li>
+        <li class="pagination__item"><a class="pagination__link" href="/page=5">5</a></li>
 
-        <li class="nhsuk-pagination__item  nhsuk-pagination__item--next">
-          <a class="nhsuk-pagination__link" href="">Next<span class="nhsuk-u-visually-hidden"> set of
+        <li class="pagination__item  pagination__item--next">
+          <a class="pagination__link" href="">Next<span class="nhsuk-u-visually-hidden"> set of
               pages</span></a>
         </li>
       </ul>
-      <p class="nhsuk-pagination__results">Showing <b>1</b> to <b>8</b> of <b>1,500</b> results</p>
+      <p class="pagination__results">Showing <b>1</b> to <b>8</b> of <b>1,500</b> results</p>
     </nav>
-
-    <a class="nhsuk-button" href="#">Download as a spreadsheet</a>
   
  </div>
 </div>

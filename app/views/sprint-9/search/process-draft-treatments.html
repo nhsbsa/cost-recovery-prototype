@@ -19,7 +19,7 @@ Process draft treatments
     </div>
 
     <div class="nhsuk-header__content" id="content-header">
-      <p style="color: #ffffff; font-size: 16px; margin-top: 10px; margin-bottom: 0px">Signed in as Paul Mathew (<a style="color: #ffffff;" href="sign-in">Sign out</a>)</p>
+      <p style="color: #ffffff; display: inline-block;font-size: 16px; padding-top:10px; margin-bottom: 0px;">Signed in as <a href="account" style="color: #ffffff;" >Paul Mathew</a> (<a style="color: #ffffff;" href="sign-in">Sign out</a>)</p>
     </div>
   </div>
 
@@ -31,6 +31,7 @@ Process draft treatments
   <div class="nhsuk-width-container">
     <ol class="nhsuk-breadcrumb__list">
       <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="home">Home</a></li>
+      <li class="nhsuk-breadcrumb__item">Draft claims</li>
     </ol>
     <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="home">Back to Home</a></p>
   </div>
@@ -145,20 +146,28 @@ Process draft treatments
       </table>
     </div>
 
-    <nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
-      <ul class="nhsuk-list nhsuk-pagination__list">
-        <li class="nhsuk-pagination-item--next">
-          <a class="nhsuk-pagination__link nhsuk-pagination__link--next" href="#">
-            <span class="nhsuk-pagination__title">Next</span>
-            <span class="nhsuk-u-visually-hidden">:</span>
-            <span class="nhsuk-pagination__page">Page 2 of 2</span>
-            <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
-            </svg>
-          </a>
+    <nav class="pagination" id="pagination-label">
+
+      <p class="nhsuk-u-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+
+      <ul class="pagination__list">
+        <!--<li class="pagination__item  pagination__item--prev">
+          <a class="pagination__link" href="">Previous<span class="nhsuk-u-visually-hidden"> set of
+              pages</span></a>
+        </li> -->
+
+        <li class="pagination__item pagination__item--active">1</li>
+
+        <li class="pagination__item"><a class="pagination__link" href="">2</a></li>
+
+        <li class="pagination__item  pagination__item--next">
+          <a class="pagination__link" href="">Next<span class="nhsuk-u-visually-hidden"> set of
+              pages</span></a>
         </li>
       </ul>
+      <p class="pagination__results">Showing <b>1</b> to <b>8</b> of <b>1,500</b> results</p>
     </nav>
+  
 
   </div>
 </div>
