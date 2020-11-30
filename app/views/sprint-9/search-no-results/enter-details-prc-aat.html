@@ -47,13 +47,9 @@ Enter details PRC
         </h1>
       </legend>
 
-      <span class="nhsuk-hint">
-        Enter the details as they appear on the PRC (Numbers in brackets refer to the areas on the PRC sample certificate shown).
-      </span>
-      
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="country">
-          Issuing member state(2)
+          Issuing member state
         </label>
         <input class="nhsuk-input nhsuk-input--width-20" id="country" name="country" type="text" value="Spain" disabled>
       </div>
@@ -61,28 +57,58 @@ Enter details PRC
       <h4>Card holder related information</h4>
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="name">
-          Name(3)
+          Name
         </label>
         <input class="nhsuk-input nhsuk-input--width-20" id="name" name="name" type="text" value="Rodríguez" disabled>
       </div>
 
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="givenNames">
-          Given names(4)
+          Given names
         </label>
         <input class="nhsuk-input nhsuk-input--width-20" id="givenNames" name="givennames" type="text" value="Maria" disabled>
       </div>
 
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="dateOfBirth">
-          Date of birth(5)
+          Date of birth
         </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="dateOfBirth" name="dob" type="text"  value="06/12/1988" disabled>
+
+        <div class="nhsuk-hint" id="hint">
+          For example, 15 03 1984
+        </div>
+    
+        <div class="nhsuk-date-input" id="example">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="day">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="day" name="day" type="number" pattern="[0-9]*" value="06" disabled>
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="month">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="month" name="month" type="number" pattern="[0-9]*" value="12" disabled>
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="year">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="year" name="year" type="number" pattern="[0-9]*" value="1988" disabled>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="personalIdentificationNumber">
-          Personal identification number(6)
+          Personal identification number
         </label>
         <input class="nhsuk-input nhsuk-input--width-20" id="personalIdentificationNumber" name="pin" type="text" value="280000000293" disabled>
       </div>
@@ -90,32 +116,123 @@ Enter details PRC
       <h4>Card related information</h4>
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="IdentificationNumberOnCard">
-          Identification number of the card(8) (optional)
+          Identification number of the card (optional)
         </label>
         <input class="nhsuk-input nhsuk-input--width-20" id="IdentificationNumberOnCard" name="idcard" type="text"> 
       </div>
 
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="expiryDate">
-          Expiry date(9) (optional)
+          Expiry date (optional)
         </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="expiryDate" name="expirydate" type="text"> 
+        
+        <div class="nhsuk-hint" id="hint">
+          For example, 15 03 1984
+        </div>
+    
+        <div class="nhsuk-date-input" id="example">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="day">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="day" name="day" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="month">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="month" name="month" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="year">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="year" name="year" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+        </div>
       </div>
       
       <h4>Certificate details</h4>
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="validityFrom">
-          Validity period from(a)
+          Validity period from
         </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="validityFrom" name="validityfrom" type="text"> 
+        
+        <div class="nhsuk-hint" id="hint">
+          For example, 15 03 1984
+        </div>
+    
+        <div class="nhsuk-date-input" id="example">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="day">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="day" name="day" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="month">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="month" name="month" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="year">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="year" name="year" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+        </div>
       </div>  
 
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="validityTo">
-          Validity period to(b)
+          Validity period to
         </label>  
-        <input class="nhsuk-input nhsuk-input--width-20" id="validityTo" name="validityto" type="text"> 
+        
+        <div class="nhsuk-hint" id="hint">
+          For example, 15 03 1984
+        </div>
+    
+        <div class="nhsuk-date-input" id="example">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="day">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="day" name="day" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="month">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="month" name="month" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="year">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="year" name="year" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+        </div>
       </div>
+      
       
     </fieldset>
 
@@ -123,11 +240,6 @@ Enter details PRC
     <a class="nhsuk-button nhsuk-button--secondary" href="save-as-draft-confirmation">Save as draft</a>
     <p><a href="home">Cancel</a></p>
  </div>
-
- <div class="nhsuk-grid-column-one-third">
-  <img src="/images/sample.png" alt="PRC sample" style="width:480px; height:550px; padding-top:100px; padding-left: 50px; padding-right:100px;">
-  <span style="margin-left: 50px;">PRC sample</span> 
-</div>
 
 </div>
 {% endblock %}

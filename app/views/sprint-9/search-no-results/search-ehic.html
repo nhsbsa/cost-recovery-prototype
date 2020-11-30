@@ -48,39 +48,64 @@ Search
       </legend>
 
       <span class="nhsuk-hint">
-        Enter the details as they appear on the EHIC (Numbers in brackets refer to the areas on the EHIC sample card shown).
+        Enter the details as they appear on the EHIC.
       </span>
     
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="name">
-          Name(3)
+          Name
         </label>
         <input class="nhsuk-input nhsuk-input--width-20" id="name" name="name" type="text">
       </div>
 
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="givenName">
-          Given names(4)
+          Given names
         </label>
         <input class="nhsuk-input nhsuk-input--width-20" id="givenName" name="givenname" type="text">
       </div>
     
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="dateOfBirth">
-          Date of birth(5)
+          Date of birth
         </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="dateOfBirth" name="dob" type="text"> <br>
-      </div>
+
+        <div class="nhsuk-hint" id="hint">
+          For example, 15 03 1984
+        </div>
+    
+        <div class="nhsuk-date-input" id="example">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="day">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="day" name="day" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="month">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="month" name="month" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="year">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="year" name="year" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+        </div>
+
     </fieldset>
 
     <a class="nhsuk-button" href="search-ehic-results#result">Search</a>
     <p><a href="home">Cancel</a></p>
 
- </div>
-
- <div class="nhsuk-grid-column-one-third">
-  <img src="/images/ehic-sample.png" alt="Ehic sample card" style="width:550px; height:400px; padding-top:150px; padding-left: 50px; padding-right:100px;">
-  <span style="margin-left: 50px;">EHIC sample</span> 
  </div>
 
 </div>
