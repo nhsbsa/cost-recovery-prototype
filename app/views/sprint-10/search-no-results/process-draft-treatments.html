@@ -1,0 +1,175 @@
+{% extends 'layout.html' %}
+{% block pageTitle %}
+Process draft treatments
+{% endblock %}
+
+{% block header %}
+<header class="nhsuk-header" role="banner">
+  <div class="nhsuk-width-container nhsuk-header__container">
+    <div class="nhsuk-header__logo nhsuk-header__logo--only"><a class="nhsuk-header__link nhsuk-header__link--service " href="home" aria-label="Overseas visitor treatment portal homepage">
+        <svg class="nhsuk-logo" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false" viewBox="0 0 40 16">
+          <path class="nhsuk-logo__background" d="M0 0h40v16H0z"></path>
+          <path class="nhsuk-logo__text" d="M3.9 1.5h4.4l2.6 9h.1l1.8-9h3.3l-2.8 13H9l-2.7-9h-.1l-1.8 9H1.1M17.3 1.5h3.6l-1 4.9h4L25 1.5h3.5l-2.7 13h-3.5l1.1-5.6h-4.1l-1.2 5.6h-3.4M37.7 4.4c-.7-.3-1.6-.6-2.9-.6-1.4 0-2.5.2-2.5 1.3 0 1.8 5.1 1.2 5.1 5.1 0 3.6-3.3 4.5-6.4 4.5-1.3 0-2.9-.3-4-.7l.8-2.7c.7.4 2.1.7 3.2.7s2.8-.2 2.8-1.5c0-2.1-5.1-1.3-5.1-5 0-3.4 2.9-4.4 5.8-4.4 1.6 0 3.1.2 4 .6"></path>
+          <image src="https://assets.nhs.uk/images/nhs-logo.png" xlink:href=""></image>
+        </svg>
+        <span class="nhsuk-header__service-name">
+          Overseas visitor treatment
+        </span>
+      </a>
+    </div>
+
+    <div class="nhsuk-header__content" id="content-header">
+      <p style="color: #ffffff; display: inline-block;font-size: 16px; padding-top:10px; margin-bottom: 0px;">Signed in as <a href="account" style="color: #ffffff;" >Paul Mathew</a> (<a style="color: #ffffff;" href="sign-in">Sign out</a>)</p>
+    </div>
+  </div>
+
+</header>
+{% endblock %}
+
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="home">Home</a></li>
+      <li class="nhsuk-breadcrumb__item">Draft claims</li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="home">Back to Home</a></p>
+  </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+      <h1 class="nhsuk-fieldset__heading">
+        Process draft treatments
+      </h1>
+    </legend>
+
+    <div class="nhsuk-table-responsive">
+      <table class="nhsuk-table">
+        <caption class="nhsuk-table__caption">Draft treatments</caption>
+        <thead class="nhsuk-table__head">
+          <tr class="nhsuk-table__row">
+            <th class="nhsuk-table__header" scope="col">Entitlement</th>
+            <th class="nhsuk-table__header" scope="col">Name</th>
+            <th class="nhsuk-table__header" scope="col">Given names</th>
+            <th class="nhsuk-table__header" scope="col">Country</th>
+            <th class="nhsuk-table__header" scope="col">Created by</th>
+            <th class="nhsuk-table__header" scope="col">Date created</th>
+            <th class="nhsuk-table__header" scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">EHIC</td>
+            <td class="nhsuk-table__cell ">Rodríguez</td>
+            <td class="nhsuk-table__cell ">Maria</td>
+            <td class="nhsuk-table__cell ">Spain</td>
+            <td class="nhsuk-table__cell ">Paul Mathew</td>
+            <td class="nhsuk-table__cell ">28/06/2020</td>
+            <td class="nhsuk-table__cell "><a href="have-address-ehic-draft">Continue</a></td>
+          </tr>
+
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">EHIC</td>
+            <td class="nhsuk-table__cell ">Laurent</td>
+            <td class="nhsuk-table__cell ">Rapheal</td>
+            <td class="nhsuk-table__cell ">France</td>
+            <td class="nhsuk-table__cell ">Paul Mathew</td>
+            <td class="nhsuk-table__cell ">20/06/2020</td>
+            <td class="nhsuk-table__cell "><a href="#">Continue</a></td>
+          </tr>
+
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">PRC</td>
+            <td class="nhsuk-table__cell ">Eposito</td>
+            <td class="nhsuk-table__cell ">Romeo</td>
+            <td class="nhsuk-table__cell ">Italy</td>
+            <td class="nhsuk-table__cell ">Sarah Jordan</td>
+            <td class="nhsuk-table__cell ">18/06/2020</td>
+            <td class="nhsuk-table__cell "><a href="#">Continue</a></td>
+          </tr>
+
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">EHIC</td>
+            <td class="nhsuk-table__cell ">Martin</td>
+            <td class="nhsuk-table__cell ">Alexandre</td>
+            <td class="nhsuk-table__cell ">France</td>
+            <td class="nhsuk-table__cell ">Edward Philips</td>
+            <td class="nhsuk-table__cell ">10/06/2020</td>
+            <td class="nhsuk-table__cell "><a href="#">Continue</a></td>
+          </tr>
+
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">PRC</td>
+            <td class="nhsuk-table__cell ">Hernández</td>
+            <td class="nhsuk-table__cell ">Daisy</td>
+            <td class="nhsuk-table__cell ">Spain</td>
+            <td class="nhsuk-table__cell ">Sarah Jordan</td>
+            <td class="nhsuk-table__cell ">08/06/2020</td>
+            <td class="nhsuk-table__cell "><a href="#">Continue</a></td>
+          </tr>
+
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">PRC</td>
+            <td class="nhsuk-table__cell ">Eduardo</td>
+            <td class="nhsuk-table__cell ">Carlos</td>
+            <td class="nhsuk-table__cell ">Portugal</td>
+            <td class="nhsuk-table__cell ">Sarah Jordan</td>
+            <td class="nhsuk-table__cell ">04/06/2020</td>
+            <td class="nhsuk-table__cell "><a href="#">Continue</a></td>
+          </tr>
+
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">EHIC</td>
+            <td class="nhsuk-table__cell ">Janssens</td>
+            <td class="nhsuk-table__cell ">Marie</td>
+            <td class="nhsuk-table__cell ">Belgium</td>
+            <td class="nhsuk-table__cell ">Paul Mathew</td>
+            <td class="nhsuk-table__cell ">11/05/2020</td>
+            <td class="nhsuk-table__cell "><a href="#">Continue</a></td>
+          </tr>
+
+          
+
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">S2</td>
+            <td class="nhsuk-table__cell ">Fernandes</td>
+            <td class="nhsuk-table__cell ">Joana</td>
+            <td class="nhsuk-table__cell ">Spain</td>
+            <td class="nhsuk-table__cell ">Edward Philips</td>
+            <td class="nhsuk-table__cell ">10/04/2020</td>
+            <td class="nhsuk-table__cell "><a href="#">Continue</a></td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+
+    <nav class="pagination" id="pagination-label">
+
+      <p class="nhsuk-u-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+
+      <ul class="pagination__list">
+        <!--<li class="pagination__item  pagination__item--prev">
+          <a class="pagination__link" href="">Previous<span class="nhsuk-u-visually-hidden"> set of
+              pages</span></a>
+        </li> -->
+
+        <li class="pagination__item pagination__item--active">1</li>
+
+        <li class="pagination__item"><a class="pagination__link" href="">2</a></li>
+
+        <li class="pagination__item  pagination__item--next">
+          <a class="pagination__link" href="">Next<span class="nhsuk-u-visually-hidden"> set of
+              pages</span></a>
+        </li>
+      </ul>
+      <p class="pagination__results">Showing <b>1</b> to <b>8</b> of <b>1,500</b> results</p>
+    </nav>
+
+  </div>
+</div>
+{% endblock %}

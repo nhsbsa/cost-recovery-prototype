@@ -2,6 +2,7 @@
 {% block pageTitle %}
 Person record view
 {% endblock %}
+
 {% block header %}
 <header class="nhsuk-header" role="banner">
   <div class="nhsuk-width-container nhsuk-header__container">
@@ -70,117 +71,17 @@ Person record view
       <h2 class="nhsuk-label--m">Entitlements</h2>
 
     <div class="nhsuk-expander-group">
-      <details class="nhsuk-details nhsuk-expander">
+      <details class="nhsuk-details nhsuk-expander" id="treatments" open>
         <summary class="nhsuk-details__summary">
           <span class="nhsuk-details__summary-text">
             EHIC - valid until 04/08/2021
           </span>
         </summary>
         <div class="nhsuk-details__text">
-          <!--<table role="table" class="nhsuk-table-responsive">
-            <caption class="nhsuk-table__caption">EHIC treatments</caption>
-            <span class="nhsuk-hint">Added by Airedale NHS Foundation Trust</span>
-            <thead role="rowgroup" class="nhsuk-table__head">
-              <tr role="row">
-                <th role="columnheader" class="" scope="col">
-                  Treatment ID
-                </th>
-                <th role="columnheader" class="" scope="col">
-                  Start date
-                </th>
-                <th role="columnheader" class="" scope="col">
-                  End date
-                </th>
-                <th role="columnheader" class="" scope="col">
-                  Cost
-                </th>
-                <th role="columnheader" class="" scope="col">
-                  Status
-                </th>
-                <th role="columnheader" class="" scope="col">
-                  Processed date
-                </th>
-                <th role="columnheader" class="" scope="col">
-                  Action
-                </th>
-              </tr>
-            </thead>
-            <tbody class="nhsuk-table__body">
-              <tr role="row" class="nhsuk-table__row">
-                <td role="cell" class="nhsuk-table__cell">
-                  <span class="nhsuk-table-responsive__heading">Treatment ID </span>-
-                </td>
-                <td role="cell" class="nhsuk-table__cell">
-                  <span class="nhsuk-table-responsive__heading">Start date </span>15/10/2020
-                </td>
-                <td role="cell" class="nhsuk-table__cell">
-                  <span class="nhsuk-table-responsive__heading">End date </span>20/10/2020
-                </td>
-                <td role="cell" class="nhsuk-table__cell">
-                  <span class="nhsuk-table-responsive__heading">Cost</span>-
-                </td>
-                <td role="cell" class="nhsuk-table__cell">
-                  <span class="nhsuk-table-responsive__heading">Status</span><strong style="color: #354550"; class="nhsuk-tag no-caps nhsuk-tag--yellow">Draft</strong>
-                </td>
-                <td role="cell" class="nhsuk-table__cell">
-                  <span class="nhsuk-table-responsive__heading">Processed date </span>-
-                </td>
-                <td role="cell" class="nhsuk-table__cell">
-                  <span class="nhsuk-table-responsive__heading">Action</span><a href="#">Continue</a>
-                </td>
-              </tr>
-              <tr role="row" class="nhsuk-table__row">
-                <td role="cell" class="nhsuk-table__cell">
-                  <span class="nhsuk-table-responsive__heading">Treatment ID </span>62998
-                </td>
-                <td role="cell" class="nhsuk-table__cell">
-                  <span class="nhsuk-table-responsive__heading">Start date </span>03/10/2020
-                </td>
-                <td role="cell" class="nhsuk-table__cell">
-                  <span class="nhsuk-table-responsive__heading">End date </span>10/10/2020
-                </td>
-                <td role="cell" class="nhsuk-table__cell">
-                  <span class="nhsuk-table-responsive__heading">Cost</span>-
-                </td>
-                <td role="cell" class="nhsuk-table__cell">
-                  <span class="nhsuk-table-responsive__heading">Status</span><strong style="color: #354550"; class="nhsuk-tag no-caps nhsuk-tag--blue">Pending</strong>
-                </td>
-                <td role="cell" class="nhsuk-table__cell">
-                  <span class="nhsuk-table-responsive__heading">Processed date </span>-
-                </td>
-                <td role="cell" class="nhsuk-table__cell">
-                  <span class="nhsuk-table-responsive__heading">Action</span>-
-                </td>
-              </tr>
-              <tr role="row" class="nhsuk-table__row">
-                <td role="cell" class="nhsuk-table__cell">
-                  <span class="nhsuk-table-responsive__heading">Treatment ID </span>63002
-                </td>
-                <td role="cell" class="nhsuk-table__cell">
-                  <span class="nhsuk-table-responsive__heading">Start date </span>25/08/2020
-                </td>
-                <td role="cell" class="nhsuk-table__cell">
-                  <span class="nhsuk-table-responsive__heading">End date </span>20/09/2020
-                </td>
-                <td role="cell" class="nhsuk-table__cell">
-                  <span class="nhsuk-table-responsive__heading">Cost</span>£12,454.56
-                </td>
-                <td role="cell" class="nhsuk-table__cell">
-                  <span class="nhsuk-table-responsive__heading">Status</span><strong style="color: #354550"; class="nhsuk-tag no-caps nhsuk-tag--green">Processed</strong></td>
-                </td>
-                <td role="cell" class="nhsuk-table__cell">
-                  <span class="nhsuk-table-responsive__heading">Processed date </span>22/08/2020
-                </td>
-                <td role="cell" class="nhsuk-table__cell">
-                  <span class="nhsuk-table-responsive__heading">Action</span>-
-                </td>
-              </tr>
-            </tbody>
-          </table> -->
           <div class="nhsuk-table-responsive">
             <table class="nhsuk-table">
                <caption class="nhsuk-table__caption">Treatments</caption>
-               <h2 class="nhsuk-label--m" id="treatments">EHIC treatments</h2>
+               <h2 class="nhsuk-label--m">EHIC treatments</h2>
                <span class="nhsuk-hint">Added by Airedale NHS Foundation Trust</span>
                <thead class="nhsuk-table__head">
                      <th class="nhsuk-table__header" scope="col">Treatment ID</th>
@@ -230,9 +131,8 @@ Person record view
                      <td class="nhsuk-table__cell ">-</td>
                   </tr>
                </tbody>
-            </table> 
-         </div>
-         <br>
+            </table>
+         </div> 
          <p><a href="entitlement-ehic-details">View EHIC details</a></p>
         </div>
       </details>
