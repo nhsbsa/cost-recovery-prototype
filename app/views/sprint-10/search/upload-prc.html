@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block pageTitle %}
-Duplicate treatment
+Upload a copy of the PRC
 {% endblock %}
 
 {% block header %}
@@ -19,7 +19,7 @@ Duplicate treatment
     </div>
 
     <div class="nhsuk-header__content" id="content-header">
-      <a style="color: #ffffff; padding-top:10px; float: right;" href="sign-in">Sign out</a>
+      <p style="color: #ffffff; display: inline-block;font-size: 16px; padding-top:10px; margin-bottom: 0px;">Signed in as <a href="account" style="color: #ffffff;" >Paul Mathew</a> (<a style="color: #ffffff;" href="sign-in">Sign out</a>)</p>
     </div>
   </div>
 
@@ -37,44 +37,25 @@ Duplicate treatment
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          Upload a copy of the PRC (optional)
+        </h1>
+      </legend>
 
-    <h1 class="nhsuk-label-wrapper">
-      <label class="nhsuk-label nhsuk-label--l" for="duplicateTreatmentEntry">
-        Duplicate treatment entry
-      </label></h1>
+      <div class="nhsuk-hint">
+        The selected file must be a PDF, BMP, PNG, JPG or JPEG.
+      </div>
 
-    <p>You have entered a treatment that is already existing.</p>
-    <div class="nhsuk-table-responsive">
-      <table class="nhsuk-table">
-        <caption class="nhsuk-table__caption">Historic treatments</caption>
-        <thead class="nhsuk-table__head">
-          <tr class="nhsuk-table__row">
-            <th class="nhsuk-table__header" scope="col">Treatment</th>
-            <th class="nhsuk-table__header" scope="col">Start date</th>
-            <th class="nhsuk-table__header" scope="col">End date</th>
-            <th class="nhsuk-table__header" scope="col">Cost</th>
-          </tr>
-        </thead>
-        <tbody class="nhsuk-table__body">
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">Entered treatment</td>
-            
-            <td class="nhsuk-table__cell ">10/03/2020</td>
-            <td class="nhsuk-table__cell ">11/04/2020</td>
-            <td class="nhsuk-table__cell ">£783.45</td>
-          </tr>
-          <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">Existing treatment</td>
-            <td class="nhsuk-table__cell ">10/03/2020</td>
-            <td class="nhsuk-table__cell ">11/04/2020</td>
-            <td class="nhsuk-table__cell ">£783.45</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-     <br> 
-    <p>On cancel, the treatment you have entered will not be saved and the existing treatment will remain as it is.</p> 
-    <a style="margin-right: 20px;" class="nhsuk-button" href="home">Cancel</a>
+      <input class="file-upload" id="file-upload" name="file-upload" type="file" aria-describedby="file-upload">
+    </fieldset> 
+
+    <br>
+      
+    <a style="margin-right: 20px;" class="nhsuk-button" href="address-prc">Continue</a>
+    <a class="nhsuk-button nhsuk-button--secondary" href="save-as-draft-confirmation">Save as draft</a>
+    <p><a href="home">Cancel</a></p>
 
  </div>
 </div>
