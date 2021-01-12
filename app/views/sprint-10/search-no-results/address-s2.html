@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block pageTitle %}
-Treatment cost
+Address details
 {% endblock %}
 
 {% block header %}
@@ -38,24 +38,48 @@ Treatment cost
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
     <span class="nhsuk-caption-l">
-      Treatment details
+      Address details
     </span>
-    <div class="nhsuk-form-group">
-      <h1 class="nhsuk-label-wrapper">
-        <h1 class="nhsuk-label-wrapper">
-          <label class="nhsuk-label nhsuk-label--l" for="cost">
-            What is the full cost of the treatment, in pounds and pence?
-          </label></h1>
-  
-          <div class="nhsuk-hint">
-            For example, £15234.21
-          </div>
-      <input class="nhsuk-input  nhsuk-input--width-20" id="cost" name="cost" type="text" value="£">
-    </div>
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          What is Antonio Cruz's address in Spain?
+        </h1>
+      </legend>
 
-    <a class="nhsuk-button" href="check-your-answers-s2-sec1">Continue</a>
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="addressLine1">
+          Address line 1 
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="addressLine1" name="address-line-1" type="text">
+      </div>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="addressLine2">
+          Address line 2 (optional)
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="addressLine2" name="address-line-2" type="text">
+      </div>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="addressLine3">
+          Address line 3 (optional)
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="addressLine3" name="address-line-3" type="text">
+      </div>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="country">
+          Country
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="country" name="country" type="text" value="Spain" disabled>
+      </div>
+    
+    </fieldset>
+
+    <a style="margin-right: 20px;" class="nhsuk-button" href="check-your-answers-s2-sec2">Continue</a>
+    <a class="nhsuk-button nhsuk-button--secondary" href="save-as-draft-confirmation">Save as draft</a>
     <p><a href="home">Cancel</a></p>
-
 
  </div>
 </div>

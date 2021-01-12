@@ -2,6 +2,7 @@
 {% block pageTitle %}
 Search person results
 {% endblock %}
+
 {% block header %}
 <header class="nhsuk-header" role="banner">
   <div class="nhsuk-width-container nhsuk-header__container">
@@ -55,7 +56,7 @@ Search person results
         <label class="nhsuk-label" for="treatmentID">
           Treatment ID
         </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="treatmentID" name="treatmentID" type="text" value="63645">
+        <input class="nhsuk-input nhsuk-input--width-20" id="treatmentID" name="treatmentID" type="text"> <br>
       </div>
 
       <span class="nhsuk-hint" >
@@ -64,16 +65,16 @@ Search person results
     
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="firstName">
-          First name
+          First name (Given names/Forenames)
         </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="firstName" name="firstname" type="text">
+        <input class="nhsuk-input nhsuk-input--width-20" id="firstName" name="firstname" type="text" value="Antonio">
       </div>
 
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="lastName">
-          Last name
+          Last name (Name/Surname)
         </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="lastName" name="lastname" type="text">
+        <input class="nhsuk-input nhsuk-input--width-20" id="lastName" name="lastname" type="text" value="Cruz">
       </div>
     
       <div class="nhsuk-form-group">
@@ -119,7 +120,7 @@ Search person results
         </label>
         <input class="nhsuk-input nhsuk-input--width-20" id="country" name="country" type="text"> <br>
       </div>
-    
+
     </fieldset>
 
     <a class="nhsuk-button" href="search-person-results#results">Search</a>
@@ -128,14 +129,13 @@ Search person results
   </div>
 
   <div class="nhsuk-grid-column-full" id="results">
-    <h3>1 result found</h3>
+    <h3>2 results found</h3>
 
     <div class="nhsuk-table-responsive new-filtered-table">
       <table class="nhsuk-table new-table">
         <caption class="nhsuk-table__caption">Sent forms</caption>
         <thead class="nhsuk-table__head">
           <tr class="nhsuk-table__row">
-            <th class="nhsuk-table__header" scope="col">Treatment ID</th>
             <th class="nhsuk-table__header" scope="col">First name</th>
             <th class="nhsuk-table__header" scope="col">Last name</th>
             <th class="nhsuk-table__header" scope="col">Date of birth</th>
@@ -145,14 +145,19 @@ Search person results
         </thead>
         <tbody class="nhsuk-table__body">
           <tr class="nhsuk-table__row">
-            <td class="nhsuk-table__cell ">63645</td>
-            <td class="nhsuk-table__cell ">Julia</td>
-            <td class="nhsuk-table__cell ">Laurent</td>
+            <td class="nhsuk-table__cell ">Antonio</td>
+            <td class="nhsuk-table__cell ">Cruz</td>
+            <td class="nhsuk-table__cell ">10/11/1986</td>
+            <td class="nhsuk-table__cell ">Spain</td>
+            <td class="nhsuk-table__cell "><a href="person-record-view-ehic">View record</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell ">Antonio</td>
+            <td class="nhsuk-table__cell ">Cruz</td>
             <td class="nhsuk-table__cell ">22/03/1975</td>
             <td class="nhsuk-table__cell ">Spain</td>
-            <td class="nhsuk-table__cell "><a href="person-record-view-ehic#treatments">View record</a></td>
+            <td class="nhsuk-table__cell "><a href="#">View record</a></td>
           </tr>
-    
         </tbody>
       </table>
     </div>

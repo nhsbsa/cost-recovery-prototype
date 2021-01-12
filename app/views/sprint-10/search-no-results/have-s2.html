@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block pageTitle %}
-Treatment cost
+Have S2
 {% endblock %}
 
 {% block header %}
@@ -38,23 +38,38 @@ Treatment cost
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
     <span class="nhsuk-caption-l">
-      Treatment details
+      S2/E112 details
     </span>
-    <div class="nhsuk-form-group">
-      <h1 class="nhsuk-label-wrapper">
-        <h1 class="nhsuk-label-wrapper">
-          <label class="nhsuk-label nhsuk-label--l" for="cost">
-            What is the full cost of the treatment, in pounds and pence?
-          </label></h1>
-  
-          <div class="nhsuk-hint">
-            For example, £15234.21
-          </div>
-      <input class="nhsuk-input  nhsuk-input--width-20" id="cost" name="cost" type="text" value="£">
-    </div>
+    <form action="have-s2" method="post">
+      {% call fieldset({
+        legend: {
+          "text": "Do you have a copy of the S2/E112?",
+          "classes": "nhsuk-fieldset__legend--l",
+          "isPageHeading": true
+        }
+        }) %}
+      
+      {{ radios({
+         "idPrefix": "s2",
+         "name": "s2",
+         "items": [
+           {
+             "value": "yes",
+             "text": "Yes"
+           },
+           {
+             "value": "no",
+             "text": "No"
+           }
+         ]
+       }) }}
 
-    <a class="nhsuk-button" href="check-your-answers-s2-sec1">Continue</a>
-    <p><a href="home">Cancel</a></p>
+       {% endcall %}
+
+      <button style="margin-right: 20px;" class="nhsuk-button" type="submit">Continue</button>
+      <a class="nhsuk-button nhsuk-button--secondary" href="save-as-draft-confirmation">Save as draft</a>
+      <p><a href="home">Cancel</a></p>
+   </form>
 
 
  </div>

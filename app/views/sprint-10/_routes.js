@@ -168,5 +168,58 @@ router.post('/cancel-confirm', function (req, res) {
 
 })
 
+//upload-another-s2.html
+router.post('/upload-file', function (req, res) {
+
+  const selectedRadio = req.body.file;
+
+  if (selectedRadio === "yes"){
+    res.redirect('enter-details-s2-2')
+  }
+  if (selectedRadio === "no"){
+    res.redirect('address-s2')
+  }
+  else {
+    res.redirect('upload-another-s2')
+  }
+
+})
+
+
+//delete-file-confirmation.html
+router.post('/delete-confirm', function (req, res) {
+
+  const selectedRadio = req.body.delete;
+
+  if (selectedRadio === "yes"){
+    res.redirect('view-treatment-details-delete-conf')
+  }
+  if (selectedRadio === "no"){
+    res.redirect('view-treatment-details')
+  }
+  else {
+    res.redirect('delete-file-confirmation')
+  }
+
+})
+
+//have-s2.html
+router.post('/have-s2', function (req, res) {
+
+  const selectedRadio = req.body.s2;
+
+  if (selectedRadio === "yes"){
+    res.redirect('enter-details-s2')
+  }
+  if (selectedRadio === "no"){
+    res.redirect('contact-ops-team')
+  }
+  else {
+    res.redirect('have-s2')
+  }
+
+})
+
+
 
   module.exports = router

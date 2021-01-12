@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block pageTitle %}
-Treatment cost
+Search institution
 {% endblock %}
 
 {% block header %}
@@ -38,25 +38,61 @@ Treatment cost
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
     <span class="nhsuk-caption-l">
-      Treatment details
+      S2/E112 details
     </span>
-    <div class="nhsuk-form-group">
-      <h1 class="nhsuk-label-wrapper">
-        <h1 class="nhsuk-label-wrapper">
-          <label class="nhsuk-label nhsuk-label--l" for="cost">
-            What is the full cost of the treatment, in pounds and pence?
-          </label></h1>
-  
-          <div class="nhsuk-hint">
-            For example, £15234.21
-          </div>
-      <input class="nhsuk-input  nhsuk-input--width-20" id="cost" name="cost" type="text" value="£">
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          What is the institution ID?
+        </h1>
+      </legend>
+     
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="institutionID">
+          Institution ID
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="institutionID" name="inscode" type="text">
+      </div>
+    
+    </fieldset>
+
+    <a style="margin-right: 20px;" class="nhsuk-button" href="#result">Search</a>
+    <a class="nhsuk-button nhsuk-button--secondary" href="save-as-draft-confirmation">Save as draft</a>
+    <p><a href="home">Cancel</a></p>
+  </div>
+
+  <div class="nhsuk-grid-column-full">
+    
+    <br>
+    <h3 id="result">1 result found</h3>
+
+    <div class="nhsuk-hint">
+      Select the correct institution to continue.
+    </div>
+    
+    <div class="nhsuk-table-responsive">
+      <table class="nhsuk-table">
+        <caption class="nhsuk-table__caption">Institution search results</caption>
+        <thead class="nhsuk-table__head">
+          <tr class="nhsuk-table__row">
+            <th class="nhsuk-table__header" scope="col">Institution ID</th>
+            <th class="nhsuk-table__header" scope="col">Institution name</th>
+            <th class="nhsuk-table__header" scope="col">Institution address</th>
+            <th class="nhsuk-table__header" scope="col"></th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">2800</td>
+            <td class="nhsuk-table__cell ">National Institute of Social Security, Provincial Head Office of Madrid</td>
+            <td class="nhsuk-table__cell ">Plaza de los Astros 5-7, 28007 Madrid</td>
+            <td class="nhsuk-table__cell "><a href="upload-s2">Select</a></td>
+          </tr>
+
+        </tbody>
+      </table>
     </div>
 
-    <a class="nhsuk-button" href="check-your-answers-s2-sec1">Continue</a>
-    <p><a href="home">Cancel</a></p>
-
-
- </div>
+  </div>
 </div>
 {% endblock %}

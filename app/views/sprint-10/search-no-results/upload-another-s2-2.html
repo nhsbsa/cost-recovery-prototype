@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block pageTitle %}
-Treatment cost
+Upload another copy of the S2
 {% endblock %}
 
 {% block header %}
@@ -38,24 +38,72 @@ Treatment cost
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
     <span class="nhsuk-caption-l">
-      Treatment details
+      S2/E112 details
     </span>
-    <div class="nhsuk-form-group">
-      <h1 class="nhsuk-label-wrapper">
-        <h1 class="nhsuk-label-wrapper">
-          <label class="nhsuk-label nhsuk-label--l" for="cost">
-            What is the full cost of the treatment, in pounds and pence?
-          </label></h1>
-  
-          <div class="nhsuk-hint">
-            For example, £15234.21
-          </div>
-      <input class="nhsuk-input  nhsuk-input--width-20" id="cost" name="cost" type="text" value="£">
-    </div>
 
-    <a class="nhsuk-button" href="check-your-answers-s2-sec1">Continue</a>
-    <p><a href="home">Cancel</a></p>
+    <h1 class="nhsuk-heading-l">Upload files</h1>
 
+    <dl class="nhsuk-summary-list">
+      <h2 class="nhsuk-heading-m">File added</h2>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          File 2
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          s2file2.jpg
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+    
+          <a href="">
+            View<span class="nhsuk-u-visually-hidden"> file</span>
+          </a>
+    
+        </dd>
+    
+        <dd class="nhsuk-summary-list__actions">
+    
+          <a href="#">
+            Delete<span class="nhsuk-u-visually-hidden"> file</span>
+          </a>
+    
+        </dd>
+    
+      </div>
+    
+    </dl>
+
+    <form action="upload-file-another" method="post">
+      {% call fieldset({
+        legend: {
+          "text": "Do you want to upload a copy of another S2 that covers the treatment?",
+          "classes": "nhsuk-fieldset__legend--m",
+          "isPageHeading": true
+        }
+        }) %}
+      
+      {{ radios({
+         "idPrefix": "file",
+         "name": "file",
+         "items": [
+           {
+             "value": "yes",
+             "text": "Yes"
+           },
+           {
+             "value": "no",
+             "text": "No"
+           }
+         ]
+       }) }}
+
+       {% endcall %}
+
+       <a style="margin-right: 20px;" class="nhsuk-button" href="address-s2-2">Continue</a>
+      <a class="nhsuk-button nhsuk-button--secondary" href="save-as-draft-confirmation">Save as draft</a>
+      <p><a href="home">Cancel</a></p>
+   </form>
 
  </div>
 </div>
