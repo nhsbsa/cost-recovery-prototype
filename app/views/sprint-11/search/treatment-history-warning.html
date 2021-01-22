@@ -1,0 +1,147 @@
+{% extends 'layout.html' %}
+{% block pageTitle %}
+Treatment history
+{% endblock %}
+
+{% block header %}
+<header class="nhsuk-header" role="banner">
+  <div class="nhsuk-width-container nhsuk-header__container">
+    <div class="nhsuk-header__logo nhsuk-header__logo--only"><a class="nhsuk-header__link nhsuk-header__link--service " href="home" aria-label="Overseas visitor treatment portal homepage">
+        <svg class="nhsuk-logo" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false" viewBox="0 0 40 16">
+          <path class="nhsuk-logo__background" d="M0 0h40v16H0z"></path>
+          <path class="nhsuk-logo__text" d="M3.9 1.5h4.4l2.6 9h.1l1.8-9h3.3l-2.8 13H9l-2.7-9h-.1l-1.8 9H1.1M17.3 1.5h3.6l-1 4.9h4L25 1.5h3.5l-2.7 13h-3.5l1.1-5.6h-4.1l-1.2 5.6h-3.4M37.7 4.4c-.7-.3-1.6-.6-2.9-.6-1.4 0-2.5.2-2.5 1.3 0 1.8 5.1 1.2 5.1 5.1 0 3.6-3.3 4.5-6.4 4.5-1.3 0-2.9-.3-4-.7l.8-2.7c.7.4 2.1.7 3.2.7s2.8-.2 2.8-1.5c0-2.1-5.1-1.3-5.1-5 0-3.4 2.9-4.4 5.8-4.4 1.6 0 3.1.2 4 .6"></path>
+          <image src="https://assets.nhs.uk/images/nhs-logo.png" xlink:href=""></image>
+        </svg>
+        <span class="nhsuk-header__service-name">
+          Overseas visitor treatment
+        </span>
+      </a>
+    </div>
+
+    <div class="nhsuk-header__content" id="content-header">
+      <p style="color: #ffffff; display: inline-block;font-size: 16px; padding-top:10px; margin-bottom: 0px;">Signed in as <a href="account" style="color: #ffffff;" >Paul Mathew</a> (<a style="color: #ffffff;" href="sign-in">Sign out</a>)</p>
+    </div>
+  </div>
+
+</header>
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="javascript:history.back()">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back</a>
+</div>
+
+<div class="nhsuk-grid-row">
+  
+  <div class="nhsuk-grid-column-full">
+  
+    <h1 class="nhsuk-label-wrapper">
+      <label class="nhsuk-label nhsuk-label--l" for="treatmentHistory">
+        Check ordinary residence for Louis Victor
+      </label></h1>
+
+        <div class="nhsuk-inset-text">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p style="font-weight: bold;">Louis Victor has had more than xx treatments in the last xx months.</p>
+        </div>
+
+     <p class="nhsuk-heading-s">Showing treatment history for Louis Victor</p>
+      <div class="nhsuk-table-responsive">
+        <table class="nhsuk-table">
+          <caption class="nhsuk-table__caption">Historic treatments</caption>
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="col">Treatment ID</th>
+              <th class="nhsuk-table__header" scope="col">Start date</th>
+              <th class="nhsuk-table__header" scope="col">End date</th>
+              <th class="nhsuk-table__header" scope="col">Processed date</th>
+              <th class="nhsuk-table__header" scope="col">Trust name</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">63832</td>
+              <td class="nhsuk-table__cell ">10/03/2020</td>
+              <td class="nhsuk-table__cell ">01/04/2020</td>
+              <td class="nhsuk-table__cell ">20/04/2020</td>
+              <td class="nhsuk-table__cell ">Airedale NHS Foundation Trust</td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">62887</td>
+              <td class="nhsuk-table__cell ">24/02/2020</td>
+              <td class="nhsuk-table__cell ">26/02/2020</td>
+              <td class="nhsuk-table__cell ">20/03/2020</td>
+              <td class="nhsuk-table__cell ">Bedford Hospital NHS Trust</td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">62554</td>
+              <td class="nhsuk-table__cell ">15/02/2020</td>
+              <td class="nhsuk-table__cell ">17/02/2020</td>
+              <td class="nhsuk-table__cell ">30/02/2020</td>
+              <td class="nhsuk-table__cell ">Cambridge University Hospitals NHS Foundation Trust</td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">60883</td>
+              <td class="nhsuk-table__cell ">12/01/2020</td>
+              <td class="nhsuk-table__cell ">13/01/2020</td>
+              <td class="nhsuk-table__cell ">30/01/2020</td>
+              <td class="nhsuk-table__cell ">East Sussex Healthcare NHS Trust</td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">60662</td>
+              <td class="nhsuk-table__cell ">24/12/2019</td>
+              <td class="nhsuk-table__cell ">26/12/2019</td>
+              <td class="nhsuk-table__cell ">28/12/2019</td>
+              <td class="nhsuk-table__cell ">Cambridge University Hospitals NHS Foundation Trust</td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">60652</td>
+              <td class="nhsuk-table__cell ">16/11/2019</td>
+              <td class="nhsuk-table__cell ">17/11/2019</td>
+              <td class="nhsuk-table__cell ">25/11/2019</td>
+              <td class="nhsuk-table__cell ">Airedale NHS Foundation Trust</td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">60632</td>
+              <td class="nhsuk-table__cell ">03/02/2016</td>
+              <td class="nhsuk-table__cell ">05/02/2016</td>
+              <td class="nhsuk-table__cell ">10/03/2016</td>
+              <td class="nhsuk-table__cell ">Airedale NHS Foundation Trust</td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">60612</td>
+              <td class="nhsuk-table__cell ">26/05/2015</td>
+              <td class="nhsuk-table__cell ">24/05/2015</td>
+              <td class="nhsuk-table__cell ">28/05/2015</td>
+              <td class="nhsuk-table__cell ">Gateshead Health NHS Foundation Trust</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
+        <ul class="nhsuk-list nhsuk-pagination__list">
+          <li class="nhsuk-pagination-item--next">
+            <a class="nhsuk-pagination__link nhsuk-pagination__link--next" href="#">
+              <span class="nhsuk-pagination__title">Next</span>
+              <span class="nhsuk-u-visually-hidden">:</span>
+              <span class="nhsuk-pagination__page">Page 2 of 2</span>
+              <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <p>Click on continue if you still want to proceed with the treatment, if you are not sure you can save as draft and get back to it later. Click on cancel, if Louis Victor is ordinary resident. </p>
+      <a style="margin-right: 20px;" class="nhsuk-button" href="upload-prc">Continue</a>
+      <a class="nhsuk-button nhsuk-button--secondary" href="save-as-draft-confirmation">Save as draft</a>
+      <p><a href="cancel-confirmation">Cancel</a></p>
+
+ </div>
+</div>
+{% endblock %}

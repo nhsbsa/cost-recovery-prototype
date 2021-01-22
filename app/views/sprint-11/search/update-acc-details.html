@@ -1,0 +1,113 @@
+{% extends 'layout.html' %}
+{% block pageTitle %}
+Update account details
+{% endblock %}
+
+{% block header %}
+<header class="nhsuk-header" role="banner">
+  <div class="nhsuk-width-container nhsuk-header__container">
+    <div class="nhsuk-header__logo nhsuk-header__logo--only"><a class="nhsuk-header__link nhsuk-header__link--service " href="home" aria-label="Overseas visitor treatment portal homepage">
+        <svg class="nhsuk-logo" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false" viewBox="0 0 40 16">
+          <path class="nhsuk-logo__background" d="M0 0h40v16H0z"></path>
+          <path class="nhsuk-logo__text" d="M3.9 1.5h4.4l2.6 9h.1l1.8-9h3.3l-2.8 13H9l-2.7-9h-.1l-1.8 9H1.1M17.3 1.5h3.6l-1 4.9h4L25 1.5h3.5l-2.7 13h-3.5l1.1-5.6h-4.1l-1.2 5.6h-3.4M37.7 4.4c-.7-.3-1.6-.6-2.9-.6-1.4 0-2.5.2-2.5 1.3 0 1.8 5.1 1.2 5.1 5.1 0 3.6-3.3 4.5-6.4 4.5-1.3 0-2.9-.3-4-.7l.8-2.7c.7.4 2.1.7 3.2.7s2.8-.2 2.8-1.5c0-2.1-5.1-1.3-5.1-5 0-3.4 2.9-4.4 5.8-4.4 1.6 0 3.1.2 4 .6"></path>
+          <image src="https://assets.nhs.uk/images/nhs-logo.png" xlink:href=""></image>
+        </svg>
+        <span class="nhsuk-header__service-name">
+          Overseas visitor treatment
+        </span>
+      </a>
+    </div>
+
+    <div class="nhsuk-header__content" id="content-header">
+      <p style="color: #ffffff; display: inline-block;font-size: 16px; padding-top:10px; margin-bottom: 0px;">Signed in as <a href="account" style="color: #ffffff;" >Paul Mathew</a> (<a style="color: #ffffff;" href="sign-in">Sign out</a>)</p>
+    </div>
+  </div>
+
+</header>
+{% endblock %}
+
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="home">Home</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="account">Account</a></li>
+      <li class="nhsuk-breadcrumb__item">Update account details</li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="account">Back to Account</a></p>
+  </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+   <div class="nhsuk-grid-column-two-thirds">
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          Update account details
+        </h1>
+      </legend>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="firstName">
+          First name
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="firstName" name="firstname" type="text" value="Paul">
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="lastName">
+          Last name
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="lastName" name="lastname" type="text" value="Mathew"> 
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="emailAddress">
+          Email address
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="emailAddress" name="emailaddress" type="text" value="paul.mathew@example.com">
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="phoneNumber">
+          Phone number
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="phoneNumber" name="phonenumber" type="text" value="07700 900362">
+      </div>
+      
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="select-1">
+          Region
+        </label>
+        <select class="nhsuk-select" id="select-1" name="select-1">
+          <option value="1">Select region</option>
+          <option value="0" selected>England</option>
+          <option value="2">Scotland</option>
+          <option value="3">Wales</option>
+          <option value="4">Northern Ireland</option>
+          <option value="5">Gibraltar</option>
+        </select>
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="select-2">
+          Trust
+        </label>
+        <select class="nhsuk-select" id="select-2" name="select-2">
+          <option value="0" selected>Select trust</option>
+          <option value="1"selected >Trust option 1</option>
+          <option value="2">Trust option 2</option>
+          <option value="3">Trust option 3</option>
+        </select>
+      </div>
+     
+    </fieldset>
+
+    <a style="margin-right: 20px" class="nhsuk-button" href="update-confirmation">Update</a>
+    <a class="nhsuk-button nhsuk-button--secondary" href="account">Cancel</a>
+
+   </div>
+</div>
+{% endblock %}

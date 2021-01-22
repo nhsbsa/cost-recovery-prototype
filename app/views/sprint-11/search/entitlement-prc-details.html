@@ -1,0 +1,181 @@
+{% extends 'layout.html' %}
+{% block pageTitle %}
+EHIC details
+{% endblock %}
+
+{% block header %}
+<header class="nhsuk-header" role="banner">
+  <div class="nhsuk-width-container nhsuk-header__container">
+    <div class="nhsuk-header__logo nhsuk-header__logo--only"><a class="nhsuk-header__link nhsuk-header__link--service " href="home" aria-label="Overseas visitor treatment portal homepage">
+        <svg class="nhsuk-logo" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false" viewBox="0 0 40 16">
+          <path class="nhsuk-logo__background" d="M0 0h40v16H0z"></path>
+          <path class="nhsuk-logo__text" d="M3.9 1.5h4.4l2.6 9h.1l1.8-9h3.3l-2.8 13H9l-2.7-9h-.1l-1.8 9H1.1M17.3 1.5h3.6l-1 4.9h4L25 1.5h3.5l-2.7 13h-3.5l1.1-5.6h-4.1l-1.2 5.6h-3.4M37.7 4.4c-.7-.3-1.6-.6-2.9-.6-1.4 0-2.5.2-2.5 1.3 0 1.8 5.1 1.2 5.1 5.1 0 3.6-3.3 4.5-6.4 4.5-1.3 0-2.9-.3-4-.7l.8-2.7c.7.4 2.1.7 3.2.7s2.8-.2 2.8-1.5c0-2.1-5.1-1.3-5.1-5 0-3.4 2.9-4.4 5.8-4.4 1.6 0 3.1.2 4 .6"></path>
+          <image src="https://assets.nhs.uk/images/nhs-logo.png" xlink:href=""></image>
+        </svg>
+        <span class="nhsuk-header__service-name">
+          Overseas visitor treatment
+        </span>
+      </a>
+    </div>
+
+    <div class="nhsuk-header__content" id="content-header">
+      <p style="color: #ffffff; display: inline-block;font-size: 16px; padding-top:10px; margin-bottom: 0px;">Signed in as <a href="account" style="color: #ffffff;" >Paul Mathew</a> (<a style="color: #ffffff;" href="sign-in">Sign out</a>)</p>
+    </div>
+  </div>
+
+</header>
+{% endblock %}
+
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="home">Home</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="search-person">Search person</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="person-record-view-ehic">View record</a></li>
+      <li class="nhsuk-breadcrumb__item">PRC details</li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="person-record-view-ehic">Back to View record</a></p>
+  </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <span class="nhsuk-caption-m">
+      PRC details
+    </span>
+      <h1 class="nhsuk-label--l ">
+        Julia Laurent
+      </h1>
+  </div>
+
+  <div class="nhsuk-grid-column-two-thirds">
+  
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Issuing member state
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Spain
+        </dt>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="nhsuk-label--m" style="font-size: 22px;">Card holder related information</h2>  
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Laurent
+        </dt>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Given names
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Julia
+        </dt>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+         Date of birth
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          06/12/1988
+        </dt>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Personal identification number
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          280000000293
+        </dt>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="nhsuk-label--m" style="font-size: 22px;">Competent institution related information</h2>
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Identification number of the institution
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          2800 - INSS MADRID
+        </dd>
+      </div>
+    </dl>  
+
+    <h2 class="nhsuk-label--m" style="font-size: 22px;">Card related information</h2>
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Identification number of the card
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          80724028000420000098
+        </dt>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Expiry date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          04/08/2021
+        </dt>
+        </dd>
+      </div>
+    </dl>
+
+    <h4>Certificate details</h4>
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Valid period from
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          12/08/2020
+        </dt>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Valid period to
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          14/08/2020
+        </dt>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Delivery date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          12/08/2020
+        </dt>
+        </dd>
+      </div>
+    </dl>
+
+  </div>
+</div>
+{% endblock %}
