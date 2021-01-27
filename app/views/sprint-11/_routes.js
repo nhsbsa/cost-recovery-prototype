@@ -240,6 +240,57 @@ router.post('/additional-cost', function (req, res) {
 
 })
 
+//Verify-cost.html
+router.post('/cost', function (req, res) {
+
+  const selectedRadio = req.body.cost;
+
+  if (selectedRadio === "yes"){
+    res.redirect('confirmation-ehic-ac')
+  }
+  if (selectedRadio === "no"){
+    res.redirect('verify-additional-costs')
+  }
+  else {
+    res.redirect('verify-cost')
+  }
+
+})
+
+//Verify-additional-costs.html
+router.post('/add-cost', function (req, res) {
+
+  const selectedRadio = req.body.add;
+
+  if (selectedRadio === "yes"){
+    res.redirect('summary-cost')
+  }
+  if (selectedRadio === "no"){
+    res.redirect('edit-treatment-details')
+  }
+  else {
+    res.redirect('verify-additional-costs')
+  }
+
+})
+
+//Verify-cost-2.html
+router.post('/current-total', function (req, res) {
+
+  const selectedRadio = req.body.cost;
+
+  if (selectedRadio === "yes"){
+    res.redirect('confirmation-ehic-ac')
+  }
+  if (selectedRadio === "no"){
+    res.redirect('new-total-cost')
+  }
+  else {
+    res.redirect('verify-cost')
+  }
+
+})
+
 
 
   module.exports = router
