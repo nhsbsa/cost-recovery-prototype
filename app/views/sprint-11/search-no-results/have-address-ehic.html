@@ -27,11 +27,10 @@ Have home address or not
           "isPageHeading": true
         }
         }) %}
-        {{ hint({
-          "text": "The home address is important for the processing of claims.",
-          "classes": "nhsuk-u-margin-bottom-2"
-        }) }}
-      
+        <div class="nhsuk-inset-text" style="margin-top: 0px; margin-bottom: 25px;">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p>The home address is important for the processing of claims.</p>
+        </div>
       {{ radios({
          "idPrefix": "address",
          "name": "address",
