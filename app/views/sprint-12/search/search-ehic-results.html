@@ -1,0 +1,131 @@
+{% extends 'layout-with-login.html' %}
+{% block pageTitle %}
+Search results
+{% endblock %}
+
+
+
+{% block content %}
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="javascript:history.back()">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back</a>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <span class="nhsuk-caption-l">
+      EHIC details
+    </span>
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          Search for a person with an EHIC that covers the treatment dates
+        </h1>
+      </legend>
+
+      <span class="nhsuk-hint">
+        Enter the details as they appear on the EHIC.
+      </span>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="name">
+          Name
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="name" name="name" type="text" value="Rodríguez">
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="givenName">
+          Given names
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="givenName" name="givenname" type="text" value="Maria">
+      </div>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="dateOfBirth">
+          Date of birth
+        </label>
+
+        <div class="nhsuk-hint" id="hint">
+          For example, 15 03 1984
+        </div>
+    
+        <div class="nhsuk-date-input" id="example">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="day">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="day" name="day" type="number" pattern="[0-9]*" value="06">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="month">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="month" name="month" type="number" pattern="[0-9]*" value="12">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="year">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="year" name="year" type="number" pattern="[0-9]*" value="1988">
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </fieldset>
+
+    <a class="nhsuk-button" href="search-ehic-results#results">Search</a>
+    <p><a href="home">Cancel</a></p>
+
+ </div>
+
+ <div class="nhsuk-grid-column-full">
+    
+  <br>
+  <h3 id="result">1 result found</h3>
+
+  <div class="nhsuk-hint">
+    Select the correct person to continue.
+  </div>
+
+  <div class="nhsuk-table-responsive">
+    <table class="nhsuk-table">
+      <caption class="nhsuk-table__caption">Person search results</caption>
+      <thead class="nhsuk-table__head">
+        <tr class="nhsuk-table__row">
+          <th class="nhsuk-table__header" scope="col">Name</th>
+          <th class="nhsuk-table__header" scope="col">Given names</th>
+          <th class="nhsuk-table__header" scope="col">Date of birth</th>
+          <th class="nhsuk-table__header" scope="col">Personal identification number</th>
+          <th class="nhsuk-table__header" scope="col"></th>
+        </tr>
+      </thead>
+      <tbody class="nhsuk-table__body">
+  
+        <tr class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">Rodríguez</td>
+          <td class="nhsuk-table__cell ">Maria</td>
+          <td class="nhsuk-table__cell ">06/12/1988</td>
+          <td class="nhsuk-table__cell "> 280000000293</td>
+          <td class="nhsuk-table__cell "><a href="details-ehic">Select</a></td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+<br>
+  <p>If none of the results match <a href="enter-details-ehic">add a person</a></p>
+
+</div>
+
+</div>
+{% endblock %}

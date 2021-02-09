@@ -1,0 +1,151 @@
+{% extends 'layout-with-login.html' %}
+{% block pageTitle %}
+Person record view
+{% endblock %}
+
+
+
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="home">Home</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="search-person">Search person</a></li>
+      <li class="nhsuk-breadcrumb__item">View record</li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="search-person">Back to Search person</a></p>
+  </div>
+</nav>
+<div class="app-phase-banner">
+  <div class="nhsuk-width-container app-phase-banner__container">
+     <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+        Beta
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a new service - your <a href="#">feedback</a> will help us improve it.
+        </span>
+     </p>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <span class="nhsuk-caption-m">
+      Person record
+    </span>
+      <h1 class="nhsuk-label--l ">
+        Antonio Cruz
+      </h1>
+      <hr>
+    </div>
+ 
+    <div class="nhsuk-grid-column-one-third">
+      <h2 class="nhsuk-label--m" >Date of birth</h2>
+      <p>06/12/1988
+      </p>
+    </div>
+
+    <div class="nhsuk-grid-column-two-thirds">
+    <h2 class="nhsuk-label--m">Home address</h2>
+    <p>	3A Calle de las Huertas<br>
+      28005 Madrid<br>
+      Spain
+    </p>
+    </div>
+    
+
+    <div class="nhsuk-grid-column-full">
+      <hr>
+      <h2 class="nhsuk-label--m">Entitlements</h2>
+
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            S2 - valid from 01/11/2020 to	04/12/2020
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <div class="nhsuk-table-responsive">
+            <table class="nhsuk-table">
+               <caption class="nhsuk-table__caption">Treatments</caption>
+               <h2 class="app-side-nav__heading" id="treatments">S2 treatments</h2>
+               <span class="nhsuk-hint">Added by Airedale NHS Foundation Trust</span>
+               <thead class="nhsuk-table__head">
+                     <th class="nhsuk-table__header" scope="col">Treatment ID</th>
+                     <th class="nhsuk-table__header" scope="col">Start date</th>
+                     <th class="nhsuk-table__header" scope="col">End date</th>
+                     <th class="nhsuk-table__header" scope="col">Cost</th>
+                     <th class="nhsuk-table__header" scope="col">Status</th>
+                     <th class="nhsuk-table__header" scope="col">Processed date</th>
+                     <th class="nhsuk-table__header" scope="col">Action</th>
+                  </tr>
+               </thead>
+               <tbody class="nhsuk-table__body">
+                  <tr class="nhsuk-table__row">
+                     <td class="nhsuk-table__cell ">63955</td>
+                     <td class="nhsuk-table__cell ">03/11/2020</td>
+                     <td class="nhsuk-table__cell ">30/01/2021</td>
+                     <td class="nhsuk-table__cell ">£20,538.66</td>
+                     <td class="nhsuk-table__cell "><strong style="color: #354550"; class="nhsuk-tag no-caps nhsuk-tag--green">Processed</strong></td>
+                     <td class="nhsuk-table__cell ">05/12/2021</td>
+                     <td class="nhsuk-table__cell ">-</td>
+                  </tr>
+               </tbody>
+            </table>
+         </div> 
+         <br>
+         <p><a href="entitlement-s2-details">View S2 details</a></p>
+    
+        </div>
+      </details>
+
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            S2 - valid from 05/12/2020 to	01/02/2021
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <div class="nhsuk-table-responsive">
+            <table class="nhsuk-table">
+               <caption class="nhsuk-table__caption">Treatments</caption>
+               <h2 class="app-side-nav__heading" id="treatments">S2 treatments</h2>
+               <span class="nhsuk-hint">Added by Airedale NHS Foundation Trust</span>
+               <thead class="nhsuk-table__head">
+                     <th class="nhsuk-table__header" scope="col">Treatment ID</th>
+                     <th class="nhsuk-table__header" scope="col">Start date</th>
+                     <th class="nhsuk-table__header" scope="col">End date</th>
+                     <th class="nhsuk-table__header" scope="col">Cost</th>
+                     <th class="nhsuk-table__header" scope="col">Status</th>
+                     <th class="nhsuk-table__header" scope="col">Processed date</th>
+                     <th class="nhsuk-table__header" scope="col">Action</th>
+                  </tr>
+               </thead>
+               <tbody class="nhsuk-table__body">
+                  <tr class="nhsuk-table__row">
+                     <td class="nhsuk-table__cell ">63955</td>
+                     <td class="nhsuk-table__cell ">03/11/2020</td>
+                     <td class="nhsuk-table__cell ">30/01/2021</td>
+                     <td class="nhsuk-table__cell ">£20,538.66</td>
+                     <td class="nhsuk-table__cell "><strong style="color: #354550"; class="nhsuk-tag no-caps nhsuk-tag--green">Processed</strong></td>
+                     <td class="nhsuk-table__cell ">05/12/2021</td>
+                     <td class="nhsuk-table__cell ">-</td>
+                  </tr>
+               </tbody>
+            </table>
+         </div> 
+         <br>
+         <p><a href="entitlement-s2-details-2">View S2 details</a></p>
+    
+        </div>
+      </details>
+    
+    <a class="nhsuk-button" href="">Add Treatment</a>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+{% block pageTitle %}
+Sign in
+{% endblock %}
+{% block beforeContent %}    
+<div class="app-phase-banner">
+   <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+         <strong class="nhsuk-tag app-phase-banner__tag">
+         Beta
+         </strong>
+         <span class="app-phase-banner__text">
+         This is a new service - your <a href="#">feedback</a> will help us improve it.
+         </span>
+      </p>
+   </div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="nhsuk-grid-row">
+   <div class="nhsuk-grid-column-two-thirds">
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          Sign in
+        </h1>
+      </legend>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="emailAddress">
+          Email address
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="emailAddress" name="emailaddress" type="text">
+      </div>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="password">
+          Password
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="password" name="password" type="text"> <br>
+      </div>
+      <p><a href="password-reset">Forgot your password?</a></p>
+    </fieldset>
+
+    <a class="nhsuk-button" href="home">Sign in</a>
+
+    <hr>
+
+    <p>Don't have an account?</p>
+    <a class="nhsuk-button nhsuk-button--secondary" href="request-account">Request account</a>
+
+   </div>
+</div>
+{% endblock %}

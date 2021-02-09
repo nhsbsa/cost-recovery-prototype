@@ -1,0 +1,77 @@
+{% extends 'layout-with-login.html' %}
+{% block pageTitle %}
+Search institution
+{% endblock %}
+
+
+
+{% block content %}
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="javascript:history.back()">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back</a>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <span class="nhsuk-caption-l">
+      S2/E112 details
+    </span>
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          What is the institution ID?
+        </h1>
+      </legend>
+     
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="institutionID">
+          Institution ID
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="institutionID" name="inscode" type="text">
+      </div>
+    
+    </fieldset>
+
+    <a style="margin-right: 20px;" class="nhsuk-button" href="#result">Search</a>
+    <a class="nhsuk-button nhsuk-button--secondary" href="save-as-draft-confirmation">Save as draft</a>
+    <p><a href="home">Cancel</a></p>
+  </div>
+
+  <div class="nhsuk-grid-column-full">
+    
+    <br>
+    <h3 id="result">1 result found</h3>
+
+    <div class="nhsuk-hint">
+      Select the correct institution to continue.
+    </div>
+    
+    <div class="nhsuk-table-responsive">
+      <table class="nhsuk-table">
+        <caption class="nhsuk-table__caption">Institution search results</caption>
+        <thead class="nhsuk-table__head">
+          <tr class="nhsuk-table__row">
+            <th class="nhsuk-table__header" scope="col">Institution ID</th>
+            <th class="nhsuk-table__header" scope="col">Institution name</th>
+            <th class="nhsuk-table__header" scope="col">Institution address</th>
+            <th class="nhsuk-table__header" scope="col"></th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">2800</td>
+            <td class="nhsuk-table__cell ">National Institute of Social Security, Provincial Head Office of Madrid</td>
+            <td class="nhsuk-table__cell ">Plaza de los Astros 5-7, 28007 Madrid</td>
+            <td class="nhsuk-table__cell "><a href="type-of-upload">Select</a></td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

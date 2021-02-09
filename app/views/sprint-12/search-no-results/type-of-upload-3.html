@@ -1,0 +1,60 @@
+{% extends 'layout-with-login.html' %}
+{% block pageTitle %}
+Type of upload
+{% endblock %}
+
+
+
+{% block content %}
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="javascript:history.back()">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back</a>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <span class="nhsuk-caption-l">
+      S2/E112 details
+    </span>
+    <form action="type-upload-2" method="post">
+      {% call fieldset({
+        legend: {
+          "text": "Upload a copy of the S2/E112",
+          "classes": "nhsuk-fieldset__legend--l",
+          "isPageHeading": true
+        }
+        }) %}
+
+        {{ hint({
+          "text": "Select one option"
+        }) }}
+      
+      {{ radios({
+         "idPrefix": "type2",
+         "name": "type2",
+         "items": [
+           {
+             "value": "single file",
+             "text": "Upload the S2/E112 as a single file"
+           },
+           {
+             "value": "page wise",
+             "text": "Upload page wise copy of the S2/E112"
+           }
+         ]
+       }) }}
+
+       {% endcall %}
+
+      <a style="margin-right: 20px;"  class="nhsuk-button" href="upload-s2-3">Continue</a>
+      <a class="nhsuk-button nhsuk-button--secondary" href="save-as-draft-confirmation">Save as draft</a>
+      <p><a href="home">Cancel</a></p>
+   </form>
+
+
+ </div>
+</div>
+{% endblock %}
