@@ -17,13 +17,18 @@ Type of upload
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
     <span class="nhsuk-caption-l">
-      S2/E112 details
+      S2 or E112 details
     </span>
+    <h1 class="nhsuk-heading-l">Upload a copy of the S2 or E112 document</h1>
+    <div class="nhsuk-inset-text" style="margin-top: 0px; margin-bottom: 25px;">
+      <span class="nhsuk-u-visually-hidden">Information: </span>
+      <p>A copy of the entitlement is needed for claiming money back from the member state.</p>
+    </div>
     <form action="type-upload-2" method="post">
       {% call fieldset({
         legend: {
-          "text": "Upload a copy of the S2/E112",
-          "classes": "nhsuk-fieldset__legend--l",
+          "text": "How do you want to upload the document?",
+          "classes": "nhsuk-fieldset__legend--m",
           "isPageHeading": true
         }
         }) %}
@@ -36,14 +41,14 @@ Type of upload
          "idPrefix": "type2",
          "name": "type2",
          "items": [
-           {
-             "value": "single file",
-             "text": "Upload the S2/E112 as a single file"
-           },
-           {
-             "value": "page wise",
-             "text": "Upload page wise copy of the S2/E112"
-           }
+         {
+          "value": "single file",
+          "text": "Upload the whole document as a single file"
+        },
+        {
+          "value": "page wise",
+          "text": "Upload each page of your document as a separate file"
+        }
          ]
        }) }}
 
