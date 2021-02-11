@@ -1,0 +1,89 @@
+{% extends 'layout-with-login.html' %}
+{% block pageTitle %}
+Pending treatment details
+{% endblock %}
+
+
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="home">Home</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="search-person">Search person</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="person-record-view-ehic">View record</a></li>
+      <li class="nhsuk-breadcrumb__item">View treatment</li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="person-record-view-ehic">Back to View record</a></p>
+  </div>
+</nav>
+<div class="app-phase-banner">
+  <div class="nhsuk-width-container app-phase-banner__container">
+     <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+        Beta
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a new service - your <a href="#">feedback</a> will help us improve it.
+        </span>
+     </p>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+<h1 class="nhsuk-heading-l">Treatment details</h1>
+<div class="nhsuk-inset-text">
+  <span class="nhsuk-u-visually-hidden">Information: </span>
+  <p>This treatment is pending as the institution details are yet to be approved by the Cost Recovery Operations Team.</p>
+</div>
+
+    <dl class="nhsuk-summary-list">
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Treatment ID
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          62998
+        </dd>
+    
+      </div>
+    
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Treatment start date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          03/10/2020
+        </dd>
+    
+      </div>
+    
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Treatment end date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          10/10/2020
+        </dd>
+    
+        </dd>
+    
+      </div>
+    
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Cost
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £3,234.88
+        </dd>
+    
+      </div>
+    
+    </dl>
+  </div>
+</div>
+{% endblock %}
