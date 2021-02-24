@@ -1,0 +1,156 @@
+{% extends 'layout-with-login.html' %}
+{% block pageTitle %}
+PRC details
+{% endblock %}
+
+
+
+{% block content %}
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="javascript:history.back()">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back</a>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <span class="nhsuk-caption-l">
+      PRC details
+    </span>
+    <h1 class="nhsuk-label-wrapper">
+      <label class="nhsuk-label nhsuk-label--l" for="prcDetails">
+        Louis Victor's PRC that covers the treatment dates
+      </label></h1>
+
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Issuing member state
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            France
+          </dt>
+          </dd>
+        </div>
+      </dl>
+  
+      <h4>Card holder related information</h4>  
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Victor
+          </dt>
+          </dd>
+        </div>
+  
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Given names
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Louis
+          </dt>
+          </dd>
+        </div>
+  
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+           Date of birth 
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            20/12/1981
+          </dt>
+          </dd>
+        </div>
+  
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Personal identification number
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            1 62 05 59 544 102 26
+          </dt>
+          </dd>
+        </div>
+      </dl>
+  
+      <h4>Competent institution related information</h4>
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Identification number of the institution
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            01071 - CPAM ARDECH
+          </dt>
+          </dd>
+        </div>
+      </dl>  
+
+      <h4>Card related information</h4>
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Identification number of the card
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            80250000030100000110
+          </dt>
+          </dd>
+        </div>
+  
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Expiry date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            05/11/2023
+          </dt>
+          </dd>
+        </div>
+      </dl>
+  
+      <h4>Certificate details</h4>
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Validity period from
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            03/07/2020
+          </dt>
+          </dd>
+        </div>
+  
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Validity period to
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            05/08/2020
+          </dt>
+          </dd>
+        </div>
+
+      </dl>
+    
+      <div class="nhsuk-checkboxes__item">
+        <input class="nhsuk-checkboxes__input" id="student" name="student" type="checkbox" value="student">
+        <label class="nhsuk-label nhsuk-checkboxes__label" for="student">
+          Louis Victor is a student
+        </label>
+      </div>
+    <br>
+    <a style="margin-right: 20px;" class="nhsuk-button" href="treatment-history-warning">Continue</a>
+    <a class="nhsuk-button nhsuk-button--secondary" href="save-as-draft-confirmation">Save as draft</a>
+    <p><a href="home">Cancel</a></p>
+  </div>
+
+</div>
+
+{% endblock %}

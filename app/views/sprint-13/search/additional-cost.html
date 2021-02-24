@@ -1,0 +1,100 @@
+{% extends 'layout-with-login.html' %}
+{% block pageTitle %}
+Additional cost
+{% endblock %}
+
+
+{% block content %}
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="javascript:history.back()">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back</a>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <h1 class="nhsuk-label-wrapper">
+      <label class="nhsuk-label nhsuk-label--l" for="duplicateTreatmentEntry">
+        Verify additional costs
+      </label></h1>
+
+    <p>As you have entered treatment dates that fall within the existing treatment dates please verify the costs.</p>
+    <div class="nhsuk-table-responsive">
+      <table class="nhsuk-table">
+        <caption class="nhsuk-table__caption">Historic treatments</caption>
+        <thead class="nhsuk-table__head">
+          <tr class="nhsuk-table__row">
+            <th class="nhsuk-table__header" scope="col">Treatment</th>
+            <th class="nhsuk-table__header" scope="col">Start date</th>
+            <th class="nhsuk-table__header" scope="col">End date</th>
+            <th class="nhsuk-table__header" scope="col">Cost</th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Entered treatment</td>
+            
+            <td class="nhsuk-table__cell ">01/04/2020</td>
+            <td class="nhsuk-table__cell ">11/04/2020</td>
+            <td class="nhsuk-table__cell ">£1389.35</td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Existing treatment</td>
+            <td class="nhsuk-table__cell ">01/04/2020</td>
+            <td class="nhsuk-table__cell ">11/04/2020</td>
+            <td class="nhsuk-table__cell ">£1034.45</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br>
+    <form action="additional-cost" method="post">
+    {% call fieldset({
+      legend: {
+        "text": "Verify the cost of the entered treatment (£1389.35)",
+        "classes": "nhsuk-fieldset__legend--m",
+        "isPageHeading": true
+      }
+      }) %}
+    
+    {{ radios({
+       "idPrefix": "additional",
+       "name": "additional",
+       "items": [
+         {
+           "value": "add cost",
+           "text": "Additional cost",
+           "hint": {
+            "text": "£1389.35 is purely additional and has nothing to do with the existing treatment cost."
+             }
+         },
+         {
+           "value": "total cost",
+           "text": "Total cost",
+           "hint": {
+           "text": "£1389.35 is inclusive of the existing treatment cost."
+            }
+         },
+         {
+          "value": "none of the above",
+          "text": "Edit entered treatment details",
+          "hint": {
+          "text": "Edit entered treatment dates or cost."
+          }
+        }
+       ]
+     }) }}
+
+     {% endcall %}
+
+    <button style="margin-right: 20px;" class="nhsuk-button" type="submit">Continue</button>
+    <a class="nhsuk-button nhsuk-button--secondary" href="save-as-draft-confirmation">Save as draft</a>
+    <p><a href="home">Cancel</a></p>
+  </form>
+
+ </div>
+</div>
+{% endblock %}

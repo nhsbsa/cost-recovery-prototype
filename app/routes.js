@@ -53,6 +53,10 @@ router.use('/sprint-12/search', require('./views/sprint-12/_routes'));
 
 router.use('/sprint-12/search-no-results', require('./views/sprint-12/_routes'));
 
+router.use('/sprint-13/search', require('./views/sprint-13/_routes'));
+
+router.use('/sprint-13/search-no-results', require('./views/sprint-13/_routes'));
+
 
 
 
