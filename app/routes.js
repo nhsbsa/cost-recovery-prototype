@@ -57,6 +57,10 @@ router.use('/sprint-13/search', require('./views/sprint-13/_routes'));
 
 router.use('/sprint-13/search-no-results', require('./views/sprint-13/_routes'));
 
+router.use('/sprint-14/search', require('./views/sprint-14/_routes'));
+
+router.use('/sprint-14/search-no-results', require('./views/sprint-14/_routes'));
+
 
 
 
