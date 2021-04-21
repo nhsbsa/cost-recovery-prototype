@@ -22,25 +22,19 @@ Institution
     <fieldset class="nhsuk-fieldset">
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
         <h1 class="nhsuk-fieldset__heading">
-          Search for the identification number of the institution in Spain
+          Search for the identification number of the institution (field 7) in France
         </h1>
       </legend>
-      <span class="nhsuk-hint" >
-        The identification number of the institution is a combination of numbers and letters. For example PL5500 00R or 23456 - ZUS.
-      </span>
-      <!--<p style="font:900"><b>This can appear on the card as a series of numbers followed by letters. For example 234562 - BKB</b></p> -->
+
       <nav class="nhsuk-secondary-navigation" aria-label="Primary navigation" style="background-color:#f0f4f5;">
         <ul class="nhsuk-secondary-navigation__list">
+
           <li class="nhsuk-secondary-navigation__item">
-            <a class="nhsuk-secondary-navigation__link" href="#">Institution acronym</a>
+            <a class="nhsuk-secondary-navigation__link" aria-current="page" href="#1">Identification number</a>
           </li>
 
           <li class="nhsuk-secondary-navigation__item">
-            <a class="nhsuk-secondary-navigation__link" aria-current="page" href="#1">Institution ID</a>
-          </li>
-
-          <li class="nhsuk-secondary-navigation__item">
-            <a class="nhsuk-secondary-navigation__link" href="#">Institution name</a>
+            <a class="nhsuk-secondary-navigation__link" href="institution-name-prc">Institution name</a>
           </li>
 
         </ul>
@@ -50,15 +44,10 @@ Institution
       <br>
       
       <div class="nhsuk-form-group">
-
-        <div class="nhsuk-inset-text" style="margin-top: 10px; margin-bottom: 30px;">
-          <span class="nhsuk-u-visually-hidden">Information: </span>
-          <p>We break the identification number of the institution down into its separate  parts to make it easier to find.</p>
-        </div>
-        
-        <span class="nhsuk-hint" >
+        <span class="nhsuk-hint" style="color:black" >
+          Enter as it appears on the PRC, <b>along with spaces and hypens.</b>
+        </span>
           
-          The institution ID is the combination of numbers and letters that appear at the start the identification number of the institution. For example, PL5500
         </span>
         <input class="nhsuk-input nhsuk-input--width-20" id="institutionID" name="inscode" type="text">
       </div>

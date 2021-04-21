@@ -22,17 +22,34 @@ Search institution
     <fieldset class="nhsuk-fieldset">
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
         <h1 class="nhsuk-fieldset__heading">
-          What is the institution ID?
+          Search for the institution ID or name in Spain
         </h1>
       </legend>
-     
+
+      <nav class="nhsuk-secondary-navigation" aria-label="Primary navigation" style="background-color:#f0f4f5;">
+        <ul class="nhsuk-secondary-navigation__list">
+          <li class="nhsuk-secondary-navigation__item">
+            <a class="nhsuk-secondary-navigation__link" aria-current="page" href="#1">Institution ID</a>
+          </li>
+
+          <li class="nhsuk-secondary-navigation__item">
+            <a class="nhsuk-secondary-navigation__link" href="institution-name-s2">Institution name</a>
+          </li>
+
+        </ul>
+      </nav>
+      <hr style="border-bottom:1px solid #ccc; margin:0">
+      <br>
+      <br>
+      
       <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="institutionID">
-          Institution ID
-        </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="institutionID" name="inscode" type="text">
+        <span class="nhsuk-hint" >
+          
+          Enter the institution ID as it is present on the S2.
+        </span>
+        <input class="nhsuk-input nhsuk-input--width-20" id="institutionID" name="inscode" type="text" value="2800">
       </div>
-    
+
     </fieldset>
 
     <a style="margin-right: 20px;" class="nhsuk-button" href="#result">Search</a>
@@ -65,7 +82,7 @@ Search institution
             <td class="nhsuk-table__cell">2800</td>
             <td class="nhsuk-table__cell ">National Institute of Social Security, Provincial Head Office of Madrid</td>
             <td class="nhsuk-table__cell ">Plaza de los Astros 5-7, 28007 Madrid</td>
-            <td class="nhsuk-table__cell "><a href="type-of-upload-4">Select</a></td>
+            <td class="nhsuk-table__cell "><a href="type-of-upload">Select</a></td>
           </tr>
 
         </tbody>

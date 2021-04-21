@@ -22,15 +22,34 @@ Institution
     <fieldset class="nhsuk-fieldset">
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
         <h1 class="nhsuk-fieldset__heading">
-          What is the institution ID?
+          Search for the institution ID or name in Spain
         </h1>
       </legend>
+
+      <nav class="nhsuk-secondary-navigation" aria-label="Primary navigation" style="background-color:#f0f4f5;">
+        <ul class="nhsuk-secondary-navigation__list">
+          <li class="nhsuk-secondary-navigation__item">
+            <a class="nhsuk-secondary-navigation__link" aria-current="page" href="#1">Institution ID</a>
+          </li>
+
+          <li class="nhsuk-secondary-navigation__item">
+            <a class="nhsuk-secondary-navigation__link" href="#">Institution name</a>
+          </li>
+
+        </ul>
+      </nav>
+      <hr style="border-bottom:1px solid #ccc; margin:0">
+      <br>
+      <br>
       
       <div class="nhsuk-form-group">
-
+        <span class="nhsuk-hint" style="color:black" >
+          
+        Enter the institution ID as it is present on the S2.
+        </span>
         <input class="nhsuk-input nhsuk-input--width-20" id="institutionID" name="inscode" type="text">
       </div>
-    
+
     </fieldset>
 
     <a style="margin-right: 20px;" class="nhsuk-button" href="institution-search-s2-3#result">Search</a>
