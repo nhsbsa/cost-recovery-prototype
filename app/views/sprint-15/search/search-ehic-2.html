@@ -1,6 +1,6 @@
 {% extends 'layout-with-login.html' %}
 {% block pageTitle %}
-Treatment dates
+Search
 {% endblock %}
 
 
@@ -16,19 +16,42 @@ Treatment dates
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
-    <div class="nhsuk-form-group">
-      <span class="nhsuk-caption-l">
-        Treatment details
+    <span class="nhsuk-caption-l">
+      EHIC details
+    </span>
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          Search for a person with an EHIC that covers the treatment dates
+        </h1>
+      </legend>
+
+      <span class="nhsuk-hint">
+        Enter the details as they appear on the EHIC (Numbers in brackets refer to the areas on the EHIC card).
       </span>
-      <fieldset class="nhsuk-fieldset" aria-describedby="hint" role="group">
-        <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-          <h1 class="nhsuk-fieldset__heading">
-            What is the start date of the treatment?
-          </h1>
-        </legend>
-        <span class="nhsuk-hint" id="hint">
-          For example, 30 04 2019
-        </span>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="name">
+          Name (3)
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="name" name="name" type="text">
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="givenName">
+          Given names (4)
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="givenName" name="givenname" type="text">
+      </div>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="dateOfBirth">
+          Date of birth (5)
+        </label>
+
+        <div class="nhsuk-hint" id="hint">
+          For example, 15 03 1984
+        </div>
     
         <div class="nhsuk-date-input" id="example">
           <div class="nhsuk-date-input__item">
@@ -56,14 +79,13 @@ Treatment dates
             </div>
           </div>
         </div>
-      </fieldset>
-    
-    </div>
 
+    </fieldset>
 
-    <a class="nhsuk-button" href="treatment-end-date-ehic-2">Continue</a>
+    <a class="nhsuk-button" href="search-ehic-results-2#result">Search</a>
     <p><a href="home">Cancel</a></p>
 
  </div>
+
 </div>
 {% endblock %}
