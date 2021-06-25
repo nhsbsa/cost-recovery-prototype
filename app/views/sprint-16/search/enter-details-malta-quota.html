@@ -1,0 +1,106 @@
+{% extends 'layout-with-login.html' %}
+{% block pageTitle %}
+Enter EHIC details
+{% endblock %}
+
+
+
+{% block content %}
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="javascript:history.back()">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back</a>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <span class="nhsuk-caption-l">
+      Malta quota details
+    </span>
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          What are the Malta quota details?
+        </h1>
+      </legend>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="country">
+          Issuing member state
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="country" name="country" type="text" value="Malta" >
+      </div>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="name">
+          Name
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="name" name="name" type="text" value="Camilleri" >
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="givenNames">
+          Given names
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="givenNames" name="givennames" type="text" value="John" >
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="dateOfBirth">
+          Date of birth
+        </label>
+
+        <div class="nhsuk-hint" id="hint">
+          For example, 15 03 1984
+        </div>
+    
+        <div class="nhsuk-date-input" id="example">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="day">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="day" name="day" type="number" pattern="[0-9]*" value="06" >
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="month">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="month" name="month" type="number" pattern="[0-9]*" value="12" >
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="year">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="year" name="year" type="number" pattern="[0-9]*" value="1988" >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="maltaQuotaNumber">
+          Malta quota number
+        </label>
+        <div class="nhsuk-hint">
+          For example, 20/21-001 (YY/YY-NNN)
+        </div>
+        <input class="nhsuk-input  nhsuk-input--width-20" id="maltaQuotaNumber" name="maltaquota" type="text">
+      </div>
+
+    </fieldset>
+
+
+    <a style="margin-right: 20px;" class="nhsuk-button" href="have-address-malta">Continue</a>
+    <a class="nhsuk-button nhsuk-button--secondary" href="save-as-draft-confirmation">Save as draft</a>
+    <p><a href="home">Cancel</a></p>
+ </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block pageTitle %}
+Your request has been received
+{% endblock %}
+{% block beforeContent %}    
+<div class="app-phase-banner">
+   <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+         <strong class="nhsuk-tag app-phase-banner__tag">
+         Beta
+         </strong>
+         <span class="app-phase-banner__text">
+         This is a new service - your <a href="#">feedback</a> will help us improve it.
+         </span>
+      </p>
+   </div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="nhsuk-grid-row">
+   <div class="nhsuk-grid-column-two-thirds">
+      <h2>Your request has been received</h2>
+      <p>A member of the Cost Recovery Operations Team will be in contact within 3 working days to approve your request and then you will receive an email to create your password.</p>
+   </div>
+</div>
+{% endblock %}
