@@ -362,6 +362,40 @@ router.post('/upload-another', function (req, res) {
 
 })
 
+//confirmation-malta.html
+router.post('/another-treatment-malta', function (req, res) {
+
+  const selectedRadio = req.body.another;
+
+  if (selectedRadio === "same person"){
+    res.redirect('treatment-start-date-malta-aat')  
+  }
+  if (selectedRadio === "different person"){
+    res.redirect('add-treatment')
+  }
+  else {
+    res.redirect('confirmation-malta')
+  }
+
+})
+
+//confirmation-malta-2.html
+router.post('/another-treatment-malta-2', function (req, res) {
+
+  const selectedRadio = req.body.another;
+
+  if (selectedRadio === "same person"){
+    res.redirect('treatment-start-date-malta-aat-2')  
+  }
+  if (selectedRadio === "different person"){
+    res.redirect('add-treatment')
+  }
+  else {
+    res.redirect('confirmation-malta')
+  }
+
+})
+
 
 
   module.exports = router
