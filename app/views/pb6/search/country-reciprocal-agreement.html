@@ -1,6 +1,6 @@
 {% extends 'layout-with-login.html' %}
 {% block pageTitle %}
-Which country is the patient's Reciprocal, Bilateral or Quota agreement issued in? - Reciprocal, Bilateral and Quota agreement - Overseas visitor treatment
+Which country is the patient's Reciprocal, Bilateral or Quota agreement issued in? - Overseas visitor treatment - NHSBSA
 {% endblock %}
 
 
@@ -18,7 +18,7 @@ Which country is the patient's Reciprocal, Bilateral or Quota agreement issued i
   <div class="nhsuk-grid-column-two-thirds">
     <div class="nhsuk-form-group">
       <span class="nhsuk-caption-l">
-        Reciprocal, Bilateral and Quota agreement
+        Reciprocal, Bilateral and Quota agreement details
       </span>
 
       <form action="select-country" method="post">
@@ -27,6 +27,9 @@ Which country is the patient's Reciprocal, Bilateral or Quota agreement issued i
         <label class="nhsuk-label nhsuk-label--l" for="country">
           Which country is the patient's Reciprocal, Bilateral or Quota agreement issued in?
         </label></h1>
+        <div class="nhsuk-hint" id="example-with-hint-text-hint">
+        Country
+        </div>
       <input class="nhsuk-input  nhsuk-input--width-20" id="country" name="country" type="text" value="" >
     </div>
 
