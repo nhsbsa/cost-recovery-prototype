@@ -69,6 +69,8 @@ router.use('/sprint-16/search', require('./views/sprint-16/_routes'));
 
 router.use('/sprint-16/search-no-results', require('./views/sprint-16/_routes'));
 
+router.use('/pb6/search', require('./views/pb6/_routes'));
+
 
 
 

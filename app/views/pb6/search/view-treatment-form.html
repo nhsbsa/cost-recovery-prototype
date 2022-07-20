@@ -1,0 +1,181 @@
+{% extends 'layout-with-login.html' %}
+{% block pageTitle %}
+View treatment form
+{% endblock %}
+
+
+
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="home">Home</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="reports-filter">Reports</a></li>
+      <li class="nhsuk-breadcrumb__item">Treatment form details</li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="reports-filter">Back to Reports</a></p>
+  </div>
+</nav>
+<div class="app-phase-banner">
+  <div class="nhsuk-width-container app-phase-banner__container">
+     <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+        Beta
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a new service - your <a href="#">feedback</a> will help us improve it.
+        </span>
+     </p>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <span class="nhsuk-caption-m">
+      Treatment form details
+    </span>
+    <h1 class="nhsuk-label--l ">
+      Laura Peeters
+    </h1>
+  </div>
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <dl class="nhsuk-summary-list">
+      <h2 class="nhsuk-label--m">EHIC details</h2>
+       <div class="nhsuk-summary-list__row">
+         <dt class="nhsuk-summary-list__key">
+           Issuing member state
+         </dt>
+         <dd class="nhsuk-summary-list__value">
+           Belgium
+         </dd>
+       </div>
+ 
+       <div class="nhsuk-summary-list__row">
+         <dt class="nhsuk-summary-list__key">
+           Name
+         </dt>
+         <dd class="nhsuk-summary-list__value">
+          Peteers
+         </dd>
+       </div>
+ 
+       <div class="nhsuk-summary-list__row">
+         <dt class="nhsuk-summary-list__key">
+           Given names
+         </dt>
+         <dd class="nhsuk-summary-list__value">
+          Laura
+         </dd>
+       </div>
+ 
+       <div class="nhsuk-summary-list__row">
+         <dt class="nhsuk-summary-list__key">
+          Date of birth
+         </dt>
+         <dd class="nhsuk-summary-list__value">
+           06/12/1988
+         </dd>
+       </div>
+ 
+       <div class="nhsuk-summary-list__row">
+         <dt class="nhsuk-summary-list__key">
+           Personal identification number
+         </dt>
+         <dd class="nhsuk-summary-list__value">
+           280000000293
+         </dd>
+       </div>
+ 
+       <div class="nhsuk-summary-list__row">
+         <dt class="nhsuk-summary-list__key">
+           Identification number of the institution
+         </dt>
+         <dd class="nhsuk-summary-list__value">
+          0206653946 - NIHDI
+         </dd>
+       </div>
+ 
+       <div class="nhsuk-summary-list__row">
+         <dt class="nhsuk-summary-list__key">
+           Identification number of the card
+         </dt>
+         <dd class="nhsuk-summary-list__value">
+           80724028000420000098
+         </dd>
+       </div>
+ 
+       <div class="nhsuk-summary-list__row">
+         <dt class="nhsuk-summary-list__key">
+           Expiry date
+         </dt>
+         <dd class="nhsuk-summary-list__value">
+           04/08/2022
+         </dd>
+       </div>
+ 
+       <div class="nhsuk-summary-list__row">
+         <dt class="nhsuk-summary-list__key">
+          Laura Peteers is a student
+         </dt>
+         <dd class="nhsuk-summary-list__value">
+           Yes
+         </dd>
+       </div>
+ 
+     </dl>
+
+     <dl class="nhsuk-summary-list">
+      <h2 class="nhsuk-label--m">Address details</h2>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Home address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          5 Boulevard de Waterloo<br>
+          28005 Brussels<br>
+          Belgium
+        </dd>
+      </div>
+
+    </dl>
+
+     <dl class="nhsuk-summary-list">
+      <h2 class="nhsuk-label--m">Treatment details</h2>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Treatment start date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          10/03/2020
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Treatment end date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          11/04/2020
+        </dd>
+      </div>
+
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Treatment cost
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        £954.55
+      </dd>
+    </div>
+
+  </dl>
+
+
+  </div>
+</div>
+    
+{% endblock %}

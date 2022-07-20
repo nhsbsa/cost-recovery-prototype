@@ -1,0 +1,199 @@
+{% extends 'layout-with-login.html' %}
+{% block pageTitle %}
+Account
+{% endblock %}
+
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="home">Home</a></li>
+      <li class="nhsuk-breadcrumb__item">Account</li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="home">Back to Home</a></p>
+  </div>
+</nav>
+<div class="app-phase-banner">
+  <div class="nhsuk-width-container app-phase-banner__container">
+     <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+        Beta
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a new service - your <a href="#">feedback</a> will help us improve it.
+        </span>
+     </p>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <h1 class="nhsuk-label-wrapper">
+      <label class="nhsuk-label nhsuk-label--l" for="title">
+        Account Details
+      </label>
+    </h1>
+
+    <div class="nhsuk-inset-text">
+      <span class="nhsuk-u-visually-hidden">Information: </span>
+      <p>You have requested to update your details. It will be updated once it has been confirmed by a member of the Cost Recovery Operations Team.</p>
+    </div>
+
+    <dl class="nhsuk-summary-list">
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          First name
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Paul
+        </dd>
+    
+        <dd class="nhsuk-summary-list__actions">
+    
+          <a href="#">
+          </a>
+    
+        </dd>
+    
+      </div>
+    
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Last name
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Mathew
+        </dd>
+    
+        <dd class="nhsuk-summary-list__actions">
+    
+          <a href="#">
+          </a>
+    
+        </dd>
+    
+      </div>
+    
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Email address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          paul.mathew@example.com
+        </dd>
+    
+        <dd class="nhsuk-summary-list__actions">
+    
+          <a href="#">
+          </a>
+    
+        </dd>
+    
+      </div>
+    
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Phone number
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <p>07700 900362</p>
+        </dd>
+    
+        <dd class="nhsuk-summary-list__actions">
+    
+          <a href="#">
+          </a>
+    
+        </dd>
+    
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Region
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <p>England</p>
+        </dd>
+    
+        <dd class="nhsuk-summary-list__actions">
+    
+          <a href="#">
+          </a>
+    
+        </dd>
+    
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Trust
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <p>Airedale NHS Foundation Trust</p>
+        </dd>
+    
+        <dd class="nhsuk-summary-list__actions">
+    
+          <a href="#">
+          </a>
+    
+        </dd>
+    
+      </div>
+    
+    </dl>
+
+    <a class="nhsuk-button" href="update-acc-details">Update account details</a>
+
+  </div>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <h3>Users in your trust</h3>
+    <div class="nhsuk-table-responsive">
+      <table class="nhsuk-table">
+        <caption class="nhsuk-table__caption">Users in your trust</caption>
+        <thead class="nhsuk-table__head">
+          <tr class="nhsuk-table__row">
+            <th class="nhsuk-table__header" scope="col">Full name</th>
+            <th class="nhsuk-table__header" scope="col">Email address</th>
+            <th class="nhsuk-table__header" scope="col">Phone number</th>
+            <th class="nhsuk-table__header" scope="col"></th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Paul Mathew</td>
+            <td class="nhsuk-table__cell ">paul.mathew@example.com</td>
+            <td class="nhsuk-table__cell">07700 900362</td>
+            <td class="nhsuk-table__cell "><a href="delete-account-reason">Delete account</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Sarah Jordan</td>
+            <td class="nhsuk-table__cell ">sarah.jordan@example.com</td>
+            <td class="nhsuk-table__cell">07466986522</td>
+            <td class="nhsuk-table__cell "><a href="delete-account-reason-other">Delete account</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Edward Philips</td>
+            <td class="nhsuk-table__cell ">edward.philips@example.com</td>
+            <td class="nhsuk-table__cell">07700 999456</td>
+            <td class="nhsuk-table__cell "><a href="#">Delete account</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+      
+
+  </div>
+</div>
+{% endblock %}

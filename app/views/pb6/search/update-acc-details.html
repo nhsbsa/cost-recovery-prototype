@@ -1,0 +1,104 @@
+{% extends 'layout-with-login.html' %}
+{% block pageTitle %}
+Update account details
+{% endblock %}
+
+
+
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="home">Home</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="account">Account</a></li>
+      <li class="nhsuk-breadcrumb__item">Update account details</li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="account">Back to Account</a></p>
+  </div>
+</nav>
+<div class="app-phase-banner">
+  <div class="nhsuk-width-container app-phase-banner__container">
+     <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+        Beta
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a new service - your <a href="#">feedback</a> will help us improve it.
+        </span>
+     </p>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+   <div class="nhsuk-grid-column-two-thirds">
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          Update account details
+        </h1>
+      </legend>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="firstName">
+          First name
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="firstName" name="firstname" type="text" value="Paul">
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="lastName">
+          Last name
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="lastName" name="lastname" type="text" value="Mathew"> 
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="emailAddress">
+          Email address
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="emailAddress" name="emailaddress" type="text" value="paul.mathew@example.com">
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="phoneNumber">
+          Phone number
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="phoneNumber" name="phonenumber" type="text" value="07700 900362">
+      </div>
+      
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="select-1">
+          Region
+        </label>
+        <select class="nhsuk-select" id="select-1" name="select-1">
+          <option value="1">Select region</option>
+          <option value="0" selected>England</option>
+          <option value="2">Scotland</option>
+          <option value="3">Wales</option>
+          <option value="4">Northern Ireland</option>
+          <option value="5">Gibraltar</option>
+        </select>
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="select-2">
+          Trust
+        </label>
+        <select class="nhsuk-select" id="select-2" name="select-2">
+          <option value="0" selected>Select trust</option>
+          <option value="1"selected >Trust option 1</option>
+          <option value="2">Trust option 2</option>
+          <option value="3">Trust option 3</option>
+        </select>
+      </div>
+     
+    </fieldset>
+
+    <a style="margin-right: 20px" class="nhsuk-button" href="update-confirmation">Update</a>
+    <a class="nhsuk-button nhsuk-button--secondary" href="account">Cancel</a>
+
+   </div>
+</div>
+{% endblock %}

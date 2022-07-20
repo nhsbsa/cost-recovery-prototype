@@ -1,0 +1,189 @@
+{% extends 'layout-with-login.html' %}
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+
+
+{% block content %}
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="javascript:history.back()">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back</a>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-three-quarters">
+    <h1 class="nhsuk-label-wrapper">
+      <label class="nhsuk-label nhsuk-label--l" for="CheckYourAnswers">
+        Check these details before submitting the treatment form
+      </label></h1>
+
+      <dl class="nhsuk-summary-list">
+        <h3>Treatment details</h3>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Treatment start date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            03/08/2020
+          </dd>
+      
+          <dd class="nhsuk-summary-list__actions">
+            <a href="#">
+            </a>
+          </dd>
+        </div>
+  
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Treatment end date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            04/08/2020
+          </dd>
+      
+          <dd class="nhsuk-summary-list__actions">
+            <a href="#">
+            </a>
+          </dd>
+        </div>
+  
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Treatment cost
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £850.66
+        </dd>
+    
+        <dd class="nhsuk-summary-list__actions">
+          <a href="#">
+          </a>
+        </dd>
+      </div>
+  
+    </dl>
+
+    <dl class="nhsuk-summary-list">
+     <h3>Malta quota details</h3>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Issuing member state
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Malta
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="#">
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Camilleri
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="#">
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Given names
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          John
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="#">
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+         Date of birth
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          06/12/1988
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="#">
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+            {{ data['country'] }} quota number
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          20/21-001
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="malta-quota-number">
+            Change<span class="nhsuk-u-visually-hidden"> {{ data['country'] }} quota number</span>
+          </a>
+        </dd>
+      </div>
+
+    </dl>
+
+    <dl class="nhsuk-summary-list">
+      <h3>Address details</h3>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Do you have John Camilleri's address in Malta?
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Yes
+        </dd>
+    
+        <dd class="nhsuk-summary-list__actions">
+          <a href="have-address-malta">
+            Change<span class="nhsuk-u-visually-hidden">home address</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Home address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          12 St George's Road<br>
+          VLT 118 Placeville<br>
+          Malta
+        </dd>
+    
+        <dd class="nhsuk-summary-list__actions">
+          <a href="address-malta-2">
+            Change<span class="nhsuk-u-visually-hidden"> home address</span>
+          </a>
+        </dd>
+      </div>
+
+    </dl>
+
+  <p>If you select submit, you are confirming that these details are correct to the best of your knowledge.</p>
+  
+  <a style="margin-right: 20px;" class="nhsuk-button" href="confirmation-malta">Submit</a>
+  <a class="nhsuk-button nhsuk-button--secondary" href="save-as-draft-confirmation">Save as draft</a>
+
+  <p><a href="home">Cancel</a></p>
+ </div>
+</div>
+{% endblock %}
