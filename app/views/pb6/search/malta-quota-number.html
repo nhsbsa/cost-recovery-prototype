@@ -1,6 +1,6 @@
 {% extends 'layout-with-login.html' %}
 {% block pageTitle %}
-Malta quota number
+What is the Malta quota number? - Malta Quota agreement details - Overseas visitor treatment - NHSBSA
 {% endblock %}
 
 
@@ -16,26 +16,31 @@ Malta quota number
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
-    <span class="nhsuk-caption-l">
-      Malta quota details
-    </span>
     <div class="nhsuk-form-group">
+      <span class="nhsuk-caption-l">
+        Malta Quota agreement details
+      </span>
+
+      <form action="patient-details-malta" method="post">
+
       <h1 class="nhsuk-label-wrapper">
-        <h1 class="nhsuk-label-wrapper">
-          <label class="nhsuk-label nhsuk-label--l" for="maltaQuotaNumber">
-            What is the Malta quota number?
-          </label></h1>
-  
-          <div class="nhsuk-hint">
-            For example, 20/21-001 (YY/YY-NNN)
-          </div>
-      <input class="nhsuk-input  nhsuk-input--width-20" id="maltaQuotaNumber" name="maltaquota" type="text">
+        <label class="nhsuk-label nhsuk-label--l" for="quote-number">
+          What is the Malta Quota number?
+        </label></h1>
+        <div class="nhsuk-hint" id="hint-text-quote-number">
+          For example, 20/21-001 (YY/YY-NNN)
+        </div>
+      <input class="nhsuk-input  nhsuk-input--width-20" id="quota-number" name="quota-number" type="text" value="" >
     </div>
 
-    <a style="margin-right: 20px;" class="nhsuk-button" href="address-malta">Continue</a>
-    <a class="nhsuk-button nhsuk-button--secondary" href="save-as-draft-confirmation">Save as draft</a>
-    <p><a href="home">Cancel</a></p>
+    <br>
 
+    {{ button({
+        "text": "Continue"
+        }) }}
+
+    </form>
+    <p><a href="home">Cancel</a></p>
 
  </div>
 </div>

@@ -10,25 +10,7 @@ router.get('/', function(req , res){
   res.render('index');
  });
 
-//add-treatment.html
-router.post('/select-country', function (req, res) {
 
-  const selectedCountry = req.body.country;
-
-  if (selectedCountry === "Malta"){
-    res.redirect('patient-details-reciprocal-agreement-1')
-  }
-  if (selectedCountry === "malta"){
-    res.redirect('patient-details-reciprocal-agreement-1')
-  }
-  if (selectedCountry === ""){
-    res.redirect('country-reciprocal-agreement')
-  }
-  else {
-    res.redirect('patient-details-reciprocal-agreement-2')
-  }
-
-})
 
 
 //add-treatment.html
@@ -45,8 +27,8 @@ router.post('/select-country', function (req, res) {
   if (selectedRadio === "s2"){
     res.redirect('treatment-start-date-s2')
   }
-  if (selectedRadio === "reciprocal"){
-    res.redirect('treatment-start-date-reciprocal-agreement')
+  if (selectedRadio === "maltaQuota"){
+    res.redirect('treatment-start-date-malta')
   }
   else {
     res.redirect('add-treatment')
