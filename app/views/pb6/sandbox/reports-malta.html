@@ -3,8 +3,6 @@
 Reports
 {% endblock %}
 
-
-
 {% block beforeContent %}
 <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
   <div class="nhsuk-width-container">
@@ -17,14 +15,14 @@ Reports
 </nav>
 <div class="app-phase-banner">
   <div class="nhsuk-width-container app-phase-banner__container">
-     <p class="app-phase-banner__content">
-        <strong class="nhsuk-tag app-phase-banner__tag">
+    <p class="app-phase-banner__content">
+      <strong class="nhsuk-tag app-phase-banner__tag">
         Beta
-        </strong>
-        <span class="app-phase-banner__text">
+      </strong>
+      <span class="app-phase-banner__text">
         This is a new service - your <a href="#">feedback</a> will help us improve it.
-        </span>
-     </p>
+      </span>
+    </p>
   </div>
 </div>
 {% endblock %}
@@ -32,16 +30,15 @@ Reports
 {% block content %}
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
-    <h1 class="nhsuk-heading-xl">Malta Quota</h1>
+    <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-1">Reports</h1>
+    <h2 class="nhsuk-u-margin-bottom-4">Malta Quota treatments</h2>
 
-    <h1 class="nhsuk-label-wrapper">
-      <label class="nhsuk-label nhsuk-label--l" for="title">
-        Filter and download your report as a spreadsheet
-      </label>
-    </h1>
+    <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">
+      Filter and download your report as a spreadsheet
+    </h3>
 
-    <span class="nhsuk-hint">
-      You can use the filters here to narrow your search and find details of treatments dealt with by your trust.
+    <span class="nhsuk-hint nhsuk-u-margin-bottom-4">
+      You can use the filters here to narrow your search and find details of treatments within your trust.
     </span>
 
     <div class="nhsuk-form-group select-inline">
@@ -64,18 +61,21 @@ Reports
       <input class="nhsuk-input nhsuk-input--width-10" id="startDate" name="startdate" type="text">
     </div>
 
-
-
-
-    
     <br>
-    
+
     <a class="nhsuk-button select-inline" href="#">Apply filters</a>
 
   </div>
 </div>
+
+<div class="row">
+  <div class="nhsuk-inset-text">
+    <span class="nhsuk-u-visually-hidden">Information: </span>
+    <p>For other entitilement types please visit the <a href="reports">main reports page</a>.</p>
+  </div>
+</div>
 <br>
 
- </div>
+</div>
 </div>
 {% endblock %}

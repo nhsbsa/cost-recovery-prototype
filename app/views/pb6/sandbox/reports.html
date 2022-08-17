@@ -6,15 +6,6 @@ Reports
 
 
 {% block beforeContent %}
-<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
-  <div class="nhsuk-width-container">
-    <ol class="nhsuk-breadcrumb__list">
-      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="home">Home</a></li>
-      <li class="nhsuk-breadcrumb__item">Reports</li>
-    </ol>
-    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="home">Back to Home</a></p>
-  </div>
-</nav>
 <div class="app-phase-banner">
   <div class="nhsuk-width-container app-phase-banner__container">
      <p class="app-phase-banner__content">
@@ -27,20 +18,30 @@ Reports
      </p>
   </div>
 </div>
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="home">Home</a></li>
+      <li class="nhsuk-breadcrumb__item">Reports</li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="home">Back to Home</a></p>
+  </div>
+</nav>
+
 {% endblock %}
 
 {% block content %}
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
+    <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-4">Reports</h1>
 
-    <h1 class="nhsuk-label-wrapper">
-      <label class="nhsuk-label nhsuk-label--l" for="title">
-        Filter and download your report as a spreadsheet
-      </label>
-    </h1>
 
-    <span class="nhsuk-hint">
-      You can use the filters here to narrow your search and find details of treatments dealt with by your trust.
+    <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">
+      Filter and download your report as a spreadsheet
+    </h3>
+
+    <span class="nhsuk-hint nhsuk-u-margin-bottom-4">
+      You can use the filters here to narrow your search and find details of treatments within your trust.
     </span>
 
     <div class="nhsuk-form-group select-inline">
@@ -68,17 +69,18 @@ Reports
         Entitlement
       </label>
       <select class="nhsuk-select" id="select-1" name="select-1">
-          <option value="0" selected></option>
+          <option value="0" selected>All</option>
           <option value="1">EHIC</option>
           <option value="2">PRC</option>
-          <option value="3">S2</option>
+          <option value="3">S2/E112</option>
         </select>
     </div>
 
     <div class="nhsuk-form-group select-inline">
       <label class="nhsuk-label" for="country">
-        Country
+        Country of issue
       </label>
+      <div class="nhsuk-hint">For example, France</div>
       <input class="nhsuk-input nhsuk-input--width-10" id="country" name="country" type="text" placeholder="All countries">
     </div>
     
@@ -88,6 +90,13 @@ Reports
 
   </div>
 </div>
+<div class="row">
+  <div class="nhsuk-inset-text">
+    <span class="nhsuk-u-visually-hidden">Information: </span>
+    <p>For Malta Quota reports please visit the <a href="reports-malta">Malta Quota reports page</a>.</p>
+  </div>
+</div>
+
 <br>
 
  </div>
