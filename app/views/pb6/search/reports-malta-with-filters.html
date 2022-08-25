@@ -1,6 +1,6 @@
 {% extends 'layout-with-login.html' %}
 {% block pageTitle %}
-Reports - Malta Quota treatments - Overseas Visitor Treatment - NHSBSA
+Reports
 {% endblock %}
 
 {% block beforeContent %}
@@ -31,11 +31,12 @@ Reports - Malta Quota treatments - Overseas Visitor Treatment - NHSBSA
 {% block content %}
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
-    <h1 class="nhsuk-heading-xl ">Reports - Malta Quota treatments</h1>
+    <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-1">Reports</h1>
+    <h2 class="nhsuk-u-margin-bottom-4">Malta Quota treatments</h2>
 
-    <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">
+    <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">
       Filter and download your report as a spreadsheet
-    </h2>
+    </h3>
 
     <span class="nhsuk-hint nhsuk-u-margin-bottom-4">
       You can use the filters here to narrow your search and find details of treatments within your trust.
@@ -46,9 +47,9 @@ Reports - Malta Quota treatments - Overseas Visitor Treatment - NHSBSA
         Start date
       </label>
       <span class="nhsuk-hint">
-        For example, 21/03/2022
+        For example, 21/03/2019
       </span>
-      <input class="nhsuk-input nhsuk-input--width-10" id="startDate" name="startdate" type="text">
+      <input class="nhsuk-input nhsuk-input--width-10" id="startDate" name="startdate" type="text" value="01/01/2022">
     </div>
 
     <div class="nhsuk-form-group select-inline">
@@ -56,14 +57,19 @@ Reports - Malta Quota treatments - Overseas Visitor Treatment - NHSBSA
         End date
       </label>
       <span class="nhsuk-hint">
-        For example, 21/03/2022
+        For example, 21/05/2019
       </span>
-      <input class="nhsuk-input nhsuk-input--width-10" id="startDate" name="startdate" type="text">
+      <input class="nhsuk-input nhsuk-input--width-10" id="startDate" name="startdate" type="text" value="30/06/2022">
     </div>
 
     <br>
 
-    <a class="nhsuk-button select-inline" href="reports-malta-with-filters">Apply filters</a>
+    <a class="nhsuk-button select-inline" href="#">Apply filters</a>
+    <p class="select-inline" style="padding-top: 23px" ;="">
+        <a id="clear_filter" href="">Clear
+           filters</a>
+     </p>
+     <p>    <a href="">Download</a></p>
 
 
   </div>
@@ -72,7 +78,7 @@ Reports - Malta Quota treatments - Overseas Visitor Treatment - NHSBSA
 <div class="row">
   <div class="nhsuk-inset-text">
     <span class="nhsuk-u-visually-hidden">Information: </span>
-    <p>For EHIC, PRC or S2/E112 reports, <a href="reports">visit the main reports page</a>.</p>
+    <p>For EHIC, PRC or S2/E112 reports please visit the <a href="reports">main reports page</a>.</p>
   </div>
 </div>
 <br>

@@ -1,6 +1,6 @@
 {% extends 'layout-with-login.html' %}
 {% block pageTitle %}
-What are the patient details? - Malta Quota agreement details - Overseas visitor treatment - NHSBSA
+What are the patient's details? - Overseas Visitor Treatment - NHSBSA
 {% endblock %}
 
 
@@ -22,7 +22,7 @@ What are the patient details? - Malta Quota agreement details - Overseas visitor
     <fieldset class="nhsuk-fieldset">
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
         <h1 class="nhsuk-fieldset__heading">
-          What are the patient details?
+          What are the patient's details?
         </h1>
       </legend>
 
@@ -37,6 +37,9 @@ What are the patient details? - Malta Quota agreement details - Overseas visitor
         <label class="nhsuk-label" for="name">
           Name
         </label>
+        <div class="nhsuk-hint" id="example-with-hint-text-hint">
+          This is the patient's last name (family name or surname). For example, Smith
+        </div>
         <input class="nhsuk-input nhsuk-input--width-20" id="name" name="name" type="text">
       </div>
 
@@ -44,6 +47,9 @@ What are the patient details? - Malta Quota agreement details - Overseas visitor
         <label class="nhsuk-label" for="givenName">
           Given names
         </label>
+        <div class="nhsuk-hint" id="example-with-hint-text-hint">
+          These are the patient's first names. For example, Phillip John
+        </div>
         <input class="nhsuk-input nhsuk-input--width-20" id="givenName" name="givenname" type="text">
       </div>
     

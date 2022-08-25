@@ -1,9 +1,7 @@
 {% extends 'layout-with-login.html' %}
 {% block pageTitle %}
-Check these details before submitting the treatment form - Malta Quota agreement details - Overseas visitor treatment - NHSBSA
+Malta Quota - check your answers - Overseas Visitor Treatment - NHSBSA
 {% endblock %}
-
-
 
 {% block content %}
 <div class="nhsuk-back-link">
@@ -18,11 +16,13 @@ Check these details before submitting the treatment form - Malta Quota agreement
   <div class="nhsuk-grid-column-three-quarters">
     <h1 class="nhsuk-label-wrapper">
       <label class="nhsuk-label nhsuk-label--l" for="CheckYourAnswers">
-        Check these details before submitting the treatment form
+        Malta Quota - check your answers
       </label></h1>
+      <p>Check your answers before submitting the treatment details.</p>
+      <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Treatment details</h2>
+      <hr style="margin:0">
+      <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-9">
 
-      <dl class="nhsuk-summary-list">
-        <h3>Treatment details</h3>
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
             Treatment start date
@@ -53,10 +53,10 @@ Check these details before submitting the treatment form - Malta Quota agreement
   
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Treatment cost
+          Treatment cost (£)
         </dt>
         <dd class="nhsuk-summary-list__value">
-          £1850.66
+          1850.66
         </dd>
     
         <dd class="nhsuk-summary-list__actions">
@@ -67,8 +67,10 @@ Check these details before submitting the treatment form - Malta Quota agreement
   
     </dl>
 
-    <dl class="nhsuk-summary-list">
-      <h3>Agreement details</h3>
+    <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Agreement details</h2>
+    <hr style="margin:0">
+    <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-9">
+
        <div class="nhsuk-summary-list__row">
          <dt class="nhsuk-summary-list__key">
            Issuing member state
@@ -102,10 +104,9 @@ Check these details before submitting the treatment form - Malta Quota agreement
  
      </dl>
 
+     <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Patient details</h2>
+     <hr style="margin:0">
     <dl class="nhsuk-summary-list">
-      <h3>Patient details</h3>
-
- 
        <div class="nhsuk-summary-list__row">
          <dt class="nhsuk-summary-list__key">
            Name
@@ -173,7 +174,7 @@ Check these details before submitting the treatment form - Malta Quota agreement
 
 
 
-  <p>If you select submit, you are confirming that these details are correct to the best of your knowledge.</p>
+  <p>If you select Submit, you are confirming these details are correct to the best of your knowledge.</p>
   
   <a style="margin-right: 20px;" class="nhsuk-button" href="confirmation-malta">Submit</a>
  
