@@ -36,6 +36,40 @@ router.get('/', function(req , res){
 
 })
 
+//treatment-length-confirmation.html
+router.post('/treatment-duration', function (req, res) {
+
+  const selectedRadio = req.body.continuousPatient;
+
+  if (selectedRadio === "yes"){
+    res.redirect('treatment-cost-malta')
+  }
+  if (selectedRadio === "no"){
+    res.redirect('treatment-end-date-malta')
+  }
+  else {
+    res.redirect('treatment-length-confirmation')
+  }
+
+})
+
+//address-check-malta.html
+router.post('/address-check-malta', function (req, res) {
+
+  const selectedRadio = req.body.addressCheck;
+
+  if (selectedRadio === "yes"){
+    res.redirect('address-malta')
+  }
+  if (selectedRadio === "no"){
+    res.redirect('check-your-answers-malta-sec-2')
+  }
+  else {
+    res.redirect('address-malta')
+  }
+
+})
+
 //confirm-cost-ehic.html
 router.post('/confirm-cost', function (req, res) {
 
