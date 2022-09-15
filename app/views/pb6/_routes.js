@@ -48,7 +48,7 @@ router.post('/treatment-duration', function (req, res) {
     res.redirect('treatment-end-date-malta')
   }
   else {
-    res.redirect('treatment-length-confirmation')
+    res.redirect('treatment-length-confirmation-malta')
   }
 
 })
