@@ -62,10 +62,10 @@ router.post('/address-check-malta', function (req, res) {
     res.redirect('address-malta')
   }
   if (selectedRadio === "no"){
-    res.redirect('check-your-answers-malta-sec-2')
+    res.redirect('check-your-answers-malta-sec-2b')
   }
   else {
-    res.redirect('address-malta')
+    res.redirect('address-check-malta')
   }
 
 })
