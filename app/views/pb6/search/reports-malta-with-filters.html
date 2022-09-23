@@ -20,7 +20,7 @@ Reports
   <div class="nhsuk-width-container">
     <ol class="nhsuk-breadcrumb__list">
       <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="home">Home</a></li>
-      <li class="nhsuk-breadcrumb__item">Reports</li>
+      <li class="nhsuk-breadcrumb__item">Reports - Malta</li>
     </ol>
     <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="home">Back to Home</a></p>
   </div>
@@ -31,56 +31,51 @@ Reports
 {% block content %}
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
-    <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-1">Reports</h1>
-    <h2 class="nhsuk-u-margin-bottom-4">Malta Quota treatments</h2>
+    <h1 class="nhsuk-heading-xl ">Reports - Malta Quota treatments</h1>
 
-    <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">
-      Filter and download your report as a spreadsheet
-    </h3>
+    <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">
+      Download a report for treatments between selected dates at your trust.
+    </h2>
 
     <span class="nhsuk-hint nhsuk-u-margin-bottom-4">
-      You can use the filters here to narrow your search and find details of treatments within your trust.
+      Enter a start and end date for the treatments you want a report for.<br/>
+      (Use a '/' to separate day, month and year.)
     </span>
 
     <div class="nhsuk-form-group select-inline">
       <label class="nhsuk-label" for="startDate">
-        Start date
+        Treatment start date
       </label>
       <span class="nhsuk-hint">
-        For example, 21/03/2019
+        For example, 21/03/2022
       </span>
       <input class="nhsuk-input nhsuk-input--width-10" id="startDate" name="startdate" type="text" value="01/01/2022">
     </div>
 
     <div class="nhsuk-form-group select-inline">
       <label class="nhsuk-label" for="EndDate">
-        End date
+        Treatment end date
       </label>
       <span class="nhsuk-hint">
-        For example, 21/05/2019
+        For example, 21/03/2022
       </span>
       <input class="nhsuk-input nhsuk-input--width-10" id="startDate" name="startdate" type="text" value="30/06/2022">
     </div>
 
     <br>
 
-    <a class="nhsuk-button select-inline" href="#">Apply filters</a>
+    <a class="nhsuk-button select-inline" href="#">Search</a>
     <p class="select-inline" style="padding-top: 23px" ;="">
         <a id="clear_filter" href="">Clear
-           filters</a>
+           dates</a>
      </p>
-     <p>    <a href="">Download</a></p>
+     <p>    <a href="">Download report (Excel)</a></p>
 
 
   </div>
 </div>
 
-<div class="row">
-  <div class="nhsuk-inset-text">
-    <span class="nhsuk-u-visually-hidden">Information: </span>
-    <p>For EHIC, PRC or S2/E112 reports please visit the <a href="reports">main reports page</a>.</p>
-  </div>
-</div>
+
 <br>
 
 </div>
