@@ -1,0 +1,132 @@
+{% extends 'layout-with-login.html' %}
+{% block pageTitle %}
+Search person
+{% endblock %}
+
+
+
+{% block beforeContent %}
+<div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+       <p class="app-phase-banner__content">
+          <strong class="nhsuk-tag app-phase-banner__tag">
+          Beta
+          </strong>
+          <span class="app-phase-banner__text">
+          This is a new service - your <a href="#">feedback</a> will help us improve it.
+          </span>
+       </p>
+    </div>
+  </div>
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="#">Home</a></li>
+      <li class="nhsuk-breadcrumb__item">Search person</li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="#">Back to Home</a></p>
+  </div>
+</nav>
+
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          Search for a person
+        </h1>
+      </legend>
+
+      <div class="nhsuk-hint" id="hint">
+        Search for the person by entering their treatment ID or any 3 of their personal details, then selecting Search.
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="treatmentID">
+          Treatment ID
+        </label>
+        <div class="nhsuk-hint">For example, 555555550</div>
+        <input class="nhsuk-input nhsuk-input--width-20" id="treatmentID" name="treatmentID" type="text"> <br>
+      </div>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="firstName">
+          First name
+        </label>
+        <div class="nhsuk-hint">
+            <span>Hint : Given names/Forename</span>
+            <br>
+            <span>For example, ph or Phillip John.</span>
+         </div>
+        <input class="nhsuk-input nhsuk-input--width-20" id="firstName" name="firstname" type="text" value="Emma">
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="lastName">
+          Last name
+        </label>
+        <div class="nhsuk-hint">
+            <span>Hint : Name/Surname</span>
+            <br>
+            <span>For example, sm or Smith</span>
+         </div>
+        <input class="nhsuk-input nhsuk-input--width-20" id="lastName" name="lastname" type="text" value="Smith">
+      </div>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="dateOfBirth">
+          Date of birth
+        </label>
+
+        <div class="nhsuk-hint" id="hint">
+          For example, 30 04 2019
+        </div>
+    
+        <div class="nhsuk-date-input" id="example">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="day">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="day" name="day" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="month">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="month" name="month" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="year">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="year" name="year" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+        </div> 
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="country">
+          Entitlement country
+        </label>
+        <div class="nhsuk-hint">For example, France</div>
+        <input class="nhsuk-input nhsuk-input--width-20" id="country" name="country" type="text" value="France (FR)"> <br>
+      </div>
+
+    </fieldset>
+
+    <a class="nhsuk-button" href="search-person-results#results">Search</a>
+
+    <div role="alert" class="nhsuk-label--m" id="zero_record">No result found</div>
+ 
+  </div>
+</div>
+{% endblock %}
