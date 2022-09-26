@@ -40,9 +40,26 @@ Search person
         </h1>
       </legend>
 
-      <span class="nhsuk-hint" >
-        Enter the treatment ID if you have it:
-      </span>
+
+                            <!--start secondary nav-->
+                            <nav class="nhsuk-secondary-navigation nav-tabs-bg" aria-label="Secondary navigation" style="background-color:#f0f4f5;">
+                              <ul class="nhsuk-secondary-navigation__list">
+                                <li class="nhsuk-secondary-navigation__item">
+                                    <a class="nhsuk-secondary-navigation__link" href="version-5-person-details">Person details</a>
+                                </li>
+                                  <li class="nhsuk-secondary-navigation__item">
+                                      <a class="nhsuk-secondary-navigation__link" aria-current="page" href="version-5-treatment-id">Treatment ID</a>
+                                  </li>
+
+                              </ul>
+                          </nav>
+                          <hr style="border-bottom:1px solid #ccc; margin:0"><br/>
+                          <!--end secondary nav-->
+      
+
+      <div class="nhsuk-hint" id="hint">
+        Search for the person by entering their treatment ID, then selecting Search.
+      </div>
 
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="treatmentID">
@@ -51,12 +68,8 @@ Search person
         <div class="nhsuk-hint">For example, 555555550</div>
         <input class="nhsuk-input nhsuk-input--width-20" id="treatmentID" name="treatmentID" type="text"> <br>
       </div>
-
-      <span class="nhsuk-hint" >
-        You can also search by completing at least three of the following fields:
-      </span>
     
-      <div class="nhsuk-form-group">
+      <!-- <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="firstName">
           First name
         </label>
@@ -123,7 +136,7 @@ Search person
         </label>
         <div class="nhsuk-hint">For example, France</div>
         <input class="nhsuk-input nhsuk-input--width-20" id="country" name="country" type="text" value="Enter country"> <br>
-      </div>
+      </div> -->
 
     </fieldset>
 
