@@ -1,0 +1,74 @@
+{% extends 'layout-with-login.html' %}
+
+{% block pageTitle %}
+Malta Quota treatment submitted - Reporting overseas visitor treatments - NHSBSA
+{% endblock %}
+
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-panel nhsuk-panel--confirmation nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-4">
+
+        <h1 style="font-size:40px;" class="nhsuk-panel__title">
+          Malta Quota treatment submitted
+          </h1>
+
+          <div class="nhsuk-panel__body">
+            The treatment ID for John Camilleri is:<br />
+<strong>63878</strong>
+
+          </div>
+
+      </div>
+
+      <p>
+        The treatment details have been submitted.
+      </p>
+
+      <div class="nhsuk-form-group">
+
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+            <h2 class="nhsuk-fieldset__heading">
+              Add another treatment
+            </h2>
+          </legend>
+        
+            <div class="nhsuk-radios">
+        
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="samePersonQuota" name="anotherTreatment" type="radio" value="Same person and quota number">
+                <label class="nhsuk-label nhsuk-radios__label" for="samePerson">
+                  For John Camilleri using the same quota number - 22/23-005
+                </label>
+              </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="samePerson" name="anotherTreatment" type="radio" value="Same person new quota number">
+                <label class="nhsuk-label nhsuk-radios__label" for="samePerson">
+                  For John Camilleri using a new quota number
+                </label>
+              </div>
+        
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="newPerson" name="anotherTreatment" type="radio" value="New person">
+                <label class="nhsuk-label nhsuk-radios__label" for="differentPerson">
+                  For a different patient with a different quota number
+                </label>
+              </div>
+    
+            </div>
+        </fieldset>
+      </div>
+
+
+      <a class="nhsuk-button" href="home">Continue</a>
+      <a class="nhsuk-button nhsuk-button--secondary" href="home">Back to home</a>
+       
+
+    </div>
+  </div>
+{% endblock %}
