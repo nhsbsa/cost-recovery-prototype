@@ -10,6 +10,176 @@ router.get('/', function(req , res){
   res.render('index');
  });
 
+ //malta-cancel-confirmation-start-date.html
+router.post('/malta-cancel-confirmation-start-date', function (req, res) {
+
+  const selectedRadio = req.body.cancel;
+
+  if (selectedRadio === "yes"){
+    res.redirect('home')
+  }
+  if (selectedRadio === "no"){
+    res.redirect('treatment-start-date-malta')
+  }
+  else {
+    res.redirect('malta-cancel-confirmation-start-date')
+  }
+
+})
+
+ //malta-cancel-confirmation-end-date.html
+ router.post('/malta-cancel-confirmation-end-date', function (req, res) {
+
+  const selectedRadio = req.body.cancel;
+
+  if (selectedRadio === "yes"){
+    res.redirect('home')
+  }
+  if (selectedRadio === "no"){
+    res.redirect('treatment-end-date-malta')
+  }
+  else {
+    res.redirect('malta-cancel-confirmation-end-date')
+  }
+
+})
+
+ //malta-cancel-confirmation-cost.html
+ router.post('/malta-cancel-confirmation-cost', function (req, res) {
+
+  const selectedRadio = req.body.cancel;
+
+  if (selectedRadio === "yes"){
+    res.redirect('home')
+  }
+  if (selectedRadio === "no"){
+    res.redirect('treatment-cost-malta')
+  }
+  else {
+    res.redirect('malta-cancel-confirmation-cost')
+  }
+
+})
+
+ //malta-cancel-confirmation-check-details-1.html
+ router.post('/malta-cancel-confirmation-check-details-1', function (req, res) {
+
+  const selectedRadio = req.body.cancel;
+
+  if (selectedRadio === "yes"){
+    res.redirect('home')
+  }
+  if (selectedRadio === "no"){
+    res.redirect('check-your-answers-malta-sec-1')
+  }
+  else {
+    res.redirect('malta-cancel-confirmation-check-details-1')
+  }
+
+})
+
+ //malta-cancel-confirmation-quota-number.html
+ router.post('/malta-cancel-confirmation-quota-number', function (req, res) {
+
+  const selectedRadio = req.body.cancel;
+
+  if (selectedRadio === "yes"){
+    res.redirect('home')
+  }
+  if (selectedRadio === "no"){
+    res.redirect('malta-quota-number')
+  }
+  else {
+    res.redirect('malta-cancel-confirmation-quota-number')
+  }
+
+})
+
+ //malta-cancel-confirmation-patient-details.html
+ router.post('/malta-cancel-confirmation-patient-details', function (req, res) {
+
+  const selectedRadio = req.body.cancel;
+
+  if (selectedRadio === "yes"){
+    res.redirect('home')
+  }
+  if (selectedRadio === "no"){
+    res.redirect('patient-details-malta')
+  }
+  else {
+    res.redirect('malta-cancel-confirmation-patient-details')
+  }
+
+})
+
+ //malta-cancel-confirmation-address-check.html
+ router.post('/malta-cancel-confirmation-address-check', function (req, res) {
+
+  const selectedRadio = req.body.cancel;
+
+  if (selectedRadio === "yes"){
+    res.redirect('home')
+  }
+  if (selectedRadio === "no"){
+    res.redirect('address-check-malta')
+  }
+  else {
+    res.redirect('malta-cancel-confirmation-address-check')
+  }
+
+})
+
+ //malta-cancel-confirmation-address.html
+ router.post('/malta-cancel-confirmation-address', function (req, res) {
+
+  const selectedRadio = req.body.cancel;
+
+  if (selectedRadio === "yes"){
+    res.redirect('home')
+  }
+  if (selectedRadio === "no"){
+    res.redirect('address-malta')
+  }
+  else {
+    res.redirect('malta-cancel-confirmation-address')
+  }
+
+})
+
+ //malta-cancel-confirmation-check-details-2.html
+ router.post('/malta-cancel-confirmation-check-details-2', function (req, res) {
+
+  const selectedRadio = req.body.cancel;
+
+  if (selectedRadio === "yes"){
+    res.redirect('home')
+  }
+  if (selectedRadio === "no"){
+    res.redirect('check-your-answers-malta-sec-2')
+  }
+  else {
+    res.redirect('malta-cancel-confirmation-check-details-2')
+  }
+
+})
+
+ //malta-cancel-confirmation-check-details-2b.html
+ router.post('/malta-cancel-confirmation-check-details-2b', function (req, res) {
+
+  const selectedRadio = req.body.cancel;
+
+  if (selectedRadio === "yes"){
+    res.redirect('home')
+  }
+  if (selectedRadio === "no"){
+    res.redirect('check-your-answers-malta-sec-2b')
+  }
+  else {
+    res.redirect('malta-cancel-confirmation-check-details-2b')
+  }
+
+})
+
 
 
 
