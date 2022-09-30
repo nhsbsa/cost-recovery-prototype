@@ -1,6 +1,6 @@
 {% extends 'layout-with-login.html' %}
 {% block pageTitle %}
-What is the Malta Quota number for this patient? - Reporting overseas visitor treatments - NHSBSA
+What is the cost of the treatment? - Reporting overseas visitor treatments - NHSBSA
 {% endblock %}
 
 
@@ -16,31 +16,25 @@ What is the Malta Quota number for this patient? - Reporting overseas visitor tr
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
+    <span class="nhsuk-caption-l">
+      Treatment details
+    </span>
     <div class="nhsuk-form-group">
-      <span class="nhsuk-caption-l">
-        Malta Quota agreement details
-      </span>
-
-      <form action="patient-details-malta" method="post">
-
       <h1 class="nhsuk-label-wrapper">
-        <label class="nhsuk-label nhsuk-label--l" for="quote-number">
-          What is this patient's Malta Quota number?
-        </label></h1>
-        <div class="nhsuk-hint" id="hint-text-quote-number">
-          The format should be YY/YY-NNN. For example, 20/21-001
-        </div>
-      <input class="nhsuk-input  nhsuk-input--width-20" id="quota-number" name="quota-number" type="text" value="" >
+        <h1 class="nhsuk-label-wrapper">
+          <label class="nhsuk-label nhsuk-label--l" for="cost">
+            What is the cost of the treatment?
+          </label></h1>
+  
+          <div class="nhsuk-hint">
+            For example, 234.21
+          </div>
+      <input class="nhsuk-input  nhsuk-input--width-20" id="cost" name="cost" type="text" value="">
     </div>
 
-    <br>
-
-    {{ button({
-        "text": "Continue"
-        }) }}
-
-    </form>
+    <a class="nhsuk-button" href="check-your-answers-malta-sec-1">Continue</a>
     <p><a href="home">Cancel</a></p>
+
 
  </div>
 </div>
