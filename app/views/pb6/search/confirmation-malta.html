@@ -29,7 +29,50 @@ Malta Quota treatment submitted - Reporting overseas visitor treatments - NHSBSA
       </p>
 
 
-      <a class="nhsuk-button" href="home">Back to home</a>
+      <form action="malta-additional" method="post">
+
+        <div class="nhsuk-form-group">
+  
+          <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+              <h2 class="nhsuk-fieldset__heading">
+                Add another treatment
+              </h2>
+            </legend>
+          
+              <div class="nhsuk-radios">
+          
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="samePersonQuota" name="addTreatment" type="radio" value="1">
+                  <label class="nhsuk-label nhsuk-radios__label" for="samePersonQuota">
+                    For {{ data['givenName'] }} {{ data['name'] }} using the same quota number - {{ data['quotaNumber'] }}
+                  </label>
+                </div>
+  
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="samePerson" name="addTreatment" type="radio" value="2">
+                  <label class="nhsuk-label nhsuk-radios__label" for="samePerson">
+                    For {{ data['givenName'] }} {{ data['name'] }} using a new quota number
+                  </label>
+                </div>
+          
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="newPerson" name="addTreatment" type="radio" value="3">
+                  <label class="nhsuk-label nhsuk-radios__label" for="newPerson">
+                    For a different patient with a different quota number
+                  </label>
+                </div>
+      
+              </div>
+          </fieldset>
+        </div>
+  
+  
+        <button class="nhsuk-button" type="submit">
+          Continue
+        </button>
+        <a class="nhsuk-button nhsuk-button--secondary" href="home">Back to home</a>
+         </form>
        
 
     </div>

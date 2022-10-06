@@ -25,19 +25,19 @@ router.get('/', function(req , res){
 })
 
 
- //malta-additional-treatments/confirmation-malta.html
- router.post('/malta-add-another-treatment', function (req, res) {
+ //confirmation-malta.html
+ router.post('/malta-additional', function (req, res) {
 
-  const selectedRadio = req.body.cancel;
+  const selectedRadio = req.body.addTreatment;
 
-  if (selectedRadio === "Same person and quota number"){
-    res.redirect('treatment-start-date-malta')
+  if (selectedRadio === "1"){
+    res.redirect('treatment-start-date-malta-additional-1')
   }
-  if (selectedRadio === "Same person new quota number"){
-    res.redirect('treatment-start-date-malta')
+  if (selectedRadio === "2"){
+    res.redirect('treatment-start-date-malta-additional-2')
   }
-  if (selectedRadio === "New person"){
-    res.redirect('../search/add-treatment')
+  if (selectedRadio === "3"){
+    res.redirect('../search/treatment-start-date-malta')
   }
   else {
     res.redirect('confirmation-malta')
