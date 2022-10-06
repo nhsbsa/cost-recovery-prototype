@@ -30,7 +30,7 @@ Treatment details - check your answers - Reporting overseas visitor treatments -
           Treatment start date
         </dt>
         <dd class="nhsuk-summary-list__value">
-          09/08/2021
+          {{ data['treatment-start-dd'] }}/{{ data['treatment-start-mm'] }}/{{ data['treatment-start-yyyy'] }}
         </dd>
     
         <dd class="nhsuk-summary-list__actions">
@@ -45,7 +45,7 @@ Treatment details - check your answers - Reporting overseas visitor treatments -
           Treatment end date
         </dt>
         <dd class="nhsuk-summary-list__value">
-          15/03/2022
+          {{ data['treatment-end-dd'] }}/{{ data['treatment-end-mm'] }}/{{ data['treatment-end-yyyy'] }}
         </dd>
     
         <dd class="nhsuk-summary-list__actions">
@@ -60,7 +60,7 @@ Treatment details - check your answers - Reporting overseas visitor treatments -
         Treatment cost (£)
       </dt>
       <dd class="nhsuk-summary-list__value">
-        1,850.66
+        {{ data['treatment-cost'] }}
       </dd>
   
       <dd class="nhsuk-summary-list__actions">

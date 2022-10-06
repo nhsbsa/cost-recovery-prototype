@@ -24,13 +24,13 @@ What is the Malta Quota number for this patient? - Reporting overseas visitor tr
       <form action="patient-details-malta" method="post">
 
       <h1 class="nhsuk-label-wrapper">
-        <label class="nhsuk-label nhsuk-label--l" for="quote-number">
+        <label class="nhsuk-label nhsuk-label--l" for="quota-number">
           What is this patient's Malta Quota number?
         </label></h1>
-        <div class="nhsuk-hint" id="hint-text-quote-number">
+        <div class="nhsuk-hint" id="hint-text-quota-number">
           The format should be YY/YY-NNN. For example, 20/21-001
         </div>
-      <input class="nhsuk-input  nhsuk-input--width-20" id="quota-number" name="quota-number" type="text" value="" >
+      <input class="nhsuk-input  nhsuk-input--width-20" id="quota-number" name="quota-number" type="text" value="{{ data['quota-number'] }}" >
     </div>
 
     <br>

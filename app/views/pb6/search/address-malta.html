@@ -19,32 +19,35 @@ Address details - Reporting overseas visitor treatments - NHSBSA
     <span class="nhsuk-caption-l">
       Address details
     </span>
+
+    <form action="check-your-answers-malta-sec-2" method="post">
+
     <fieldset class="nhsuk-fieldset">
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
         <h1 class="nhsuk-fieldset__heading">
-          John Camilleri's address in Malta?
+          {{ data['givenName'] }} {{ data['name'] }}'s address in Malta?
         </h1>
       </legend>
       
       <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="addressLine1">
+        <label class="nhsuk-label" for="address-1">
           Address line 1 
         </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="addressLine1" name="address-line-1" type="text" value="">
+        <input class="nhsuk-input nhsuk-input--width-20" id="address-1" name="address-1" type="text" value="{{ data['address-1'] }}">
       </div>
     
       <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="addressLine2">
+        <label class="nhsuk-label" for="address-2">
           Address line 2 (optional)
         </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="addressLine2" name="address-line-2" type="text" value="">
+        <input class="nhsuk-input nhsuk-input--width-20" id="address-2" name="address-2" type="text" value="{{ data['address-2'] }}">
       </div>
     
       <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="addressLine3">
+        <label class="nhsuk-label" for="address-3">
           Address line 3 (optional)
         </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="addressLine3" name="address-line-3" type="text">
+        <input class="nhsuk-input nhsuk-input--width-20" id="address-3" name="address-3" type="text" value="{{ data['address-3'] }}">
       </div>
     
       <div class="nhsuk-form-group">
@@ -56,11 +59,13 @@ Address details - Reporting overseas visitor treatments - NHSBSA
     
     </fieldset>
 
-    <a style="margin-right: 20px;" class="nhsuk-button" href="check-your-answers-malta-sec-2">Continue</a>
+    <button class="nhsuk-button" type="submit">
+      Continue
+    </button>
    
 
     <p><a href="malta-cancel-confirmation-address">Cancel</a></p>
-
+</form>
  </div>
 </div>
 {% endblock %}

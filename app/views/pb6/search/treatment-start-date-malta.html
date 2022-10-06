@@ -39,7 +39,7 @@ What is the start date of the treatment? - Reporting overseas visitor treatments
                   Day
                 </label>
                 <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="treatment-start-dd"
-                  name="treatment-start-dd" type="number" pattern="[0-9]*">
+                  name="treatment-start-dd" type="number" pattern="[0-9]*" value="{{ data['treatment-start-dd'] }}">
               </div>
             </div>
             <div class="nhsuk-date-input__item">
@@ -48,7 +48,7 @@ What is the start date of the treatment? - Reporting overseas visitor treatments
                   Month
                 </label>
                 <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="treatment-start-mm"
-                  name="treatment-start-mm" type="number" pattern="[0-9]*">
+                  name="treatment-start-mm" type="number" pattern="[0-9]*" value="{{ data['treatment-start-mm'] }}">
               </div>
             </div>
             <div class="nhsuk-date-input__item">
@@ -57,7 +57,7 @@ What is the start date of the treatment? - Reporting overseas visitor treatments
                   Year
                 </label>
                 <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="treatment-start-yyyy"
-                  name="treatment-start-yyyy" type="number" pattern="[0-9]*">
+                  name="treatment-start-yyyy" type="number" pattern="[0-9]*" value="{{ data['treatment-start-yyyy'] }}">
               </div>
             </div>
           </div>
