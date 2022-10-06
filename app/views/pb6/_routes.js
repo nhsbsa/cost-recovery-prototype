@@ -10,6 +10,21 @@ router.get('/', function(req , res){
   res.render('index');
  });
 
+ //pb6/search/malta-quota-number.html
+ router.post('/quota-number-check', function (req, res) {
+
+  const selectedRadio = req.body.quotaNumber;
+
+  if (selectedRadio === "22/23-100"){
+    res.redirect('malta-quota-number-confirmation')
+  }
+  else {
+    res.redirect('patient-details-malta')
+  }
+
+})
+
+
  //malta-additional-treatments/confirmation-malta.html
  router.post('/malta-add-another-treatment', function (req, res) {
 

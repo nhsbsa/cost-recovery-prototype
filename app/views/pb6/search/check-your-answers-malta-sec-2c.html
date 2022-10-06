@@ -64,40 +64,41 @@ Check these details before submitting the treatment form - Reporting overseas vi
           </a>
         </dd>
       </div>
+  
     </dl>
 
     <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Agreement details</h2>
 
     <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-9">
 
-      <div class="nhsuk-summary-list__row">
+       <div class="nhsuk-summary-list__row">
+         <dt class="nhsuk-summary-list__key">
+           Issuing member state
+         </dt>
+         <dd class="nhsuk-summary-list__value">
+           Malta
+         </dd>
+ 
+         <dd class="nhsuk-summary-list__actions">
+           <a href="#">
+           </a>
+         </dd>
+       </div>
+
+       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Issuing member state
+          Quota number
         </dt>
         <dd class="nhsuk-summary-list__value">
-          Malta
+          {{ data['quotaNumber'] }}
         </dd>
 
         <dd class="nhsuk-summary-list__actions">
-          <a href="#">
-          </a>
+          <!-- <a href="malta-quota-number">
+            Change<span class="nhsuk-u-visually-hidden"> malta quota number</span>
+          </a> -->
         </dd>
       </div>
-
-      <div class="nhsuk-summary-list__row">
-       <dt class="nhsuk-summary-list__key">
-         Quota number
-       </dt>
-       <dd class="nhsuk-summary-list__value">
-         {{ data['quotaNumber'] }}
-       </dd>
-
-       <dd class="nhsuk-summary-list__actions">
-         <a href="malta-quota-number">
-           Change<span class="nhsuk-u-visually-hidden"> malta quota number</span>
-         </a>
-       </dd>
-     </div>
  
 
  
@@ -106,63 +107,80 @@ Check these details before submitting the treatment form - Reporting overseas vi
      <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Patient details</h2>
 
     <dl class="nhsuk-summary-list">
-      <div class="nhsuk-summary-list__row">
+       <div class="nhsuk-summary-list__row">
+         <dt class="nhsuk-summary-list__key">
+           Name
+         </dt>
+         <dd class="nhsuk-summary-list__value">
+          {{ data['name'] }}
+         </dd>
+ 
+         <dd class="nhsuk-summary-list__actions">
+           <!-- <a href="patient-details-malta">Change
+           </a> -->
+         </dd>
+       </div>
+ 
+       <div class="nhsuk-summary-list__row">
+         <dt class="nhsuk-summary-list__key">
+           Given names
+         </dt>
+         <dd class="nhsuk-summary-list__value">
+          {{ data['givenName'] }}
+         </dd>
+ 
+         <dd class="nhsuk-summary-list__actions">
+           <!-- <a href="patient-details-malta">Change
+           </a> -->
+         </dd>
+       </div>
+ 
+       <div class="nhsuk-summary-list__row">
+         <dt class="nhsuk-summary-list__key">
+          Date of birth
+         </dt>
+         <dd class="nhsuk-summary-list__value">
+          {{ data['dob-dd'] }}/{{ data['dob-mm'] }}/{{ data['dob-yyyy'] }}
+         </dd>
+ 
+         <dd class="nhsuk-summary-list__actions">
+           <!-- <a href="patient-details-malta">Change
+           </a> -->
+         </dd>
+       </div>
+
+       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Name
+          Do you have {{ data['givenName'] }} {{ data['name'] }}'s address in Malta?
         </dt>
         <dd class="nhsuk-summary-list__value">
-         {{ data['name'] }}
+          Yes
         </dd>
-
+    
         <dd class="nhsuk-summary-list__actions">
-          <a href="patient-details-malta">Change
+          <a href="#">
+            Change<span class="nhsuk-u-visually-hidden"> do you have {{ data['givenName'] }} {{ data['name'] }}'s home address in Malta</span>
           </a>
         </dd>
       </div>
 
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Given names
+          Home address
         </dt>
         <dd class="nhsuk-summary-list__value">
-         {{ data['givenName'] }}
+          {{ data['address-1'] }}<br />
+          {{ data['address-2'] }}<br />
+          {{ data['address-3'] }}<br />
+          Malta
         </dd>
-
+    
         <dd class="nhsuk-summary-list__actions">
-          <a href="patient-details-malta">Change
+          <a href="#">
+            Change<span class="nhsuk-u-visually-hidden"> home address</span>
           </a>
         </dd>
       </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-         Date of birth
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-         {{ data['dob-dd'] }}/{{ data['dob-mm'] }}/{{ data['dob-yyyy'] }}
-        </dd>
-
-        <dd class="nhsuk-summary-list__actions">
-          <a href="patient-details-malta">Change
-          </a>
-        </dd>
-      </div>
-
-      <div class="nhsuk-summary-list__row">
-       <dt class="nhsuk-summary-list__key">
-         Do you have {{ data['givenName'] }} {{ data['name'] }}'s address in Malta?
-       </dt>
-       <dd class="nhsuk-summary-list__value">
-         No
-       </dd>
-   
-       <dd class="nhsuk-summary-list__actions">
-         <a href="address-check-malta">
-           Change<span class="nhsuk-u-visually-hidden"> do you have {{ data['givenName'] }} {{ data['name'] }}'s home address in Malta</span>
-         </a>
-       </dd>
-     </div>
-
  
 
  
@@ -174,7 +192,7 @@ Check these details before submitting the treatment form - Reporting overseas vi
   
   <a style="margin-right: 20px;" class="nhsuk-button" href="confirmation-malta">Submit</a>
  
-  <p><a href="malta-cancel-confirmation-check-details-2b">Cancel</a></p>
+  <p><a href="malta-cancel-confirmation-check-details-2">Cancel</a></p>
  </div>
 </div>
 {% endblock %}
