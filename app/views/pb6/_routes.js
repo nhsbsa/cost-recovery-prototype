@@ -39,16 +39,6 @@ router.get('/', function(req , res){
 
 })
 
-
-// Clear all data in session
-router.post('/clear-data', function (req, res) {
-  req.session.data = {}
-  res.render('prototype-admin/clear-data-success')
-})
-
-
-
-
  //confirmation-malta.html
  router.post('/malta-additional', function (req, res) {
 
