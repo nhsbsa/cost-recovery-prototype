@@ -24,6 +24,20 @@ router.get('/', function(req , res){
 
 })
 
+ //pb6/search/malta-quota-number-additional-2.html
+ router.post('/quota-number-check-2', function (req, res) {
+
+  const selectedRadio = req.body.quotaNumber;
+
+  if (selectedRadio === "22/23-100"){
+    res.redirect('malta-quota-number-confirmation')
+  }
+  else {
+    res.redirect('check-your-answers-malta-sec-2d')
+  }
+
+})
+
 
  //confirmation-malta.html
  router.post('/malta-additional', function (req, res) {
