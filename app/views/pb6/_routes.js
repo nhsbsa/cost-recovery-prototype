@@ -10,6 +10,7 @@ router.get('/', function(req , res){
   res.render('index');
  });
 
+
  //pb6/search/malta-quota-number.html
  router.post('/quota-number-check', function (req, res) {
 
@@ -39,6 +40,15 @@ router.get('/', function(req , res){
 })
 
 
+// Clear all data in session
+router.post('/clear-data', function (req, res) {
+  req.session.data = {}
+  res.render('prototype-admin/clear-data-success')
+})
+
+
+
+
  //confirmation-malta.html
  router.post('/malta-additional', function (req, res) {
 
@@ -51,6 +61,7 @@ router.get('/', function(req , res){
     res.redirect('treatment-start-date-malta-additional-2')
   }
   if (selectedRadio === "3"){
+    req.session.data = {}
     res.redirect('../search/treatment-start-date-malta')
   }
   else {
