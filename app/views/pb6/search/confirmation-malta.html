@@ -45,21 +45,28 @@ Malta Quota treatment submitted - Reporting overseas visitor treatments - NHSBSA
                 <div class="nhsuk-radios__item">
                   <input class="nhsuk-radios__input" id="samePersonQuota" name="addTreatment" type="radio" value="1">
                   <label class="nhsuk-label nhsuk-radios__label" for="samePersonQuota">
-                    For {{ data['givenName'] }} {{ data['name'] }} using the same quota number - {{ data['quotaNumber'] }}
+                    Yes, for {{ data['givenName'] }} {{ data['name'] }} using the same Malta Quota number {{ data['quotaNumber'] }}
                   </label>
                 </div>
   
                 <div class="nhsuk-radios__item">
                   <input class="nhsuk-radios__input" id="samePerson" name="addTreatment" type="radio" value="2">
                   <label class="nhsuk-label nhsuk-radios__label" for="samePerson">
-                    For {{ data['givenName'] }} {{ data['name'] }} using a new quota number
+                    Yes, for {{ data['givenName'] }} {{ data['name'] }} using a different Malta Quota number
                   </label>
                 </div>
           
                 <div class="nhsuk-radios__item">
                   <input class="nhsuk-radios__input" id="newPerson" name="addTreatment" type="radio" value="3">
                   <label class="nhsuk-label nhsuk-radios__label" for="newPerson">
-                    For a different patient with a different quota number
+                    Yes, for a different patient
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="no" name="addTreatment" type="radio" value="4">
+                  <label class="nhsuk-label nhsuk-radios__label" for="newPerson">
+                    No
                   </label>
                 </div>
       
@@ -71,7 +78,7 @@ Malta Quota treatment submitted - Reporting overseas visitor treatments - NHSBSA
         <button class="nhsuk-button" type="submit">
           Continue
         </button>
-        <a class="nhsuk-button nhsuk-button--secondary" href="home">Back to home</a>
+       
          </form>
        
 

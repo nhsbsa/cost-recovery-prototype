@@ -54,6 +54,10 @@ router.get('/', function(req , res){
     req.session.data = {}
     res.redirect('../search/treatment-start-date-malta')
   }
+  if (selectedRadio === "4"){
+    req.session.data = {}
+    res.redirect('../search/home')
+  }
   else {
     res.redirect('confirmation-malta')
   }
