@@ -1,6 +1,6 @@
 {% extends 'layout-with-login.html' %}
 {% block pageTitle %}
-Are you sure that this person was an in-patient for a continuous period of longer than 6 months? - Reporting overseas
+Are you sure that this treatment runs over 2 fiscal years? - Reporting overseas
 visitor treatments - NHSBSA
 {% endblock %}
 
@@ -23,20 +23,20 @@ visitor treatments - NHSBSA
                 Treatment details
             </span>
 
-            <form action="treatment-duration" method="post">
+            <form action="" method="post">
             <div class="nhsuk-form-group">
 
                 <fieldset class="nhsuk-fieldset">
                     <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
                         <h1 class="nhsuk-fieldset__heading">
-                            Are you sure that this person was an in-patient for a continuous period of longer than 6
-                            months?
+                            You have keyed treatment dates spanning 2 fiscal years (2021/22 and 2022/23) using only one Malta Quota number. Is this correct?
                         </h1>
                     </legend>
+                   
 
                     <div class="nhsuk-inset-text nhsuk-u-margin-bottom-4" style="margin-top:0;" >
                         <span class="nhsuk-u-visually-hidden">Information: </span>
-                        <p>If not then you should claim for treatments separately.</p>
+                        <p>If this is not correct you should claim for treatments in different fiscal years separately using different Malta Quota numbers.</p>
                     </div>
 
                     <div class="nhsuk-radios">
