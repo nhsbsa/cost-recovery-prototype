@@ -29,43 +29,48 @@ visitor treatments - NHSBSA
                 <fieldset class="nhsuk-fieldset">
                     <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
                         <h1 class="nhsuk-fieldset__heading">
-                            Treatment dates span two financial years
+                            Treatment dates overlap 2 fiscal years (2021 and 2022)
                         </h1>
                     </legend>
 
-                    <div class="nhsuk-hint" id="example-hint" style="padding-top:20px">
-                        The dates you have added for this treatment (23/03/2021 to 10/04/2021) span two financial years (2020/21 and 2021/22).
+                    <div class="nhsuk-hint" id="example-hint">
+                        The start and end dates you have keyed for this treatment (23/03/2021 to 10/04/2021) overlap 2 fiscal years.
                       </div>
 
-                      <div class="nhsuk-checkboxes">
+                      <p><strong>Do you confirm that this is a continuous course of treatment using a single Malta Quota number?</strong></p>
 
-                        <div class="nhsuk-checkboxes__item">
-                          <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
-                          <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1" >
-                            I confirm that this is a continuous period of treatment
+
+                      <div class="nhsuk-radios">
+
+                        <div class="nhsuk-radios__item">
+                          <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+                          <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                            Yes
                           </label>
                         </div>
-                
-                
+                  
+                        <div class="nhsuk-radios__item">
+                          <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+                          <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                            No
+                          </label>
+                        </div>
+                  
                       </div>
+
+
                    
                 </fieldset>
 
             </div>
+<br />
 
-            <div class="nhsuk-inset-text" style="margin-top:0;">
-                <span class="nhsuk-u-visually-hidden">Information: </span>
-                <p>If this is not a continuous period of treatment, 2 quota numbers are required for separate treatments carried out in different financial years.</p>
-                    <p>Add treatments separately or contact the NHSBSA Cost Recovery team for further advice.</p>
-              </div>
 
             <button class="nhsuk-button" type="submit">
                 Continue
               </button>
 
-              <button class="nhsuk-button nhsuk-button--secondary" type="submit">
-                Return to homepage
-              </button>
+
             </form>
         </div>
 
