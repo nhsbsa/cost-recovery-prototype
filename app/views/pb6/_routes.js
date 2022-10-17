@@ -11,6 +11,22 @@ router.get('/', function(req , res){
  });
 
 
+
+ //pb6/search/treatment-end-date-malta.html
+ router.post('/check-treatment-dates', function (req, res) {
+
+  const treatmentStartDate = req.body.treatmentStartMM;
+
+  if (treatmentStartDate ==="03"){
+    res.redirect('treatment-length-confirmation-malta')
+  }
+  else {
+    res.redirect('treatment-cost-malta')
+  }
+
+})
+
+
  //pb6/search/malta-quota-number.html
  router.post('/quota-number-check', function (req, res) {
 

@@ -17,7 +17,10 @@ What is the end date of the treatment? - Reporting overseas visitor treatments -
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
 
-    <form action="treatment-cost-malta" method="post">
+    <!-- <form action="treatment-cost-malta" method="post"> -->
+      <form action="check-treatment-dates" method="post">
+
+        <input type="hidden" id="treatmentStartMM" name="treatmentStartMM" value="{{ data['treatment-start-mm'] }}" />
 
     <div class="nhsuk-form-group">
       <span class="nhsuk-caption-l">
