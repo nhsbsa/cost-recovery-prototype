@@ -68,7 +68,7 @@ router.get('/', function(req , res){
   }
   if (selectedRadio === "3"){
     req.session.data = {}
-    res.redirect('../search/treatment-start-date-malta')
+    res.redirect('../search/add-treatment')
   }
   if (selectedRadio === "4"){
     req.session.data = {}
