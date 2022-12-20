@@ -270,11 +270,11 @@ router.post('/malta-cancel-confirmation-start-date', function (req, res) {
   if (selectedRadio === "maltaQuota"){
     res.redirect('treatment-start-date-malta')
   }
-  if (selectedRadio === "RH"){
-    res.redirect('RH-PAGE-HERE')
+  if (selectedRadio === "RHGeneral"){
+    res.redirect('treatment-start-date-rhg')
   }
   if (selectedRadio === "RHQuota"){
-    res.redirect('RHQuota-PAGE-HERE')
+    res.redirect('treatment-start-date-rhq')
   }
   else {
     res.redirect('add-treatment')
