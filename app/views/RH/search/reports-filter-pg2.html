@@ -1,0 +1,254 @@
+{% extends 'layout-with-login.html' %}
+{% block pageTitle %}
+Reports filtered results
+{% endblock %}
+
+
+
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="home">Home</a></li>
+      <li class="nhsuk-breadcrumb__item">Reports</li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="home">Back to Home</a></p>
+  </div>
+</nav>
+<div class="app-phase-banner">
+  <div class="nhsuk-width-container app-phase-banner__container">
+     <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+        Beta
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a new service - your <a href="#">feedback</a> will help us improve it.
+        </span>
+     </p>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <h1 class="nhsuk-label-wrapper">
+      <label class="nhsuk-label nhsuk-label--l" for="title">
+        Filter and download your report as a spreadsheet
+      </label>
+    </h1>
+
+    <span class="nhsuk-hint">
+      You can use the filters here to narrow your search and find details of treatments dealt with by your trust.
+    </span>
+
+    <div class="nhsuk-form-group select-inline">
+      <label class="nhsuk-label" for="timePeriodFrom">
+        Start date
+      </label>
+      <span class="nhsuk-hint">
+        For example, Jan 21/03/2019
+      </span>
+      <input class="nhsuk-input nhsuk-input--width-10" id="timePeriodFrom" name="timefrom" type="text" value="01/01/2018">
+    </div>
+
+    <div class="nhsuk-form-group select-inline">
+      <label class="nhsuk-label" for="timePeriodTo">
+        End date
+      </label>
+      <span class="nhsuk-hint">
+        For example, 21/052019
+      </span>
+      <input class="nhsuk-input nhsuk-input--width-10" id="timePeriodTo" name="timeto" type="text" value="31/03/2018">
+    </div>
+
+    <div class="nhsuk-form-group select-inline">
+      <label class="nhsuk-label" for="select-1">
+        Entitlement
+      </label>
+      <select class="nhsuk-select" id="select-1" name="select-1">
+          <option value="0"></option>
+          <option value="1"  selected>EHIC</option>
+          <option value="2">PRC</option>
+          <option value="3">S2</option>
+        </select>
+    </div>
+
+    <div class="nhsuk-form-group select-inline">
+      <label class="nhsuk-label" for="country">
+        Country
+      </label>
+      <input class="nhsuk-input nhsuk-input--width-10" id="country" name="country" type="text" value="Belgium">
+    </div>
+    
+    <a class="nhsuk-button select-inline" href="reports-filter#summary">Apply filters</a>
+    <p class="select-inline" style="padding-top: 12px";><a href="reports">Clear filters</a></p>
+
+  </div>
+</div>
+<br>
+
+<section>
+  <div class="nhsuk-width-container" id="summary">
+    <p class="filter-description">EHIC treatments processed by Airedale NHS Foundation Trust for Belgium from 01/01/2018 to 31/03/2018.</p>
+    <div class="nhsuk-grid-row nhsuk-card-group">
+      <div class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content" style="text-align: center;">
+            <h2 class="nhsuk-card__heading nhsuk-heading-s">Processed treatments</h2>
+            <p class="data-item-l">20</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content" style="text-align: center;">
+            <h2 class="nhsuk-card__heading nhsuk-heading-s">Total cost</h2>
+            <p class="nhsuk-card__description data-item-l">£20,255.54</p>
+          </div>
+          </div>
+        </div>
+
+        <!--<div class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          <div class="nhsuk-card">
+            <div class="nhsuk-card__content" style="text-align: center;">
+              <h2 class="nhsuk-card__heading nhsuk-heading-s">Incentives</h2>
+              <p class="nhsuk-card__description data-item-l">£5,063.88</p>
+            </div>
+            </div>
+          </div> -->
+      </div>
+    </div>
+</section>
+
+<p><a href="#">Download as a spreadsheet</a></p>
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <div class="nhsuk-table-responsive" id="table">
+      <table class="nhsuk-table">
+        <caption class="nhsuk-table__caption">Sent forms</caption>
+        <thead class="nhsuk-table__head">
+          <tr class="nhsuk-table__row">
+            <th class="nhsuk-table__header" scope="col">Treatment ID</th>
+            <th class="nhsuk-table__header" scope="col">Full name</th>
+            <th class="nhsuk-table__header" scope="col">Entitlement</th>
+            <th class="nhsuk-table__header" scope="col">Country</th>
+            <th class="nhsuk-table__header" scope="col">Cost</th>
+            <th class="nhsuk-table__header" scope="col">Processed date</th>
+            <th class="nhsuk-table__header" scope="col"></th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">63552</td>
+            <td class="nhsuk-table__cell ">Gaëtan Lejeune</td>
+            <td class="nhsuk-table__cell ">EHIC</td>
+            <td class="nhsuk-table__cell ">Belgium</td>
+            <td class="nhsuk-table__cell ">£450.00</td>
+            <td class="nhsuk-table__cell ">26/02/2018</td>
+            <td class="nhsuk-table__cell"><a href="#">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">63543</td>
+            <td class="nhsuk-table__cell ">Caroline Delvaux</td>
+            <td class="nhsuk-table__cell ">EHIC</td>
+            <td class="nhsuk-table__cell ">Belgium</td>
+            <td class="nhsuk-table__cell ">£954.55</td>
+            <td class="nhsuk-table__cell ">22/02/2018</td>
+            <td class="nhsuk-table__cell"><a href="#">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">63532</td>
+            <td class="nhsuk-table__cell ">Lisa Lefevre</td>
+            <td class="nhsuk-table__cell ">EHIC</td>
+            <td class="nhsuk-table__cell ">Belgium</td>
+            <td class="nhsuk-table__cell ">£1,000.00</td>
+            <td class="nhsuk-table__cell ">21/02/2018</td>
+            <td class="nhsuk-table__cell"><a href="#">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">63421</td>
+            <td class="nhsuk-table__cell ">Axel Mahieu</td>
+            <td class="nhsuk-table__cell ">EHIC</td>
+            <td class="nhsuk-table__cell ">Belgium</td>
+            <td class="nhsuk-table__cell ">£500.50</td>
+            <td class="nhsuk-table__cell ">20/02/2018</td>
+            <td class="nhsuk-table__cell"><a href="#">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">63390</td>
+            <td class="nhsuk-table__cell ">Valentin Bertrand</td>
+            <td class="nhsuk-table__cell ">EHIC</td>
+            <td class="nhsuk-table__cell ">Belgium</td>
+            <td class="nhsuk-table__cell ">£1,300.55</td>
+            <td class="nhsuk-table__cell ">08/02/2018</td>
+            <td class="nhsuk-table__cell"><a href="#">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">63487</td>
+            <td class="nhsuk-table__cell ">Nora Rousseau</td>
+            <td class="nhsuk-table__cell ">EHIC</td>
+            <td class="nhsuk-table__cell ">Belgium</td>
+            <td class="nhsuk-table__cell ">£250.00</td>
+            <td class="nhsuk-table__cell ">21/01/2018</td>
+            <td class="nhsuk-table__cell"><a href="#">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">63560</td>
+            <td class="nhsuk-table__cell ">Karim Remy</td>
+            <td class="nhsuk-table__cell ">EHIC</td>
+            <td class="nhsuk-table__cell ">Belgium</td>
+            <td class="nhsuk-table__cell ">£3,000.00</td>
+            <td class="nhsuk-table__cell ">20/01/2018</td>
+            <td class="nhsuk-table__cell"><a href="#">View</a></td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">63220</td>
+            <td class="nhsuk-table__cell ">Jerome Daniels</td>
+            <td class="nhsuk-table__cell ">EHIC</td>
+            <td class="nhsuk-table__cell ">Belgium</td>
+            <td class="nhsuk-table__cell ">£683.30</td>
+            <td class="nhsuk-table__cell ">10/01/2018</td>
+            <td class="nhsuk-table__cell"><a href="#">View</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+
+    <nav class="pagination" id="pagination-label">
+
+      <p class="nhsuk-u-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+
+      <ul class="pagination__list">
+        <li class="pagination__item  pagination__item--prev">
+          <a class="pagination__link" href="">Previous<span class="nhsuk-u-visually-hidden"> set of
+              pages</span></a>
+        </li>
+
+        <li class="pagination__item"><a class="pagination__link" href="reports-filter#table">1</a></li>
+
+        <li class="pagination__item pagination__item--active">2</li>
+
+        <li class="pagination__item"><a class="pagination__link" href="/page=3">3</a></li>
+
+        <li class="pagination__item"><a class="pagination__link" href="/page=4">4</a></li>
+
+        <li class="pagination__item"><a class="pagination__link" href="/page=5">5</a></li>
+
+        <li class="pagination__item  pagination__item--next">
+          <a class="pagination__link" href="">Next<span class="nhsuk-u-visually-hidden"> set of
+              pages</span></a>
+        </li>
+      </ul>
+      <p class="pagination__results">Showing <b>1</b> to <b>8</b> of <b>1,500</b> results</p>
+    </nav>
+  
+ </div>
+</div>
+{% endblock %}

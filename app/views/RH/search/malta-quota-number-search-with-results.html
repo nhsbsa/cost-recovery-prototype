@@ -1,0 +1,108 @@
+{% extends 'layout-with-login.html' %}
+{% block pageTitle %}
+What is the Malta Quota number for this patient? - Reporting overseas visitor treatments - NHSBSA
+{% endblock %}
+
+
+
+{% block content %}
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="javascript:history.back()">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back</a>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-form-group">
+      <span class="nhsuk-caption-l">
+        Malta Quota agreement details
+      </span>
+
+      <form action="patient-details-malta" method="post">
+
+      <h1 class="nhsuk-label-wrapper">
+        <label class="nhsuk-label nhsuk-label--l" for="quote-number">
+          Search for a Malta Quota number
+        </label></h1>
+        <div class="nhsuk-hint" id="hint-text-quote-number">
+          The format should be YY/YY-NNN. For example, 20/21-001
+        </div>
+      <input class="nhsuk-input  nhsuk-input--width-20" id="quota-number" name="quota-number" type="text" value="22/23-005" >
+    </div>
+
+    <br>
+
+    {{ button({
+        "text": "Search"
+        }) }}
+
+    </form>
+    <p><a href="home">Cancel</a></p><br />
+
+    <div id="result">
+         
+        <div role="alert" class="nhsuk-label--m" id="non_zero_records">1 result found</div>
+     <div class="nhsuk-hint">Select the correct person to continue.</div>
+     <div>
+        <table role="table" class="nhsuk-table-responsive">
+           <caption class="nhsuk-table__caption"></caption>
+           <thead role="rowgroup" class="nhsuk-table__head">
+              <tr role="row">
+                 <th role="columnheader" scope="col" class="table-columnheader">Name</th>
+                 <th role="columnheader" scope="col" class="table-columnheader">Given names</th>
+                 <th role="columnheader" scope="col" class="table-columnheader">Date of birth</th>
+                 <th role="columnheader" scope="col" class="table-columnheader">Action</th>
+              </tr>
+              
+           </thead>
+           <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                 <td role="cell" class="nhsuk-table__cell ">
+                    <span class="nhsuk-table-responsive__heading">Name</span>
+                    <p >Johnson</p>
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell ">
+                    <span class="nhsuk-table-responsive__heading">Given names</span>
+                    <p >George</p>
+                 </td>
+                 <td role="cell" class="nhsuk-table__cell ">
+                    <span class="nhsuk-table-responsive__heading">Date of birth</span>
+                    <p >01/01/1981</p>
+                 </td>
+
+                 <td role="cell" class="nhsuk-table__cell " value="222557383">
+                    <span class="nhsuk-table-responsive__heading">Action</span>
+                    <a href="" id="">
+                       Select
+                       <span class="nhsuk-u-visually-hidden">&nbsp;</span>
+                       <span class="nhsuk-u-visually-hidden">record for George Johnson with the date of birth 01/01/1981 and belongs to France</span>
+                    </a>
+                    
+                    
+                 </td>
+              </tr>
+           </tbody>
+        </table>
+     </div>
+     <div>
+        <div>
+
+</div>
+        <p>
+           <span>If none of the results match</span>
+           <a id="redirect_to_entitlement_detail_page" href="/report-overseas-visitor-treatments/add-treatment/search-person-ehic/select-person">
+              
+              <span id="search-records-add-new-person">add a quota number</span>
+           </a>
+        </p>
+     </div>
+     
+     
+  </div>
+
+ </div>
+</div>
+{% endblock %}
