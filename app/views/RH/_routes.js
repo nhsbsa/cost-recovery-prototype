@@ -271,7 +271,7 @@ router.post('/malta-cancel-confirmation-start-date', function (req, res) {
     res.redirect('treatment-start-date-malta')
   }
   if (selectedRadio === "RHGeneral"){
-    res.redirect('treatment-start-date-rhg')
+    res.redirect('rhg-treatment-start-date')
   }
   if (selectedRadio === "RHQuota"){
     res.redirect('treatment-start-date-rhq')
@@ -333,6 +333,23 @@ router.post('/confirm-cost', function (req, res) {
 
 })
 
+//confirm-cost-rhg.html
+router.post('/confirm-cost-rhg', function (req, res) {
+
+  const selectedRadio = req.body.cost;
+
+  if (selectedRadio === "yes"){
+    res.redirect('rhg-reason-cost')
+  }
+  if (selectedRadio === "no"){
+    res.redirect('rhg-treatment-cost')
+  }
+  else {
+    res.redirect('rhg-confirm-cost')
+  }
+
+})
+
 //add-another-treatment-ehic.html
 router.post('/another-treatment', function (req, res) {
 
@@ -346,6 +363,23 @@ router.post('/another-treatment', function (req, res) {
   }
   else {
     res.redirect('confirmation-ehic')
+  }
+
+})
+
+//add-another-treatment-rhg.html
+router.post('/another-treatment-rhg', function (req, res) {
+
+  const selectedRadio = req.body.another;
+
+  if (selectedRadio === "same person"){
+    res.redirect('rhg-entitlements')  
+  }
+  if (selectedRadio === "different person"){
+    res.redirect('add-treatment')
+  }
+  else {
+    res.redirect('rhg-confirmation')
   }
 
 })
