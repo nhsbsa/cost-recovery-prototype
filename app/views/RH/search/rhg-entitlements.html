@@ -16,38 +16,38 @@ Entitlement
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
-       
-      <form action="entitlements-aat" method="post">
+
+      <form action="entitlements-rhg" method="post">
 
         {{ radios({
-           "idPrefix": "entitlement",
-           "name": "entitlement",
-           "fieldset": {
-             "legend": {
-               "text": "To which entitlement do you want to add another treatment for Douglas Caven?",
-               "classes": "nhsuk-fieldset__legend--l",
-               "isPageHeading": true
-             }
-           },
-           "items": [
-             {
-               "value": "RHGeneral",
-               "text": "RH General"
-             },
-             {
-               "value": "RHQuota",
-               "text": "RH Quota"
-             }
-           ]
-         }) }}
- 
+          "idPrefix": "entitlement",
+          "name": "entitlement",
+          "fieldset": {
+            "legend": {
+              "text": "To which entitlement do you want to add another treatment for Douglas Caven?",
+              "classes": "nhsuk-fieldset__legend--l",
+              "isPageHeading": true
+            }
+          },
+          "items": [
+            {
+              "value": "RHGeneral",
+              "text": "RH General"
+            },
+            {
+              "value": "RHQuota",
+              "text": "RH Quota"
+            }
+          ]
+        }) }}
+
         {{ button({
         "text": "Continue"
         }) }}
- 
-     </form>
-     <p><a href="home">Cancel</a></p>
 
- </div>
+    </form>
+    <p><a href="home">Cancel</a></p>
+
+  </div>
 </div>
 {% endblock %}
