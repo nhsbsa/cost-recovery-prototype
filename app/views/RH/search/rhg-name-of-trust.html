@@ -1,6 +1,6 @@
 {% extends 'layout-with-login.html' %}
 {% block pageTitle %}
-Hospital details
+Trust details
 {% endblock %}
 
 
@@ -17,29 +17,30 @@ Hospital details
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
     <span class="nhsuk-caption-l">
-      Hospital address details
+      Trust details
     </span>
     <fieldset class="nhsuk-fieldset">
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
         <h1 class="nhsuk-fieldset__heading">
-          What was the name of the hospital where treatment was received?
+          What was the name of the trust where treatment was received?
         </h1>
       </legend>
       
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="addressLine0">
-          Name of hospital 
+          Name of trust
         </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="addressLine1" name="address-line-1" type="text" value="Royal Free">
+        <input class="nhsuk-input nhsuk-input--width-20" id="addressLine1" name="address-line-1" type="text" value="">
       </div>
 
+<!--    
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="addressLine1">
           City or town
         </label>
         <input class="nhsuk-input nhsuk-input--width-20" id="addressLine1" name="address-line-1" type="text" value="Edinburgh">
       </div>
-<!--    
+
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="addressLine2">
           Address line 2 (optional)
