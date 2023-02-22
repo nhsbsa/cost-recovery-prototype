@@ -1,0 +1,82 @@
+{% extends 'layout-with-login.html' %}
+{% block pageTitle %}
+Reports
+{% endblock %}
+
+{% block beforeContent %}
+<div class="app-phase-banner">
+  <div class="nhsuk-width-container app-phase-banner__container">
+    <p class="app-phase-banner__content">
+      <strong class="nhsuk-tag app-phase-banner__tag">
+        Beta
+      </strong>
+      <span class="app-phase-banner__text">
+        This is a new service - your <a href="#">feedback</a> will help us improve it.
+      </span>
+    </p>
+  </div>
+</div>
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="home">Home</a></li>
+      <li class="nhsuk-breadcrumb__item">Reports</li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="home">Back to Home</a></p>
+  </div>
+</nav>
+
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-1">Reports</h1>
+    <h2 class="nhsuk-u-margin-bottom-4">Malta Quota treatments</h2>
+
+    <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">
+      Filter and download your report as a spreadsheet
+    </h3>
+
+    <span class="nhsuk-hint nhsuk-u-margin-bottom-4">
+      You can use the filters here to narrow your search and find details of treatments within your trust.
+    </span>
+
+    <div class="nhsuk-form-group select-inline">
+      <label class="nhsuk-label" for="startDate">
+        Start date
+      </label>
+      <span class="nhsuk-hint">
+        For example, 21/03/2019
+      </span>
+      <input class="nhsuk-input nhsuk-input--width-10" id="startDate" name="startdate" type="text">
+    </div>
+
+    <div class="nhsuk-form-group select-inline">
+      <label class="nhsuk-label" for="EndDate">
+        End date
+      </label>
+      <span class="nhsuk-hint">
+        For example, 21/05/2019
+      </span>
+      <input class="nhsuk-input nhsuk-input--width-10" id="startDate" name="startdate" type="text">
+    </div>
+
+    <br>
+
+    <a class="nhsuk-button select-inline" href="#">Apply filters</a>
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="nhsuk-inset-text">
+    <span class="nhsuk-u-visually-hidden">Information: </span>
+    <p>For EHIC, PRC or S2/E112 reports please visit the <a href="reports">main reports page</a>.</p>
+  </div>
+</div>
+<br>
+
+</div>
+</div>
+{% endblock %}

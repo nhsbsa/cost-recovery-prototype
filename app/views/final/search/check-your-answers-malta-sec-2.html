@@ -1,0 +1,198 @@
+{% extends 'layout-with-login.html' %}
+{% block pageTitle %}
+Check these details before submitting the treatment form - Reporting overseas visitor treatments - NHSBSA
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="javascript:history.back()">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back</a>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-three-quarters">
+    <h1 class="nhsuk-label-wrapper">
+      <label class="nhsuk-label nhsuk-label--l" for="CheckYourAnswers">
+        Check these details before submitting the treatment form
+      </label></h1>
+
+      <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Treatment details</h2>
+
+      <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-9">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Treatment start date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['treatment-start-dd'] }}/{{ data['treatment-start-mm'] }}/{{ data['treatment-start-yyyy'] }}
+          </dd>
+      
+          <dd class="nhsuk-summary-list__actions">
+            <a href="#">
+            </a>
+          </dd>
+        </div>
+  
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Treatment end date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['treatment-end-dd'] }}/{{ data['treatment-end-mm'] }}/{{ data['treatment-end-yyyy'] }}
+          </dd>
+      
+          <dd class="nhsuk-summary-list__actions">
+            <a href="#">
+            </a>
+          </dd>
+        </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Treatment cost (£)
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['treatment-cost'] }}
+        </dd>
+    
+        <dd class="nhsuk-summary-list__actions">
+          <a href="#">
+          </a>
+        </dd>
+      </div>
+  
+    </dl>
+
+    <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Agreement details</h2>
+
+    <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-9">
+
+       <div class="nhsuk-summary-list__row">
+         <dt class="nhsuk-summary-list__key">
+           Issuing member state
+         </dt>
+         <dd class="nhsuk-summary-list__value">
+           Malta
+         </dd>
+ 
+         <dd class="nhsuk-summary-list__actions">
+           <a href="#">
+           </a>
+         </dd>
+       </div>
+
+       <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Quota number
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['quotaNumber'] }}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="malta-quota-number">
+            Change<span class="nhsuk-u-visually-hidden"> malta quota number</span>
+          </a>
+        </dd>
+      </div>
+ 
+
+ 
+     </dl>
+
+     <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Patient details</h2>
+
+    <dl class="nhsuk-summary-list">
+       <div class="nhsuk-summary-list__row">
+         <dt class="nhsuk-summary-list__key">
+           Name
+         </dt>
+         <dd class="nhsuk-summary-list__value">
+          {{ data['name'] }}
+         </dd>
+ 
+         <dd class="nhsuk-summary-list__actions">
+           <a href="patient-details-malta">Change
+           </a>
+         </dd>
+       </div>
+ 
+       <div class="nhsuk-summary-list__row">
+         <dt class="nhsuk-summary-list__key">
+           Given names
+         </dt>
+         <dd class="nhsuk-summary-list__value">
+          {{ data['givenName'] }}
+         </dd>
+ 
+         <dd class="nhsuk-summary-list__actions">
+           <a href="patient-details-malta">Change
+           </a>
+         </dd>
+       </div>
+ 
+       <div class="nhsuk-summary-list__row">
+         <dt class="nhsuk-summary-list__key">
+          Date of birth
+         </dt>
+         <dd class="nhsuk-summary-list__value">
+          {{ data['dob-dd'] }}/{{ data['dob-mm'] }}/{{ data['dob-yyyy'] }}
+         </dd>
+ 
+         <dd class="nhsuk-summary-list__actions">
+           <a href="patient-details-malta">Change
+           </a>
+         </dd>
+       </div>
+
+       <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Do you have {{ data['givenName'] }} {{ data['name'] }}'s address in Malta?
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Yes
+        </dd>
+    
+        <dd class="nhsuk-summary-list__actions">
+          <a href="address-check-malta">
+            Change<span class="nhsuk-u-visually-hidden"> do you have {{ data['givenName'] }} {{ data['name'] }}'s home address in Malta</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Home address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['address-1'] }}<br />
+          {{ data['address-2'] }}<br />
+          {{ data['address-3'] }}<br />
+          Malta
+        </dd>
+    
+        <dd class="nhsuk-summary-list__actions">
+          <a href="address-malta">
+            Change<span class="nhsuk-u-visually-hidden"> home address</span>
+          </a>
+        </dd>
+      </div>
+ 
+
+ 
+     </dl>
+
+
+
+  <p>If you select Submit, you are confirming these details are correct to the best of your knowledge.</p>
+  
+  <a style="margin-right: 20px;" class="nhsuk-button" href="confirmation-malta">Submit</a>
+ 
+  <p><a href="malta-cancel-confirmation-check-details-2">Cancel</a></p>
+ </div>
+</div>
+{% endblock %}

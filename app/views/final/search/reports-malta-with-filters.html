@@ -1,0 +1,89 @@
+{% extends 'layout-with-login.html' %}
+{% block pageTitle %}
+Reports - Malta Quota treatments - Reporting overseas visitors treatments - NHSBSA
+{% endblock %}
+
+{% block beforeContent %}
+<div class="app-phase-banner">
+  <div class="nhsuk-width-container app-phase-banner__container">
+    <p class="app-phase-banner__content">
+      <strong class="nhsuk-tag app-phase-banner__tag">
+        Beta
+      </strong>
+      <span class="app-phase-banner__text">
+        This is a new service - your <a href="#">feedback</a> will help us improve it.
+      </span>
+    </p>
+  </div>
+</div>
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="home">Home</a></li>
+      <li class="nhsuk-breadcrumb__item">Reports - Malta Quota</li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="home">Back to Home</a></p>
+  </div>
+</nav>
+
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <h1 class="nhsuk-heading-xl ">Reports - Malta Quota treatments</h1>
+
+    <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">
+      Download a report for treatments between selected dates at your trust.
+    </h2>
+
+    <span class="nhsuk-hint nhsuk-u-margin-bottom-6">
+      Enter a start and end date for the treatments you want a report for.<br/>
+      (Use a '/' to separate day, month and year.)
+    </span>
+
+    <div class="nhsuk-form-group select-inline">
+      <label class="nhsuk-label" for="startDate">
+        Treatment start date
+      </label>
+      <span class="nhsuk-hint">
+        For example, 21/03/2022
+      </span>
+      <input class="nhsuk-input nhsuk-input--width-10" id="startDate" name="startdate" type="text" value="01/01/2022">
+    </div>
+
+    <div class="nhsuk-form-group select-inline">
+      <label class="nhsuk-label" for="EndDate">
+        Treatment end date
+      </label>
+      <span class="nhsuk-hint">
+        For example, 21/03/2022
+      </span>
+      <input class="nhsuk-input nhsuk-input--width-10" id="startDate" name="startdate" type="text" value="30/06/2022">
+    </div>
+
+    <br>
+
+    <a class="nhsuk-button select-inline" href="#">Search</a>
+    <p class="select-inline" style="padding-top: 23px" ;="">
+        <a id="clear_filter" href="reports-malta">Clear
+           dates</a>
+     </p>
+     <div class="nhsuk-inset-text" style="margin-top:2px;">
+      <span class="nhsuk-u-visually-hidden">Information: </span>
+      <p>Your report has been created.</p>
+      <button class="nhsuk-button nhsuk-button--secondary" type="submit">
+          Download Excel report
+        </button>
+    </div>
+
+
+  </div>
+</div>
+
+
+<br>
+
+</div>
+</div>
+{% endblock %}
