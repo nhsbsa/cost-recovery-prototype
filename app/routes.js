@@ -77,5 +77,11 @@ router.use('/pb6/malta-additional-treatments', require('./views/pb6/_routes'));
 
 router.use('/RH/search', require('./views/RH/_routes'));
 
+router.use('/final/search', require('./views/final/_routes'));
+
+router.use('/final/malta-quota-search', require('./views/final/_routes'));
+
+router.use('/final/malta-additional-treatments', require('./views/final/_routes'));
+
 
 module.exports = router;
