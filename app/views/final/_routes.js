@@ -316,7 +316,7 @@ router.post('/confirm-cost', function (req, res) {
   const selectedRadio = req.body.cost;
 
   if (selectedRadio === "yes"){
-    res.redirect('reason-cost')
+    res.redirect('check-your-answers-ehic-sec1')
   }
   if (selectedRadio === "no"){
     res.redirect('treatment-cost-ehic')
