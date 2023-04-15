@@ -1,7 +1,7 @@
 {% extends 'layout-with-login.html' %}
 
 {% block pageTitle %}
-  Confirmation
+  Confirmation that EHIC treatment form is submitted
 {% endblock %}
 
 
@@ -28,7 +28,7 @@
         The treatment form is processed and sent to the operations team for claims.
       </p>
 
-      <form action="rhg-another-treatment" method="post">
+      <form action="rhq-another-treatment" method="post">
         <div class="nhsuk-form-group">
 
           <fieldset class="nhsuk-fieldset">
@@ -41,14 +41,14 @@
               <div class="nhsuk-radios">
           
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="samePerson" name="another" type="radio" value="same person">
+                  <input class="nhsuk-radios__input" id="samePerson" name="another" type="radio" value="rhq same person">
                   <label class="nhsuk-label nhsuk-radios__label" for="samePerson">
                     For Douglas Caven
                   </label>
                 </div>
           
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="differentPerson" name="another" type="radio" value="different person">
+                  <input class="nhsuk-radios__input" id="differentPerson" name="another" type="radio" value="rhq different person">
                   <label class="nhsuk-label nhsuk-radios__label" for="differentPerson">
                     For a different person
                   </label>

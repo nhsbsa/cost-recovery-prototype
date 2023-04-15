@@ -26,7 +26,6 @@ router.get('/', function(req , res){
 
 })
 
-
  //pb6/search/malta-quota-number.html
  router.post('/quota-number-check', function (req, res) {
 
@@ -250,9 +249,6 @@ router.post('/malta-cancel-confirmation-start-date', function (req, res) {
 
 })
 
-
-
-
 //add-treatment.html
  router.post('/select-entitlement', function (req, res) {
 
@@ -271,10 +267,10 @@ router.post('/malta-cancel-confirmation-start-date', function (req, res) {
     res.redirect('treatment-start-date-malta')
   }
   if (selectedRadio === "RHGeneral"){
-    res.redirect('rhg-treatment-start-date')
+    res.redirect('rhg-name-of-trust')
   }
   if (selectedRadio === "RHQuota"){
-    res.redirect('treatment-start-date-rhq')
+    res.redirect('rhq-name-of-trust')
   }
   else {
     res.redirect('add-treatment')
@@ -384,7 +380,6 @@ router.post('/another-treatment-rhg', function (req, res) {
 
 })
 
-
 //have-address-ehic.html
 router.post('/have-address-ehic', function (req, res) {
 
@@ -401,7 +396,6 @@ router.post('/have-address-ehic', function (req, res) {
   }
 
 })
-
 
 //entitlements-aat.html
 router.post('/entitlements-aat', function (req, res) {
@@ -627,7 +621,6 @@ router.post('/have-page3', function (req, res) {
 
 })
 
-
 //upload-another-s2.html
 router.post('/upload-file', function (req, res) {
 
@@ -713,6 +706,85 @@ router.post('/another-treatment-malta-2', function (req, res) {
 
 })
 
+//Are the details you are adding provisional for general.html
+router.post('/provisional-details', function (req, res) {
+
+  const selectedRadio = req.body.addressCheck;
+
+  if (selectedRadio === "yes"){
+    res.redirect('rhg-treatment-start-date')
+  }
+  if (selectedRadio === "no"){
+    res.redirect('rhg-treatment-start-date')
+  }
+  else {
+    res.redirect('rhg-treatment-start-date')
+  }
+
+})
+
+//rhg-another-treatment.html
+router.post('/rhg-another-treatment', function (req, res) {
+
+  const selectedRadio = req.body.another;
+
+  if (selectedRadio === "same person"){
+    res.redirect('rhg-entitlements')  
+  }
+  if (selectedRadio === "different person"){
+    res.redirect('rhg-add-treatment')
+  }
+  else {
+    res.redirect('rhg-confirmation')
+  }
+
+})
+
+//Are the details you are adding provisional for quota?.html
+router.post('/quota-provisional-details', function (req, res) {
+
+  const selectedRadio = req.body.addressCheck;
+
+  if (selectedRadio === "yes"){
+    res.redirect('rhq-treatment-start-date')
+  }
+  if (selectedRadio === "no"){
+    res.redirect('rhq-treatment-start-date')
+  }
+  else {
+    res.redirect('rhq-treatment-start-date')
+  }
+
+})
+
+ router.post('/rhq-quota-number-check', function (req, res) {
+
+  const selectedRadio = req.body.quotaNumber;
+
+  if (selectedRadio === "22/23-100"){
+    res.redirect('malta-quota-number-confirmation')
+  }
+  else {
+    res.redirect('rhq-patient-details')
+  }
+
+})
 
 
+//rhq-another-treatment.html
+router.post('/rhq-another-treatment', function (req, res) {
+
+  const selectedRadio = req.body.another;
+
+  if (selectedRadio === "rhq same person"){
+    res.redirect('rhq-entitlements')  
+  }
+  if (selectedRadio === "rhq different person"){
+    res.redirect('rhq-add-treatment')
+  }
+  else {
+    res.redirect('rhq-confirmation')
+  }
+
+})
   module.exports = router
