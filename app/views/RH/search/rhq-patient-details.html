@@ -41,8 +41,9 @@ Patient details
         </label>
         <div class="nhsuk-hint" id="example-with-hint-text-hint">
           This is the patient's reference number. For example, 1234567
+          <p style ="color:red; font-weight:800">Is this field alpha numeric?</p>
         </div>
-        <input class="nhsuk-input nhsuk-input--width-20" id="name" name="name" type="text" value="{{ data['name'] }}">
+        <input class="nhsuk-input nhsuk-input--width-20" id="name" name="name" type="text" value="{{ data['ref-no'] }}">
       </div>
 
       <div class="nhsuk-form-group">
@@ -107,7 +108,7 @@ Patient details
     <button class="nhsuk-button" type="submit">
       Continue
     </button>
-    <p><a href="rhg-home">Cancel</a></p>
+    <p><a href="rhq-home">Cancel</a></p>
     </form>
 
  </div>

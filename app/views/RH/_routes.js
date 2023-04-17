@@ -729,13 +729,13 @@ router.post('/rhg-another-treatment', function (req, res) {
   const selectedRadio = req.body.another;
 
   if (selectedRadio === "same person"){
-    res.redirect('rhg-entitlements')  
+    res.redirect('rhg-home')  
   }
   if (selectedRadio === "different person"){
-    res.redirect('rhg-add-treatment')
+    res.redirect('rhg-home')
   }
   else {
-    res.redirect('rhg-confirmation')
+    res.redirect('rhg-home')
   }
 
 })
@@ -770,20 +770,19 @@ router.post('/quota-provisional-details', function (req, res) {
 
 })
 
-
 //rhq-another-treatment.html
 router.post('/rhq-another-treatment', function (req, res) {
 
   const selectedRadio = req.body.another;
 
   if (selectedRadio === "rhq same person"){
-    res.redirect('rhq-entitlements')  
+    res.redirect('rhq-home')  
   }
   if (selectedRadio === "rhq different person"){
-    res.redirect('rhq-add-treatment')
+    res.redirect('rhq-home')
   }
   else {
-    res.redirect('rhq-confirmation')
+    res.redirect('rhq-home')
   }
 
 })
