@@ -267,7 +267,7 @@ router.post('/malta-cancel-confirmation-start-date', function (req, res) {
     res.redirect('treatment-start-date-malta')
   }
   if (selectedRadio === "RHGeneral"){
-    res.redirect('rhg-add-provisional-details')
+    res.redirect('rhg-treatment-start-date')
   }
   if (selectedRadio === "RHQuota"){
     res.redirect('rhq-name-of-trust')
