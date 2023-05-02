@@ -776,13 +776,13 @@ router.post('/rhq-another-treatment', function (req, res) {
   const selectedRadio = req.body.another;
 
   if (selectedRadio === "rhq same person"){
-    res.redirect('rhq-home')  
+    res.redirect('rhq-name-of-trust')  
   }
   if (selectedRadio === "rhq different person"){
-    res.redirect('rhq-home')
+    res.redirect('rhq-name-of-trust')
   }
   else {
-    res.redirect('rhq-home')
+    res.redirect('rhq-name-of-trust')
   }
 
 })
