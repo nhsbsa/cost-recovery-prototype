@@ -7,81 +7,85 @@ Malta Quota treatment submitted - Reporting overseas visitor treatments - NHSBSA
 
 
 {% block content %}
-  <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
 
-      <div class="nhsuk-panel nhsuk-panel--confirmation nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-4">
+    <div class="nhsuk-panel nhsuk-panel--confirmation nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-4" style="background-color: white;">
 
-        <h1 style="font-size:40px;" class="nhsuk-panel__title">
-          Malta Quota treatment submitted
-          </h1>
+      <h1 style="font-size:40px;" class="nhsuk-panel__title">
+        Malta Quota treatment submitted
+      </h1>
 
-          <div class="nhsuk-panel__body">
-            The treatment ID for {{ data['givenName'] }} {{ data['name'] }} is:<br />
-<strong>63878</strong>
-
-          </div>
+      <div class="nhsuk-panel__body">
+        The treatment ID for John Smith is:<br />
+        <!-- The treatment ID for {{ data['givenName'] }} {{ data['name'] }} is:<br /> -->
+        <strong>444444682</strong>
 
       </div>
 
-      <p>
-        The treatment details have been submitted.
-      </p>
-
-
-      <form action="malta-additional" method="post">
-
-        <div class="nhsuk-form-group">
-  
-          <fieldset class="nhsuk-fieldset">
-            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
-              <h2 class="nhsuk-fieldset__heading">
-                Do you want to add another treatment?
-              </h2>
-            </legend>
-          
-              <div class="nhsuk-radios">
-          
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="samePersonQuota" name="addTreatment" type="radio" value="1">
-                  <label class="nhsuk-label nhsuk-radios__label" for="samePersonQuota">
-                    Yes, for {{ data['givenName'] }} {{ data['name'] }} using the same Malta Quota number {{ data['quotaNumber'] }}
-                  </label>
-                </div>
-  
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="samePerson" name="addTreatment" type="radio" value="2">
-                  <label class="nhsuk-label nhsuk-radios__label" for="samePerson">
-                    Yes, for {{ data['givenName'] }} {{ data['name'] }} using a different Malta Quota number
-                  </label>
-                </div>
-          
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="newPerson" name="addTreatment" type="radio" value="3">
-                  <label class="nhsuk-label nhsuk-radios__label" for="newPerson">
-                    Yes, for a different patient
-                  </label>
-                </div>
-
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="no" name="addTreatment" type="radio" value="4">
-                  <label class="nhsuk-label nhsuk-radios__label" for="newPerson">
-                    No
-                  </label>
-                </div>
-      
-              </div>
-          </fieldset>
-        </div>
-  
-  
-        <button class="nhsuk-button" type="submit">
-          Continue
-        </button>
-       
-         </form>
-       
-
     </div>
+
+    <p>
+      The treatment details have been submitted.
+    </p>
+
+
+    <form action="malta-additional" method="post">
+
+      <div class="nhsuk-form-group">
+
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+            <h2 class="nhsuk-fieldset__heading">
+              Do you want to add another treatment?
+            </h2>
+          </legend>
+
+          <div class="nhsuk-radios">
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="samePersonQuota" name="addTreatment" type="radio" value="1">
+              <label class="nhsuk-label nhsuk-radios__label" for="samePersonQuota">
+                Yes, for John Smith using the same Malta Quota number 22/23-001
+                <!-- Yes, for {{ data['givenName'] }} {{ data['name'] }} using the same Malta Quota number {{
+                data['quotaNumber'] }} -->
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="samePerson" name="addTreatment" type="radio" value="2">
+              <label class="nhsuk-label nhsuk-radios__label" for="samePerson">
+                Yes, for John Smith using a different Malta Quota number
+                <!-- Yes, for {{ data['givenName'] }} {{ data['name'] }} using a different Malta Quota number -->
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="newPerson" name="addTreatment" type="radio" value="3">
+              <label class="nhsuk-label nhsuk-radios__label" for="newPerson">
+                Yes, for a different patient
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="no" name="addTreatment" type="radio" value="4">
+              <label class="nhsuk-label nhsuk-radios__label" for="newPerson">
+                No
+              </label>
+            </div>
+
+          </div>
+        </fieldset>
+      </div>
+
+
+      <button class="nhsuk-button" type="submit">
+        Continue
+      </button>
+
+    </form>
+
+
   </div>
+</div>
 {% endblock %}

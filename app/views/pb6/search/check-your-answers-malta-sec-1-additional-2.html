@@ -8,8 +8,11 @@ Treatment details - check your answers - Reporting overseas visitor treatments -
 {% block content %}
 <div class="nhsuk-back-link">
   <a class="nhsuk-back-link__link" href="javascript:history.back()">
-    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+      aria-hidden="true">
+      <path
+        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+      </path>
     </svg>
     Go back</a>
 </div>
@@ -19,20 +22,20 @@ Treatment details - check your answers - Reporting overseas visitor treatments -
     <h1 class="nhsuk-label-wrapper">
       <label class="nhsuk-label nhsuk-label--l" for="CheckYourAnswers">
         Check these details before proceeding
-      </label></h1>
+      </label>
+    </h1>
 
-      <h2 class="nhsuk-heading-s">Treatment details</h2>
+    <h2 class="nhsuk-heading-s">Treatment details</h2>
 
     <dl class="nhsuk-summary-list">
-  
+
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
           Treatment start date
         </dt>
         <dd class="nhsuk-summary-list__value">
-          {{ data['treatment-start-dd'] }}/{{ data['treatment-start-mm'] }}/{{ data['treatment-start-yyyy'] }}
-        </dd>
-    
+          01/01/2023 </dd>
+
         <dd class="nhsuk-summary-list__actions">
           <a href="treatment-start-date-malta">
             Change<span class="nhsuk-u-visually-hidden">treatment start date</span>
@@ -45,9 +48,8 @@ Treatment details - check your answers - Reporting overseas visitor treatments -
           Treatment end date
         </dt>
         <dd class="nhsuk-summary-list__value">
-          {{ data['treatment-end-dd'] }}/{{ data['treatment-end-mm'] }}/{{ data['treatment-end-yyyy'] }}
-        </dd>
-    
+01/02/2023        </dd>
+
         <dd class="nhsuk-summary-list__actions">
           <a href="treatment-end-date-malta">
             Change<span class="nhsuk-u-visually-hidden"> treatment end date</span>
@@ -55,26 +57,26 @@ Treatment details - check your answers - Reporting overseas visitor treatments -
         </dd>
       </div>
 
-    <div class="nhsuk-summary-list__row">
-      <dt class="nhsuk-summary-list__key">
-        Treatment cost (£)
-      </dt>
-      <dd class="nhsuk-summary-list__value">
-        {{ data['treatment-cost'] }}
-      </dd>
-  
-      <dd class="nhsuk-summary-list__actions">
-        <a href="treatment-cost-malta">
-          Change<span class="nhsuk-u-visually-hidden"> treatment cost</span>
-        </a>
-      </dd>
-    </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Treatment cost (£)
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          234.21
+        </dd>
 
-  </dl>
-  
-  <a class="nhsuk-button" href="malta-quota-number-additional-2">Continue</a>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="treatment-cost-malta">
+            Change<span class="nhsuk-u-visually-hidden"> treatment cost</span>
+          </a>
+        </dd>
+      </div>
 
-  <p><a href="malta-cancel-confirmation-check-details-1">Cancel</a></p>
- </div>
+    </dl>
+
+    <a class="nhsuk-button" href="malta-quota-number-additional-2">Continue</a>
+
+    <p><a href="malta-cancel-confirmation-check-details-1">Cancel</a></p>
+  </div>
 </div>
 {% endblock %}
