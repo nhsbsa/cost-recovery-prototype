@@ -1,6 +1,6 @@
 {% extends 'layout-with-login.html' %}
 {% block pageTitle %}
-Patient details
+Patient details – Rest of World Quota - Manage overseas entitlements and treatments - NHSBSA
 {% endblock %}
 
 
@@ -30,19 +30,9 @@ Patient details
 
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="name">
-          Country
+          Issuing country
         </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="member-state" name="member-state" type="text" value="Anguilla" disabled>
-      </div>
-
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="name">
-          Reference
-        </label>
-        <div class="nhsuk-hint" id="example-with-hint-text-hint">
-          This is the patient's reference. For example, ABC1234567
-        </div>
-        <input class="nhsuk-input nhsuk-input--width-20" id="name" name="name" type="text" value="{{ data['ref-no'] }}">
+        <input class="nhsuk-input nhsuk-input--width-20" id="member-state" name="member-state" type="text" value="Saint Helena" disabled>
       </div>
 
       <div class="nhsuk-form-group">
@@ -71,7 +61,7 @@ Patient details
         </label>
 
         <div class="nhsuk-hint" id="hint">
-          For example, 15 12 1984
+          For example, 31 3 1984
         </div>
     
         <div class="nhsuk-date-input" id="example">

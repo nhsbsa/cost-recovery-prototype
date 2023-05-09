@@ -1,6 +1,6 @@
 {% extends 'layout-with-login.html' %}
 {% block pageTitle %}
-Check your answers
+Check patient details – Rest of World Quota - Manage overseas entitlements and treatments - NHSBSA
 {% endblock %}
 
 
@@ -82,21 +82,21 @@ Check your answers
       </div>
   
     </dl>
-
+<h3>Rest of World (ROW) Quota details</h3>
     <dl class="nhsuk-summary-list">
-     <h3>RH Quota details</h3>
 
      <div class="nhsuk-summary-list__row">
       <dt class="nhsuk-summary-list__key">
         Country
       </dt>
       <dd class="nhsuk-summary-list__value">
-        Antuilla
+        Saint Helena
       </dd>
 
       <dd class="nhsuk-summary-list__actions">
-        <a href="rhq-treatment-end-date">
-        </a>
+          <a href="rhq-quota-number">
+            Change<span class="nhsuk-u-visually-hidden"> reference number</span>
+          </a>
       </dd>
     </div>
       
@@ -111,21 +111,6 @@ Check your answers
         <dd class="nhsuk-summary-list__actions">
           <a href="rhq-quota-number">
             Change<span class="nhsuk-u-visually-hidden"> quota number</span>
-          </a>
-        </dd>
-      </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Reference
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          ABC1234567
-        </dd>
-
-        <dd class="nhsuk-summary-list__actions">
-          <a href="rhq-quota-number">
-            Change<span class="nhsuk-u-visually-hidden"> reference number</span>
           </a>
         </dd>
       </div>
@@ -178,7 +163,8 @@ Check your answers
     </dl>
 
   <p>If you select submit, you are confirming that these details are correct to the best of your knowledge.</p>
-  <p style ="color:red; font-weight:800">Note: if the details entered are provisional we will NOT have a 'Submit' button, only a 'Save' button.</p>
+  <p style ="color:red; font-weight:800">Note: Above content (If you select submit...) and Submit button should only appear if details are NOT provisional. 
+                                          If the details are provisional then we should only display the 'Save as draft' button, without the above content.</p>
   <a style="margin-right: 20px;" class="nhsuk-button" href="rhq-confirmation">Submit</a>
   <a class="nhsuk-button nhsuk-button--secondary" href="search">Save as draft</a>
 

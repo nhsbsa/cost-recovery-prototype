@@ -1,23 +1,29 @@
 {% extends 'layout-with-login.html' %}
 
 {% block pageTitle %}
-  Confirmation
+  Treatment submitted – Rest of World Quota - Manage overseas entitlements and treatments - NHSBSA
 {% endblock %}
 
-
-
 {% block content %}
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="javascript:history.back()">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back</a>
+</div>
+
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
       <div class="nhsuk-panel nhsuk-panel--confirmation nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-4">
 
         <h1 style="font-size:40px;" class="nhsuk-panel__title">
-            Treatment form processed for Douglas Caven
+            Saint Helena Quota treatment submitted
           </h1>
 
           <div class="nhsuk-panel__body">
-            Treatment ID
+            The treatment ID for Douglas Caven is:
             <br>
             <strong>63878</strong>
           </div>
@@ -25,7 +31,7 @@
       </div>
 
       <p>
-        The treatment form is processed and sent to the operations team for claims.
+        The treatment details have now been submitted.
       </p>
 
       <form action="rhq-another-treatment" method="post">
@@ -34,7 +40,7 @@
           <fieldset class="nhsuk-fieldset">
             <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
               <h2 class="nhsuk-fieldset__heading">
-                Add another treatment
+                Do you want to add another treatment?
               </h2>
             </legend>
           
@@ -43,14 +49,28 @@
                 <div class="nhsuk-radios__item">
                   <input class="nhsuk-radios__input" id="samePerson" name="another" type="radio" value="rhq same person">
                   <label class="nhsuk-label nhsuk-radios__label" for="samePerson">
-                    For Douglas Caven
+                    Yes, for Douglas Caven using the same ROW Quota number 22/23-001
+                  </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="samePerson" name="another" type="radio" value="rhq same person">
+                  <label class="nhsuk-label nhsuk-radios__label" for="samePerson">
+                    Yes, for Douglas Caven using a different ROW Quota number
                   </label>
                 </div>
           
                 <div class="nhsuk-radios__item">
                   <input class="nhsuk-radios__input" id="differentPerson" name="another" type="radio" value="rhq different person">
                   <label class="nhsuk-label nhsuk-radios__label" for="differentPerson">
-                    For a different person
+                    Yes, for a different patient
+                  </label>
+                </div>
+
+                 <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="differentPerson" name="another" type="radio" value="rhq different person">
+                  <label class="nhsuk-label nhsuk-radios__label" for="differentPerson">
+                    No
                   </label>
                 </div>
       
