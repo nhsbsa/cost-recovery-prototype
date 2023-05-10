@@ -1,0 +1,45 @@
+{% extends 'layout-rina.html' %}
+
+{% block pageTitle %}
+Cost recovery prototype
+{% endblock %}
+
+{% block beforeContent %}
+<div class="app-phase-banner">
+   <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+         <strong class="nhsuk-tag app-phase-banner__tag">
+            Prototype
+         </strong>
+         <span class="app-phase-banner__text">
+            This is a prototype - your <a href="#">feedback</a> will help us improve it.
+            <!-- mailto: lakshmi.karuppiah@nhs.net -->
+         </span>
+      </p>
+   </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<h1 class="nhsuk-heading-xl"><span class="nhsuk-caption-xl nhsuk-caption--bottom">EESSI RINA Service</span>Sign in to
+   RINA Portal</h1>
+
+<div class="nhsuk-form-group">
+   <label class="nhsuk-label" for="input-width-20">
+      Username
+   </label>
+   <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
+
+   <br><br>
+
+   <label class="nhsuk-label" for="input-width-20">
+      Password
+   </label>
+   <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
+</div>
+
+<br>
+
+<a class="nhsuk-button select-inline" href="case-search">Sign in</a>
+
+{% endblock %}
