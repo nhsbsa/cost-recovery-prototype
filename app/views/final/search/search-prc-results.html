@@ -22,31 +22,33 @@ Search results
     <fieldset class="nhsuk-fieldset">
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
         <h1 class="nhsuk-fieldset__heading">
-          Search for a person with a PRC that covers the treatment dates
+          Search for a person
         </h1>
       </legend>
 
       <span class="nhsuk-hint">
-        Enter the details as they appear on the PRC (Numbers in brackets refer to the areas on the PRC).
+        Enter these details as they are on the PRC
       </span>
     
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="name">
-          Name (3)
+          Name
         </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="name" name="name" type="text" value="Victor">
+        <div class="nhsuk-hint">For example, Smith</div>
+        <input class="nhsuk-input nhsuk-input--width-20" id="name" name="name" type="text">
       </div>
 
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="givenName">
-          Given names (4)
+          Given names
         </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="givenName" name="givenname" type="text" value="Louis">
+        <div class="nhsuk-hint">For example, Phillip John. </div>
+        <input class="nhsuk-input nhsuk-input--width-20" id="givenName" name="givenname" type="text">
       </div>
-    
+
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="dateOfBirth">
-          Date of birth (5)
+          Date of birth
         </label>
 
         <div class="nhsuk-hint" id="hint">
@@ -59,7 +61,7 @@ Search results
               <label class="nhsuk-label nhsuk-date-input__label" for="day">
                 Day
               </label>
-              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="day" name="day" type="number" pattern="[0-9]*" value="20">
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="day" name="day" type="number" pattern="[0-9]*">
             </div>
           </div>
           <div class="nhsuk-date-input__item">
@@ -67,7 +69,7 @@ Search results
               <label class="nhsuk-label nhsuk-date-input__label" for="month">
                 Month
               </label>
-              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="month" name="month" type="number" pattern="[0-9]*" value="12">
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="month" name="month" type="number" pattern="[0-9]*">
             </div>
           </div>
           <div class="nhsuk-date-input__item">
@@ -75,12 +77,12 @@ Search results
               <label class="nhsuk-label nhsuk-date-input__label" for="year">
                 Year
               </label>
-              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="year" name="year" type="number" pattern="[0-9]*" value="1981">
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="year" name="year" type="number" pattern="[0-9]*">
             </div>
           </div>
-        </div>
-        
+        </div> 
       </div>
+    
     </fieldset>
 
     <a class="nhsuk-button" href="search-prc-results#result">Search</a>

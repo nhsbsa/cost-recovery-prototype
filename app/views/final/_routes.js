@@ -673,6 +673,23 @@ router.post('/another-treatment-malta-2', function (req, res) {
 
 })
 
+//add-another-treatment-prc.html
+router.post('/another-treatment-prc', function (req, res) {
+
+  const selectedRadio = req.body.another;
+
+  if (selectedRadio === "same person"){
+    res.redirect('treatment-start-date-prc')  
+  }
+  if (selectedRadio === "different person"){
+    res.redirect('treatment-start-date-prc')
+  }
+  else {
+    res.redirect('treatment-start-date-prc')
+  }
+
+})
+
 
 
   module.exports = router

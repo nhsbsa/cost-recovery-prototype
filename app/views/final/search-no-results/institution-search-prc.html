@@ -15,22 +15,24 @@ Search institution
 </div>
 
 <div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-two-thirds">
+  <div class="nhsuk-grid-column-three-thirds" style="padding-left: 17px;">
     <span class="nhsuk-caption-l">
       PRC details
     </span>
     <fieldset class="nhsuk-fieldset">
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <div class="nhsuk-grid-column-two-thirds" style="padding-left: 0;">
         <h1 class="nhsuk-fieldset__heading">
-          Search for the identification number of the institution (field 7) in France
+          Search for the identification number of the institution in France
         </h1>
+        </div>
       </legend>
-   
+
       <nav class="nhsuk-secondary-navigation" aria-label="Primary navigation" style="background-color:#f0f4f5;">
         <ul class="nhsuk-secondary-navigation__list">
 
           <li class="nhsuk-secondary-navigation__item">
-            <a class="nhsuk-secondary-navigation__link" aria-current="page" href="#1">Institution ID</a>
+            <a class="nhsuk-secondary-navigation__link" aria-current="page" href="#1">Identification number</a>
           </li>
 
           <li class="nhsuk-secondary-navigation__item">
@@ -44,13 +46,12 @@ Search institution
       <br>
       
       <div class="nhsuk-form-group">
-        <span class="nhsuk-hint" >
-          <span class="nhsuk-hint" >
-            Enter as it appears on the PRC, <b>along with spaces and hypens.</b>
-          </span>
+        <div class="nhsuk-hint" id="hint">
+          This is in field 7 of an PRC certificate. Enter as shown on the certificate including the spaces and hyphens.
+        </div>
           
         </span>
-        <input class="nhsuk-input nhsuk-input--width-20" id="institutionID" name="inscode" type="text" value="1029-SKAT">
+        <input class="nhsuk-input nhsuk-input--width-20" id="institutionID" name="inscode" type="text">
       </div>
 
     </fieldset>
