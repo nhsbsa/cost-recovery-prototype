@@ -336,7 +336,7 @@ router.post('/another-treatment', function (req, res) {
     res.redirect('entitlements-aat')  
   }
   if (selectedRadio === "different person"){
-    res.redirect('add-treatment')
+    res.redirect('../search/add-treatment')
   }
   else {
     res.redirect('confirmation-ehic')
@@ -679,10 +679,10 @@ router.post('/another-treatment-prc', function (req, res) {
   const selectedRadio = req.body.another;
 
   if (selectedRadio === "same person"){
-    res.redirect('treatment-start-date-prc')  
+    res.redirect('entitlements-aat-prc')  
   }
   if (selectedRadio === "different person"){
-    res.redirect('treatment-start-date-prc')
+    res.redirect('../search/add-treatment')
   }
   else {
     res.redirect('treatment-start-date-prc')
