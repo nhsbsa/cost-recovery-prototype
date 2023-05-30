@@ -1,0 +1,165 @@
+{% extends 'layout-with-login.html' %}
+{% block pageTitle %}
+Process draft treatments
+{% endblock %}
+
+
+
+{% block beforeContent %}
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="home">Home</a></li>
+      <li class="nhsuk-breadcrumb__item">Draft claims</li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="home">Back to Home</a></p>
+  </div>
+</nav>
+<div class="app-phase-banner">
+  <div class="nhsuk-width-container app-phase-banner__container">
+     <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+        Beta
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a new service - your <a href="#">feedback</a> will help us improve it.
+        </span>
+     </p>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+      <h1 class="nhsuk-fieldset__heading">
+        Process draft treatments
+      </h1>
+    </legend>
+
+    <div class="nhsuk-table-responsive">
+      <table class="nhsuk-table">
+        <caption class="nhsuk-table__caption">Draft treatments</caption>
+        <thead class="nhsuk-table__head">
+          <tr class="nhsuk-table__row">
+            <!-- <th class="nhsuk-table__header" scope="col">Entitlement</th> -->
+            <th class="nhsuk-table__header" scope="col">Name</th>
+            <th class="nhsuk-table__header" scope="col">Given names</th>
+            <th class="nhsuk-table__header" scope="col">Country</th>
+            <th class="nhsuk-table__header" scope="col">Created by</th>
+            <th class="nhsuk-table__header" scope="col">Date created</th>
+            <th class="nhsuk-table__header" scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr class="nhsuk-table__row">
+            <!-- <td class="nhsuk-table__cell">S2</td> -->
+            <td class="nhsuk-table__cell ">Cruz</td>
+            <td class="nhsuk-table__cell ">Antonio</td>
+            <td class="nhsuk-table__cell ">Spain</td>
+            <td class="nhsuk-table__cell ">Paul Mathew</td>
+            <td class="nhsuk-table__cell ">09/11/2020</td>
+            <td class="nhsuk-table__cell "><a href="check-your-answers-s2-sec2-draft">Continue</a></td>
+          </tr>
+
+          <tr class="nhsuk-table__row">
+            <!-- <td class="nhsuk-table__cell">EHIC</td> -->
+            <td class="nhsuk-table__cell ">Rodríguez</td>
+            <td class="nhsuk-table__cell ">Maria</td>
+            <td class="nhsuk-table__cell ">Spain</td>
+            <td class="nhsuk-table__cell ">Paul Mathew</td>
+            <td class="nhsuk-table__cell ">28/06/2020</td>
+            <td class="nhsuk-table__cell "><a href="details-ehic-draft">Continue</a></td>
+          </tr>
+
+          <tr class="nhsuk-table__row">
+            <!-- <td class="nhsuk-table__cell">EHIC</td> -->
+            <td class="nhsuk-table__cell ">Laurent</td>
+            <td class="nhsuk-table__cell ">Rapheal</td>
+            <td class="nhsuk-table__cell ">France</td>
+            <td class="nhsuk-table__cell ">Paul Mathew</td>
+            <td class="nhsuk-table__cell ">20/06/2020</td>
+            <td class="nhsuk-table__cell "><a href="#">Continue</a></td>
+          </tr>
+
+          <tr class="nhsuk-table__row">
+            <!-- <td class="nhsuk-table__cell">PRC</td> -->
+            <td class="nhsuk-table__cell ">Eposito</td>
+            <td class="nhsuk-table__cell ">Romeo</td>
+            <td class="nhsuk-table__cell ">Italy</td>
+            <td class="nhsuk-table__cell ">Sarah Jordan</td>
+            <td class="nhsuk-table__cell ">18/06/2020</td>
+            <td class="nhsuk-table__cell "><a href="#">Continue</a></td>
+          </tr>
+
+          <tr class="nhsuk-table__row">
+            <!-- <td class="nhsuk-table__cell">EHIC</td> -->
+            <td class="nhsuk-table__cell ">Martin</td>
+            <td class="nhsuk-table__cell ">Alexandre</td>
+            <td class="nhsuk-table__cell ">France</td>
+            <td class="nhsuk-table__cell ">Edward Philips</td>
+            <td class="nhsuk-table__cell ">10/06/2020</td>
+            <td class="nhsuk-table__cell "><a href="#">Continue</a></td>
+          </tr>
+
+          <tr class="nhsuk-table__row">
+            <!-- <td class="nhsuk-table__cell">PRC</td> -->
+            <td class="nhsuk-table__cell ">Hernández</td>
+            <td class="nhsuk-table__cell ">Daisy</td>
+            <td class="nhsuk-table__cell ">Spain</td>
+            <td class="nhsuk-table__cell ">Sarah Jordan</td>
+            <td class="nhsuk-table__cell ">08/06/2020</td>
+            <td class="nhsuk-table__cell "><a href="#">Continue</a></td>
+          </tr>
+
+          <tr class="nhsuk-table__row">
+            <!-- <td class="nhsuk-table__cell">PRC</td> -->
+            <td class="nhsuk-table__cell ">Eduardo</td>
+            <td class="nhsuk-table__cell ">Carlos</td>
+            <td class="nhsuk-table__cell ">Portugal</td>
+            <td class="nhsuk-table__cell ">Sarah Jordan</td>
+            <td class="nhsuk-table__cell ">04/06/2020</td>
+            <td class="nhsuk-table__cell "><a href="#">Continue</a></td>
+          </tr>
+
+          <tr class="nhsuk-table__row">
+            <!-- <td class="nhsuk-table__cell">EHIC</td> -->
+            <td class="nhsuk-table__cell ">Janssens</td>
+            <td class="nhsuk-table__cell ">Marie</td>
+            <td class="nhsuk-table__cell ">Belgium</td>
+            <td class="nhsuk-table__cell ">Paul Mathew</td>
+            <td class="nhsuk-table__cell ">11/05/2020</td>
+            <td class="nhsuk-table__cell "><a href="#">Continue</a></td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+
+    <nav class="pagination" id="pagination-label">
+
+      <p class="nhsuk-u-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+
+      <ul class="pagination__list">
+        <!--<li class="pagination__item  pagination__item--prev">
+          <a class="pagination__link" href="">Previous<span class="nhsuk-u-visually-hidden"> set of
+              pages</span></a>
+        </li> -->
+
+        <li class="pagination__item pagination__item--active">1</li>
+
+        <li class="pagination__item"><a class="pagination__link" href="">2</a></li>
+
+        <li class="pagination__item  pagination__item--next">
+          <a class="pagination__link" href="">Next<span class="nhsuk-u-visually-hidden"> set of
+              pages</span></a>
+        </li>
+      </ul>
+      <p class="pagination__results">Showing <b>1</b> to <b>8</b> of <b>1,500</b> results</p>
+    </nav>
+  
+
+  </div>
+</div>
+{% endblock %}
