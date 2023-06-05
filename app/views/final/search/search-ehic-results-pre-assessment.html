@@ -17,35 +17,45 @@ Search results
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
     <span class="nhsuk-caption-l">
-      PRC details
+      EHIC details
     </span>
     <fieldset class="nhsuk-fieldset">
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <!-- <h1 class="nhsuk-fieldset__heading">
+          Search for a person with an EHIC that covers the treatment dates
+        </h1> -->
         <h1 class="nhsuk-fieldset__heading">
           Search for a person
         </h1>
       </legend>
 
+      <!-- <span class="nhsuk-hint">
+        Enter the details as they appear on the EHIC (Numbers in brackets refer to the areas on the EHIC card).
+      </span> -->
       <span class="nhsuk-hint">
-        Enter these details as they are on the PRC
+        Enter these details as they are on the EHIC
       </span>
     
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="name">
           Name
         </label>
-        <div class="nhsuk-hint">For example, Smith</div>
-        <input class="nhsuk-input nhsuk-input--width-20" id="name" name="name" type="text">
+        <span class="nhsuk-hint">
+          For example, Smith
+        </span>
+        <input class="nhsuk-input nhsuk-input--width-20" id="name" name="name" type="text" value="Braque">
       </div>
 
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="givenName">
           Given names
         </label>
-        <div class="nhsuk-hint">For example, Phillip John. </div>
-        <input class="nhsuk-input nhsuk-input--width-20" id="givenName" name="givenname" type="text">
+        <span class="nhsuk-hint">
+          For example, Phillip John
+        </span>
+        <input class="nhsuk-input nhsuk-input--width-20" id="givenName" name="givenname" type="text" value="Georges">
       </div>
-
+    
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="dateOfBirth">
           Date of birth
@@ -61,7 +71,7 @@ Search results
               <label class="nhsuk-label nhsuk-date-input__label" for="day">
                 Day
               </label>
-              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="day" name="day" type="number" pattern="[0-9]*">
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="day" name="day" type="number" pattern="[0-9]*" value="01">
             </div>
           </div>
           <div class="nhsuk-date-input__item">
@@ -69,7 +79,7 @@ Search results
               <label class="nhsuk-label nhsuk-date-input__label" for="month">
                 Month
               </label>
-              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="month" name="month" type="number" pattern="[0-9]*">
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="month" name="month" type="number" pattern="[0-9]*" value="01">
             </div>
           </div>
           <div class="nhsuk-date-input__item">
@@ -77,24 +87,24 @@ Search results
               <label class="nhsuk-label nhsuk-date-input__label" for="year">
                 Year
               </label>
-              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="year" name="year" type="number" pattern="[0-9]*">
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="year" name="year" type="number" pattern="[0-9]*" value="1980">
             </div>
           </div>
-        </div> 
+        </div>
+
       </div>
-    
     </fieldset>
 
-    <a class="nhsuk-button" href="search-prc-results#result">Search</a>
+    <a class="nhsuk-button" href="search-ehic-results#results">Search</a>
     <p><a href="home">Cancel</a></p>
 
  </div>
 
-
-<div class="nhsuk-grid-column-full">
+ <div class="nhsuk-grid-column-full">
     
   <br>
-  <h3 id="result">2 results found</h3>
+  <h3 id="result">1 result found</h3>
+
   <div class="nhsuk-hint">
     Select the correct person to continue.
   </div>
@@ -114,26 +124,18 @@ Search results
       <tbody class="nhsuk-table__body">
   
         <tr class="nhsuk-table__row">
-          <td class="nhsuk-table__cell">Victor</td>
-          <td class="nhsuk-table__cell ">Louis</td>
-          <td class="nhsuk-table__cell ">20/12/1981</td>
-          <td class="nhsuk-table__cell "> 1 62 05 59 544 102 26</td>
-          <td class="nhsuk-table__cell "><a href="../search-no-results/details-prc-2">Select</a></td>
-        </tr>
-
-        <tr class="nhsuk-table__row">
-          <td class="nhsuk-table__cell">Victor</td>
-          <td class="nhsuk-table__cell ">Louis</td>
-          <td class="nhsuk-table__cell ">23/07/1979</td>
-          <td class="nhsuk-table__cell ">1 62 05 59 522 903 48</td>
-          <td class="nhsuk-table__cell "><a href="../search-no-results/details-prc-2">Select</a></td>
+          <td class="nhsuk-table__cell">Braque</td>
+          <td class="nhsuk-table__cell ">Georges</td>
+          <td class="nhsuk-table__cell ">01/01/1980</td>
+          <td class="nhsuk-table__cell "> 280123450758</td>
+          <td class="nhsuk-table__cell "><a href="details-ehic">Select</a></td>
         </tr>
 
       </tbody>
     </table>
   </div>
-  <br>
-  <p>If none of the results match <a href="enter-details-prc">add a person</a></p>
+<br>
+  <p>If none of the results match <a href="enter-details-ehic">add a person</a></p>
 
 </div>
 
