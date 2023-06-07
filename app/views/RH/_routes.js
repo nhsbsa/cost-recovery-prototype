@@ -267,7 +267,7 @@ router.post('/malta-cancel-confirmation-start-date', function (req, res) {
     res.redirect('treatment-start-date-malta')
   }
   if (selectedRadio === "RHGeneral"){
-    res.redirect('rhg-treatment-start-date')
+    res.redirect('rhg-add-provisional-details')
   }
   if (selectedRadio === "RHQuota"){
     res.redirect('rhq-name-of-trust')
@@ -723,16 +723,33 @@ router.post('/provisional-details', function (req, res) {
 
 })
 
+//Are the details you are adding provisional for general.html
+router.post('/rha-provisional-details', function (req, res) {
+
+  const selectedRadio = req.body.addressCheck;
+
+  if (selectedRadio === "yes"){
+    res.redirect('rha-treatment-start-date')
+  }
+  if (selectedRadio === "no"){
+    res.redirect('rha-treatment-start-date')
+  }
+  else {
+    res.redirect('rha-treatment-start-date')
+  }
+
+})
+
 //rhg-another-treatment.html
 router.post('/rhg-another-treatment', function (req, res) {
 
   const selectedRadio = req.body.another;
 
   if (selectedRadio === "same person"){
-    res.redirect('rhg-home')  
+    res.redirect('rha-add-provisional-details')  
   }
   if (selectedRadio === "different person"){
-    res.redirect('rhg-home')
+    res.redirect('rhg-add-provisional-details')
   }
   else {
     res.redirect('rhg-home')
