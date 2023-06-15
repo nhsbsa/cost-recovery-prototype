@@ -16,6 +16,9 @@ Choose country – Rest of World Quota - Manage overseas entitlements and treatm
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="rhq-quota-number" method="post">
+
     <div class="nhsuk-form-group">
       <span class="nhsuk-caption-l">
         Rest of World Quota agreement details
@@ -26,24 +29,24 @@ Choose country – Rest of World Quota - Manage overseas entitlements and treatm
         </label></h1>
                         <td  class="test-case" style="overflow: visible">
                           <div>
-                              <select id="vaccines" class="typeahead js-hidden nhsuk-select" name="vaccines" aria-required="true">
-                                  <option value="x">Choose a country</option>
-                                  <option value="x">Anguilla</option>
-                                  <option value="x">British Virgin Islands</option>
-                                  <option value="x">Montserrat</option>
-                                  <option value="x">Saint Helena</option> 
-                                  <option value="x">Turks and Caicos Islands</option>
+                              <select id="quota-country" class="typeahead js-hidden nhsuk-select" name="quota-country" aria-required="true">
+                                  <option value="">Choose a country</option>
+                                  <option value="Anguilla">Anguilla</option>
+                                  <option value="British Virgin Islands">British Virgin Islands</option>
+                                  <option value="Montserrat">Montserrat</option>
+                                  <option value="Saint Helena">Saint Helena</option> 
+                                  <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
                                                                
                               </select>
                           </div>
                         </td>
     </div>
-
-    <br>
-
-    <a class="nhsuk-button" href="rhq-quota-number">Continue</a>
+    <br />
+    <button class="nhsuk-button" type="submit">
+      Continue
+    </button>
     <p><a href="search">Cancel</a></p>
-
+ </form>
  </div>
 </div>
 {% endblock %}
