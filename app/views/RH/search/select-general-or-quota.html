@@ -1,6 +1,6 @@
 {% extends 'layout-with-login-ops-style.html' %}
 {% block pageTitle %}
-Provisional details
+Confirm if provisional – Manage overseas entitlements and treatments - NHSBSA
 {% endblock %}
 
 {% block content %}
@@ -19,32 +19,32 @@ Provisional details
     <div class="nhsuk-grid-column-two-thirds">
         <div class="nhsuk-form-group">
             <span class="nhsuk-caption-l">
-                Provisional details
+                Treatment details
             </span>
 
-            <form action="provisional-details" method="post">
+            <form action="select-general-or-quota" method="post">
             <div class="nhsuk-form-group">
 
                 <fieldset class="nhsuk-fieldset">
                     <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
                         <h1 class="nhsuk-fieldset__heading">
-                            Are the details you are adding provisional?
+                            What reciprocal healthcare ROW details do you want to add? 
                         </h1>
                     </legend>
-                    
+
                     <div class="nhsuk-radios">
 
                         <div class="nhsuk-radios__item">
-                            <input class="nhsuk-radios__input" id="addressCheck-yes" name="addressCheck" type="radio" value="yes">
+                            <input class="nhsuk-radios__input" id="addressCheck-yes" name="addressCheck" type="radio" value="general">
                             <label class="nhsuk-label nhsuk-radios__label" for="addressCheck-yes">
-                                Yes
+                                General
                             </label>
                         </div>
 
                         <div class="nhsuk-radios__item">
-                            <input class="nhsuk-radios__input" id="addressCheck-no" name="addressCheck" type="radio" value="no">
+                            <input class="nhsuk-radios__input" id="addressCheck-no" name="addressCheck" type="radio" value="quota">
                             <label class="nhsuk-label nhsuk-radios__label" for="addressCheck-no">
-                                No
+                                Quota
                             </label>
                         </div>
 

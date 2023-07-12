@@ -752,7 +752,7 @@ router.post('/rhg-another-treatment', function (req, res) {
     res.redirect('rhg-add-provisional-details')
   }
   else {
-    res.redirect('rhg-home')
+    res.redirect('home2')
   }
 
 })
@@ -770,6 +770,23 @@ router.post('/quota-provisional-details', function (req, res) {
   }
   else {
     res.redirect('rhq-treatment-start-date')
+  }
+
+})
+
+//Are the details you are adding provisional for quota?.html
+router.post('/select-general-or-quota', function (req, res) {
+
+  const selectedRadio = req.body.addressCheck;
+
+  if (selectedRadio === "general"){
+    res.redirect('rhg-add-provisional-details')
+  }
+  if (selectedRadio === "quota"){
+    res.redirect('rhq-name-of-trust')
+  }
+  else {
+    res.redirect('select-general-or-quota')
   }
 
 })
