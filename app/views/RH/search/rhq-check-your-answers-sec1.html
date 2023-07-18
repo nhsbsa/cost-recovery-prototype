@@ -29,7 +29,7 @@ Check treatment details – Rest of World Quota - Manage overseas entitlements a
         Name of trust
       </dt>
       <dd class="nhsuk-summary-list__value">
-        NHS Newcastle East
+        {{ data['rhq-trust'] }}
       </dd>
   
       <dd class="nhsuk-summary-list__actions">
@@ -44,7 +44,7 @@ Check treatment details – Rest of World Quota - Manage overseas entitlements a
           Treatment start date
         </dt>
         <dd class="nhsuk-summary-list__value">
-          10/07/2020
+          {{ data['rhq-start-day'] }}/{{ data['rhq-start-month'] }}/{{ data['rhq-start-year'] }}
         </dd>
     
         <dd class="nhsuk-summary-list__actions">
@@ -59,7 +59,7 @@ Check treatment details – Rest of World Quota - Manage overseas entitlements a
           Treatment end date
         </dt>
         <dd class="nhsuk-summary-list__value">
-          01/08/2020
+          {{ data['rhq-end-day'] }}/{{ data['rhq-end-month'] }}/{{ data['rhq-end-year'] }}
         </dd>
     
         <dd class="nhsuk-summary-list__actions">
@@ -74,7 +74,7 @@ Check treatment details – Rest of World Quota - Manage overseas entitlements a
         Treatment cost (£)
       </dt>
       <dd class="nhsuk-summary-list__value">
-        10,900.00
+        {{ data['rhq-cost'] }}.00
       </dd>
   
       <dd class="nhsuk-summary-list__actions">
