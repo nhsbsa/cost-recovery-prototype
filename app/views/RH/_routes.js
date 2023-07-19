@@ -752,7 +752,7 @@ router.post('/rhg-another-treatment', function (req, res) {
     res.redirect('rhg-add-provisional-details')
   }
   else {
-    res.redirect('home2')
+    res.redirect('rhg-home')
   }
 
 })

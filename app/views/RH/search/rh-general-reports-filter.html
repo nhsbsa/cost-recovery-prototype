@@ -1,0 +1,103 @@
+{% extends 'layout-with-login-ops-style.html' %}
+{% block pageTitle %}
+Reports filtered results
+{% endblock %}
+
+
+
+{% block beforeContent %}
+<div class="app-phase-banner">
+  <div class="nhsuk-width-container app-phase-banner__container">
+     <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+        Beta
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a new service - your <a href="#">feedback</a> will help us improve it.
+        </span>
+     </p>
+  </div>
+</div>
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="rhg-home">Home</a></li>
+      <li class="nhsuk-breadcrumb__item">Reports</li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="home">Back to home page</a></p>
+  </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <h1 class="nhsuk-heading-xl ">Reports - RH ROW General treatments</h1>
+    <h1 class="nhsuk-heading-l ">Filter and download your report as a spreadsheet</h1>
+   
+
+    <span class="nhsuk-hint nhsuk-u-margin-bottom-4">
+      You can use the filters here to narrow your search and find details of treatments within your trust.
+    </span>
+
+    <div class="nhsuk-form-group select-inline">
+      <label class="nhsuk-label" for="startDate">
+        Start date
+      </label>
+      <span class="nhsuk-hint">
+        For example, 21/03/2019
+      </span>
+      <input class="nhsuk-input nhsuk-input--width-10" id="startDate" name="startdate" type="text" value="01/01/2022">
+    </div>
+
+    <div class="nhsuk-form-group select-inline">
+      <label class="nhsuk-label" for="EndDate">
+        End date
+      </label>
+      <span class="nhsuk-hint">
+        For example, 21/05/2019
+      </span>
+      <input class="nhsuk-input nhsuk-input--width-10" id="startDate" name="startdate" type="text" value="01/02/2022">
+    </div>
+
+    <div class="nhsuk-form-group select-inline">
+      <label class="nhsuk-label" for="EndDate">
+        Country of issue
+      </label>
+      <span class="nhsuk-hint">
+        For example, New Zealand
+      </span>
+      <input class="nhsuk-input nhsuk-input--width-10" id="Country" name="country" type="text" value="Australia">
+    </div>
+
+    <br>
+    
+    <a class="nhsuk-button select-inline" href="rh-general-reports-filter">Apply filters</a>
+    <p class="select-inline" style="padding-top: 23px" ;="">
+        <a id="clear_filter" href="reports">Clear
+           dates</a>
+     </p>
+     <div class="nhsuk-inset-text" style="margin-top:2px;">
+      <span class="nhsuk-u-visually-hidden">Information: </span>
+      <p>Your report has been created.</p>
+      <button class="nhsuk-button nhsuk-button--secondary" type="submit">
+          Download Excel report
+        </button>
+    </div>
+  </div>
+</div>
+
+<!--15 09 2022 - Elaine Russell - Code removed from prototype so the layout can remain consistent with the existing reports page - suggested this gets added to the backlog -->
+<!-- <div class="row">
+  <div class="nhsuk-inset-text">
+    <span class="nhsuk-u-visually-hidden">Information: </span>
+    <p>For Malta Quota reports please visit the <a href="reports-malta">Malta Quota reports page</a>.</p>
+  </div>
+</div> -->
+
+<br>
+
+ </div>
+</div>
+{% endblock %}
+
