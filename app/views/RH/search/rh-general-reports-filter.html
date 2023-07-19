@@ -47,7 +47,7 @@ Reports filtered results
       <span class="nhsuk-hint">
         For example, 21/03/2019
       </span>
-      <input class="nhsuk-input nhsuk-input--width-10" id="startDate" name="startdate" type="text" value="01/01/2022">
+      <input class="nhsuk-input nhsuk-input--width-10" id="startDate" name="startdate" type="text" value="{{ data['startDate'] }}">
     </div>
 
     <div class="nhsuk-form-group select-inline">
@@ -57,7 +57,7 @@ Reports filtered results
       <span class="nhsuk-hint">
         For example, 21/05/2019
       </span>
-      <input class="nhsuk-input nhsuk-input--width-10" id="startDate" name="startdate" type="text" value="01/02/2022">
+      <input class="nhsuk-input nhsuk-input--width-10" id="startDate" name="startdate" type="text" value="{{ data['endDate'] }}">
     </div>
 
     <div class="nhsuk-form-group select-inline">
@@ -67,14 +67,14 @@ Reports filtered results
       <span class="nhsuk-hint">
         For example, New Zealand
       </span>
-      <input class="nhsuk-input nhsuk-input--width-10" id="Country" name="country" type="text" value="Australia">
+      <input class="nhsuk-input nhsuk-input--width-10" id="Country" name="country" type="text" value="{{ data['country'] }}">
     </div>
 
     <br>
     
     <a class="nhsuk-button select-inline" href="rh-general-reports-filter">Apply filters</a>
     <p class="select-inline" style="padding-top: 23px" ;="">
-        <a id="clear_filter" href="reports">Clear
+        <a id="clear_filter" href="rh-general-reports">Clear
            dates</a>
      </p>
      <div class="nhsuk-inset-text" style="margin-top:2px;">
