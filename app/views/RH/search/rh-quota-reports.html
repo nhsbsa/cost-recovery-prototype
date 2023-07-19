@@ -31,6 +31,7 @@ Reports - Reporting overseas visitor treatments - NHSBSA
 {% endblock %}
 
 {% block content %}
+<form action="rh-quota-reports-filter" method="post">
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
     <h1 class="nhsuk-heading-xl ">Reports - RH ROW Quota treatments</h1>
@@ -48,7 +49,7 @@ Reports - Reporting overseas visitor treatments - NHSBSA
       <span class="nhsuk-hint">
         For example, 21/03/2019
       </span>
-      <input class="nhsuk-input nhsuk-input--width-10" id="startDate" name="startdate" type="text">
+      <input class="nhsuk-input nhsuk-input--width-10" id="startDate" name="startDate" type="text">
     </div>
 
     <div class="nhsuk-form-group select-inline">
@@ -58,7 +59,7 @@ Reports - Reporting overseas visitor treatments - NHSBSA
       <span class="nhsuk-hint">
         For example, 21/05/2019
       </span>
-      <input class="nhsuk-input nhsuk-input--width-10" id="startDate" name="startdate" type="text">
+      <input class="nhsuk-input nhsuk-input--width-10" id="endDate" name="endDate" type="text">
     </div>
 
     <div class="nhsuk-form-group select-inline">
@@ -66,21 +67,31 @@ Reports - Reporting overseas visitor treatments - NHSBSA
         Country of issue
       </label>
       <span class="nhsuk-hint">
-        For instance, Anguilla
+        For example, New Zealand
       </span>
-      <select class="nhsuk-select" id="select-1" name="select-1">
-        <option value="x">Select country</option>
-        <option value="x">Anguilla</option>
-        <option value="x">British Virgin Islands</option>
-        <option value="x">Montserrat</option>
-        <option value="x">Saint Helena</option>
-        <option value="x">Turks and Caicos Islands</option>
+      <select class="nhsuk-select" id="country" name="country">
+        <option value="">Select country</option>
+        <option value="Australia">Australia</option>
+        <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+        <option value="Falkland Islands">Falkland Islands</option>
+        <option value="Faroe Islands">Faroe Islands</option>
+        <option value="Gibraltar">Gibraltar</option>
+        <option value="Isle of Man">Isle of Man</option>
+        <option value="Israel">Israel</option>
+        <option value="Jersey">Jersey</option>
+        <option value="Kosovo">Kosovo</option>
+        <option value="Montserrat">Montserrat</option>
+        <option value="New Zealand">New Zealand</option>
+        <option value="North Macedonia">North Macedonia</option>
+        <option value="Norway">Norway</option>
+        <option value="Serbia">Serbia</option>
         </select>
     </div>
-
-    <br>
     
-    <a class="nhsuk-button select-inline" href="rh-quota-reports-filter">Apply filters</a>
+    <br>
+    <button class="nhsuk-button" type="submit">
+      Apply filters
+    </button>
 
   </div>
 </div>
