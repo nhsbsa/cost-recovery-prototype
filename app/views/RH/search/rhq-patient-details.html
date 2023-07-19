@@ -42,7 +42,7 @@ Patient details – Rest of World Quota - Manage overseas entitlements and treat
         <div class="nhsuk-hint" id="example-with-hint-text-hint">
           This is the patient's last name (family name or surname). For example, Smith
         </div>
-        <input class="nhsuk-input nhsuk-input--width-20" id="name" name="name" type="text" value="{{ data['firstName'] }}">
+        <input class="nhsuk-input nhsuk-input--width-20" id="rhq-name" name="rhq-name" type="text" value="{{ data['firstName'] }}">
       </div>
 
       <div class="nhsuk-form-group">
@@ -52,7 +52,7 @@ Patient details – Rest of World Quota - Manage overseas entitlements and treat
         <div class="nhsuk-hint" id="example-with-hint-text-hint">
           These are the patient's first names. For example, Phillip John
         </div>
-        <input class="nhsuk-input nhsuk-input--width-20" id="givenName" name="givenName" type="text" value="{{ data['givenName'] }}">
+        <input class="nhsuk-input nhsuk-input--width-20" id="rhq-givenName" name="rhq-givenName" type="text" value="{{ data['givenName'] }}">
       </div>
     
       <div class="nhsuk-form-group">
@@ -70,7 +70,7 @@ Patient details – Rest of World Quota - Manage overseas entitlements and treat
               <label class="nhsuk-label nhsuk-date-input__label" for="dob-dd">
                 Day
               </label>
-              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dob-dd" name="dob-dd" type="number" pattern="[0-9]*" value="{{ data['dob-dd'] }}">
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="rhq-dob-day" name="rhq-dob-day" type="number" pattern="[0-9]*" value="{{ data['dob-dd'] }}">
             </div>
           </div>
           <div class="nhsuk-date-input__item">
@@ -78,7 +78,7 @@ Patient details – Rest of World Quota - Manage overseas entitlements and treat
               <label class="nhsuk-label nhsuk-date-input__label" for="dob-mm">
                 Month
               </label>
-              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dob-mm" name="dob-mm" type="number" pattern="[0-9]*" value="{{ data['dob-mm'] }}">
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="rhq-dob-month" name="rhq-dob-month" type="number" pattern="[0-9]*" value="{{ data['dob-mm'] }}">
             </div>
           </div>
           <div class="nhsuk-date-input__item">
@@ -86,7 +86,7 @@ Patient details – Rest of World Quota - Manage overseas entitlements and treat
               <label class="nhsuk-label nhsuk-date-input__label" for="dob-yyyy">
                 Year
               </label>
-              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="dob-yyyy" name="dob-yyyy" type="number" pattern="[0-9]*" value="{{ data['dob-yyyy'] }}">
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="rhq-dob-year" name="rhq-dob-year" type="number" pattern="[0-9]*" value="{{ data['dob-yyyy'] }}">
             </div>
           </div>
         </div>

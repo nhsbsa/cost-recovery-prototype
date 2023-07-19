@@ -17,7 +17,7 @@
           </h1>
 
           <div class="nhsuk-panel__body">
-            The treatment ID for Douglas Caven is:
+            The treatment ID for {{ data['rhg-name'] }} {{ data['rhg-givenName'] }} is:
             <br>
             <strong>63878</strong>
           </div>
@@ -43,7 +43,7 @@
                 <div class="nhsuk-radios__item">
                   <input class="nhsuk-radios__input" id="samePerson" name="another" type="radio" value="same person">
                   <label class="nhsuk-label nhsuk-radios__label" for="samePerson">
-                    Yes, for Douglas Caven
+                    Yes, for {{ data['rhg-name'] }} {{ data['rhg-givenName'] }}
                   </label>
                 </div>
           

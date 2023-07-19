@@ -13,6 +13,7 @@ Treatment cost – Rest of World Quota - Manage overseas entitlements and treatm
     </svg>
     Go back</a>
 </div>
+<form action="rhq-check-your-answers-sec1" method="post">
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
@@ -50,17 +51,19 @@ Treatment cost – Rest of World Quota - Manage overseas entitlements and treatm
                             cursor: default;
                             -webkit-box-flex: 0;
                             flex: 0 0 auto" aria-hidden="true">£</div>
-              <input class="nhsuk-input nhsuk-input--width-10" style="max-width: 12em" id="cost" name="cost" type="text"
+              <input class="nhsuk-input nhsuk-input--width-10" style="max-width: 12em" id="rhq-cost" name="rhq-cost" type="text"
                 spellcheck="false">
             </div>
           </div>
 
       </div>
-
-    <a class="nhsuk-button" href="rhq-check-your-answers-sec1">Continue</a>
+      <button class="nhsuk-button" type="submit">
+        Continue
+      </button>
     <p><a href="search">Cancel</a></p>
 
 
  </div>
 </div>
+</form>
 {% endblock %}

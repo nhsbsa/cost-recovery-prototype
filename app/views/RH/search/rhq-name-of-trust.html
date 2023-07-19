@@ -13,6 +13,7 @@ Trust name – Rest of World Quota – Manage overseas entitlements and treatmen
     </svg>
     Go back</a>
 </div>
+<form action="rhq-add-provisional-details" method="post">
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
@@ -32,11 +33,11 @@ Trust name – Rest of World Quota – Manage overseas entitlements and treatmen
         
                         <td  class="test-case" style="overflow: visible">
                           <div>
-                              <select id="vaccines" class="typeahead js-hidden nhsuk-select" name="vaccines" aria-required="true">
+                              <select id="rhq-trust" class="typeahead js-hidden nhsuk-select" name="rhq-trust" aria-required="true">
                                   <option value="x">Choose a trust</option>
-                                  <option value="x">NHS Newcastle East</option>
-                                  <option value="x">Lancashire Teaching Hospitals</option>
-                                  <option value="x">Sheffield NHS Trust</option>
+                                  <option value="NHS Newcastle East">NHS Newcastle East</option>
+                                  <option value="Lancashire Teaching Hospitals">Lancashire Teaching Hospitals</option>
+                                  <option value="Sheffield NHS Trust">Sheffield NHS Trust</option>
                               </select>
                           </div>
                         </td>
@@ -44,10 +45,14 @@ Trust name – Rest of World Quota – Manage overseas entitlements and treatmen
 
     </fieldset>
 <br>
-    <a style="margin-right: 20px;" class="nhsuk-button" href="rhq-add-provisional-details">Continue</a>
+<button class="nhsuk-button" type="submit">
+  Continue
+</button>
     
     <p><a href="search">Cancel</a></p>
 
  </div>
 </div>
+</form>
+
 {% endblock %}

@@ -14,30 +14,28 @@ Quota number – Rest of World Quota - Manage overseas entitlements and treatmen
     Go back</a>
 </div>
 
-<div class="nhsuk-grid-row">
+<form action="rhq-patient-details" method="post">
+  <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
     <div class="nhsuk-form-group">
       <span class="nhsuk-caption-l">
         Rest of World Quota agreement details
       </span>
 
-      <form action="rhq-quota-number-check" method="post">
+      <!-- <form action="rhq-quota-number-check" method="post"> -->
 
       <h1 class="nhsuk-label-wrapper">
         <label class="nhsuk-label nhsuk-label--l" for="quotaNumber">
           What is the {{ data['quota-country'] }} Quota number for this patient?
         </label></h1>
-<!--        <div class="nhsuk-hint" id="hint-text-quotaNumber">
-          The format should be YY/YY-NNN. For example, 20/21-001
-        </div>
--->      <input class="nhsuk-input  nhsuk-input--width-20" id="quotaNumber" name="quotaNumber" type="text" value="{{ data['quotaNumber'] }}" >
+    <input class="nhsuk-input  nhsuk-input--width-20" id="rhq-quotaNumber" name="rhq-quotaNumber" type="text" value="{{ data['quotaNumber'] }}" >
     </div>
 
     <br>
 
-    {{ button({
-        "text": "Continue"
-        }) }}
+    <button class="nhsuk-button" type="submit">
+      Continue
+    </button>
 
     </form>
     

@@ -19,6 +19,7 @@ Treatment cost
     <span class="nhsuk-caption-l">
       Treatment details
     </span>
+    <form action="rhg-check-your-answers-sec1" method="post">
     <div class="nhsuk-form-group">
       <h1 class="nhsuk-label-wrapper">
         <h1 class="nhsuk-label-wrapper">
@@ -46,13 +47,16 @@ Treatment cost
                           cursor: default;
                           -webkit-box-flex: 0;
                           flex: 0 0 auto" aria-hidden="true">£</div>
-            <input class="nhsuk-input nhsuk-input--width-10" style="max-width: 12em" id="cost" name="cost" type="text"
+            <input class="nhsuk-input nhsuk-input--width-10" style="max-width: 12em" id="rhg-cost" name="rhg-cost" type="text"
               spellcheck="false">
           </div>
             </div>
 
-    <a class="nhsuk-button" href="rhg-check-your-answers-sec1">Continue</a>
-    <p><a href="search">Cancel</a></p>
+            <button class="nhsuk-button" type="submit">
+              Continue
+            </button>
+            <p><a href="search">Cancel</a></p>
+  </form>
 
 
  </div>

@@ -30,7 +30,7 @@ Check your answers
             Treatment start date
           </dt>
           <dd class="nhsuk-summary-list__value">
-            10/07/2020
+            {{ data['rha-start-day'] }}/{{ data['rha-start-month'] }}/{{ data['rha-start-year'] }}
           </dd>
       
           <dd class="nhsuk-summary-list__actions">
@@ -45,7 +45,7 @@ Check your answers
             Treatment end date
           </dt>
           <dd class="nhsuk-summary-list__value">
-            01/08/2020
+            {{ data['rha-end-day'] }}/{{ data['rha-end-month'] }}/{{ data['rha-end-year'] }}
           </dd>
       
           <dd class="nhsuk-summary-list__actions">
@@ -60,7 +60,7 @@ Check your answers
           Treatment cost (£)
         </dt>
         <dd class="nhsuk-summary-list__value">
-          10,900.00
+          {{ data['rha-cost'] }}.00
         </dd>
     
         <dd class="nhsuk-summary-list__actions">
@@ -79,12 +79,10 @@ Check your answers
           Country
         </dt>
         <dd class="nhsuk-summary-list__value">
-          Australia
+          {{ data['quota-country'] }}
         </dd>
 
         <dd class="nhsuk-summary-list__actions">
-          <a href="#">
-          </a>
         </dd>
 
       </div>
@@ -94,7 +92,7 @@ Check your answers
           Name
         </dt>
         <dd class="nhsuk-summary-list__value">
-          Caven
+          {{ data['rhg-name'] }}
         </dd>
 
         <dd class="nhsuk-summary-list__actions">
@@ -107,11 +105,10 @@ Check your answers
           Given names
         </dt>
         <dd class="nhsuk-summary-list__value">
-          Douglas
+          {{ data['rhg-givenName'] }}
         </dd>
 
       <dd class="nhsuk-summary-list__actions">
-        </dd>
       </div>
 
       <div class="nhsuk-summary-list__row">
@@ -119,7 +116,7 @@ Check your answers
           Date of birth
         </dt>
         <dd class="nhsuk-summary-list__value">
-          06/12/1988
+          {{ data['rhg-dob-day'] }}/{{ data['rhg-dob-month'] }}/{{ data['rhg-dob-year'] }}
         </dd>
 
         <dd class="nhsuk-summary-list__actions">

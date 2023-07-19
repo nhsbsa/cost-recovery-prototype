@@ -30,7 +30,7 @@ Check your answers
           Treatment start date
         </dt>
         <dd class="nhsuk-summary-list__value">
-          10/07/2020
+          {{ data['rhg-start-day'] }}/{{ data['rhg-start-month'] }}/{{ data['rhg-start-year'] }}
         </dd>
     
         <dd class="nhsuk-summary-list__actions">
@@ -45,7 +45,7 @@ Check your answers
           Treatment end date
         </dt>
         <dd class="nhsuk-summary-list__value">
-          01/08/2020
+          {{ data['rhg-end-day'] }}/{{ data['rhg-end-month'] }}/{{ data['rhg-end-year'] }}
         </dd>
     
         <dd class="nhsuk-summary-list__actions">
@@ -60,7 +60,7 @@ Check your answers
         Treatment cost (£)
       </dt>
       <dd class="nhsuk-summary-list__value">
-        10,900.00
+        {{ data['rhg-cost'] }}.00
       </dd>
   
       <dd class="nhsuk-summary-list__actions">
