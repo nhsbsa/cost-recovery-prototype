@@ -1,6 +1,6 @@
 {% extends 'layout-with-login-rhq-style.html' %}
 {% block pageTitle %}
-Reports - Reporting overseas visitor treatments - NHSBSA
+Draft treatments – Rest of World Quota - Manage overseas entitlements and treatments - NHSBSA
 {% endblock %}
 
 
@@ -35,29 +35,31 @@ Reports - Reporting overseas visitor treatments - NHSBSA
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
     <h1 class="nhsuk-heading-xl ">Reports - RH ROW Quota treatments</h1>
-    <h1 class="nhsuk-heading-l ">Filter and download your report as a spreadsheet</h1>
+    <h1 class="nhsuk-heading-l ">Download a report for treatments between selected dates at your trust.</h1>
    
 
     <span class="nhsuk-hint nhsuk-u-margin-bottom-4">
-      You can use the filters here to narrow your search and find details of treatments within your trust.
+      Enter a start and end date for the treatments you want a report for.
+      (Use a ‘/’ to separate day, month and year.)
+
     </span>
 
     <div class="nhsuk-form-group select-inline">
       <label class="nhsuk-label" for="startDate">
-        Start date
+        Treatment start date
       </label>
       <span class="nhsuk-hint">
-        For example, 21/03/2019
+        For example, 21/03/2022
       </span>
       <input class="nhsuk-input nhsuk-input--width-10" id="startDate" name="startDate" type="text">
     </div>
 
     <div class="nhsuk-form-group select-inline">
       <label class="nhsuk-label" for="EndDate">
-        End date
+        Treatment end date
       </label>
       <span class="nhsuk-hint">
-        For example, 21/05/2019
+        For example, 21/05/2022
       </span>
       <input class="nhsuk-input nhsuk-input--width-10" id="endDate" name="endDate" type="text">
     </div>
@@ -81,7 +83,7 @@ Reports - Reporting overseas visitor treatments - NHSBSA
     
     <br>
     <button class="nhsuk-button" type="submit">
-      Apply filters
+      Search
     </button>
 
   </div>

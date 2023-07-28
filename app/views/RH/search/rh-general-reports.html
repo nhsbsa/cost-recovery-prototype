@@ -34,63 +34,59 @@ Reports - Reporting overseas visitor treatments - NHSBSA
 <form action="rh-general-reports-filter" method="post">
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
-    <h1 class="nhsuk-heading-xl ">Reports - RH ROW General treatments</h1>
-    <h1 class="nhsuk-heading-l ">Filter and download your report as a spreadsheet</h1>
-   
+
+      <div class="nhsuk-back-link">
+        <a class="nhsuk-back-link__link" href="javascript:history.back()">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+          Go back</a>
+      </div>
+
+
+
+    <h1 class="nhsuk-heading-xl ">Reports – Reciprocal Healthcare (RH) General treatments</h1>
+    <h1 class="nhsuk-heading-m ">Download a report for treatments between selected dates at your trust</h1>
 
     <span class="nhsuk-hint nhsuk-u-margin-bottom-4">
-      You can use the filters here to narrow your search and find details of treatments within your trust.
+      Enter a start and end date for the treatments you want a report for. (Use a '/' to separate day, month and year.)
+
     </span>
 
     <div class="nhsuk-form-group select-inline">
       <label class="nhsuk-label" for="startDate">
-        Start date
+        Treatment start date
       </label>
       <span class="nhsuk-hint">
-        For example, 21/03/2019
+        For example, 21/03/2022
       </span>
       <input class="nhsuk-input nhsuk-input--width-10" id="startDate" name="startDate" type="text">
     </div>
 
     <div class="nhsuk-form-group select-inline">
       <label class="nhsuk-label" for="EndDate">
-        End date
+        Treatment end date
       </label>
       <span class="nhsuk-hint">
-        For example, 21/05/2019
+        For example, 21/05/2022
       </span>
       <input class="nhsuk-input nhsuk-input--width-10" id="endDate" name="endDate" type="text">
     </div>
 
     <div class="nhsuk-form-group select-inline">
-      <label class="nhsuk-label" for="select-1">
+      <label class="nhsuk-label" for="EndDate">
         Country of issue
       </label>
       <span class="nhsuk-hint">
         For example, New Zealand
       </span>
-      <select class="nhsuk-select" id="country" name="country">
-        <option value="">Select country</option>
-        <option value="Australia">Australia</option>
-        <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
-        <option value="Falkland Islands">Falkland Islands</option>
-        <option value="Faroe Islands">Faroe Islands</option>
-        <option value="Gibraltar">Gibraltar</option>
-        <option value="Isle of Man">Isle of Man</option>
-        <option value="Israel">Israel</option>
-        <option value="Jersey">Jersey</option>
-        <option value="Kosovo">Kosovo</option>
-        <option value="Montserrat">Montserrat</option>
-        <option value="New Zealand">New Zealand</option>
-        <option value="North Macedonia">North Macedonia</option>
-        <option value="Norway">Norway</option>
-        <option value="Serbia">Serbia</option>
-        </select>
+      <input class="nhsuk-input nhsuk-input--width-10" id="Country" name="country" type="text" value="{{ data['country'] }}">
     </div>
-    
+
+
     <br>
     <button class="nhsuk-button" type="submit">
-      Apply filters
+      Search
     </button>
 
   </div>
