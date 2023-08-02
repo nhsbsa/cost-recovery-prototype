@@ -746,10 +746,10 @@ router.post('/rhg-another-treatment', function (req, res) {
   const selectedRadio = req.body.another;
 
   if (selectedRadio === "same person"){
-    res.redirect('rha-add-provisional-details')  
+    res.redirect('rha-treatment-start-date')  
   }
   if (selectedRadio === "different person"){
-    res.redirect('rhg-add-provisional-details')
+    res.redirect('rhg-treatment-start-date')
   }
   else {
     res.redirect('rhg-home')
@@ -780,7 +780,7 @@ router.post('/select-general-or-quota', function (req, res) {
   const selectedRadio = req.body.addressCheck;
 
   if (selectedRadio === "general"){
-    res.redirect('rhg-add-provisional-details')
+    res.redirect('rhg-treatment-start-date')
   }
   if (selectedRadio === "quota"){
     res.redirect('rhq-name-of-trust')
