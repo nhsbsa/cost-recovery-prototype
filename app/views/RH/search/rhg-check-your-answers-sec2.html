@@ -12,40 +12,41 @@ Check your answers
     <h1 class="nhsuk-label-wrapper">
       <label class="nhsuk-label nhsuk-label--l" for="CheckYourAnswers">
         Check these details before submitting the treatment
-      </label></h1>
+      </label>
+    </h1>
 
-      <h3>Treatment details</h3>
+    <h3>Treatment details</h3>
 
-      <dl class="nhsuk-summary-list">
+    <dl class="nhsuk-summary-list">
 
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Treatment start date
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            {{ data['rhg-start-day'] }}/{{ data['rhg-start-month'] }}/{{ data['rhg-start-year'] }}
-          </dd>
-      
-          <dd class="nhsuk-summary-list__actions">
-            <a href="rhg-treatment-start-date">Change<span class="nhsuk-u-visually-hidden">treatment start date</span>
-            </a>
-          </dd>
-        </div>
-  
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Treatment end date
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            {{ data['rhg-end-day'] }}/{{ data['rhg-end-month'] }}/{{ data['rhg-end-year'] }}
-          </dd>
-      
-          <dd class="nhsuk-summary-list__actions">
-            <a href="rhg-treatment-end-date">Change<span class="nhsuk-u-visually-hidden">treatment end date</span>
-            </a>
-          </dd>
-        </div>
-  
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Treatment start date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['rhg-start-day'] }}/{{ data['rhg-start-month'] }}/{{ data['rhg-start-year'] }}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="rhg-treatment-start-date">Change<span class="nhsuk-u-visually-hidden">treatment start date</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Treatment end date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['rhg-end-day'] }}/{{ data['rhg-end-month'] }}/{{ data['rhg-end-year'] }}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="rhg-treatment-end-date">Change<span class="nhsuk-u-visually-hidden">treatment end date</span>
+          </a>
+        </dd>
+      </div>
+
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
           Treatment cost (£)
@@ -53,14 +54,14 @@ Check your answers
         <dd class="nhsuk-summary-list__value">
           {{ data['rhg-cost'] }}
         </dd>
-    
+
         <dd class="nhsuk-summary-list__actions">
           <a href="rhg-treatment-cost">Change<span class="nhsuk-u-visually-hidden">treatment cost</span>
           </a>
-            
+
         </dd>
       </div>
-  
+
     </dl>
 
     <h3>Non-EU Reciprocal Healthcare details</h3>
@@ -105,7 +106,7 @@ Check your answers
           {{ data['rhg-givenName'] }}
         </dd>
 
-      <dd class="nhsuk-summary-list__actions">
+        <dd class="nhsuk-summary-list__actions">
           <a href="rhg-patient-details">
             Change<span class="nhsuk-u-visually-hidden">treatment start date</span>
           </a>
@@ -126,17 +127,19 @@ Check your answers
           </a>
         </dd>
       </div>
- 
+
     </dl>
 
-  <p>If you select submit, you are confirming that these details are correct to the best of your knowledge.
+    <!-- <p>If you select submit, you are confirming that these details are correct to the best of your knowledge.
       If the details are provisional select <strong>Save as draft.</p>
-  </p>
+   -->
 
-  <a style="margin-right: 20px;" class="nhsuk-button" href="rhg-confirmation">Submit</a>
-  <a class="nhsuk-button nhsuk-button--secondary" href="rh-save-as-draft-confirmation">Save as draft</a>
+    <p>If you select submit, you are confirming that these details are correct to the best of your knowledge.</p>
 
-  <p><a href="search">Cancel</a></p>
-</div>
+    <a style="margin-right: 20px;" class="nhsuk-button" href="rhg-confirmation">Submit</a>
+    <!-- <a class="nhsuk-button nhsuk-button--secondary" href="rh-save-as-draft-confirmation">Save as draft</a> -->
+
+    <p><a href="search">Cancel</a></p>
+  </div>
 </div>
 {% endblock %}
