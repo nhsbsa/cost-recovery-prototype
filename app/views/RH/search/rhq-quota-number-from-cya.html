@@ -1,0 +1,46 @@
+{% extends 'layout-with-login-rhq-style.html' %}
+{% block pageTitle %}
+Quota number – Rest of World Quota - Manage overseas entitlements and treatments - NHSBSA
+{% endblock %}
+
+
+
+{% block content %}
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="javascript:history.back()">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back</a>
+</div>
+
+<form action="rhq-check-your-answers-sec2" method="post">
+  <div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-form-group">
+      <span class="nhsuk-caption-l">
+        Non-EU Reciprocal Healthcare (Quota) agreement details
+      </span>
+
+      <!-- <form action="rhq-quota-number-check" method="post"> -->
+
+      <h1 class="nhsuk-label-wrapper">
+        <label class="nhsuk-label nhsuk-label--l" for="quotaNumber">
+          What is the {{ data['quota-country'] }} Quota number for this patient?
+        </label></h1>
+    <input class="nhsuk-input  nhsuk-input--width-20" id="rhq-quotaNumber" name="rhq-quotaNumber" type="text" value="{{ data['quotaNumber'] }}" >
+    </div>
+
+    <br>
+
+    <button class="nhsuk-button" type="submit">
+      Continue
+    </button>
+
+    </form>
+    
+    <p><a href="search">Cancel</a></p>
+
+ </div>
+</div>
+{% endblock %}
