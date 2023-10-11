@@ -1,0 +1,67 @@
+{% extends 'layout-with-login-rhq-style.html' %}
+{% block pageTitle %}
+Treatment start date – Rest of World Quota - Manage overseas entitlements and treatments - NHSBSA
+{% endblock %}
+
+
+
+{% block content %}
+
+<form action="cancel-rhq-treatment" method="post">
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <div class="nhsuk-form-group">
+
+        <fieldset class="nhsuk-fieldset" aria-describedby="hint" role="group">
+          <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+            <h1 class="nhsuk-fieldset__heading">
+              Are you sure you want to cancel adding this treatment?
+            </h1>
+          </legend>
+          <span class="nhsuk-hint" id="hint">
+            The data that you have entered will not be saved.
+          </span>
+
+          <div class="nhsuk-radios">
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="choice-yes" name="choice" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="choice-yes">
+                Yes
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="choice-no" name="choice" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="choice-no">
+                No
+              </label>
+            </div>
+
+          </div>
+
+        </fieldset>
+
+      </div>
+
+      <a class="nhsuk-button" href="abc" id="linkid" onclick='myFunction()'>Submit</a>
+
+    </div>
+  </div>
+</form>
+
+
+<script>
+  function myFunction() {
+
+    if (document.getElementById('choice-yes').checked) {
+      document.getElementById('linkid').href = "home2";
+    }
+
+    if (document.getElementById('choice-no').checked) {
+      document.getElementById('linkid').href = "javascript:history.back()";
+    }
+  }
+</script>
+{% endblock %}
