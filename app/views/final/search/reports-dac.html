@@ -1,0 +1,148 @@
+{% extends 'layout-with-login.html' %}
+{% block pageTitle %}
+Reports - Reporting overseas visitor treatments - NHSBSA
+{% endblock %}
+
+
+
+{% block beforeContent %}
+<div class="app-phase-banner">
+  <div class="nhsuk-width-container app-phase-banner__container">
+     <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+        Beta
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a new service - your <a href="#">feedback</a> will help us improve it.
+        </span>
+     </p>
+  </div>
+</div>
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="home">Home</a></li>
+      <li class="nhsuk-breadcrumb__item">Reports</li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="home">Back to home page</a></p>
+  </div>
+</nav>
+
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <h1 class="nhsuk-heading-l ">Filter and download your report as a spreadsheet</h1>
+   
+
+    <span class="nhsuk-hint nhsuk-u-margin-bottom-4">
+      You can use the filters here to narrow your search and find details of treatments within your trust.
+    </span>
+  
+    <div class="nhsuk-form-group select-inline">
+      <label class="nhsuk-label" for="startDate">
+        Treatment start date
+      </label>
+      <span class="nhsuk-hint">
+        For example, 30 4 2019
+      </span>
+      <div class="nhsuk-date-input" id="example">
+        <div class="nhsuk-date-input__item">
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-date-input__label" for="day">
+              Day
+            </label>
+            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="day" name="day" type="number" pattern="[0-9]*">
+          </div>
+        </div>
+        <div class="nhsuk-date-input__item">
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-date-input__label" for="month">
+              Month
+            </label>
+            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="month" name="month" type="number" pattern="[0-9]*">
+          </div>
+        </div>
+        <div class="nhsuk-date-input__item">
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-date-input__label" for="year">
+              Year
+            </label>
+            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="year" name="year" type="number" pattern="[0-9]*">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nhsuk-form-group select-inline">
+      <label class="nhsuk-label" for="EndDate">
+        Treatment end date
+      </label>
+      <span class="nhsuk-hint">
+        For example, 21 3 2022
+      </span>
+      <div class="nhsuk-date-input" id="example">
+        <div class="nhsuk-date-input__item">
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-date-input__label" for="day">
+              Day
+            </label>
+            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="day" name="day" type="number" pattern="[0-9]*">
+          </div>
+        </div>
+        <div class="nhsuk-date-input__item">
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-date-input__label" for="month">
+              Month
+            </label>
+            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="month" name="month" type="number" pattern="[0-9]*">
+          </div>
+        </div>
+        <div class="nhsuk-date-input__item">
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-date-input__label" for="year">
+              Year
+            </label>
+            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="year" name="year" type="number" pattern="[0-9]*">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="nhsuk-grid-column-full">
+    <div class="nhsuk-form-group select-inline">
+      <label class="nhsuk-label" for="select-1">
+        Entitlement
+      </label>
+      <select class="nhsuk-select" id="select-1" name="select-1">
+          <option value="0" selected>All</option>
+          <option value="1">EHIC</option>
+          <option value="2">PRC</option>
+          <option value="3">S2/E112</option>
+        </select>
+    </div>
+  </div>
+
+  <div class="nhsuk-grid-column-full">
+
+    <div class="nhsuk-form-group select-inline">
+      <label class="nhsuk-label" for="country">
+        Country of issue
+      </label>
+      <div class="nhsuk-hint">For example, France</div>
+      <input class="nhsuk-input nhsuk-input--width-10" id="country" name="country" type="text" placeholder="All countries">
+    </div>
+    
+    <br>
+    <br>
+    
+    <a class="nhsuk-button select-inline" href="reports-filter#summary">Search</a>
+
+  </div>
+</div>
+
+ </div>
+</div>
+{% endblock %}
