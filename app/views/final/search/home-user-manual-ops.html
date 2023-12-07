@@ -1,0 +1,68 @@
+{% extends 'layout-with-login-user-manual.html' %}
+{% block pageTitle %}
+Home
+{% endblock %}
+
+
+{% block beforeContent %}
+<div class="app-phase-banner">
+  <div class="nhsuk-width-container app-phase-banner__container">
+     <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+        Beta
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a new service - your <a href="#">feedback</a> will help us improve it.
+        </span>
+     </p>
+  </div>
+</div>
+<section class="nhsuk-hero">
+  <div class="nhsuk-width-container nhsuk-hero--border">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-hero__wrapper app-hero__wrapper">
+          <h2 class="nhsuk-heading-s" style="margin-bottom: 10px">NHSBSA Cost Recovery</h2>
+          <h1 class="nhsuk-heading-l">Submit claims or resubmissions to the EU, Switzerland, Norway, Iceland and Liechtenstein</h1>
+            <button onclick="window.location.href='add-treatment';" class="nhsuk-button nhsuk-button--reverse" href="#" style="margin-bottom:0" >Create claim</button>
+            <button onclick="window.location.href='add-treatment';" class="nhsuk-button nhsuk-button--reverse" href="#" style="margin-left:25px; margin-bottom:0" >Create resubmission</button>
+            <button onclick="window.location.href='search-person';" class="nhsuk-button nhsuk-button--reverse" href="#" style="margin-left:25px; margin-bottom:0">Search for person</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block content %}
+
+<section> 
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row nhsuk-card-group">
+
+        <div class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          <div class="nhsuk-card nhsuk-card--clickable">
+            <div class="nhsuk-card__content">
+             <h2 class="nhsuk-card__heading nhsuk-heading-m">Useful information</h2>
+              <ul>
+                <li><a href="/downloads/sample-file-1.pdf" target="_blank">
+                  <span id="wa_schedule_download_text">User manual</span>
+                  <span class="nhsuk-u-visually-hidden">&nbsp;</span>
+                  <span class="nhsuk-u-visually-hidden">user manual</span>
+                </a></li>
+                <li><a href="/downloads/sample-file-1.pdf" target="_blank">
+                  <span id="wa_schedule_download_text">Support desk</span>
+                  <span class="nhsuk-u-visually-hidden">&nbsp;</span>
+                  <span class="nhsuk-u-visually-hidden">support desk</span>
+                </a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+  </div>
+</section>
+
+
+
+{% endblock %}
