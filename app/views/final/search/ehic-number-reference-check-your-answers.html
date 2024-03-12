@@ -1,0 +1,296 @@
+{% extends 'layout-with-login.html' %}
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+
+
+{% block content %}
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="javascript:history.back()">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back</a>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-three-quarters">
+    <h1 class="nhsuk-label-wrapper">
+      <label class="nhsuk-label nhsuk-label--l" for="CheckYourAnswers">
+        Check these details before submitting the treatment form
+      </label></h1>
+
+      <dl class="nhsuk-summary-list">
+        <h3>Treatment details</h3>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Treatment start date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            01/01/2022
+          </dd>
+      
+          <dd class="nhsuk-summary-list__actions">
+            <a href="#">
+            </a>
+          </dd>
+        </div>
+  
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Treatment end date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            02/01/2022
+          </dd>
+      
+          <dd class="nhsuk-summary-list__actions">
+            <a href="#">
+            </a>
+          </dd>
+        </div>
+  
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Treatment cost
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          £750.00
+        </dd>
+    
+        <dd class="nhsuk-summary-list__actions">
+          <a href="#">
+          </a>
+        </dd>
+      </div>
+  
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Treatment cost above £10,000
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          No
+        </dd>
+    
+        <dd class="nhsuk-summary-list__actions">
+          <a href="#">
+          </a>
+        </dd>
+      </div>
+
+      <!-- <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Reason for the treatment cost being above £10,000
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Since it is a heart transplant the cost is high.
+        </dd>
+    
+        <dd class="nhsuk-summary-list__actions">
+          <a href="#">
+          </a>
+        </dd>
+      </div> -->
+  
+    </dl>
+
+    <dl class="nhsuk-summary-list">
+     <h3>EHIC details</h3>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          (Field 2) Issuing member state
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Germany (DE)
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="found-no-ehic#country">
+            Change<span class="nhsuk-u-visually-hidden"> Issuing member state  </span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          (Field 3) Name
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Richter
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="found-no-ehic#name">
+            Change<span class="nhsuk-u-visually-hidden"> Name </span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          (Field 4) Given names
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Jonas
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="found-no-ehic#givennames">
+            Change<span class="nhsuk-u-visually-hidden"> Given names </span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          (Field 5) Date of birth
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          01/10/1980
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="found-no-ehic#dob">
+            Change<span class="nhsuk-u-visually-hidden"> Date of birth </span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          (Field 6) Personal identification number
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          1234
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="found-no-ehic#pin">
+            Change<span class="nhsuk-u-visually-hidden"> Personal identification number </span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          (Field 8) EHIC card number
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+         123456789
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="found-no-ehic#idcard">
+            Change<span class="nhsuk-u-visually-hidden"> Identification number of the card</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          (Field 9) EHIC expiry date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          31/12/2024
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="found-no-ehic#expirydate">
+            Change<span class="nhsuk-u-visually-hidden"> Expiry date</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Jonas Richter is a student
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          No
+        </dd>
+    
+        <dd class="nhsuk-summary-list__actions">
+          <a href="details-ehic#student">
+            Change<span class="nhsuk-u-visually-hidden"> Maria Rodriguez is a student</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          (Field 7) Identification number of the institution
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          104LR29 - SKAT
+        </dd>
+ 
+        <dd class="nhsuk-summary-list__actions">
+          <a href="institution-ehic">
+            Change<span class="nhsuk-u-visually-hidden">Identification number of the institution</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Copy of the EHIC
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          
+        </dd>
+ 
+        <dd class="nhsuk-summary-list__actions">
+          <a href="institution-ehic">
+            Change<span class="nhsuk-u-visually-hidden">Identification number of the institution</span>
+          </a>
+        </dd>
+      </div>
+
+    </dl>
+
+    <dl class="nhsuk-summary-list">
+      <h3>Address details</h3>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Do you have Jonas Richter's address in Germany?
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Yes
+        </dt>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="have-address-ehic">
+            Change<span class="nhsuk-u-visually-hidden">Do you have Jonas Richter's address in Germany?</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Home address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Kieler Strasse 18<br>
+          Waldkraiburg<br>
+          Germany<br>
+        </dd>
+    
+        <dd class="nhsuk-summary-list__actions">
+          <a href="address-ehic">
+            Change<span class="nhsuk-u-visually-hidden"> home address</span>
+          </a>
+        </dd>
+      </div>
+
+    </dl>
+
+  </dl>
+
+  <p>If you select submit, you are confirming that these details are correct to the best of your knowledge.</p>
+  
+  <a style="margin-right: 20px;" class="nhsuk-button" href="#">Submit</a>
+  <a class="nhsuk-button nhsuk-button--secondary" href="#">Save as draft</a>
+  <p><a href="home">Cancel</a></p>
+ </div>
+</div>
+{% endblock %}
