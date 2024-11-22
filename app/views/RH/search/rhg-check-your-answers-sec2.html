@@ -24,7 +24,7 @@ Check your answers
           Treatment start date
         </dt>
         <dd class="nhsuk-summary-list__value">
-          {{ data['rhg-start-day'] }}/{{ data['rhg-start-month'] }}/{{ data['rhg-start-year'] }}
+          {{ data['rhg-start-day'] }}/{{ data['rhg-start-month'] }}/{{ data['rhg-start-year'] or 'test' }}
         </dd>
 
         <dd class="nhsuk-summary-list__actions">

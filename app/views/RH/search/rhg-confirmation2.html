@@ -1,0 +1,78 @@
+{% extends 'layout-with-login-ops-style.html' %}
+
+{% block pageTitle %}
+  Confirmation
+{% endblock %}
+
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-panel nhsuk-panel--confirmation nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-4" style="background-color: white; padding-left: 20px; padding-right: 20px;">
+
+        <h1 style="font-size:40px;" class="nhsuk-panel__title">
+          Non-EU Reciprocal Healthcare treatment submitted
+          </h1>
+
+          <div class="nhsuk-panel__body">
+            The treatment ID for {{ data['rhg-name'] }} {{ data['rhg-givenName'] }} is:
+            <br>
+            <strong>63878</strong>
+          </div>
+
+      </div>
+
+      <p>
+        The treatment details have now been submitted.
+      </p>
+
+      <form action="rhg-another-treatment" method="post">
+        <div class="nhsuk-form-group">
+
+          <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+              <h2 class="nhsuk-fieldset__heading">
+                Do you want to add another treatment?
+              </h2>
+            </legend>
+          
+              <div class="nhsuk-radios">
+          
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="samePerson" name="another" type="radio" value="same person">
+                  <label class="nhsuk-label nhsuk-radios__label" for="samePerson">
+                    Yes, for {{ data['rhg-name'] }} {{ data['rhg-givenName'] }}
+                  </label>
+                </div>
+          
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="differentPerson" name="another" type="radio" value="different person">
+                  <label class="nhsuk-label nhsuk-radios__label" for="differentPerson">
+                    Yes, for another person
+                  </label>
+                </div>
+          
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="no" name="another" type="radio" value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="no">
+                    No
+                  </label>
+                </div>
+      
+              </div>
+          </fieldset>
+        </div> 
+           
+        <button class="nhsuk-button" style="margin-right: 20px;" type="submit">
+          Continue
+        </button>
+        <!-- <a class="nhsuk-button nhsuk-button--secondary" href="rhg-home">Back to home page</a> -->
+
+      </form>
+       
+
+    </div>
+  </div>
+{% endblock %}
