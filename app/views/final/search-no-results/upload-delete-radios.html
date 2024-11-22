@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Right to reside in the UK evidence uploaded
+{% endblock %}
+
+{% block beforeContent %}
+
+  <!-- Phase banner -->
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your <a href="#">feedback</a> will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+  
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+      <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Step 1</span> -->
+      <form action="addEvidRight" method="post">
+
+        {% call fieldset({
+          legend: {
+            text: "You have successfully uploaded a file",
+            classes: "nhsuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
+        
+        <p>You can view the uploaded file to make sure you uploaded the correct document. If you uploaded an incorrect document, delete the file and upload the patient's copy of the EHIC.</p>
+
+        <h3>Files added</h3>
+        <thead class="nhsuk-table__head">
+        </thead>
+        <dl class="nhsuk-summary-list">
+
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            <!-- Passport -->
+            Example file
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <a href="">example_file_name_01.jpg</a>, 2MB
+          </dd>
+          <dd class="nhsuk-summary-list__value">
+            <a href="#">
+              View<span class="nhsuk-u-visually-hidden"> </span>
+            </a>
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="#">
+              Delete<span class="nhsuk-u-visually-hidden"> </span>
+            </a>
+          </dd>   
+        </div>
+      </dl>
+
+        <h3>Do you need to upload another document?</h3>
+
+        <p>Do we need hint text?</p>
+
+        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras neque purus, ullamcorper et iaculis ut, egestas ornare leo.</p> -->
+
+        {{ radios({
+          "idPrefix": "add-evid-right",
+          "name": "add-evid-right",
+          "classes": "nhsuk-radios--inline",
+          "items": [
+            {
+              "value": "Yes",
+              "text": "Yes"
+            },
+            {
+              "value": "No",
+              "text": "No"
+            }
+          ]
+        }) }}
+
+        {% endcall %}
+
+        {{ button({
+          "text": "Continue"
+        }) }}
+
+      </form>
+
+     {{ backLink({
+        "href": "upload-reside",
+        "text": "Change my previous answer"
+      }) }}
+      
+    </div>
+    
+  </div>
+{% endblock %}

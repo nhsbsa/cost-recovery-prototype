@@ -357,7 +357,7 @@ router.post('/have-address-ehic', function (req, res) {
     res.redirect('check-your-answers-ehic-sec2-na')
   }
   else {
-    res.redirect('have-address-ehic')
+    res.redirect('address-ehic')
   }
 
 })
@@ -691,5 +691,38 @@ router.post('/another-treatment-prc', function (req, res) {
 })
 
 
+// Do you want to add another? (evidence for Right to Reside in UK) 
+// - upload-reside-another.html, upload-reside-another2.html
+router.post('/addEvidRight', function (req, res) {
+  var addEvidRight = req.session.data['add-evid-right']
+  if (addEvidRight == "Yes") {
+    res.redirect('have-address-ehic')
+  }
+  else if (addEvidRight == "No") {
+    // res.redirect('upload-res-uk')
+    // res.redirect('provide-res-uk-evid')
+    res.redirect('have-address-ehic')
+  }
+  else {
+    res.redirect('have-address-ehic')
+  }
+})
 
+
+//have-address-ehic-for-change.html
+router.post('/have-address-ehic-for-change', function (req, res) {
+
+  const selectedRadio = req.body.address;
+
+  if (selectedRadio === "yes"){
+    res.redirect('address-ehic-for-change')
+  }
+  if (selectedRadio === "no"){
+    res.redirect('check-your-answers-ehic-for-change')
+  }
+  else {
+    res.redirect('address-ehic-for-change')
+  }
+
+})
   module.exports = router
