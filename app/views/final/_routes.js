@@ -725,4 +725,22 @@ router.post('/have-address-ehic-for-change', function (req, res) {
   }
 
 })
+
+//have-address-prc-for-change.html
+router.post('/have-address-prc-for-change', function (req, res) {
+
+  const selectedRadio = req.body.address;
+
+  if (selectedRadio === "yes"){
+    res.redirect('address-prc-for-change')
+  }
+  if (selectedRadio === "no"){
+    res.redirect('check-your-answers-prc-for-change')
+  }
+  else {
+    res.redirect('address-prc-for-change')
+  }
+
+})
+
   module.exports = router
