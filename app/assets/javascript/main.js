@@ -3,6 +3,27 @@
 //search-person-results-js.html
 console.log('running this');
 
+
+
+document.addEventListener('DOMContentLoaded',function(){
+
+  // Nasty fix, BUT...add a class if there's a hero banner...
+  const heroBanner = document.querySelector('.nhsuk-hero');
+  if( heroBanner ){
+    document.body.classList.add('is-fullwidth','has-hero');
+  }
+
+  // Even nastier fix... swap the breadcrumb and phase banner if they're in the wrong order
+  const phaseBanner = document.querySelector('.app-phase-banner');
+  if( phaseBanner && phaseBanner.previousElementSibling.matches('.nhsuk-breadcrumb') ){
+    const breadcrumb = document.querySelector('.nhsuk-breadcrumb');
+    phaseBanner.parentElement.insertBefore(phaseBanner, breadcrumb);
+  }
+
+});
+
+
+
 // Variables
 const showTableFilter = document.querySelector('.nhsuk-search__submit');
 const wrapTable = document.querySelector('.new-filtered-table');

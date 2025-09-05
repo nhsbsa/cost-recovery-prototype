@@ -32,16 +32,15 @@
   max-width: none;
 }
 
-
-
-
 @media all and ( min-width: 1024px ){
   .is-fullwidth-header .nhsuk-header .nhsuk-width-container {
     margin: 0 32px;
   }
 }
 
-
+.has-hero .app-phase-banner {
+  background-color: #FFF;
+}
 
 
 //table
