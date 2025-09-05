@@ -5,7 +5,6 @@
 @import "components/panel-confirmation";
 @import "components/phase-banner";
 @import "components/related-nav";
-@import "components/tag";
 @import "components/list-border";
 
 ///////////////////////////////////////////
@@ -13,29 +12,36 @@
 ///////////////////////////////////////////
 
 
-// Adding a .has-sidebar class that can be added to the body (over duplicating templates) 
+// Adding a .is-fullwidth class that can be added to the body (over duplicating templates) 
 
-.has-sidebar .nhsuk-main-wrapper {
+.is-fullwidth .nhsuk-main-wrapper {
   padding: 0;
   max-width: none;
 }
 
-.has-sidebar > .nhsuk-width-container {
+.is-fullwidth > .nhsuk-width-container {
   margin: 0;
   max-width: none;
 }
 
-.has-sidebar .nhsuk-header .nhsuk-width-container {
+.is-fullwidth.has-hero .nhsuk-hero {
+  margin-bottom: 40px;
+}
+
+.is-fullwidth-header .nhsuk-header .nhsuk-width-container {
   max-width: none;
 }
 
 
+
+
 @media all and ( min-width: 1024px ){
-  .has-sidebar .nhsuk-header .nhsuk-width-container {
+  .is-fullwidth-header .nhsuk-header .nhsuk-width-container {
     margin: 0 32px;
   }
 }
-  
+
+
 
 
 //table
