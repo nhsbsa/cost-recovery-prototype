@@ -4,11 +4,11 @@
     - add custom CSS and JavaScript
 -->
 
-<!-- Extends the layout from /docs/views/template.html -->
-{% extends "template.html" %}
+<!-- Extends the layout from /docs/views/prototype-kit-template.njk -->
+{% extends "prototype-kit-template.njk" %}
 
 <!-- Add your custom CSS or Sass in /app/assets/sass/main.scss -->
-{% block headCSS %}
+{% block head %}
   <link href="/css/main.css" rel="stylesheet">
 {% endblock %}
 
@@ -64,6 +64,10 @@
   {{ footer({
     "links": [
 
+      {
+        "URL": "/prototype-admin/reset?returnPage=" + (currentPage | urlencode),
+        "label": "Reset data"
+      },
       {
       "URL": "/",
       "label": "Index"
