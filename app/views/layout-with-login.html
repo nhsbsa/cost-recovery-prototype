@@ -29,7 +29,7 @@
   },
   service: {
     text: "Report overseas visitor treatments",
-    href: "#"
+    href: "/"
   },
   account: {
     items: [
@@ -64,31 +64,43 @@
 <!-- Footer goes inside the footer block -->
 <!-- More info and code for the footer can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/footer -->
 {% block footer %}
-  {{ footer({
-    "links": [
 
+{% from 'footer/macro.njk' import footer %}
+
+{{ footer({
+  meta: {
+    items: [
       {
-        "URL": "/prototype-admin/reset?returnPage=" + (currentPage | urlencode),
-        "label": "Reset data"
+        href: "/prototype-admin/reset?returnPage=" + (currentPage | urlencode),
+        text: "Reset data"
       },
       {
-      "URL": "/",
-      "label": "Index"
+        href: "/",
+        text: "Index"
       },
       {
-        "URL": "#",
-        "label": "Accessibility statement"
+        href: "#",
+        text: "Accessibility statement"
       },
       {
-        "URL": "https://www.nhsbsa.nhs.uk/our-policies/privacy",
-        "label": "Privacy policy"
+        href: "#",
+        text: "Contact us"
       },
       {
-        "URL": "https://www.nhsbsa.nhs.uk/our-policies/terms-and-conditions",
-        "label": "Terms and conditions"
+        href: "#",
+        text: "Cookies"
+      },
+      {
+        href: "https://www.nhsbsa.nhs.uk/our-policies/privacy",
+        text: "Privacy policy"
+      },
+      {
+        href: "https://www.nhsbsa.nhs.uk/our-policies/terms-and-conditions",
+        text: "Terms and conditions"
       }
     ]
-  })}}
+  }
+}) }}
 {% endblock %}
 
 
