@@ -6,16 +6,15 @@ Upload a copy of the PRC
 
 
 {% block content %}
-{% from 'back-link/macro.njk' import backLink %}
 
 {{ backLink({
-  href: "#",
-  text: "Back"
+  "href": "javascript:history.go(-1)",
+  "text": "Back"
 }) }}
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
-    <span class="nhsuk-caption-l">
+    <span class="nhsuk-caption-l" style="margin-top: 20px;">
       PRC details
     </span>
     <fieldset class="nhsuk-fieldset">
