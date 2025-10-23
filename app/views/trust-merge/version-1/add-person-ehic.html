@@ -1,0 +1,168 @@
+{% extends 'layout-with-login.html' %}
+{% block pageTitle %}
+What are the EHIC details? - Report overseas visitor treatments - NHSBSA
+{% endblock %}
+
+
+
+{% block content %}
+
+{{ backLink({
+  "href": "javascript:history.go(-1)",
+  "text": "Back"
+}) }}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/trust-merge/version-1/add-person-ehic" method="post">
+
+    <span class="nhsuk-caption-l" style="margin-top: 20px;">
+      EHIC details
+    </span>
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          What are the EHIC details?
+        </h1>
+      </legend>
+
+      <span class="nhsuk-hint">
+        Enter these details as they are on the EHIC.<br><br>
+        The field numbers in brackets match the equivalent field numbers on the card.
+      </span>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="new-ehic-issuing-ms-label">
+          Issuing member state
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="new-ehic-issuing-ms" name="new-ehic-issuing-ms" type="text" value="Austria (AT)" disabled >
+      </div>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="new-ehic-last-name-label">
+          Name (Field 3)
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="new-ehic-last-name" name="new-ehic-last-name" type="text" value="Doe" disabled >
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="new-ehic-first-names-label">
+          Given names (Field 4)
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="new-ehic-first-names" name="new-ehic-first-names" type="text" value="John" disabled >
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="dateOfBirth">
+          Date of birth (Field 5)
+        </label>
+    
+        <div class="nhsuk-date-input" id="example">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-ehic-date-of-birth-label">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="new-ehic-date-of-birth-day" name="new-ehic-date-of-birth-day" type="number" pattern="[0-9]*" value="13" disabled >
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-ehic-date-of-birth-month-label">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="new-ehic-date-of-birth-month" name="new-ehic-date-of-birth-month" type="number" pattern="[0-9]*" value="12" disabled >
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-ehic-date-of-birth-year-label">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="year" name="new-ehic-date-of-birth-year" type="number" pattern="[0-9]*" value="1994" disabled>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="new-ehic-pin-label">
+          Personal identification number (Field 6)
+        </label> 
+
+        <div class="nhsuk-hint" id="hint">
+          The format for this is different for each member state and may include numbers, letters and other characters
+        </div>
+
+        <input class="nhsuk-input nhsuk-input--width-20" id="new-ehic-pin" name="new-ehic-pin" type="text">
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="new-ehic-card-number-label">
+          EHIC card number (Field 8)
+        </label>
+
+        <div class="nhsuk-hint" id="hint">
+          The format for this is different for each member state and may include numbers, letters and other characters
+        </div>
+
+        <input class="nhsuk-input nhsuk-input--width-20" id="new-ehic-card-number" name="new-ehic-card-number" type="text"> 
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="new-ehic-expiry-date-label">
+          EHIC expiry date (Field 9)
+        </label>
+        
+        <div class="nhsuk-hint" id="hint">
+          For example, 15 03 1984
+        </div>
+    
+        <div class="nhsuk-date-input" id="new-ehic-expiry-date">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-ehic-expiry-date-day-label">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="new-ehic-expiry-date-day" name="new-ehic-expiry-date-day" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-ehic-expiry-date-month-label">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="new-ehic-expiry-date-month" name="new-ehic-expiry-date-month" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-ehic-expiry-date-year-label">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="new-ehic-expiry-date-year" name="new-ehic-expiry-date-year" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </fieldset>
+
+    <div class="nhsuk-checkboxes__item">          
+      <input type="hidden" name="new-ehic-student-checkbox">
+      <input type="checkbox" class="nhsuk-checkboxes__input" id="new-ehic-student-checkbox" name="new-ehic-student" value="yes">
+      <label class="nhsuk-label nhsuk-checkboxes__label" for="new-ehic-student-checkbox-label">Select if John Doe is a student</label>
+    </div>
+
+    <br>
+
+    <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
+        
+    <p><a href="cancel-confirmation">Cancel</a></p>
+
+  </form>
+
+ </div>
+</div>
+{% endblock %}

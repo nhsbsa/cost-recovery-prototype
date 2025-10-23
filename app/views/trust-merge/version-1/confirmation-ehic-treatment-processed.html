@@ -1,0 +1,66 @@
+{% extends 'layout-with-login.html' %}
+{% block pageTitle %}
+Treatment form processed - Report overseas visitor treatments - NHSBSA
+{% endblock %}
+
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/trust-merge/version-1/confirmation-ehic-treatment-processed" method="post">
+
+      <div class="nhsuk-panel nhsuk-panel--confirmation nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-4">
+        <h1 style="font-size:40px;" class="nhsuk-panel__title">
+            Treatment form processed for {{ data['ehic-first-names'] or 'John' }} {{ data['ehic-last-name'] or 'Doe' }}
+        </h1>
+
+        <div class="nhsuk-panel__body">
+          Treatment ID
+          <br>
+          <strong>558761002</strong>
+        </div>
+      </div>
+
+      <p>The treatment form has been processed and sent to the operations team.</p>
+      
+      <div class="nhsuk-form-group">
+
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+            <h2 class="nhsuk-fieldset__heading">
+              Add another treatment
+            </h2>
+          </legend>
+        
+          <div class="nhsuk-form-group">
+            <div class="nhsuk-radios">
+              
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="ehic-add-another-treatment-for-same-person-yes" name="ehic-add-another-treatment-for-same-person" type="radio" value="For John Doe" aria-controls="conditional-contact-1" aria-expanded="false">
+                <label class="nhsuk-label nhsuk-radios__label" for="ehic-add-another-treatment-for-same-person-yes-label">For {{ data['ehic-first-names'] or 'John' }} {{ data['ehic-last-name'] or 'Doe' }} </label>
+              </div>
+  
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="ehic-add-another-treatment-for-same-person-no" name="ehic-add-another-treatment-for-same-person" type="radio" value="For a different person" aria-controls="conditional-contact-2" aria-expanded="false">
+                <label class="nhsuk-label nhsuk-radios__label" for="ehic-add-another-treatment-for-same-person-label">For a different person</label>
+              </div>
+              
+            </div>
+          </div>
+    
+        </fieldset>
+      </div>
+           
+      <div class="button-container" style="margin-top: 40px;">
+        <button style="margin-right:20px;" class="nhsuk-button" type="submit">Continue</button>
+        <a href="home" class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" role="button">Back to home</a>
+      </div>
+        
+  
+    </form>
+       
+    </div>
+  </div>
+{% endblock %}

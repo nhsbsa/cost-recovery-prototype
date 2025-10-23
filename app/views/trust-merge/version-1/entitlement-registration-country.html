@@ -1,0 +1,115 @@
+{% extends 'layout-with-login.html' %}
+{% block pageTitle %}
+Which country is the patient's entitlement issued in? - Report overseas visitor treatments - NHSBSA
+{% endblock %}
+
+
+
+{% block content %}
+
+{{ backLink({
+  "href": "javascript:history.go(-1)",
+  "text": "Back"
+}) }}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/trust-merge/version-1/entitlement-registration-country" method="post">
+
+    
+    <div class="nhsuk-form-group">
+
+      {% if data['entitlement-type'] == 'EHIC' %}
+        <span class="nhsuk-caption-l" style="margin-top: 20px;">
+          EHIC details
+        </span>
+        <h1 class="nhsuk-label-wrapper">
+          <label class="nhsuk-label nhsuk-label--l" for="country">
+            Which country is the patient's EHIC issued in?
+          </label>
+        </h1>
+      {% elif data['entitlement-type'] == 'PRC' %}
+        <span class="nhsuk-caption-l" style="margin-top: 20px;">
+          PRC details
+        </span>
+        <h1 class="nhsuk-label-wrapper">
+          <label class="nhsuk-label nhsuk-label--l" for="country">
+            Which country is the patient's PRC issued in?
+          </label>
+        </h1>
+      {% elif data['entitlement-type'] == 'S2/E112' %}
+        <span class="nhsuk-caption-l" style="margin-top: 20px;">
+          S2/E112 details
+        </span>
+        <h1 class="nhsuk-label-wrapper">
+          <label class="nhsuk-label nhsuk-label--l" for="country">
+            Which country is the patient's S2/E112 issued in?
+          </label>
+        </h1>
+      {% else %}
+        <span class="nhsuk-caption-l" style="margin-top: 20px;">
+          Non-EU Reciprocal Healthcare agreement details
+        </span>
+        <h1 class="nhsuk-label-wrapper">
+          <label class="nhsuk-label nhsuk-label--l" for="country">
+            Which country is the patient's S2/E112 issued in?
+          </label>
+        </h1>
+      {% endif %}
+      
+      <div class="nhsuk-form-group">
+        <div class="nhsuk-hint" style="margin-bottom: 5px;" id="entitlement-registration-country-label" for="entitlement-registration-country-label" class="form-label">
+          Enter country
+        </div>
+        <input class="nhsuk-input nhsuk-input--width-20" list="countries" id="entitlement-registration-country-drop" name="entitlement-registration-country">
+        <datalist id="countries">
+          <option value="" selected="selected"></option>
+          <option value="Austria (AT)">Austria (AT)</option>
+          <option value="Belgium (BE)">Belgium (BE)</option>
+          <option value="Bulgaria (BG)">Bulgaria (BG)</option>
+          <option value="Croatia (HR)">Croatia (HR)</option>
+          <option value="Cyprus (CY)">Cyprus (CY)</option>
+          <option value="Czech Republic (CZ)">Czech Republic (CZ)</option>
+          <option value="Denmark (DK)">Denmark (DK)</option>
+          <option value="Estonia (EE)">Estonia (EE)</option>
+          <option value="Finland (FI)">Finland (FI)</option>
+          <option value="France (FR)">France (FR)</option>
+          <option value="Germany (DE)">Germany (DE)</option>
+          <option value="Gibraltar (GI)">Gibraltar (GI)</option>
+          <option value="Greece (GR)">Greece (GR)</option>
+          <option value="Hungary (HU)">Hungary (HU)</option>
+          <option value="Iceland (IS)">Iceland (IS)</option>
+          <option value="Ireland (IE)">Ireland (IE)</option>
+          <option value="Italy (IT)">Italy (IT)</option>
+          <option value="Latvia (LV)">Latvia (LV)</option>
+          <option value="Liechtenstein (LI)">Liechtenstein (LI)</option>
+          <option value="Lithuania (LT)">Lithuania (LT)</option>
+          <option value="Luxembourg (LU)">Luxembourg (LU)</option>
+          <option value="Malta (MT)">Malta (MT)</option>
+          <option value="Netherlands (NL)">Netherlands (NL)</option>
+          <option value="Norway (NO)">Norway (NO)</option>
+          <option value="Poland (PL)">Poland (PL)</option>
+          <option value="Portugal (PT)">Portugal (PT)</option>
+          <option value="Romania (RO)">Romania (RO)</option>
+          <option value="Slovakia (SK)">Slovakia (SK)</option>
+          <option value="Slovenia (SI)">Slovenia (SI)</option>
+          <option value="Spain (ES)">Spain (ES)</option>
+          <option value="Sweden (SE)">Sweden (SE)</option>
+          <option value="Switzerland (CH)">Switzerland (CH)</option>
+          <option value="United Kingdom (UK)">United Kingdom (UK)</option>
+        </datalist>            
+     </div>
+
+    </div>
+
+
+    <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
+        
+    <p><a href="cancel-confirmation">Cancel</a></p>
+
+    </form>
+
+ </div>
+</div>
+{% endblock %}

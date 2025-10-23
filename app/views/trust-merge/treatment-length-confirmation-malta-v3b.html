@@ -1,0 +1,82 @@
+{% extends 'layout-with-login.html' %}
+{% block pageTitle %}
+Are you sure that this treatment runs over 2 fiscal years? - Reporting overseas
+visitor treatments - NHSBSA
+{% endblock %}
+
+{% block content %}
+
+{{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Back"
+ }) }}
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-form-group">
+            <span class="nhsuk-caption-l" style="margin-top: 20px;">
+                Treatment details
+            </span>
+
+            <form action="" method="post">
+            <div class="nhsuk-form-group">
+
+                <fieldset class="nhsuk-fieldset">
+                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                        <h1 class="nhsuk-fieldset__heading">
+                            Continuous course of treatment not confirmed
+                        </h1>
+                    </legend>
+
+                      <p>You will need a new Malta Quota number for any separate treatment that occurred in the second fiscal year, or you can contact our operations team to ask for further advice.</p>
+
+                      <p><strong>Select an action to continue:</strong></p>
+
+
+                      <div class="nhsuk-radios">
+
+                        <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+                            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                              Split the treatments and re-enter them using different Malta Quota numbers for each fiscal year
+                            </label>
+                          </div>
+
+                        <div class="nhsuk-radios__item">
+                          <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+                          <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                            Correct the end date of the treatment
+                          </label>
+                        </div>
+                  
+                        <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+                            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                                Return to the homepage
+                            </label>
+                          </div>
+                  
+                      </div>
+
+
+                   
+                </fieldset>
+
+            </div>
+<br />
+
+
+            <button class="nhsuk-button" type="submit">
+                Continue
+              </button>
+
+
+            </form>
+        </div>
+
+
+
+        <p><a href="home">Cancel</a></p>
+    </div>
+</div>
+{% endblock %}

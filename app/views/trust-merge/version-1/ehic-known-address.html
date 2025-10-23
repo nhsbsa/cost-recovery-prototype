@@ -1,0 +1,62 @@
+{% extends 'layout-with-login.html' %}
+{% block pageTitle %}
+Do you have the patients address? - Report overseas visitor treatments - NHSBSA
+{% endblock %}
+
+
+{% block content %}
+
+{{ backLink({
+  "href": "javascript:history.go(-1)",
+  "text": "Back"
+}) }}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/trust-merge/version-1/ehic-known-address" method="post">
+
+      <span class="nhsuk-caption-l" style="margin-top: 20px;">
+        Address details
+      </span>
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">
+          Do you have John Smith's address in {% if data['entitlement-registration-country'] %}{{ data['entitlement-registration-country'] }}{% else %}Austria (AT){% endif %}?
+          </h1>
+        </legend>
+
+        <div class="nhsuk-hint">
+          The home address is important for the processing of claims.
+        </div>
+      
+        <div class="nhsuk-form-group">
+          <div class="nhsuk-radios">
+            
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="ehic-know-address-yes" name="ehic-know-address" type="radio" value="Yes" aria-controls="conditional-contact-1" aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="ehic-know-address-yes-label">Yes</label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="ehic-know-address-no" name="ehic-know-address" type="radio" value="No" aria-controls="conditional-contact-2" aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="ehic-know-address-no-label">No</label>
+            </div>
+            
+          </div>
+        </div>
+
+      </fieldset>
+
+      <div class="button-container" style="margin-top: 10px;">
+        <button style="margin-right:20px;" class="nhsuk-button" type="submit">Continue</button>
+        <a href="save-as-draft-confirmation" class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" role="button">Save as draft</a>
+      </div>
+        
+      <p><a href="cancel-confirmation">Cancel</a></p>
+  
+      </form>
+  
+  </div>
+</div>
+{% endblock %}
