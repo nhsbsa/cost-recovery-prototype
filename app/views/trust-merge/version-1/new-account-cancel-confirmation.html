@@ -1,0 +1,46 @@
+{% extends 'layout-with-login.html' %}
+{% block pageTitle %}
+Are you sure you want to cancel adding this treatment? - Report overseas visitor treatments - NHSBSA
+{% endblock %}
+
+
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/trust-merge/version-1/new-account-cancel-confirmation" method="post">
+
+      <h1 class="nhsuk-label-wrapper">
+        <label class="nhsuk-label nhsuk-label--l" for="confirm-cancel-adding-treatment-label">
+          Are you sure you want to cancel your request for an account?
+        </label>
+      </h1>
+
+      <div class="nhsuk-hint">
+        The data that you have entered will not be saved.
+      </div>
+
+      <div class="nhsuk-form-group">
+        <div class="nhsuk-radios">
+          
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="new-account-confirm-cancellation-yes" name="new-account-confirm-cancellation" type="radio" value="Yes" aria-controls="conditional-contact-1" aria-expanded="false">
+            <label class="nhsuk-label nhsuk-radios__label" for="new-account-confirm-cancellation-yes">Yes</label>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="new-account-confirm-cancellation-no" name="new-account-confirm-cancellation" type="radio" value="No" aria-controls="conditional-contact-2" aria-expanded="false">
+            <label class="nhsuk-label nhsuk-radios__label" for="new-account-confirm-cancellation-no">No</label>
+          </div>
+          
+        </div>
+      </div>
+
+    <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Submit</button>
+
+    </form>
+
+ </div>
+</div>
+{% endblock %}

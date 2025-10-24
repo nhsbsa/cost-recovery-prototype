@@ -1,0 +1,130 @@
+{% extends 'layout-with-login.html' %}
+{% block pageTitle %}
+Check these details before requesting account - Report overseas visitor treatments - NHSBSA
+{% endblock %}
+
+
+{% block content %}
+
+{{ backLink({
+  "href": "javascript:history.go(-1)",
+  "text": "Back"
+}) }}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-three-quarters">
+
+    <form action="/trust-merge/version-1/new-account-cya" method="post">
+
+    <h1 class="nhsuk-label-wrapper">
+      <label class="nhsuk-label nhsuk-label--l" style="margin-top: 20px;" for="cya-label">
+        Check these details before requesting account
+      </label>
+    </h1>
+
+    <h3>Account request details</h3>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          First name
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['new-account-first-name'] or 'Jane' }}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="request-new-account#new-account-first-name">
+            Change<span class="nhsuk-u-visually-hidden"> First name</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Last name
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['new-account-last-name'] or 'Doe' }}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="request-new-account#new-account-last-name">
+            Change<span class="nhsuk-u-visually-hidden"> Last name</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+         Email address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['new-account-email-address'] or 'jane.doe@nhsbsa.nhs.uk' }}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="request-new-account#new-account-email-address">
+            Change<span class="nhsuk-u-visually-hidden"> Email address</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          UK mobile telephone number
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['new-account-phone-number'] or '07123456789' }}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="request-new-account#new-account-phone-number">
+            Change<span class="nhsuk-u-visually-hidden">UK mobile telephone number</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Region name
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['new-account-region'] or 'England' }}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="request-new-account#new-account-region">
+            Change<span class="nhsuk-u-visually-hidden"> Region name</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Trust name
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['trust'] or 'Airedale NHS Foundation Trust' }}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="select-trust">
+            Change<span class="nhsuk-u-visually-hidden"> trust name</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+
+  <p>If you select submit, you are confirming that account details are correct to the best of your knowledge.</p>
+  
+  <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Submit</button>
+        
+  <p><a href="new-account-cancel-confirmation">Cancel</a></p>
+
+  </form>
+
+ </div>
+</div>
+{% endblock %}

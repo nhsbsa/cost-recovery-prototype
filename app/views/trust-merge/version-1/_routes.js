@@ -5,6 +5,66 @@ const bodyParser = require('body-parser');
 router.use(bodyParser.json()); // to support JSON bodies
 router.use(bodyParser.urlencoded({ extended: true })); // to support URL-encoded bodies
 
+// Request a new ROVT account //
+
+// Enter account details
+router.post('/request-new-account', function (req, res) {
+
+  // Extract First names from the form
+  const newAccFirstName = req.body['new-account-first-name'];
+  // Store First names in the session data
+  req.session.data['new-account-first-name'] = newAccFirstName;
+
+  // Extract Last name from the form
+  const newAccLastName = req.body['new-account-last-name'];
+  // Store Last name in the session data
+  req.session.data['new-account-last-name'] = newAccLastName;
+
+  // Extract Email address from the form
+  const newAccEmailAddress = req.body['new-account-email-address'];
+  // Store Email address in the session data
+  req.session.data['new-account-email-address'] = newAccEmailAddress;
+
+  // Extract Phone number from the form
+  const newAccPhoneNumber = req.body['new-account-phone-number'];
+  // Store Phone number in the session data
+  req.session.data['new-account-phone-number'] = newAccPhoneNumber;
+
+  // Extract Region from the form
+  const newAccRegion = req.body['new-account-region'];
+  // Store Region in the session data
+  req.session.data['new-account-region'] = newAccRegion;
+
+  // Redirect to search for institution results page
+  res.redirect('/trust-merge/version-1/new-account-select-trust');
+});
+
+// Check your answers before submitting an account request
+router.post('/new-account-cya', function (req, res) {
+
+  // Redirect to Confirmation account request received screen
+  res.redirect('/trust-merge/version-1/confirmation-account-request-received');
+});
+
+// Confirmation account request received
+router.post('/confirmation-account-request-received', function (req, res) {
+
+  // Redirect to Sign-in screen
+  res.redirect('/trust-merge/version-1/sign-in');
+});
+
+// Confirm you wish to cancel your request for a new account
+router.post('/new-account-cancel-confirmation', function (req, res) {
+
+  var newAccConfirmCancellation = req.session.data['new-account-confirm-cancellation'];
+  
+  if (newAccConfirmCancellation === 'Yes') {
+    res.redirect('/trust-merge/version-1/sign-in');
+  } else {
+    res.redirect('/trust-merge/version-1/new-account-cancel-confirmation');
+  }
+});
+
 
 // Add a new treatment //
 
