@@ -1,0 +1,201 @@
+{% extends 'layout-with-login-multi-trust-3.html' %}
+{% block pageTitle %}
+Search for a person - Report overseas visitor treatments - NHSBSA
+{% endblock %}
+
+{% block beforeContent %}
+<div class="app-phase-banner">
+  <div class="nhsuk-width-container app-phase-banner__container">
+     <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+        Beta
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a new service - your <a href="#">feedback</a> will help us improve it.
+        </span>
+     </p>
+  </div>
+</div>
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__list-item"><a class="nhsuk-breadcrumb__link" href="home">Home</a></li>
+      <li class="nhsuk-breadcrumb__list-item">Search (Person)</li>
+    </ol>
+    <a class="nhsuk-back-link" href="home">
+      <span class="nhsuk-u-visually-hidden">Back to </span>
+      Home
+    </a>
+  </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/multi-trust-reporting/version-1/search-person" method="post">
+
+      
+      <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          Search for a person
+        </h1>
+      </legend>
+
+      <span class="nhsuk-hint" style="margin-top: 20px;">
+        Search for the person by entering their personal details or their treatment ID
+      </span>
+    
+      <!--start secondary navigation-->
+      <nav class="nhsuk-secondary-navigation" aria-label="Primary navigation" style="background-color:#f0f4f5; margin-bottom: 20px;">
+        <ul class="nhsuk-secondary-navigation__list">
+          <li class="nhsuk-secondary-navigation__item">
+            <a class="nhsuk-secondary-navigation__link" aria-current="page" href="search-person">Personal details</a>
+          </li>
+
+          <li class="nhsuk-secondary-navigation__item">
+            <a class="nhsuk-secondary-navigation__link" href="search-person-by-treatment-id">Treatment ID</a>
+          </li>
+        </ul>
+      </nav>
+    <!--end secondary navigation-->
+
+    <span class="nhsuk-hint" style="margin-top: 40px;">
+      Enter any 3 personal details, then select Search.
+    </span>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="internal-trust-search-first-names-label">
+          First names
+        </label>
+        <span class="nhsuk-hint">
+          Hint : Given names/Forename<br>
+          For example, ph or Phillip John.
+        </span>
+        <input class="nhsuk-input nhsuk-input--width-20" id="internal-trust-search-first-names" name="internal-trust-search-first-names" type="text">
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="internal-trust-search-last-name-label">
+          Last name
+        </label>
+        <span class="nhsuk-hint">
+          Hint : Name/Surname<br>
+          For example, sm or Smith
+        </span>
+        <input class="nhsuk-input nhsuk-input--width-20" id="internal-trust-search-last-name" name="internal-trust-search-last-name" type="text">
+      </div>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="dateOfBirth">
+          Date of birth
+        </label>
+
+        <div class="nhsuk-hint" id="internal-trust-search-date-of-birth-hint">
+          For example, 30 04 2019
+        </div>
+    
+        <div class="nhsuk-date-input" id="internal-trust-search-date-of-birth">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="internal-trust-search-date-of-birth-day">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="internal-trust-search-date-of-birth-day" name="internal-trust-search-date-of-birth-day" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="internal-trust-search-date-of-birth-month">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="internal-trust-search-date-of-birth-month" name="internal-trust-search-date-of-birth-month" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="internal-trust-search-date-of-birth-year">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="internal-trust-search-date-of-birth-year" name="internal-trust-search-date-of-birth-year" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="internal-trust-search-last-name-label">
+          Entitlement country
+        </label>
+        <div class="nhsuk-hint" style="margin-bottom: 5px;" id="entitlement-registration-country-label" for="entitlement-registration-country-label" class="form-label">
+          For example, France
+        </div>
+        <input class="nhsuk-input nhsuk-input--width-20" list="countries" id="internal-trust-search-entitlement-registration-country-drop" name="internal-trust-search-entitlement-registration-country">
+        <datalist id="countries">
+          <option value=""></option>
+          <option value="Anguilla (AI)">Anguilla (AI)</option>
+          <option value="Australia (AU)">Australia (AU)</option>
+          <option value="Austria (AT)">Austria (AT)</option>
+          <option value="Belgium (BE)">Belgium (BE)</option>
+          <option value="Bosnia and Herzegovina (BA)">Bosnia and Herzegovina (BA)</option>
+          <option value="British Virgin Islands (VG)">British Virgin Islands (VG)</option>
+          <option value="Bulgaria (BG)">Bulgaria (BG)</option>
+          <option value="Croatia (HR)">Croatia (HR)</option>
+          <option value="Cyprus (CY)">Cyprus (CY)</option>
+          <option value="Czech Republic (CZ)">Czech Republic (CZ)</option>
+          <option value="Denmark (DK)">Denmark (DK)</option>
+          <option value="Estonia (EE)">Estonia (EE)</option>
+          <option value="Falkland Islands (FK)">Falkland Islands (FK)</option>
+          <option value="Faroe Islands (FO)">Faroe Islands (FO)</option>
+          <option value="Finland (FI)">Finland (FI)</option>
+          <option value="France (FR)">France (FR)</option>
+          <option value="Germany (DE)">Germany (DE)</option>
+          <option value="Gibraltar (GI)">Gibraltar (GI)</option>
+          <option value="Greece (GR)">Greece (GR)</option>
+          <option value="Hungary (HU)">Hungary (HU)</option>
+          <option value="Iceland (IS)">Iceland (IS)</option>
+          <option value="Ireland (IE)">Ireland (IE)</option>
+          <option value="Isle of Man (IM)">Isle of Man (IM)</option>
+          <option value="Israel (IL)">Israel (IL)</option>
+          <option value="Italy (IT)">Italy (IT)</option>
+          <option value="Jersey (JE)">Jersey (JE)</option>
+          <option value="Kosovo (XK)">Kosovo (XK)</option>
+          <option value="Latvia (LV)">Latvia (LV)</option>
+          <option value="Liechtenstein (LI)">Liechtenstein (LI)</option>
+          <option value="Lithuania (LT)">Lithuania (LT)</option>
+          <option value="Luxembourg (LU)">Luxembourg (LU)</option>
+          <option value="Malta (MT)">Malta (MT)</option>
+          <option value="Montenegro (ME)">Montenegro (ME)</option>
+          <option value="Montserrat (MS)">Montserrat (MS)</option>
+          <option value="Netherlands (NL)">Netherlands (NL)</option>
+          <option value="New Zealand (NZ)">New Zealand (NZ)</option>
+          <option value="North Macedonia (MK)">North Macedonia (MK)</option>
+          <option value="Norway (NO)">Norway (NO)</option>
+          <option value="Poland (PL)">Poland (PL)</option>
+          <option value="Portugal (PT)">Portugal (PT)</option>
+          <option value="Romania (RO)">Romania (RO)</option>
+          <option value="Serbia (RS)">Serbia (RS)</option>
+          <option value="Slovakia (SK)">Slovakia (SK)</option>
+          <option value="Slovenia (SI)">Slovenia (SI)</option>
+          <option value="Spain (ES)">Spain (ES)</option>
+          <option value="St Helena (SH)">St Helena (SH)</option>
+          <option value="Sweden (SE)">Sweden (SE)</option>
+          <option value="Switzerland (CH)">Switzerland (CH)</option>
+          <option value="Turks and Caicos Islands (TC)">Turks and Caicos Islands (TC)</option>
+          <option value="United Kingdom (UK)">United Kingdom (UK)</option>
+        </datalist>            
+     </div>
+
+    </fieldset>
+
+    <button class="nhsuk-button" data-module="nhsuk-button" style="margin-top: 10px;" type="submit">Search</button>
+        
+
+    </form>
+
+ </div>
+</div>
+{% endblock %}

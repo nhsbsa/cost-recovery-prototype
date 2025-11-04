@@ -920,4 +920,54 @@ router.post('/confirmation-non-eu-treatment-processed', function (req, res) {
     res.redirect('/multi-trust-reporting/version-1/home');
   }
 });
+
+
+// Internal trust search for person //
+// Search for person by personal details
+router.post('/search-person', function (req, res) {
+  // Extract the person's first names from the form
+  const internalTrustSearchFirstNames = req.body['internal-trust-search-first-names'];
+
+  // Store the first names in the session data
+  req.session.data['internal-trust-search-first-names'] = internalTrustSearchFirstNames;
+
+  // Extract the person's last name from the form
+  const internalTrustSearchLastName = req.body['internal-trust-search-last-name'];
+
+  // Store the first names in the session data
+  req.session.data['internal-trust-search-last-name'] = internalTrustSearchLastName;
+
+  // Extract the date of birth from the request body
+  const internalTrustSearchDateOfBirthDay = req.body['internal-trust-search-date-of-birth-day'];
+  const internalTrustSearchDateOfBirthMonth = req.body['internal-trust-search-date-of-birth-month'];
+  const internalTrustSearchDateOfBirthYear = req.body['internal-trust-search-date-of-birth-year'];
+
+  // Combine to form the full date (or use a default if not provided)
+  const internalTrustSearchDateOfBirth = internalTrustSearchDateOfBirthDay && internalTrustSearchDateOfBirthMonth && internalTrustSearchDateOfBirthYear
+  ? `${internalTrustSearchDateOfBirthDay}/${internalTrustSearchDateOfBirthMonth}/${internalTrustSearchDateOfBirthYear}` 
+  : '13/12/1994';
+  // Store the person's date of birth in the session data
+  req.session.data['internal-trust-search-date-of-birth'] = internalTrustSearchDateOfBirth;
+
+  // Extract the entitlement registration country
+  const internalTrustSearchEntitlementRegistrationCountry = req.body['internal-trust-search-entitlement-registration-country'];
+
+  // Store the entitlement registration country in the session data
+  req.session.data['internal-trust-search-entitlement-registration-country'] = internalTrustSearchEntitlementRegistrationCountry;
+
+  // Redirect to person search results
+  res.redirect('/multi-trust-reporting/version-1/search-person-results');
+});
+
+// Search for person by treatment ID
+router.post('/search-person-by-treatment-id', function (req, res) {
+  // Extract the treatment ID
+  const internalTrustSearchTreatmentID = req.body['internal-trust-search-treatment-id'];
+
+  // Store the treatment ID in the session data
+  req.session.data['internal-trust-search-treatment-id'] = internalTrustSearchTreatmentID;
+
+  // Redirect to person search by treatment ID results
+  res.redirect('/multi-trust-reporting/version-1/search-person-by-treatment-id-results');
+});
 module.exports = router
