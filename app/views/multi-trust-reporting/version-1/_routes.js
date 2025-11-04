@@ -970,4 +970,10 @@ router.post('/search-person-by-treatment-id', function (req, res) {
   // Redirect to person search by treatment ID results
   res.redirect('/multi-trust-reporting/version-1/search-person-by-treatment-id-results');
 });
+
+// View EHIC details
+router.post('/view-ehic-details-johndoe', function (req, res) {
+  // Redirect to treatment record
+  res.redirect('/multi-trust-reporting/version-1/treatment-record-johndoe');
+});
 module.exports = router
