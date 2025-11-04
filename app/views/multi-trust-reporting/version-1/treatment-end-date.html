@@ -1,0 +1,75 @@
+{% extends 'layout-with-login-multi-trust-3.html' %}
+{% block pageTitle %}
+What is the end date of the treatment? - Report overseas visitor treatments - NHSBSA
+{% endblock %}
+
+
+
+{% block content %}
+
+{{ backLink({
+  "href": "javascript:history.go(-1)",
+  "text": "Back"
+}) }}
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/multi-trust-reporting/version-1/treatment-end-date" method="post">
+
+    <div class="nhsuk-form-group">
+      <span class="nhsuk-caption-l" style="margin-top: 20px;">
+        Treatment details
+      </span>
+
+      <fieldset class="nhsuk-fieldset" aria-describedby="hint" role="group">
+        <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+          <h1 class="nhsuk-fieldset__heading">
+            What is the end date of the treatment?
+          </h1>
+        </legend>
+        <span class="nhsuk-hint" id="hint">
+          For example, 30 04 2019
+        </span>
+    
+        <div class="nhsuk-date-input" id="treatment-end-date">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="treatment-end-date-day-label">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="treatment-end-date-day" name="treatment-end-date-day" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="treatment-end-date-month-label">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="treatment-end-date-month" name="treatment-end-date-month" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="treatment-end-date-year-label">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="treatment-end-date-year" name="treatment-end-date-year" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+        </div>
+        
+      </fieldset>
+    
+    </div>
+
+    <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
+
+    <p><a href="cancel-confirmation">Cancel</a></p>
+
+    </form>
+
+ </div>
+</div> 
+{% endblock %}

@@ -85,7 +85,7 @@ router.use('/final/malta-quota-search', require('./views/final/_routes'));
 
 router.use('/final/malta-additional-treatments', require('./views/final/_routes'));
 
-router.use('/trust-merge/version-1', require('./views/trust-merge/version-1/_routes'));
+router.use('/multi-trust-reporting/version-1', require('./views/multi-trust-reporting/version-1/_routes'));
 
 
 module.exports = router;

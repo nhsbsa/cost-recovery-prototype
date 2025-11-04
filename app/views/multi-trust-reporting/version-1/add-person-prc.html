@@ -1,0 +1,282 @@
+{% extends 'layout-with-login-multi-trust-3.html' %}
+{% block pageTitle %}
+What are the EHIC details? - Report overseas visitor treatments - NHSBSA
+{% endblock %}
+
+
+
+{% block content %}
+
+{{ backLink({
+  "href": "javascript:history.go(-1)",
+  "text": "Back"
+}) }}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/multi-trust-reporting/version-1/add-person-prc" method="post">
+
+    <span class="nhsuk-caption-l" style="margin-top: 20px;">
+      PRC details
+    </span>
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          What are the PRC details?
+        </h1>
+      </legend>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="new-prc-issuing-ms-label">
+          Issuing member state
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="new-prc-issuing-ms" name="new-prc-issuing-ms" type="text" value="Austria (AT)" disabled >
+      </div>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="new-prc-last-name-label">
+          Name
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="new-prc-last-name" name="new-prc-last-name" type="text" value="Doe" disabled >
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="new-prc-first-names-label">
+          Given names
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="new-prc-first-names" name="new-prc-first-names" type="text" value="John" disabled >
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="dateOfBirth">
+          Date of birth
+        </label>
+    
+        <div class="nhsuk-date-input" id="example">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-prc-date-of-birth-label">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="new-prc-date-of-birth-day" name="new-prc-date-of-birth-day" type="number" pattern="[0-9]*" value="13" disabled >
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-prc-date-of-birth-month-label">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="new-prc-date-of-birth-month" name="new-prc-date-of-birth-month" type="number" pattern="[0-9]*" value="12" disabled >
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-prc-date-of-birth-year-label">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="year" name="new-prc-date-of-birth-year" type="number" pattern="[0-9]*" value="1994" disabled>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="new-prc-pin-label">
+          Personal identification number (Field 6)
+        </label> 
+
+        <div class="nhsuk-hint" id="hint">
+          The format for this is different for each member state and may include numbers, letters and other characters
+        </div>
+
+        <input class="nhsuk-input nhsuk-input--width-20" id="new-prc-pin" name="new-prc-pin" type="text">
+      </div>
+
+
+      <h3>EHIC information (if available on PRC)</h3>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="new-prc-ehic-card-number-label">
+          EHIC card number (optional)
+        </label>
+
+        <div class="nhsuk-hint" id="hint">
+          For example, 12345678901234567890
+        </div>
+
+        <input class="nhsuk-input nhsuk-input--width-20" id="new-prc-ehic-card-number" name="new-prc-ehic-card-number" type="text"> 
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="new-prc-ehic-expiry-date-label">
+          EHIC expiry date (optional)
+        </label>
+        
+        <div class="nhsuk-hint" id="hint">
+          For example, 20 12 2020
+        </div>
+    
+        <div class="nhsuk-date-input" id="new-prc-ehic-expiry-date">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-prc-ehic-expiry-date-day-label">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="new-prc-ehic-expiry-date-day" name="new-prc-ehic-expiry-date-day" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-prc-ehic-expiry-date-month-label">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="new-prc-ehic-expiry-date-month" name="new-prc-ehic-expiry-date-month" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-prc-ehic-expiry-date-year-label">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="new-prc-ehic-expiry-date-year" name="new-prc-ehic-expiry-date-year" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <h3>PRC details</h3>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="new-prc-expiry-date-label">
+          Valid from
+        </label>
+        
+        <div class="nhsuk-hint" id="hint">
+          For example, 20 12 2020
+        </div>
+    
+        <div class="nhsuk-date-input" id="new-prc-start-date">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-prc-start-date-day-label">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="new-prc-start-date-day" name="new-prc-start-date-day" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-prc-start-date-month-label">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="new-prc-start-date-month" name="new-prc-start-date-month" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-prc-start-date-year-label">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="new-prc-start-date-year" name="new-prc-start-date-year" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="new-prc-expiry-date-label">
+          Valid to
+        </label>
+        
+        <div class="nhsuk-hint" id="hint">
+          For example, 20 01 2021
+        </div>
+    
+        <div class="nhsuk-date-input" id="new-prc-end-date">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-prc-end-date-day-label">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="new-prc-end-date-day" name="new-prc-end-date-day" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-prc-end-date-month-label">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="new-prc-end-date-month" name="new-prc-end-date-month" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-prc-end-date-year-label">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="new-prc-end-date-year" name="new-prc-end-date-year" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="new-prc-expiry-date-label">
+          PRC issue date
+        </label>
+        
+        <div class="nhsuk-hint" id="hint">
+          For example, 20 12 2020
+        </div>
+    
+        <div class="nhsuk-date-input" id="new-prc-issue-date">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-prc-issue-date-day-label">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="new-prc-issue-date-day" name="new-prc-issue-date-day" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-prc-issue-date-month-label">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="new-prc-issue-date-month" name="new-prc-issue-date-month" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-prc-issue-date-year-label">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="new-prc-issue-date-year" name="new-prc-issue-date-year" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </fieldset>
+
+    <div class="nhsuk-checkboxes__item">          
+      <input type="hidden" name="new-prc-student-checkbox">
+      <input type="checkbox" class="nhsuk-checkboxes__input" id="new-prc-student-checkbox" name="new-prc-student" value="yes">
+      <label class="nhsuk-label nhsuk-checkboxes__label" for="new-prc-student-checkbox-label">Select if John Doe is a student</label>
+    </div>
+
+    <br>
+
+    <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
+        
+    <p><a href="cancel-confirmation">Cancel</a></p>
+
+  </form>
+
+ </div>
+</div>
+{% endblock %}

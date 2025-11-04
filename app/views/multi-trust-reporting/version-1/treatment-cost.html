@@ -1,0 +1,66 @@
+{% extends 'layout-with-login-multi-trust-3.html' %}
+{% block pageTitle %}
+What is the full cost of the treatment, in pounds and pence? - Report overseas visitor treatments - NHSBSA
+{% endblock %}
+
+
+
+{% block content %}
+
+{{ backLink({
+  "href": "javascript:history.go(-1)",
+  "text": "Back"
+}) }}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/multi-trust-reporting/version-1/treatment-cost" method="post">
+    
+      <span class="nhsuk-caption-l" style="margin-top: 20px;">
+        Treatment details
+      </span>
+      <div class="nhsuk-form-group">
+        <h1 class="nhsuk-label-wrapper">
+          <h1 class="nhsuk-label-wrapper">
+            <label class="nhsuk-label nhsuk-label--l" for="cost">
+              What is the full cost of the treatment, in pounds and pence?
+            </label></h1>
+    
+            <div class="nhsuk-hint">
+              For example, 234.21
+            </div>
+
+            <div class="nhsuk-form-group">
+    
+              <div style="display: flex;">
+                <div style ="font-family: arial,sans-serif; font-weight:00;
+                              -webkit-font-smoothing: antialiased;
+                              font-weight: 400;
+                              box-sizing: border-box;
+                              display: inline-block;
+                              min-width: 2.5rem;
+                              height: 2.5rem;
+                              padding: 5px;
+                              border: 2px solid #0b0c0c;
+                              border-style: solid none solid solid;
+                              background-color: #f0f4f5;
+                              text-align: center;
+                              white-space: nowrap;
+                              cursor: default;
+                              -webkit-box-flex: 0;
+                              flex: 0 0 auto" aria-hidden="true">£</div>
+                <input class="nhsuk-input nhsuk-input--width-5" style="max-width: 14rem" id="treatment-cost" name="treatment-cost" type="text" spellcheck="false">
+              </div>
+            </div>
+          </div>
+
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
+        
+        <p><a href="cancel-confirmation">Cancel</a></p>
+
+    </form>
+
+ </div>
+</div>
+{% endblock %}

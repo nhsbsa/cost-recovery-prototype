@@ -1,0 +1,210 @@
+{% extends 'layout-with-login-multi-trust-3.html' %}
+{% block pageTitle %}
+John Doe's PRC that covers the treatment dates - Report overseas visitor treatments - NHSBSA
+{% endblock %}
+
+
+
+{% block content %}
+
+{{ backLink({
+  "href": "javascript:history.go(-1)",
+  "text": "Back"
+}) }}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/multi-trust-reporting/version-1/prc-view-person-record-johndoe" method="post">
+
+      <span class="nhsuk-caption-l" style="margin-top: 20px;">
+        PRC details
+      </span>
+      <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          John Doe's PRC that covers the treatment dates
+        </h1>
+      </legend>
+
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Issuing member state
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Austria (AT)
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            
+          </dd>
+        </div>
+      </dl>
+
+
+      <h3>Card holder related information</h3>
+
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Doe
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Given names
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            John
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            13/12/1994
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Personal identification number
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            1234567890
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            
+          </dd>
+        </div>
+      </dl>
+
+
+      <h3>Competent institution related information</h3>
+
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Identification number of the institution
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            1A00 - KFA WIEN
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Institution name
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Health Care Insititution of the municipal civil servants of the City of Vienna
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            
+          </dd>
+        </div>
+      </dl>
+
+
+      <h3>EHIC information (if available on PRC)</h3>
+
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            EHIC card number (optional)
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            EHIC expiry date (optional)
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            
+          </dd>
+        </div>
+      </dl>
+
+
+      <h3>PRC details</h3>
+
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Valid from
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            01/01/2025
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Valid to
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            31/12/2025
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            PRC issue date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            04/12/2024
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            
+          </dd>
+        </div>
+      </dl>
+
+    </fieldset>
+
+    <div class="nhsuk-checkboxes__item">          
+      <input type="hidden" name="student-checkbox">
+      <input type="checkbox" class="nhsuk-checkboxes__input" id="prc-student-checkbox" name="prc-student-checkbox" value="yes">
+      <label class="nhsuk-label nhsuk-checkboxes__label" for="prc-student-checkbox">Select if John Doe is a student</label>
+    </div>
+
+    <div class="button-container" style="margin-top: 40px;">
+      <a href="existing-prc-upload-copy" class="nhsuk-button" style="margin-right:20px;" role="button" type="submit">Continue</button>
+      <a href="save-as-draft-confirmation" class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" role="button">Save as draft</a>
+    </div>
+        
+    <p style="margin-bottom: 20px;"><a href="cancel-confirmation">Cancel</a></p>
+
+    <p>If the above prc doesnt match your requirement <a href="add-person-prc">add a new prc</a> </p>
+
+  </form>
+
+  </div>
+</div>
+{% endblock %}

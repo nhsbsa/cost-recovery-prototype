@@ -1,0 +1,71 @@
+{% extends 'layout-with-login-multi-trust-3.html' %}
+{% block pageTitle %}
+What is the patient's address? - Report overseas visitor treatments - NHSBSA
+{% endblock %}
+
+
+
+{% block content %}
+
+{{ backLink({
+  "href": "javascript:history.go(-1)",
+  "text": "Back"
+}) }}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/multi-trust-reporting/version-1/existing-prc-enter-address" method="post">
+
+    <span class="nhsuk-caption-l" style="margin-top: 20px;">
+      Address details
+    </span>
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          What is John Doe's address in {% if data['entitlement-registration-country'] %}{{ data['entitlement-registration-country'] }}{% else %}Austria (AT){% endif %}?
+        </h1>
+      </legend>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="existing-prc-address-line-1-label">
+          Address line 1 
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="existing-prc-address-line-1" name="existing-prc-address-line-1" type="text">
+      </div>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="existing-prc-address-line-2-label">
+          Address line 2 (optional)
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="existing-prc-address-line-2" name="existing-prc-address-line-2" type="text">
+      </div>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="existing-prc-address-line-3-label">
+          Address line 3 (optional)
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="existing-prc-address-line-3" name="existing-prc-address-line-3" type="text">
+      </div>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="existing-prc-address-country-label">
+          Country
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="existing-prc-address-country" name="existing-prc-address-country" type="text" value="Austria (AT)" disabled>
+      </div>
+    
+    </fieldset>
+
+    <div class="button-container" style="margin-top: 20px;">
+      <button style="margin-right:20px;" class="nhsuk-button" type="submit">Continue</button>
+      <a href="save-as-draft-confirmation" class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" role="button">Save as draft</a>
+    </div>
+      
+    <p><a href="cancel-confirmation">Cancel</a></p>
+
+  </form>
+
+ </div>
+</div>
+{% endblock %}

@@ -1,0 +1,101 @@
+{% extends 'layout-with-login-multi-trust-3.html' %}
+{% block pageTitle %}
+Search for a person - Report overseas visitor treatments - NHSBSA
+{% endblock %}
+
+
+
+{% block content %}
+
+{{ backLink({
+  "href": "javascript:history.go(-1)",
+  "text": "Back"
+}) }}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/multi-trust-reporting/version-1/prc-search-for-person" method="post">
+
+      <span class="nhsuk-caption-l" style="margin-top: 20px;">
+        PRC details
+      </span>
+      <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          Search for a person
+        </h1>
+      </legend>
+
+      <span class="nhsuk-hint">
+        Enter these details as they are on the PRC
+      </span>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="prc-last-name-label">
+          Name
+        </label>
+        <span class="nhsuk-hint">
+          For example, Smith
+        </span>
+        <input class="nhsuk-input nhsuk-input--width-20" id="prc-last-name" name="prc-last-name" type="text">
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="prc-first-names-label">
+          Given names
+        </label>
+        <span class="nhsuk-hint">
+          For example, Phillip John.
+        </span>
+        <input class="nhsuk-input nhsuk-input--width-20" id="prc-first-names" name="prc-first-names" type="text">
+      </div>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="dateOfBirth">
+          Date of birth
+        </label>
+
+        <div class="nhsuk-hint" id="hint">
+          For example, 15 03 1984
+        </div>
+    
+        <div class="nhsuk-date-input" id="prc-date-of-birth">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="prc-date-of-birth-day">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="prc-date-of-birth-day" name="prc-date-of-birth-day" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="prc-date-of-birth-month">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="prc-date-of-birth-month" name="prc-date-of-birth-month" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="prc-date-of-birth-year">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="prc-date-of-birth-year" name="prc-date-of-birth-year" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </fieldset>
+
+    <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Search</button>
+        
+    <p><a href="cancel-confirmation">Cancel</a></p>
+
+    </form>
+
+ </div>
+</div>
+{% endblock %}
