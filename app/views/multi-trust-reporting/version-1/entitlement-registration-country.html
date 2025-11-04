@@ -53,11 +53,13 @@ Which country is the patient's entitlement issued in? - Report overseas visitor 
         </span>
         <h1 class="nhsuk-label-wrapper">
           <label class="nhsuk-label nhsuk-label--l" for="country">
-            Which country is the patient's S2/E112 issued in?
+            Which country is the patient from?
           </label>
         </h1>
       {% endif %}
       
+
+      {% if data['entitlement-type'] == 'EHIC' or data['entitlement-type'] == 'PRC' or data['entitlement-type'] == 'S2/E112' %}
       <div class="nhsuk-form-group">
         <div class="nhsuk-hint" style="margin-bottom: 5px;" id="entitlement-registration-country-label" for="entitlement-registration-country-label" class="form-label">
           Enter country
@@ -100,6 +102,37 @@ Which country is the patient's entitlement issued in? - Report overseas visitor 
           <option value="United Kingdom (UK)">United Kingdom (UK)</option>
         </datalist>            
      </div>
+
+     {% else %}
+     <div class="nhsuk-form-group">
+      <div class="nhsuk-hint" style="margin-bottom: 5px;" id="entitlement-registration-country-label" for="entitlement-registration-country-label" class="form-label">
+        Enter country
+      </div>
+      <input class="nhsuk-input nhsuk-input--width-20" list="countries" id="entitlement-registration-country-drop" name="entitlement-registration-country">
+        <datalist id="countries">
+         <option value=""></option>
+         <option value="Gibraltar (GI)">Gibraltar (GI)</option>
+         <option value="Norway (NO)">Norway (NO)</option>
+         <option value="Australia (AU)">Australia (AU)</option>
+         <option value="Bosnia and Herzegovina (BA)">Bosnia and Herzegovina (BA)</option>
+         <option value="Faroe Islands (FO)">Faroe Islands (FO)</option>
+         <option value="Isle of Man (IM)">Isle of Man (IM)</option>
+         <option value="Israel (IL)">Israel (IL)</option>
+         <option value="Jersey (JE)">Jersey (JE)</option>
+         <option value="Kosovo (XK)">Kosovo (XK)</option>
+         <option value="Montenegro (ME)">Montenegro (ME)</option>
+         <option value="New Zealand (NZ)">New Zealand (NZ)</option>
+         <option value="North Macedonia (MK)">North Macedonia (MK)</option>
+         <option value="Serbia (RS)">Serbia (RS)</option>
+         <option value="Falkland Islands (FK)">Falkland Islands (FK)</option>
+         <option value="Anguilla (AI)">Anguilla (AI)</option>
+         <option value="British Virgin Islands (VG)">British Virgin Islands (VG)</option>
+         <option value="Montserrat (MS)">Montserrat (MS)</option>
+         <option value="St Helena (SH)">St Helena (SH)</option>
+         <option value="Turks and Caicos Islands (TC)">Turks and Caicos Islands (TC)</option>
+        </datalist>
+   </div>
+   {% endif %}
 
     </div>
 

@@ -1,0 +1,229 @@
+{% extends 'layout-with-login-multi-trust-3.html' %}
+{% block pageTitle %}
+What are the EHIC details? - Report overseas visitor treatments - NHSBSA
+{% endblock %}
+
+
+
+{% block content %}
+
+{{ backLink({
+  "href": "javascript:history.go(-1)",
+  "text": "Back"
+}) }}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/multi-trust-reporting/version-1/add-person-s2" method="post">
+
+    <span class="nhsuk-caption-l" style="margin-top: 20px;">
+      S2/E112
+    </span>
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          What are the S2/E112 details?
+        </h1>
+      </legend>
+
+      <h3>Personal details of the holder</h3>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="new-s2-issuing-ms-label">
+          Issuing member state
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="new-s2-issuing-ms" name="new-s2-issuing-ms" type="text" value="Austria (AT)" disabled >
+      </div>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="new-s2-last-name-label">
+          Name
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="new-s2-last-name" name="new-s2-last-name" type="text" value="Doe" disabled >
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="new-s2-first-names-label">
+          Given names
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="new-s2-first-names" name="new-s2-first-names" type="text" value="John" disabled >
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="dateOfBirth">
+          Date of birth
+        </label>
+
+        <div class="nhsuk-hint">
+          For example, 15 03 1984
+        </div>
+    
+        <div class="nhsuk-date-input" id="example">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-s2-date-of-birth-label">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="new-s2-date-of-birth-day" name="new-s2-date-of-birth-day" type="number" pattern="[0-9]*" value="13" disabled >
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-s2-date-of-birth-month-label">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="new-s2-date-of-birth-month" name="new-s2-date-of-birth-month" type="number" pattern="[0-9]*" value="12" disabled >
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-s2-date-of-birth-year-label">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="year" name="new-s2-date-of-birth-year" type="number" pattern="[0-9]*" value="1994" disabled>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="new-s2-pin-label">
+          Personal identification number (Field 6)
+        </label> 
+
+        <div class="nhsuk-hint" id="hint">
+          The format for this is different for each member state and may include numbers, letters and other characters
+        </div>
+
+        <input class="nhsuk-input nhsuk-input--width-20" id="new-s2-pin" name="new-s2-pin" type="text">
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="new-s2-expiry-date-label">
+          S2/E112 issue date
+        </label>
+        
+        <div class="nhsuk-hint" id="hint">
+          For example, 15 03 2020
+        </div>
+    
+        <div class="nhsuk-date-input" id="new-s2-issue-date">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-s2-issue-date-day-label">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="new-s2-issue-date-day" name="new-s2-issue-date-day" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-s2-issue-date-month-label">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="new-s2-issue-date-month" name="new-s2-issue-date-month" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-s2-issue-date-year-label">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="new-s2-issue-date-year" name="new-s2-issue-date-year" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <h3>Validity period</h3>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="new-s2-expiry-date-label">
+          S2/E112 start date
+        </label>
+        
+        <div class="nhsuk-hint" id="hint">
+          For example, 20 12 2020
+        </div>
+    
+        <div class="nhsuk-date-input" id="new-s2-start-date">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-s2-start-date-day-label">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="new-s2-start-date-day" name="new-s2-start-date-day" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-s2-start-date-month-label">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="new-s2-start-date-month" name="new-s2-start-date-month" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-s2-start-date-year-label">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="new-s2-start-date-year" name="new-s2-start-date-year" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="new-s2-expiry-date-label">
+          S2/E112 end date
+        </label>
+        
+        <div class="nhsuk-hint" id="hint">
+          For example, 20 12 2020
+        </div>
+    
+        <div class="nhsuk-date-input" id="new-s2-end-date">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-s2-end-date-day-label">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="new-s2-end-date-day" name="new-s2-end-date-day" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-s2-end-date-month-label">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="new-s2-end-date-month" name="new-s2-end-date-month" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-s2-end-date-year-label">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="new-s2-end-date-year" name="new-s2-end-date-year" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </fieldset>
+
+    <br>
+
+    <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
+        
+    <p><a href="cancel-confirmation">Cancel</a></p>
+
+  </form>
+
+ </div>
+</div>
+{% endblock %}

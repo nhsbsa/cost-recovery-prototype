@@ -418,12 +418,6 @@ router.post('/prc-search-for-person', function (req, res) {
 });
 
 
-// Review existing PRC details which cover the treatment dates
-router.post('/prc-search-for-person', function (req, res) {
-  // Redirect to upload a copy of the existing PRC
-  res.redirect('/multi-trust-reporting/version-1/existing-prc-upload');
-});
-
 // Upload a copy of the existing PRC
 router.post('/existing-prc-upload', function (req, res) {
   // Redirect to review the uploaded file
@@ -681,4 +675,249 @@ router.post('/confirmation-prc-treatment-processed', function (req, res) {
   }
 });
 
+
+// S2/E112 Journey //
+
+// Search for the person (S2/E112)
+router.post('/s2-search-for-person', function (req, res) {
+  // Extract the person's first names from the form
+  const s2FirstNames = req.body['s2-first-names'];
+
+  // Store the first names in the session data
+  req.session.data['s2-first-names'] = s2FirstNames;
+
+  // Extract the person's last name from the form
+  const s2LastName = req.body['s2-last-name'];
+
+  // Store the first names in the session data
+  req.session.data['s2-last-name'] = s2LastName;
+
+  // Extract the date of birth from the request body
+  const s2DateOfBirthDay = req.body['s2-date-of-birth-day'];
+  const s2DateOfBirthMonth = req.body['s2-date-of-birth-month'];
+  const s2DateOfBirthYear = req.body['s2-date-of-birth-year'];
+
+  // Combine to form the full date (or use a default if not provided)
+  const s2DateOfBirth = s2DateOfBirthDay && s2DateOfBirthMonth && s2DateOfBirthYear
+  ? `${s2DateOfBirthDay}/${s2DateOfBirthMonth}/${s2DateOfBirthYear}` 
+  : '13/12/1994';
+  // Store the person's date of birth in the session data
+  req.session.data['s2-date-of-birth'] = s2DateOfBirth;
+
+  // Redirect to check your answers
+  res.redirect('/multi-trust-reporting/version-1/s2-search-for-person-results');
+});
+
+// Do you have a copy of the S2/E112?
+router.post('/copy-of-s2', function (req, res) {
+
+  var s2HaveCopy = req.session.data['s2-have-copy'];
+  
+  if (s2HaveCopy === 'Yes') {
+    res.redirect('/multi-trust-reporting/version-1/add-person-s2');
+  } else {
+    res.redirect('/multi-trust-reporting/version-1/s2-contact-cr');
+  }
+});
+
+// Add a new person (S2/E112)
+router.post('/add-person-s2', function (req, res) {
+
+  // Extract the S2/E112 issuing Member State from the form
+  const newS2IssuingMS = req.body['new-s2-issuing-ms'];
+  // Store the S2/E112 issuing Member State in the session data
+  req.session.data['new-s2-issuing-ms'] = newS2IssuingMS;
+
+  // Extract the S2/E112 Last name from the form
+  const newS2LastName = req.body['new-s2-last-name'];
+  // Store the S2/E112 Last name in the session data
+  req.session.data['new-s2-last-name'] = newS2LastName;
+
+  // Extract the S2/E112 First names from the form
+  const newS2FirstNames = req.body['new-s2-first-names'];
+  // Store the S2/E112 First names in the session data
+  req.session.data['new-s2-first-names'] = newS2FirstNames;
+
+  // Extract the S2/E112 date of birth from the request body
+  const newS2DateOfBirthDay = req.body['new-s2-date-of-birth-day'];
+  const newS2DateOfBirthMonth = req.body['new-s2-date-of-birth-month'];
+  const newS2DateOfBirthYear = req.body['new-s2-date-of-birth-year'];
+
+  // Combine to form the full date (or use a default if not provided)
+  const newS2DateOfBirth = newS2DateOfBirthDay && newS2DateOfBirthMonth && newS2DateOfBirthYear
+  ? `${newS2DateOfBirthDay}/${newS2DateOfBirthMonth}/${newS2DateOfBirthYear}` 
+  : '13/12/1994';
+  // Store the person's date of birth in the session data
+  req.session.data['new-s2-date-of-birth'] = newS2DateOfBirth;
+
+  // Extract the S2/E112 Personal Identification Number (PIN) from the form
+  const newS2PIN = req.body['new-s2-pin'];
+  // Store the S2/E112 Personal Identification Number (PIN) in the session data
+  req.session.data['new-s2-pin'] = newS2PIN;
+
+  // S2/E112 Dates
+  // Extract the S2/E112 Issue date from the form
+  const newS2IssueDateDay = req.body['new-s2-issue-date-day'];
+  const newS2IssueDateMonth = req.body['new-s2-issue-date-month'];
+  const newS2IssueDateYear = req.body['new-s2-issue-date-year'];
+
+  // Combine to form the full date (or use a default if not provided)
+  const newS2IssueDate = newS2IssueDateDay && newS2IssueDateMonth && newS2IssueDateYear
+  ? `${newS2IssueDateDay}/${newS2IssueDateMonth}/${newS2IssueDateYear}` 
+  : '31/12/2025';
+  // Store the S2/E112 issue date in the session data
+  req.session.data['new-s2-issue-date'] = newS2IssueDate;
+
+  // Extract the S2/E112 Start date from the form
+  const newS2StartDateDay = req.body['new-s2-start-date-day'];
+  const newS2StartDateMonth = req.body['new-s2-start-date-month'];
+  const newS2StartDateYear = req.body['new-s2-start-date-year'];
+
+  // Combine to form the full date (or use a default if not provided)
+  const newS2StartDate = newS2StartDateDay && newS2StartDateMonth && newS2StartDateYear
+  ? `${newS2StartDateDay}/${newS2StartDateMonth}/${newS2StartDateYear}` 
+  : '31/12/2025';
+  // Store the S2/E112 start date in the session data
+  req.session.data['new-s2-start-date'] = newS2StartDate;
+
+  // Extract the S2/E112 End date from the form
+  const newS2EndDateDay = req.body['new-s2-end-date-day'];
+  const newS2EndDateMonth = req.body['new-s2-end-date-month'];
+  const newS2EndDateYear = req.body['new-s2-end-date-year'];
+
+  // Combine to form the full date (or use a default if not provided)
+  const newS2EndDate = newS2EndDateDay && newS2EndDateMonth && newS2EndDateYear
+  ? `${newS2EndDateDay}/${newS2EndDateMonth}/${newS2EndDateYear}` 
+  : '31/12/2025';
+  // Store the S2/E112 end date in the session data
+  req.session.data['new-s2-end-date'] = newS2EndDate;
+
+  // Redirect to search for the institution that issued the S2/E112
+  res.redirect('/multi-trust-reporting/version-1/s2-search-for-institution-id');
+});
+
+// Search for the institution that issued the entitlement (S2/E112)
+router.post('/s2-search-for-institution-id', function (req, res) {
+
+  // Extract the institution ID from the form
+  const s2InstitutionID = req.body['s2-institution-id'];
+
+  // Store the institution ID in the session data
+  req.session.data['s2-institution-id'] = s2InstitutionID;
+
+  // Redirect to search for institution results page
+  res.redirect('/multi-trust-reporting/version-1/s2-search-for-institution-id-results#result');
+});
+
+// Enter the person's address
+router.post('/s2-enter-address', function (req, res) {
+
+  // Extract Address Line 1 from the form
+  const newS2AddressLine1 = req.body['new-s2-address-line-1'];
+  // Store Address Line 1 in the session data
+  req.session.data['new-s2-address-line-1'] = newS2AddressLine1;
+
+  // Extract Address Line 2 from the form
+  const newS2AddressLine2 = req.body['new-s2-address-line-2'];
+  // Store Address Line 2 in the session data
+  req.session.data['new-s2-address-line-2'] = newS2AddressLine2;
+
+  // Extract Address Line 3 from the form
+  const newS2AddressLine3 = req.body['new-s2-address-line-3'];
+  // Store Address Line 3 in the session data
+  req.session.data['new-s2-address-line-3'] = newS2AddressLine3;
+
+  // Extract Country from the form
+  const newS2AddressCountry = req.body['new-s2-address-country'];
+  // Store Address Line 1 in the session data
+  req.session.data['new-s2-address-country'] = newS2AddressCountry;
+
+  // Redirect to search for institution results page
+  res.redirect('/multi-trust-reporting/version-1/new-s2-details-cya');
+});
+
+// Check treatment, PRC and person details
+router.post('/new-s2-details-cya', function (req, res) {
+
+  // Redirect to confirmation treatment form processed screen
+  res.redirect('/multi-trust-reporting/version-1/confirmation-s2-treatment-processed');
+});
+
+// Confirmation S2/E112 treatment processed
+router.post('/confirmation-s2-treatment-processed', function (req, res) {
+ // Redirect to Home screen
+ res.redirect('/multi-trust-reporting/version-1/home');
+});
+
+
+// Malta Quota journey //
+
+// Enter the Malta Quota number for the patient
+router.post('/ehic-search-for-person', function (req, res) {
+  // Extract the person's Malta Quota number
+  const maltaQuotaNumber = req.body['malta-quota-number'];
+
+  // Store the Malta Quota number in the session data
+  req.session.data['malta-quota-number'] = maltaQuotaNumber;
+
+  // Redirect to check your answers
+  res.redirect('/multi-trust-reporting/version-1/ehic-search-for-person-results');
+});
+
+
+// Non-EU Reciprocal Healthcare journey //
+
+// Add a new person (Non-EU Reciprocal Healthcare)
+router.post('/non-eu-enter-patient-details', function (req, res) {
+
+  // Extract the Non-EU Reciprocal Healthcare issuing country from the form
+  const newNonEUIssuingCountry = req.body['new-non-eu-issuing-country'];
+  // Store the Non-EU Reciprocal Healthcare issuing country in the session data
+  req.session.data['new-non-eu-issuing-country'] = newNonEUIssuingCountry;
+
+  // Extract the Non-EU Reciprocal Healthcare Last name from the form
+  const newNonEULastName = req.body['new-non-eu-last-name'];
+  // Store the Non-EU Reciprocal Healthcare Last name in the session data
+  req.session.data['new-non-eu-last-name'] = newNonEULastName;
+
+  // Extract the Non-EU Reciprocal Healthcare First names from the form
+  const newNonEUFirstNames = req.body['new-non-eu-first-names'];
+  // Store the Non-EU Reciprocal Healthcare First names in the session data
+  req.session.data['new-non-eu-first-names'] = newNonEUFirstNames;
+
+  // Extract the Non-EU Reciprocal Healthcare date of birth from the request body
+  const newNonEUDateOfBirthDay = req.body['new-non-eu-date-of-birth-day'];
+  const newNonEUDateOfBirthMonth = req.body['new-non-eu-date-of-birth-month'];
+  const newNonEUDateOfBirthYear = req.body['new-non-eu-date-of-birth-year'];
+
+  // Combine to form the full date (or use a default if not provided)
+  const newNonEUDateOfBirth = newNonEUDateOfBirthDay && newNonEUDateOfBirthMonth && newNonEUDateOfBirthYear
+  ? `${newNonEUDateOfBirthDay}/${newNonEUDateOfBirthMonth}/${newNonEUDateOfBirthYear}` 
+  : '13/12/1994';
+  // Store the person's date of birth in the session data
+  req.session.data['new-non-eu-date-of-birth'] = newNonEUDateOfBirth;
+
+  // Redirect to check the patient's Non-EU Reciprocal Healthcare details
+  res.redirect('/multi-trust-reporting/version-1/new-non-eu-details-cya');
+});
+
+// Check treatment, PRC and person details
+router.post('/new-non-eu-details-cya', function (req, res) {
+
+  // Redirect to confirmation Non-EU Reciprocal Healthcare treatment form processed screen
+  res.redirect('/multi-trust-reporting/version-1/confirmation-non-eu-treatment-processed');
+});
+
+// Confirmation Non-EU Reciprocal Healthcare treatment processed
+router.post('/confirmation-non-eu-treatment-processed', function (req, res) {
+  var nonEUAddAnotherTreatment = req.session.data['non-eu-add-another-treatment'];
+  
+  if (nonEUAddAnotherTreatment === 'Yes, for John Doe') {
+    res.redirect('/multi-trust-reporting/version-1/add-treatment-johndoe');
+  } else if (nonEUAddAnotherTreatment === 'Yes, for another person') {
+    res.redirect('/multi-trust-reporting/version-1/add-treatment');
+  } else {
+    res.redirect('/multi-trust-reporting/version-1/home');
+  }
+});
 module.exports = router

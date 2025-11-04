@@ -14,7 +14,7 @@ Check these details before submitting the treatment form - Report overseas visit
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-three-quarters">
 
-    <form action="/multi-trust-reporting/version-1/new-ehic-details-cya" method="post">
+    <form action="/multi-trust-reporting/version-1/new-s2-details-cya" method="post">
 
     <h1 class="nhsuk-label-wrapper">
       <label class="nhsuk-label nhsuk-label--l" style="margin-top: 20px;" for="cya-label">
@@ -60,22 +60,10 @@ Check these details before submitting the treatment form - Report overseas visit
 
         </dd>
       </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Treatment cost above £10,000
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          No
-        </dd>
-        <dd class="nhsuk-summary-list__actions">
-
-        </dd>
-      </div>
     </dl>
 
 
-    <h3>EHIC details</h3>
+    <h3>S2/E112 details</h3>
 
     <dl class="nhsuk-summary-list">
       <div class="nhsuk-summary-list__row">
@@ -98,11 +86,11 @@ Check these details before submitting the treatment form - Report overseas visit
           Name
         </dt>
         <dd class="nhsuk-summary-list__value">
-          {{ data['ehic-last-name'] or 'Doe' }}
+          {{ data['s2-last-name'] or 'Doe' }}
         </dd>
 
         <dd class="nhsuk-summary-list__actions">
-          <a href="ehic-search-for-person-results#ehic-last-name">
+          <a href="s2-search-for-person-results#s2-last-name">
             Change<span class="nhsuk-u-visually-hidden"> Name</span>
           </a>
         </dd>
@@ -113,11 +101,11 @@ Check these details before submitting the treatment form - Report overseas visit
           Given names
         </dt>
         <dd class="nhsuk-summary-list__value">
-          {{ data['ehic-first-names'] or 'John' }}
+          {{ data['s2-first-names'] or 'John' }}
         </dd>
 
         <dd class="nhsuk-summary-list__actions">
-          <a href="ehic-search-for-person-results#ehic-first-names">
+          <a href="s2-search-for-person-results#s2-first-names">
             Change<span class="nhsuk-u-visually-hidden"> Given names</span>
           </a>
         </dd>
@@ -128,12 +116,27 @@ Check these details before submitting the treatment form - Report overseas visit
          Date of birth
         </dt>
         <dd class="nhsuk-summary-list__value">
-          {{ data['ehic-date-of-birth'] or '13/12/1994' }}
+          {{ data['s2-date-of-birth'] or '13/12/1994' }}
         </dd>
 
         <dd class="nhsuk-summary-list__actions">
-          <a href="ehic-search-for-person-results#ehic-date-of-birth-day">
+          <a href="s2-search-for-person-results#s2-date-of-birth-day">
             Change<span class="nhsuk-u-visually-hidden"> Date of birth</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Do you have copy of the S2/E112 page
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['s2-have-copy'] or 'Yes' }}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="s2-have-copy">
+            Change<span class="nhsuk-u-visually-hidden"> copy of the S2/E112 page</span>
           </a>
         </dd>
       </div>
@@ -143,11 +146,11 @@ Check these details before submitting the treatment form - Report overseas visit
           Personal identification number
         </dt>
         <dd class="nhsuk-summary-list__value">
-          {{ data['new-ehic-pin'] or '1234567890' }}
+          {{ data['new-s2-pin'] or '1234567890' }}
         </dd>
 
         <dd class="nhsuk-summary-list__actions">
-          <a href="add-person-ehic#new-ehic-pin">
+          <a href="add-person-s2#new-s2-pin">
             Change<span class="nhsuk-u-visually-hidden"> Personal identification number</span>
           </a>
         </dd>
@@ -155,76 +158,107 @@ Check these details before submitting the treatment form - Report overseas visit
 
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          EHIC card number	 
+          S2/E112 start date
         </dt>
         <dd class="nhsuk-summary-list__value">
-          {{ data['new-ehic-card-number'] or '6543211110' }}
+          {{ data['new-s2-start-date'] or '01/01/2025' }}
         </dd>
 
         <dd class="nhsuk-summary-list__actions">
-          <a href="add-person-ehic#new-ehic-card-number">
-            Change<span class="nhsuk-u-visually-hidden"> EHIC card number</span>
+          <a href="add-person-s2#new-s2-start-date-day">
+            Change<span class="nhsuk-u-visually-hidden"> the S2/E112 start date</span>
           </a>
         </dd>
       </div>
 
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          EHIC expiry date 
+          S2/E112 end date
         </dt>
         <dd class="nhsuk-summary-list__value">
-          {{ data['new-ehic-expiry-date'] or '31/12/2025' }}
+          {{ data['new-s2-end-date'] or '31/12/2025' }}
         </dd>
 
         <dd class="nhsuk-summary-list__actions">
-          <a href="add-person-ehic#new-ehic-expiry-date-day">
-            Change<span class="nhsuk-u-visually-hidden"> EHIC expiry date</span>
+          <a href="add-person-s2#new-s2-end-date-day">
+            Change<span class="nhsuk-u-visually-hidden"> the S2/E112 end date</span>
           </a>
         </dd>
       </div>
 
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          {{ data['ehic-first-names'] or 'John' }} {{ data['ehic-last-name'] or 'Doe' }} is a student
+          S2/E112 issue date
         </dt>
         <dd class="nhsuk-summary-list__value">
-          {{ data['new-ehic-student'] or 'No' }} 
+          {{ data['new-s2-issue-date'] or '04/12/2024' }}
         </dd>
-    
+
         <dd class="nhsuk-summary-list__actions">
-          <a href="add-person-ehic#new-ehic-student">
-            Change<span class="nhsuk-u-visually-hidden"> John Doe is a student</span>
+          <a href="add-person-s2#new-s2-issue-date-day">
+            Change<span class="nhsuk-u-visually-hidden"> the S2/E112 issue date</span>
           </a>
         </dd>
       </div>
 
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Identification number of the institution 
+          Institution ID
         </dt>
         <dd class="nhsuk-summary-list__value">
           1A00 - KFA WIEN
         </dd>
  
         <dd class="nhsuk-summary-list__actions">
-          <a href="ehic-search-for-institution-results#ehic-institution-id">
+          <a href="s2-search-for-institution-id-results#s2-institution-id">
             Change<span class="nhsuk-u-visually-hidden"> Identification number of the institution</span>
           </a>
+        </dd>
+      </div>
+    </dl>
+
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Institution name
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Health Care institution of the municipal civil servants of the City of Vienna
+        </dd>
+ 
+        <dd class="nhsuk-summary-list__actions">
+          
         </dd>
       </div>
 
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Copy of the EHIC
+          Institution address
         </dt>
         <dd class="nhsuk-summary-list__value">
-          example.png
+          Schlesingerplatz 5, 1081 Vienna
         </dd>
  
         <dd class="nhsuk-summary-list__actions">
-          <a href="upload-ehic">
-            Change<span class="nhsuk-u-visually-hidden">copy of the EHIC</span>
-          </a>
+
+        </dd>
+      </div>
+    </dl>
+
+
+    <h3>Location of treatment</h3>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Trust name
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          North Tees and Hartlepool NHS Foundation Trust
+        </dt>
+        <dd class="nhsuk-summary-list__actions">
+
         </dd>
       </div>
     </dl>
@@ -235,20 +269,6 @@ Check these details before submitting the treatment form - Report overseas visit
     <dl class="nhsuk-summary-list">
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Do you have {{ data['ehic-first-names'] or 'John' }} {{ data['ehic-last-name'] or 'Doe' }}'s address in {{ data['entitlement-registration-country'] or 'Austria (AT)' }}?
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Yes
-        </dt>
-        <dd class="nhsuk-summary-list__actions">
-          <a href="ehic-known-address">
-            Change<span class="nhsuk-u-visually-hidden"> if address is known</span>
-          </a>
-        </dd>
-      </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
           Home address
         </dt>
         <dd class="nhsuk-summary-list__value">
@@ -257,7 +277,7 @@ Check these details before submitting the treatment form - Report overseas visit
         </dd>
     
         <dd class="nhsuk-summary-list__actions">
-          <a href="ehic-enter-address#new-ehic-address-line-1">
+          <a href="s2-enter-address#new-s2-address-line-1">
             Change<span class="nhsuk-u-visually-hidden"> home address</span>
           </a>
         </dd>

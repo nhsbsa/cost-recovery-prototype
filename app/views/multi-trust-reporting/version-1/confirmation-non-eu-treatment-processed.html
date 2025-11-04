@@ -1,0 +1,67 @@
+{% extends 'layout-with-login-multi-trust-3.html' %}
+{% block pageTitle %}
+Non-EU Reciprocal Healthcare treatment submitted - Report overseas visitor treatments - NHSBSA
+{% endblock %}
+
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/multi-trust-reporting/version-1/confirmation-non-eu-treatment-processed" method="post">
+
+      <div class="nhsuk-panel nhsuk-panel--confirmation nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-4">
+        <h1 style="font-size:40px;" class="nhsuk-panel__title">
+          Non-EU Reciprocal Healthcare treatment submitted
+        </h1>
+
+        <div class="nhsuk-panel__body">
+          The treatment ID for {{ data['non-eu-first-names'] or 'John' }} {{ data['non-eu-last-name'] or 'Doe' }} is:
+          <br>
+          <strong>558762837</strong>
+        </div>
+      </div>
+
+      <p>The treatment details have now been submitted.</p>
+      
+      <div class="nhsuk-form-group">
+
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+            <h2 class="nhsuk-fieldset__heading">
+              Do you want to add another treatment?
+            </h2>
+          </legend>
+        
+          <div class="nhsuk-form-group">
+            <div class="nhsuk-radios">
+              
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="non-eu-add-another-treatment-yes-same-person" name="non-eu-add-another-treatment" type="radio" value="Yes, for John Doe" aria-controls="conditional-contact-1" aria-expanded="false">
+                <label class="nhsuk-label nhsuk-radios__label" for="non-eu-add-another-treatment-yes-same-person-label">Yes, for {{ data['non-eu-first-names'] or 'John' }} {{ data['non-eu-last-name'] or 'Doe' }} </label>
+              </div>
+  
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="non-eu-add-another-treatment-yes-different-person" name="non-eu-add-another-treatment" type="radio" value="Yes, for another person" aria-controls="conditional-contact-2" aria-expanded="false">
+                <label class="nhsuk-label nhsuk-radios__label" for="non-eu-add-another-treatment-yes-different-person-label">Yes, for another person</label>
+              </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="non-eu-add-another-treatment-no" name="non-eu-add-another-treatment" type="radio" value="No" aria-controls="conditional-contact-3" aria-expanded="false">
+                <label class="nhsuk-label nhsuk-radios__label" for="non-eu-add-another-treatment-no-label">No</label>
+              </div>
+              
+            </div>
+          </div>
+    
+        </fieldset>
+      </div>
+           
+      <button style="margin-right:20px;" class="nhsuk-button" type="submit">Continue</button> 
+  
+    </form>
+       
+    </div>
+  </div>
+{% endblock %}

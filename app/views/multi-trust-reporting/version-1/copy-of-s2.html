@@ -1,0 +1,60 @@
+{% extends 'layout-with-login-multi-trust-3.html' %}
+{% block pageTitle %}
+Do you have a copy of the S2/E112? - Report overseas visitor treatments - NHSBSA
+{% endblock %}
+
+
+
+{% block content %}
+
+{{ backLink({
+  "href": "javascript:history.go(-1)",
+  "text": "Back"
+}) }}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/multi-trust-reporting/version-1/copy-of-s2" method="post">
+
+    <span class="nhsuk-caption-l" style="margin-top: 20px;">
+      S2/E112
+    </span>
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          Do you have a copy of the S2/E112?
+        </h1>
+      </legend>
+
+      <div class="nhsuk-hint">
+        If yes, you should retain this copy for 3 years in case the Member State questions this cost with us.
+      </div>
+
+      <div class="nhsuk-form-group">
+        <div class="nhsuk-radios">
+          
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="s2-have-copy-yes" name="s2-have-copy" type="radio" value="Yes" aria-controls="conditional-contact-1" aria-expanded="false">
+            <label class="nhsuk-label nhsuk-radios__label" for="s2-have-copy-yes-label">Yes</label>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="s2-have-copy-no" name="s2-have-copy" type="radio" value="No" aria-controls="conditional-contact-2" aria-expanded="false">
+            <label class="nhsuk-label nhsuk-radios__label" for="s2-have-copy-no-label">No</label>
+          </div>
+          
+        </div>
+      </div>
+
+    </fieldset> 
+      
+    <button class="nhsuk-button" style="margin-top: 10px;" data-module="nhsuk-button" type="submit">Continue</button>
+
+    <p><a href="cancel-confirmation">Cancel</a></p>
+
+    </form>
+
+ </div>
+</div>
+{% endblock %}
