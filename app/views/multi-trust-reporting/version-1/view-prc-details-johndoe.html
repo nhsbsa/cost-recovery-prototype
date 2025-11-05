@@ -1,0 +1,237 @@
+{% extends 'layout-with-login-multi-trust-3.html' %}
+{% block pageTitle %}
+PRC details - Report overseas visitor treatments - NHSBSA
+{% endblock %}
+
+{% block beforeContent %}
+<div class="app-phase-banner">
+  <div class="nhsuk-width-container app-phase-banner__container">
+     <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+        Beta
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a new service - your <a href="#">feedback</a> will help us improve it.
+        </span>
+     </p>
+  </div>
+</div>
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__list-item"><a class="nhsuk-breadcrumb__link" href="home">Home</a></li>
+      <li class="nhsuk-breadcrumb__list-item"><a class="nhsuk-breadcrumb__link" href="search-person">Search (Person)</a></li>
+      <li class="nhsuk-breadcrumb__list-item"><a class="nhsuk-breadcrumb__link" href="treatment-record-johndoe">View record</a></li>
+      <li class="nhsuk-breadcrumb__list-item">prc details</li>
+    </ol>
+    <a class="nhsuk-back-link" href="treatment-record-johndoe">
+      <span class="nhsuk-u-visually-hidden">Back to </span>
+      View record (John Doe)
+    </a>
+  </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <form action="/multi-trust-reporting/version-1/view-prc-details-johndoe" method="post">
+
+      
+      <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          PRC details for John Doe
+        </h1>
+      </legend>
+
+
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Issuing member state
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['entitlement-registration-country'] or 'Austria (AT)' }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+
+          </dd>
+        </div>
+      </dl>
+
+
+      <h3>Card holder related information</h3>
+
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['prc-last-name'] or 'Doe' }}
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Given names
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['prc-first-names'] or 'John' }}
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+          Date of birth
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['prc-date-of-birth'] or '13/12/1994' }}
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Personal identification number
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['new-prc-pin'] or '1234567890' }}
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            
+          </dd>
+        </div>
+      </dl>
+
+
+      <h3>Competent institution related information</h3>
+
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Identification number of the institution
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+           1A00 - KFA WIEN
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Institution name
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Health Care Institution of the municipal civil servants of the City of Vienna
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            
+          </dd>
+        </div>
+      </dl>
+
+
+      <h3>EHIC information (if available on PRC)</h3>
+
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            EHIC card number	 
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['existing-ehic-card-number'] or '0987654321' }}
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            EHIC expiry date 
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['existing-ehic-expiry-date'] or '31/12/2025' }}
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            
+          </dd>
+        </div>
+      </dl>
+
+
+      <h3>PRC details</h3>
+
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Valid from
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['new-prc-start-date'] or '01/11/2025' }}
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Valid to
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['new-prc-end-date'] or '07/11/2025' }}
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            PRC issue date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['new-prc-issue-date'] or '01/11/2025' }}
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            
+          </dd>
+        </div>
+      </dl>
+
+  
+      <div class="button-container" style="margin-top: 40px;">
+        <button style="margin-right:20px;" class="nhsuk-button" type="submit">Back to record</button>
+        <a href="upload-prc-copy" class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" role="button">Upload PRC copy</a>
+      </div>
+
+      </fieldset>
+
+    </form>
+
+</div>
+{% endblock %}

@@ -368,6 +368,9 @@ router.post('/ehic-enter-address', function (req, res) {
 // Check treatment, ehic and person details
 router.post('/new-ehic-details-cya', function (req, res) {
 
+  // Set flag that a new EHIC treatment was added
+  req.session.data['new-ehic-treatment'] = 'yes'
+
   // Redirect to confirmation treatment form processed screen
   res.redirect('/multi-trust-reporting/version-1/confirmation-ehic-treatment-processed');
 });
@@ -472,6 +475,9 @@ router.post('/existing-prc-enter-address', function (req, res) {
 
 // Check treatment, PRC and person details
 router.post('/existing-prc-details-cya', function (req, res) {
+
+  // Set flag that a new treatment was added to an existing PRC
+  req.session.data['add-new-treatment-to-existing-prc'] = 'yes'
 
   // Redirect to confirmation treatment form processed screen
   res.redirect('/multi-trust-reporting/version-1/existing-confirmation-prc-treatment-processed');
@@ -659,6 +665,9 @@ router.post('/prc-enter-address', function (req, res) {
 // Check treatment, PRC and person details
 router.post('/new-prc-details-cya', function (req, res) {
 
+  // Set flag that a new PRC treatment was uploaded
+  req.session.data['new-prc-treatment'] = 'yes'
+
   // Redirect to confirmation treatment form processed screen
   res.redirect('/multi-trust-reporting/version-1/confirmation-prc-treatment-processed');
 });
@@ -836,8 +845,11 @@ router.post('/s2-enter-address', function (req, res) {
   res.redirect('/multi-trust-reporting/version-1/new-s2-details-cya');
 });
 
-// Check treatment, PRC and person details
+// Check treatment, S2/E112 and person details
 router.post('/new-s2-details-cya', function (req, res) {
+
+  // Set flag that a new S2/E112 treatment was added
+  req.session.data['new-s2-treatment'] = 'yes'
 
   // Redirect to confirmation treatment form processed screen
   res.redirect('/multi-trust-reporting/version-1/confirmation-s2-treatment-processed');
@@ -903,6 +915,9 @@ router.post('/non-eu-enter-patient-details', function (req, res) {
 
 // Check treatment, PRC and person details
 router.post('/new-non-eu-details-cya', function (req, res) {
+
+  // Set flag that a new Non-EU Reciprocal Healthcare treatment was added
+  req.session.data['new-non-eu-treatment'] = 'yes'
 
   // Redirect to confirmation Non-EU Reciprocal Healthcare treatment form processed screen
   res.redirect('/multi-trust-reporting/version-1/confirmation-non-eu-treatment-processed');

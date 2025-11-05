@@ -73,7 +73,8 @@ Search for a person - Report overseas visitor treatments - NHSBSA
         
         <hr>
         
-        <!-- Start of expander -->
+        <!-- Start of EHIC treatment expander -->
+        {% if data['new-ehic-treatment'] === 'yes' %}
         <div class="nhsuk-expander-group">
           <details class="nhsuk-details nhsuk-expander">
             <summary class="nhsuk-details__summary">
@@ -103,19 +104,19 @@ Search for a person - Report overseas visitor treatments - NHSBSA
                         <tr role="row" class="nhsuk-table__row">
                             <td role="cell" class="nhsuk-table__cell">
                               <span class="nhsuk-table-responsive__heading">Treatment ID</span>
-                              <p id="treatment-id">558761004</p>
+                              <p id="treatment-id">558761002</p>
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                               <span class="nhsuk-table-responsive__heading">Start date</span>
-                              <p id="treatment-start-date">04/11/2025</p>
+                              <p id="treatment-start-date">01/11/2025</p>
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                               <span class="nhsuk-table-responsive__heading">End date</span>
-                              <p id="treatment-end-date">04/11/2025</p>
+                              <p id="treatment-end-date">30/11/2025</p>
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                               <span class="nhsuk-table-responsive__heading">Cost (£)</span>
-                              <p id="treatment-cost">100.00</p>
+                              <p id="treatment-cost">200.00</p>
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                               <span class="nhsuk-table-responsive__heading">Status</span>
@@ -123,7 +124,7 @@ Search for a person - Report overseas visitor treatments - NHSBSA
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                               <span class="nhsuk-table-responsive__heading">Processed date</span>
-                              <p id="treatment-processed-date">04/11/2025</p>
+                              <p id="treatment-processed-date">01/12/2025</p>
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                               <span class="nhsuk-table-responsive__heading">Action</span>
@@ -144,6 +145,157 @@ Search for a person - Report overseas visitor treatments - NHSBSA
           </details>
         </div>
         <!-- End of EHIC expander -->
+        {% endif %}
+
+
+        <!-- Start of PRC treatment expander -->
+        {% if data['new-prc-treatment'] === 'yes' %}
+        <div class="nhsuk-expander-group">
+          <details class="nhsuk-details nhsuk-expander">
+            <summary class="nhsuk-details__summary">
+                <span role="button" class="nhsuk-details__summary-text" id="entitlement-validity-prc">PRC - valid from 01/11/2025 to 07/11/2025</span>
+            </summary>
+
+            <div class="nhsuk-details__text">
+              <h2 class="nhsuk-label--m" id="entitlement-type-prc">PRC treatments</h2>
+          
+              <span class="nhsuk-hint" id="treatment_trust_name">Added by Airedale NHS Foundation Trust</span>
+                <div>
+                  
+                    <table id="search-person-EHIC-treatments-table" role="table" class="nhsuk-table-responsive">
+                      <caption class="nhsuk-table__caption"></caption>
+                      <thead class="nhsuk-table__head">
+                        <tr role="row">
+                            <th role="columnheader" scope="col" class="table-columnheader">Treatment ID</th>
+                            <th role="columnheader" scope="col" class="table-columnheader">Start date</th>
+                            <th role="columnheader" scope="col" class="table-columnheader">End date</th>
+                            <th role="columnheader" scope="col" class="table-columnheader">Cost (£)</th>
+                            <th role="columnheader" scope="col" class="table-columnheader">Status</th>
+                            <th role="columnheader" scope="col" class="table-columnheader">Processed date</th>
+                            <th role="columnheader" scope="col" class="table-columnheader">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody class="nhsuk-table__body">
+                        <tr role="row" class="nhsuk-table__row">
+                            <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">Treatment ID</span>
+                              <p id="treatment-id">558763833</p>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">Start date</span>
+                              <p id="treatment-start-date">05/11/2025</p>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">End date</span>
+                              <p id="treatment-end-date">05/11/2025</p>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">Cost (£)</span>
+                              <p id="treatment-cost">120.00</p>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">Status</span>
+                              <strong id="treatment-status" class="nhsuk-tag no-caps nhsuk-tag--green">Processed</strong>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">Processed date</span>
+                              <p id="treatment-processed-date">05/11/2025</p>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">Action</span>
+                            </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                </div>
+                <p class="nhsuk-u-margin-top-4">
+                  <a id="views-ehic-details" href="view-prc-details-johndoe">View PRC details
+                    <span class="nhsuk-u-visually-hidden">&nbsp;</span>
+                    <span class="nhsuk-u-visually-hidden">with expiry date 07/11/2025</span>
+                  </a>
+                </p>
+
+            </div>
+          </details>
+        </div>
+        <!-- End of PRC expander -->
+        {% endif %}
+
+
+        <!-- Start of S2/E112 treatment expander -->
+        {% if data['new-s2-treatment'] === 'yes' %}
+        <div class="nhsuk-expander-group">
+          <details class="nhsuk-details nhsuk-expander">
+            <summary class="nhsuk-details__summary">
+                <span role="button" class="nhsuk-details__summary-text" id="entitlement-validity-s2">S2/E112 - valid from 01/10/2025 to 07/10/2025</span>
+            </summary>
+
+            <div class="nhsuk-details__text">
+              <h2 class="nhsuk-label--m" id="entitlement-type-s2">S2/E112 treatments</h2>
+          
+              <span class="nhsuk-hint" id="treatment_trust_name">Added by Airedale NHS Foundation Trust</span>
+                <div>
+                  
+                    <table id="search-person-EHIC-treatments-table" role="table" class="nhsuk-table-responsive">
+                      <caption class="nhsuk-table__caption"></caption>
+                      <thead class="nhsuk-table__head">
+                        <tr role="row">
+                            <th role="columnheader" scope="col" class="table-columnheader">Treatment ID</th>
+                            <th role="columnheader" scope="col" class="table-columnheader">Start date</th>
+                            <th role="columnheader" scope="col" class="table-columnheader">End date</th>
+                            <th role="columnheader" scope="col" class="table-columnheader">Cost (£)</th>
+                            <th role="columnheader" scope="col" class="table-columnheader">Status</th>
+                            <th role="columnheader" scope="col" class="table-columnheader">Processed date</th>
+                            <th role="columnheader" scope="col" class="table-columnheader">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody class="nhsuk-table__body">
+                        <tr role="row" class="nhsuk-table__row">
+                            <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">Treatment ID</span>
+                              <p id="treatment-id">558762747</p>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">Start date</span>
+                              <p id="treatment-start-date">01/10/2025</p>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">End date</span>
+                              <p id="treatment-end-date">02/10/2025</p>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">Cost (£)</span>
+                              <p id="treatment-cost">330.00</p>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">Status</span>
+                              <strong id="treatment-status" class="nhsuk-tag no-caps nhsuk-tag--green">Processed</strong>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">Processed date</span>
+                              <p id="treatment-processed-date">02/10/2025</p>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                              <span class="nhsuk-table-responsive__heading">Action</span>
+                            </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                </div>
+                <p class="nhsuk-u-margin-top-4">
+                  <a id="views-ehic-details" href="view-s2-details-johndoe">View S2/E112 details
+                    <span class="nhsuk-u-visually-hidden">&nbsp;</span>
+                    <span class="nhsuk-u-visually-hidden">with expiry date 07/10/2025</span>
+                  </a>
+                </p>
+
+            </div>
+          </details>
+        </div>
+        <!-- End of S2/E112 expander -->
+        {% endif %}
 
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Add Treatment</button>
       
