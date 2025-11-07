@@ -1,0 +1,147 @@
+{% extends 'layout-with-login-multi-trust-3.html' %}
+
+{% block pageTitle %}Check your answers before submitting your access request{% endblock %}
+
+{% block beforeContent %}
+<div class="app-phase-banner">
+  <div class="nhsuk-width-container app-phase-banner__container">
+     <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+        Beta
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a new service - your <a href="#">feedback</a> will help us improve it.
+        </span>
+     </p>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+{{ backLink({
+  "href": "javascript:history.go(-1)",
+  "text": "Back"
+}) }}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/multi-trust-reporting/version-1/cya-request-access-to-other-trusts" method="post">
+
+      <h1 class="nhsuk-label-wrapper">
+        <label class="nhsuk-label nhsuk-label--l" for="manage-trust-access-label" style="margin-top: 20px;">
+          Check your answers before submitting your access request
+        </label>
+      </h1>
+
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Trusts you currently have access to
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            North Tees and Hartlepool NHS Foundation Trust<br>
+            Tees, Esk and Wear Valleys NHS Foundation Trust
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Trusts you require access to
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {% if data['required-trust-name'] %}
+              {{ required-trust-name }}
+            {% else %}
+              The Newcastle Upon Tyne Hospitals NHS Foundation Trust<br>
+              Gateshead Health NHS Foundation Trust
+            {% endif %}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+
+          </dd>
+        </div>
+      </dl>
+
+      <button style="margin-right:20px;" class="nhsuk-button" type="submit">
+        Submit request
+      </button>
+      
+      <p><a href="manage-trust-access">Cancel</a></p>
+
+    </form>
+
+ </div>
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+	function updateSelectedTrusts() {
+		var selectedTrustsContainer = document.getElementById("selectedTrustsContainer");
+		var checkboxes = document.querySelectorAll('input[name="trust"]:checked');
+
+		selectedTrustsContainer.innerHTML = ""; // Clear the container
+
+		checkboxes.forEach(function (checkbox) {
+			var trustLabel = document.querySelector('label[for="' + checkbox.id + '"]').innerText;
+			var listItem = document.createElement('li');
+			var deleteButton = document.createElement('button');
+			deleteButton.className = "delete";
+			deleteButton.setAttribute('aria-label', 'Remove ' + trustLabel + ' from the list');
+			deleteButton.innerText = trustLabel;
+
+			// Add click event listener to the delete button
+			deleteButton.addEventListener('click', function () {
+				// Remove the tile
+				listItem.remove();
+
+				// Uncheck the corresponding checkbox
+				checkbox.checked = false;
+			});
+
+			listItem.appendChild(deleteButton);
+				selectedTrustsContainer.appendChild(listItem);
+			});
+		}
+</script>
+<script>
+	document.getElementById('hei-user-btn').addEventListener('click', function (event) {
+		event.preventDefault();
+		var checkbox = document.getElementById('trust-9');
+		checkbox.checked = false;
+		document.getElementById('hei-user-btn').style.display = 'none';
+	});
+</script>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+ 		var checkbox1 = document.getElementById('trust-11');
+		var checkbox2 = document.getElementById('trust-10');
+		var checkbox3 = document.getElementById('trust-9');
+		var hiddenDiv = document.getElementById('hiddenDiv');
+		var location = document.getElementById('locationContainer');
+
+ 		// Add an event listener to each checkbox
+		checkbox1.addEventListener('change', updateHiddenDiv);
+		checkbox2.addEventListener('change', updateHiddenDiv);
+		checkbox3.addEventListener('change', updateHiddenDiv);
+
+		// Function to update the visibility of the hidden div
+		function updateHiddenDiv() {
+			// Check if any of the checkboxes are checked
+			if (checkbox1.checked || checkbox2.checked || checkbox3.checked) {
+				hiddenDiv.style.display = 'block';
+				location.style.display = 'none';
+			} else {
+				hiddenDiv.style.display = 'none';
+				location.style.display = 'block';
+			}
+		}
+		updateHiddenDiv();
+	});
+</script>
+{% endblock %}

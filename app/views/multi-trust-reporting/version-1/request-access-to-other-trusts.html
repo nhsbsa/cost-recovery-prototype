@@ -1,0 +1,270 @@
+{% extends 'layout-with-login-multi-trust-3.html' %}
+
+{% block pageTitle %}
+Select all trusts you require access to - Report overseas visitor treatments - NHSBSA
+{% endblock %}
+
+{% block beforeContent %}
+<div class="app-phase-banner">
+  <div class="nhsuk-width-container app-phase-banner__container">
+     <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+        Beta
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a new service - your <a href="#">feedback</a> will help us improve it.
+        </span>
+     </p>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+{{ backLink({
+  "href": "javascript:history.go(-1)",
+  "text": "Back"
+}) }}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/multi-trust-reporting/version-1/request-access-to-other-trusts" method="post">
+
+      <h1 class="nhsuk-label-wrapper">
+        <label class="nhsuk-label nhsuk-label--l" for="manage-trust-access-label" style="margin-top: 20px;">
+          Select all trusts you require access to
+        </label>
+      </h1>
+
+      <h3 style="margin-top: 40px;">Trusts you currently have access to</h3>
+
+      <ul>
+        <li>North Tees and Hartlepool NHS Foundation Trust</li>
+        <li>Tees, Esk and Wear Valleys NHS Foundation Trust</li>
+      </ul>
+
+
+      <div class="nhsuk-form-group">
+        <div class="nhsuk-hint" style="margin-bottom: 5px;" id="entitlement-registration-country-label" for="entitlement-registration-country-label" class="form-label">
+          Use the drop-down or begin typing to find a trust
+        </div>
+        <input class="nhsuk-input" list="trust-list" id="required-trust-name" name="required-trust-name" placeholder="" />
+        <datalist id="trust-list">
+          <!-- A -->
+          <option value="Airedale NHS Foundation Trust"></option>
+          <option value="Alder Hey Children's NHS Foundation Trust"></option>
+          <option value="Ashford and St Peter's Hospitals NHS Foundation Trust"></option>
+          <option value="Aspen Healthcare - Parkside Hospital"></option>
+          <option value="Avon and Wiltshire Mental Health Partnership NHS Trust"></option>
+        
+          <!-- B -->
+          <option value="Barking, Havering and Redbridge University Hospitals NHS Trust"></option>
+          <option value="Barnet, Enfield and Haringey Mental Health NHS Trust"></option>
+          <option value="Barnsley Hospital NHS Foundation Trust"></option>
+          <option value="Barts Health NHS Trust"></option>
+          <option value="Bedfordshire Hospitals NHS Foundation Trust"></option>
+          <option value="Berkshire Healthcare NHS Foundation Trust"></option>
+          <option value="Birmingham Community Healthcare NHS Foundation Trust"></option>
+          <option value="Birmingham Women's and Children's NHS Foundation Trust"></option>
+          <option value="Birmingham and Solihull Mental Health NHS Foundation Trust"></option>
+          <option value="Black Country Healthcare NHS Foundation Trust"></option>
+          <option value="Blackpool Teaching Hospitals NHS Foundation Trust"></option>
+          <option value="Bolton NHS Foundation Trust"></option>
+          <option value="Bradford District Care NHS Foundation Trust"></option>
+          <option value="Bradford Teaching Hospitals NHS Foundation Trust"></option>
+          <option value="Bridgewater Community Healthcare NHS Foundation Trust"></option>
+          <option value="Buckinghamshire Healthcare NHS Trust"></option>
+        
+          <!-- C -->
+          <option value="Calderdale and Huddersfield NHS Foundation Trust"></option>
+          <option value="Cambridge University Hospitals NHS Foundation Trust"></option>
+          <option value="Cambridgeshire Community Services NHS Trust"></option>
+          <option value="Cambridgeshire and Peterborough NHS Foundation Trust"></option>
+          <option value="Camden and Islington NHS Foundation Trust"></option>
+          <option value="Care UK"></option>
+          <option value="Central London Community Healthcare NHS Trust"></option>
+          <option value="Central and North West London NHS Foundation Trust"></option>
+          <option value="Chelsea and Westminster Hospital NHS Foundation Trust"></option>
+          <option value="Cheshire and Wirral Partnership NHS Foundation Trust"></option>
+          <option value="Chesterfield Royal Hospital NHS Foundation Trust"></option>
+          <option value="Cornwall Partnership NHS Foundation Trust"></option>
+          <option value="Countess of Chester Hospital NHS Foundation Trust"></option>
+          <option value="County Durham and Darlington NHS Foundation Trust"></option>
+          <option value="Coventry and Warwickshire Partnership NHS Trust"></option>
+          <option value="Croydon Health Services NHS Trust"></option>
+          <option value="Cumbria, Northumberland, Tyne and Wear NHS Foundation Trust"></option>
+        
+          <!-- D -->
+          <option value="Dartford and Gravesham NHS Trust"></option>
+          <option value="Derbyshire Community Health Services NHS Foundation Trust"></option>
+          <option value="Derbyshire Healthcare NHS Foundation Trust"></option>
+          <option value="Devon Partnership NHS Trust"></option>
+          <option value="Doncaster and Bassetlaw Teaching Hospitals NHS Foundation Trust"></option>
+          <option value="Dorset County Hospital NHS Foundation Trust"></option>
+          <option value="Dorset Healthcare University NHS Foundation Trust"></option>
+          <option value="Dudley Integrated Health and Care NHS Trust"></option>
+        
+          <!-- E -->
+          <option value="East Cheshire NHS Trust"></option>
+          <option value="East Kent Hospitals University NHS Foundation Trust"></option>
+          <option value="East Lancashire Hospitals NHS Trust"></option>
+          <option value="East London NHS Foundation Trust"></option>
+          <option value="East Midlands Ambulance Service NHS Trust"></option>
+          <option value="East Suffolk and North Essex NHS Foundation Trust"></option>
+          <option value="East Sussex Healthcare NHS Trust"></option>
+          <option value="East and North Hertfordshire NHS Trust"></option>
+          <option value="East of England Ambulance Service NHS Trust"></option>
+          <option value="Epsom and St Helier University Hospitals NHS Trust"></option>
+          <option value="Essex Partnership University NHS Foundation Trust"></option>
+        
+          <!-- F -->
+          <option value="Frimley Health NHS Foundation Trust"></option>
+
+          <!-- G -->
+          <option data-id="59" value="Gateshead Health NHS Foundation Trust"></option>
+          <option data-id="60" value="George Eliot Hospital NHS Trust"></option>
+          <option data-id="61" value="Gloucestershire Health and Care NHS Foundation Trust"></option>
+          <option data-id="62" value="Gloucestershire Hospitals NHS Foundation Trust"></option>
+          <option data-id="63" value="Great Ormond Street Hospital For Children NHS Foundation Trust"></option>
+          <option data-id="64" value="Great Western Hospitals NHS Foundation Trust"></option>
+          <option data-id="65" value="Greater Manchester Mental Health NHS Foundation Trust"></option>
+          <option data-id="66" value="Guy's and St Thomas' NHS Foundation Trust"></option>
+
+          <!-- H -->
+          <option data-id="67" value="Hampshire Hospitals NHS Foundation Trust"></option>
+          <option data-id="68" value="Harrogate and District NHS Foundation Trust"></option>
+          <option data-id="69" value="Herefordshire and Worcestershire Health and Care NHS Trust"></option>
+          <option data-id="70" value="Hertfordshire Community NHS Trust"></option>
+          <option data-id="71" value="Hertfordshire Partnership University NHS Foundation Trust"></option>
+          <option data-id="72" value="Homerton Healthcare NHS Foundation Trust"></option>
+          <option data-id="73" value="Hounslow and Richmond Community Healthcare NHS Trust"></option>
+          <option data-id="74" value="Hull University Teaching Hospitals NHS Trust"></option>
+          <option data-id="75" value="Humber Teaching NHS Foundation Trust"></option>
+
+          <!-- I -->
+          <option data-id="76" value="Imperial College Healthcare NHS Trust"></option>
+          <option data-id="77" value="Isle of Wight NHS Trust"></option>
+
+          <!-- J -->
+          <option data-id="78" value="James Paget University Hospitals NHS Foundation Trust"></option>
+
+          <!-- K -->
+          <option data-id="79" value="Kent and Medway NHS and Social Care Partnership Trust"></option>
+          <option data-id="80" value="Kent Community Health NHS Foundation Trust"></option>
+          <option data-id="81" value="Kettering General Hospital NHS Foundation Trust"></option>
+          <option data-id="82" value="King's College Hospital NHS Foundation Trust"></option>
+          <option data-id="83" value="Kingston Hospital NHS Foundation Trust"></option>
+
+          <!-- L -->
+          <option data-id="84" value="Lancashire and South Cumbria NHS Foundation Trust"></option>
+          <option data-id="85" value="Lancashire Teaching Hospitals NHS Foundation Trust"></option>
+          <option data-id="86" value="Leeds and York Partnership NHS Foundation Trust"></option>
+          <option data-id="87" value="Leeds Community Healthcare NHS Trust"></option>
+          <option data-id="88" value="Leeds Teaching Hospitals NHS Trust"></option>
+          <option data-id="89" value="Leicestershire Partnership NHS Trust"></option>
+          <option data-id="90" value="Lewisham and Greenwich NHS Trust"></option>
+          <option data-id="91" value="Lincolnshire Community Health Services NHS Trust"></option>
+          <option data-id="92" value="Lincolnshire Partnership NHS Foundation Trust"></option>
+          <option data-id="93" value="Liverpool Heart and Chest Hospital NHS Foundation Trust"></option>
+          <option data-id="94" value="Liverpool University Hospitals NHS Foundation Trust"></option>
+          <option data-id="95" value="Liverpool Women's NHS Foundation Trust"></option>
+          <option data-id="96" value="London Ambulance Service NHS Trust"></option>
+          <option data-id="97" value="London North West University Healthcare NHS Trust"></option>
+        </datalist>
+
+    </div>
+
+
+     <div class="nhsuk-grid-column-one-third">
+
+      <h3>Trusts you have selected which you require access to:</h3>
+
+      <div class="nhsuk-hint">If you have selected the wrong trust, select X to remove it.</div>
+
+      <ul id="selectedTrustsContainer" class="selected-trusts-container">
+        <!-- Selected trusts will be displayed here -->
+        <li><button id="hei-user-btn" class="delete" aria-label="Remove HEI user from the list">HEI user</button></li>
+      </ul>
+
+      <div class="button-container" style="margin-top: 40px;">
+        <button class="nhsuk-button" type="submit">
+          Continue
+        </button>
+      </div>
+      
+      <p><a href="manage-trust-access">Cancel</a></p>
+
+    </form>
+
+ </div>
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+	function updateSelectedTrusts() {
+		var selectedTrustsContainer = document.getElementById("selectedTrustsContainer");
+		var checkboxes = document.querySelectorAll('input[name="trust"]:checked');
+
+		selectedTrustsContainer.innerHTML = ""; // Clear the container
+
+		checkboxes.forEach(function (checkbox) {
+			var trustLabel = document.querySelector('label[for="' + checkbox.id + '"]').innerText;
+			var listItem = document.createElement('li');
+			var deleteButton = document.createElement('button');
+			deleteButton.className = "delete";
+			deleteButton.setAttribute('aria-label', 'Remove ' + trustLabel + ' from the list');
+			deleteButton.innerText = trustLabel;
+
+			// Add click event listener to the delete button
+			deleteButton.addEventListener('click', function () {
+				// Remove the tile
+				listItem.remove();
+
+				// Uncheck the corresponding checkbox
+				checkbox.checked = false;
+			});
+
+			listItem.appendChild(deleteButton);
+				selectedTrustsContainer.appendChild(listItem);
+			});
+		}
+</script>
+<script>
+	document.getElementById('hei-user-btn').addEventListener('click', function (event) {
+		event.preventDefault();
+		var checkbox = document.getElementById('trust-9');
+		checkbox.checked = false;
+		document.getElementById('hei-user-btn').style.display = 'none';
+	});
+</script>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+ 		var checkbox1 = document.getElementById('trust-11');
+		var checkbox2 = document.getElementById('trust-10');
+		var checkbox3 = document.getElementById('trust-9');
+		var hiddenDiv = document.getElementById('hiddenDiv');
+		var location = document.getElementById('locationContainer');
+
+ 		// Add an event listener to each checkbox
+		checkbox1.addEventListener('change', updateHiddenDiv);
+		checkbox2.addEventListener('change', updateHiddenDiv);
+		checkbox3.addEventListener('change', updateHiddenDiv);
+
+		// Function to update the visibility of the hidden div
+		function updateHiddenDiv() {
+			// Check if any of the checkboxes are checked
+			if (checkbox1.checked || checkbox2.checked || checkbox3.checked) {
+				hiddenDiv.style.display = 'block';
+				location.style.display = 'none';
+			} else {
+				hiddenDiv.style.display = 'none';
+				location.style.display = 'block';
+			}
+		}
+		updateHiddenDiv();
+	});
+</script>
+{% endblock %}

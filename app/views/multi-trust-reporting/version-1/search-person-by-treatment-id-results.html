@@ -69,7 +69,15 @@ Search for a person - Report overseas visitor treatments - NHSBSA
         <span class="nhsuk-hint">
           For example, 555555550
         </span>
-        <input class="nhsuk-input nhsuk-input--width-20" id="internal-trust-search-treatment-id" name="internal-trust-search-treatment-id" type="text" value="558760987">
+        {% if data['internal-trust-search-treatment-id'] == '558761002' %}
+          <input class="nhsuk-input nhsuk-input--width-20" id="internal-trust-search-treatment-id" name="internal-trust-search-treatment-id" type="text" value="558761002">
+        {% elif data['internal-trust-search-treatment-id'] == '558763833' %}
+          <input class="nhsuk-input nhsuk-input--width-20" id="internal-trust-search-treatment-id" name="internal-trust-search-treatment-id" type="text" value="558763833">
+        {% elif data['internal-trust-search-treatment-id'] == '558762747' %}
+          <input class="nhsuk-input nhsuk-input--width-20" id="internal-trust-search-treatment-id" name="internal-trust-search-treatment-id" type="text" value="558762747">
+        {% else %}
+          <input class="nhsuk-input nhsuk-input--width-20" id="internal-trust-search-treatment-id" name="internal-trust-search-treatment-id" type="text" value="55876">
+        {% endif %}
       </div>
 
     </fieldset>
@@ -84,53 +92,151 @@ Search for a person - Report overseas visitor treatments - NHSBSA
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
     
-    <br>
 
-    <h3 id="result">1 result found</h3>
+    {% if data['new-ehic-treatment'] === 'yes' and data['internal-trust-search-treatment-id'] == '558761002' %}
+      <h3 id="result">1 result found</h3>
 
-    <div class="nhsuk-table-responsive">
-      <table class="nhsuk-table">
-        <thead class="nhsuk-table__head">
-          <tr class="nhsuk-table__row">
-            <th class="nhsuk-table__header" scope="col">Treatment ID</th>
-            <th class="nhsuk-table__header" scope="col">First names</th>
-            <th class="nhsuk-table__header" scope="col">Last name</th>
-            <th class="nhsuk-table__header" scope="col">Date of birth</th>
-            <th class="nhsuk-table__header" scope="col">Entitlement country</th>
-            <th class="nhsuk-table__header" scope="col">Action</th>
-          </tr>
-        </thead>
-        <tbody class="nhsuk-table__body">
-          <tr class="nhsuk-table__row">
-            <td role="cell" class="nhsuk-table__cell">
-              <span class="nhsuk-table-responsive__heading">Treatment ID</span>
-              <p id="institution-id">558760987</p>
-            </td>
-            <td role="cell" class="nhsuk-table__cell">
-              <span class="nhsuk-table-responsive__heading">First names</span>
-              <p id="institution-id">John</p>
-            </td>
-            <td role="cell" class="nhsuk-table__cell">
-              <span class="nhsuk-table-responsive__heading">Last name</span>
-              <p id="institution-name">Doe</p>
-            </td>
-            <td role="cell" class="nhsuk-table__cell">
-              <span class="nhsuk-table-responsive__heading">Date of birth</span>
-              <p id="institution-id">13/12/1994</p>
-            </td>
-            <td role="cell" class="nhsuk-table__cell">
-              <span class="nhsuk-table-responsive__heading">Entitlement country</span>
-              <p id="institution-name">Austria (AT)</p>
-            </td>
-            <td role="cell" class="nhsuk-table__cell">
-              <span class="nhsuk-table-responsive__heading">Action</span>
-              <p id="action"><a href="#">Select</a></p>
-            </td>
-          </tr>
+      <div class="nhsuk-table-responsive">
+        <table class="nhsuk-table">
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="col">Treatment ID</th>
+              <th class="nhsuk-table__header" scope="col">First names</th>
+              <th class="nhsuk-table__header" scope="col">Last name</th>
+              <th class="nhsuk-table__header" scope="col">Date of birth</th>
+              <th class="nhsuk-table__header" scope="col">Entitlement country</th>
+              <th class="nhsuk-table__header" scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Treatment ID</span>
+                <p id="institution-id">558761002</p>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">First names</span>
+                <p id="institution-id">John</p>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Last name</span>
+                <p id="institution-name">Doe</p>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Date of birth</span>
+                <p id="institution-id">13/12/1994</p>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Entitlement country</span>
+                <p id="institution-name">Austria (AT)</p>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <p id="action"><a href="view-ehic-details-johndoe">Select</a></p>
+              </td>
+            </tr>
 
-        </tbody>
-      </table>
-    </div>
+          </tbody>
+        </table>
+      </div>
+
+    {% elif data['new-prc-treatment'] === 'yes' and data['internal-trust-search-treatment-id'] == '558763833' %}
+      <h3 id="result">1 result found</h3>
+
+      <div class="nhsuk-table-responsive">
+        <table class="nhsuk-table">
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="col">Treatment ID</th>
+              <th class="nhsuk-table__header" scope="col">First names</th>
+              <th class="nhsuk-table__header" scope="col">Last name</th>
+              <th class="nhsuk-table__header" scope="col">Date of birth</th>
+              <th class="nhsuk-table__header" scope="col">Entitlement country</th>
+              <th class="nhsuk-table__header" scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Treatment ID</span>
+                <p id="institution-id">558763833</p>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">First names</span>
+                <p id="institution-id">John</p>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Last name</span>
+                <p id="institution-name">Doe</p>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Date of birth</span>
+                <p id="institution-id">13/12/1994</p>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Entitlement country</span>
+                <p id="institution-name">Austria (AT)</p>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <p id="action"><a href="view-prc-details-johndoe">Select</a></p>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+    {% elif data['new-s2-treatment'] === 'yes' and data['internal-trust-search-treatment-id'] == '558762747' %}
+      <h3 id="result">1 result found</h3>
+
+      <div class="nhsuk-table-responsive">
+        <table class="nhsuk-table">
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="col">Treatment ID</th>
+              <th class="nhsuk-table__header" scope="col">First names</th>
+              <th class="nhsuk-table__header" scope="col">Last name</th>
+              <th class="nhsuk-table__header" scope="col">Date of birth</th>
+              <th class="nhsuk-table__header" scope="col">Entitlement country</th>
+              <th class="nhsuk-table__header" scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Treatment ID</span>
+                <p id="institution-id">558762747</p>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">First names</span>
+                <p id="institution-id">John</p>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Last name</span>
+                <p id="institution-name">Doe</p>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Date of birth</span>
+                <p id="institution-id">13/12/1994</p>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Entitlement country</span>
+                <p id="institution-name">Austria (AT)</p>
+              </td>
+              <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                <p id="action"><a href="view-s2-details-johndoe">Select</a></p>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    
+    {% else %}
+      <h3 id="result">No result found</h3>
+    {% endif %}
 
   </form>
 

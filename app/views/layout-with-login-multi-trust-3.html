@@ -22,6 +22,14 @@
 {% block header %}
 {% from 'header/macro.njk' import header %}
 
+{% set trust_name %}
+  {% if data['change-trust-view'] == 'yes' %}
+    {{ data['trust-name'] }}
+  {% else %}
+    North Tees and Hartlepool NHS Foundation Trust
+  {% endif %}
+{% endset %}
+
 {{ header({
   logo: {
     href: "#",
@@ -34,12 +42,12 @@
   account: {
     items: [
       {
-        text: "Joe Bloggs (North Tees and Hartlepool NHS Foundation Trust)",
+        text: "Joe Bloggs (" + trust_name | trim + ")",
         icon: true
       },
       {
         text: "Manage trust access",
-        href: "#"
+        href: "manage-trust-access"
       },
       {
         text: "Log out",
@@ -49,6 +57,10 @@
   }
 }) }}
 {% endblock %}
+
+
+
+
 
 {% block beforeContent %}    
 <div class="app-phase-banner">

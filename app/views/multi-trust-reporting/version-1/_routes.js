@@ -66,6 +66,49 @@ router.post('/new-account-cancel-confirmation', function (req, res) {
 });
 
 
+// Manage trust access //
+// Switch trust view
+router.post('/manage-trust-access', function (req, res) {
+  const trustName = req.session.data['trust-name'];
+  
+  // Save the trust in the session data
+  req.session.data['trust-name'] = trustName;
+
+  // Set flag that the user switched their view to a different trust
+  req.session.data['change-trust-view'] = 'yes'
+
+  // Redirect to the Home screen
+  res.redirect('/multi-trust-reporting/version-1/home');
+});
+
+// Request access to other trusts
+router.post('/request-access-to-other-trusts', function (req, res) {
+  const requiredTrustName = req.session.data['required-trust-name'];
+  
+  // Save the required trusts in the session data
+  req.session.data['required-trust-name'] = requiredTrustName;
+
+  // Redirect to the Confirmation - your request has been submitted screen
+  res.redirect('/multi-trust-reporting/version-1/cya-request-access-to-other-trusts');
+});
+
+// Check before submitting trust access request
+router.post('/cya-request-access-to-other-trusts', function (req, res) {
+
+  // Set flag that the user switched their view to a different trust
+  req.session.data['trust-access-request-submitted'] = 'yes'
+
+  // Redirect to the Confirmation - your request has been submitted screen
+  res.redirect('/multi-trust-reporting/version-1/confirmation-trust-access-request-submitted');
+});
+
+// Confirmation trust access request submitted
+router.post('/confirmation-trust-access-request-submitted', function (req, res) {
+  // Redirect to the Home screen
+  res.redirect('/multi-trust-reporting/version-1/home');
+});
+
+
 // Add a new treatment //
 
 // Confirm you wish to cancel adding a new treatment

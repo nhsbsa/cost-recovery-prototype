@@ -1,0 +1,48 @@
+{% extends 'layout-with-login-multi-trust-3.html' %}
+
+{% block pageTitle %}Check your answers before submitting your access request{% endblock %}
+
+{% block beforeContent %}
+<div class="app-phase-banner">
+  <div class="nhsuk-width-container app-phase-banner__container">
+     <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+        Beta
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a new service - your <a href="#">feedback</a> will help us improve it.
+        </span>
+     </p>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/multi-trust-reporting/version-1/confirmation-trust-access-request-submitted" method="post">
+
+      <div class="nhsuk-panel nhsuk-panel--confirmation nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-4">
+        <h1 style="font-size:40px;" class="nhsuk-panel__title">
+            Confirmation - Your request has been received
+        </h1>
+      </div>
+
+      <p>You will receive a confirmation email for each trust you have requested access to.</p>
+
+      <p>A member of the Cost Recovery Operations Team will be in contact within 3 working days to approve your request.</p>
+
+      <p>You will receive another email confirming which trusts you will have access to.</p>
+      
+
+      <button class="nhsuk-button" type="submit">
+        Back to Home
+      </button>
+
+
+    </form>
+
+ </div>
+</div>
+{% endblock %}
