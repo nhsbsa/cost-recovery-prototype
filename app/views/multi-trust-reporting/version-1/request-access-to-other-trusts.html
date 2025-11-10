@@ -327,16 +327,16 @@ Select all trusts you require access to - Report overseas visitor treatments - N
 
       <div class="nhsuk-hint">If you have selected the wrong trust, select X to remove it.</div>
 
-      <ul id="selectedTrustsContainer" class="selected-trusts-container nhsuk-list nhsuk-list--border">
-        <!-- Selected trusts will be displayed here -->
-      </ul>
+      <ul id="selectedTrustsContainer" class="selected-trusts-container nhsuk-list nhsuk-list--border"></ul>
 
-      <div class="button-container" style="margin-top: 40px;">
-        <button class="nhsuk-button" type="submit">
-          Continue
-        </button>
-      </div>
-      
+      <!-- hidden container for form data -->
+      <div id="hiddenInputs"></div>
+
+
+      <button class="nhsuk-button" style="margin-top: 20px;" type="submit">
+        Continue
+      </button>
+    
       <p><a href="manage-trust-access">Cancel</a></p>
 
     </form>
@@ -388,5 +388,4 @@ Select all trusts you require access to - Report overseas visitor treatments - N
     });
   });
 </script>
-
 {% endblock %}

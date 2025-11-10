@@ -25,10 +25,6 @@
 {% set trust_name %}
   {% if data['change-trust-view'] == 'yes' %}
     {{ data['trust-name'] }}
-  {% elif data['sign-into-trust-name'] == 'Tees, Esk and Wear Valleys NHS Foundation Trust' %}
-    Tees, Esk and Wear Valleys NHS Foundation Trust
-  {% elif data['sign-into-trust-name'] == 'North Tees and Hartlepool NHS Foundation Trust' %}
-    North Tees and Hartlepool NHS Foundation Trust
   {% else %}
     North Tees and Hartlepool NHS Foundation Trust
   {% endif %}

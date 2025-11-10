@@ -54,15 +54,23 @@
           </dt>
           <dd class="nhsuk-summary-list__value">
             {% if data['required-trust-name'] %}
-              {{ data['required-trust-name'] }}
+              {% if data['required-trust-name'] | length > 0 %}
+                {% if data['required-trust-name'] | first %}
+                  {% for trust in data['required-trust-name'] %}
+                    {{ trust }}<br>
+                  {% endfor %}
+                {% else %}
+                  {{ data['required-trust-name'] }}
+                {% endif %}
+              {% endif %}
             {% else %}
               The Newcastle Upon Tyne Hospitals NHS Foundation Trust<br>
               Gateshead Health NHS Foundation Trust
             {% endif %}
           </dd>
           <dd class="nhsuk-summary-list__actions">
-
-          </dd>
+            <a href="request-access-to-other-trusts">Change<span class="nhsuk-u-visually-hidden">trusts you require access to</span></a>
+          </dd>   
         </div>
       </dl>
 
@@ -76,72 +84,4 @@
 
  </div>
 </div>
-{% endblock %}
-
-{% block pageScripts %}
-<script>
-	function updateSelectedTrusts() {
-		var selectedTrustsContainer = document.getElementById("selectedTrustsContainer");
-		var checkboxes = document.querySelectorAll('input[name="trust"]:checked');
-
-		selectedTrustsContainer.innerHTML = ""; // Clear the container
-
-		checkboxes.forEach(function (checkbox) {
-			var trustLabel = document.querySelector('label[for="' + checkbox.id + '"]').innerText;
-			var listItem = document.createElement('li');
-			var deleteButton = document.createElement('button');
-			deleteButton.className = "delete";
-			deleteButton.setAttribute('aria-label', 'Remove ' + trustLabel + ' from the list');
-			deleteButton.innerText = trustLabel;
-
-			// Add click event listener to the delete button
-			deleteButton.addEventListener('click', function () {
-				// Remove the tile
-				listItem.remove();
-
-				// Uncheck the corresponding checkbox
-				checkbox.checked = false;
-			});
-
-			listItem.appendChild(deleteButton);
-				selectedTrustsContainer.appendChild(listItem);
-			});
-		}
-</script>
-<script>
-	document.getElementById('hei-user-btn').addEventListener('click', function (event) {
-		event.preventDefault();
-		var checkbox = document.getElementById('trust-9');
-		checkbox.checked = false;
-		document.getElementById('hei-user-btn').style.display = 'none';
-	});
-</script>
-
-<script>
-	document.addEventListener('DOMContentLoaded', function() {
- 		var checkbox1 = document.getElementById('trust-11');
-		var checkbox2 = document.getElementById('trust-10');
-		var checkbox3 = document.getElementById('trust-9');
-		var hiddenDiv = document.getElementById('hiddenDiv');
-		var location = document.getElementById('locationContainer');
-
- 		// Add an event listener to each checkbox
-		checkbox1.addEventListener('change', updateHiddenDiv);
-		checkbox2.addEventListener('change', updateHiddenDiv);
-		checkbox3.addEventListener('change', updateHiddenDiv);
-
-		// Function to update the visibility of the hidden div
-		function updateHiddenDiv() {
-			// Check if any of the checkboxes are checked
-			if (checkbox1.checked || checkbox2.checked || checkbox3.checked) {
-				hiddenDiv.style.display = 'block';
-				location.style.display = 'none';
-			} else {
-				hiddenDiv.style.display = 'none';
-				location.style.display = 'block';
-			}
-		}
-		updateHiddenDiv();
-	});
-</script>
 {% endblock %}

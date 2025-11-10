@@ -66,6 +66,19 @@ router.post('/new-account-cancel-confirmation', function (req, res) {
 });
 
 
+// Sign into ROVT //
+// Select which trust you'd like to sign into
+router.post('/sign-in-select-trust', function (req, res) {
+  const signIntoTrustName = req.session.data['sign-into-trust-name'];
+  
+  // Save the trust in the session data
+  req.session.data['sign-into-trust-name'] = signIntoTrustName;
+
+  // Redirect to the Home screen
+  res.redirect('/multi-trust-reporting/version-1/home');
+});
+
+
 // Manage trust access //
 // Switch trust view
 router.post('/manage-trust-access', function (req, res) {
@@ -81,16 +94,12 @@ router.post('/manage-trust-access', function (req, res) {
   res.redirect('/multi-trust-reporting/version-1/home');
 });
 
-// Request access to other trusts
 router.post('/request-access-to-other-trusts', function (req, res) {
-  const requiredTrustName = req.session.data['required-trust-name'];
-  
-  // Save the required trusts in the session data
-  req.session.data['required-trust-name'] = requiredTrustName;
-
-  // Redirect to the Confirmation - your request has been submitted screen
+  console.log('Trusts received:', req.body['required-trust-name']);
+  req.session.data['required-trust-name'] = req.body['required-trust-name'];
   res.redirect('/multi-trust-reporting/version-1/cya-request-access-to-other-trusts');
 });
+
 
 // Check before submitting trust access request
 router.post('/cya-request-access-to-other-trusts', function (req, res) {
