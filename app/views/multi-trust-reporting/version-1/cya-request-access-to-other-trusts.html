@@ -53,24 +53,18 @@
             Trusts you require access to
           </dt>
           <dd class="nhsuk-summary-list__value">
-            {% if data['required-trust-name'] %}
-              {% if data['required-trust-name'] | length > 0 %}
-                {% if data['required-trust-name'] | first %}
-                  {% for trust in data['required-trust-name'] %}
-                    {{ trust }}<br>
-                  {% endfor %}
-                {% else %}
-                  {{ data['required-trust-name'] }}
-                {% endif %}
-              {% endif %}
+            {% if data['required-trust-name'] and data['required-trust-name'] | length > 0 %}
+              {% for trust in data['required-trust-name'] %}
+                {{ trust }}
+              {% endfor %}
             {% else %}
               The Newcastle Upon Tyne Hospitals NHS Foundation Trust<br>
               Gateshead Health NHS Foundation Trust
             {% endif %}
           </dd>
           <dd class="nhsuk-summary-list__actions">
-            <a href="request-access-to-other-trusts">Change<span class="nhsuk-u-visually-hidden">trusts you require access to</span></a>
-          </dd>   
+            <a href="request-access-to-other-trusts#trust-autocomplete">Change<span class="nhsuk-u-visually-hidden"> trusts you require access to</span></a>
+          </dd>  
         </div>
       </dl>
 

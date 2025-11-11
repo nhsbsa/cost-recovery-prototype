@@ -95,8 +95,19 @@ router.post('/manage-trust-access', function (req, res) {
 });
 
 router.post('/request-access-to-other-trusts', function (req, res) {
-  console.log('Trusts received:', req.body['required-trust-name']);
-  req.session.data['required-trust-name'] = req.body['required-trust-name'];
+  // Extract selected trusts from session data
+  let trusts = req.body['required-trust-name'];
+
+  // Ensure it's always an array
+  if (!Array.isArray(trusts)) {
+    trusts = trusts ? [trusts] : [];
+  }
+
+  console.log('Trusts received:', trusts);
+
+  // Save selected trusts in session data
+  req.session.data['required-trust-name'] = trusts;
+
   res.redirect('/multi-trust-reporting/version-1/cya-request-access-to-other-trusts');
 });
 
