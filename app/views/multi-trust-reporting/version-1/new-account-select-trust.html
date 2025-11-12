@@ -1,1171 +1,428 @@
 {% extends 'layout.html' %}
+
 {% block pageTitle %}
-Select a trust - Report overseas visitor treatments - NHSBSA
+Select all trusts you require access to - Report overseas visitor treatments - NHSBSA
 {% endblock %}
 
-{% block beforeContent %}    
+{% block beforeContent %}
 <div class="app-phase-banner">
-   <div class="nhsuk-width-container app-phase-banner__container">
-      <p class="app-phase-banner__content">
-         <strong class="nhsuk-tag app-phase-banner__tag">
-         Beta
-         </strong>
-         <span class="app-phase-banner__text">
-         This is a new service - your <a href="#">feedback</a> will help us improve it.
-         </span>
-      </p>
-   </div>
+  <div class="nhsuk-width-container app-phase-banner__container">
+     <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+        Beta
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a new service - your <a href="#">feedback</a> will help us improve it.
+        </span>
+     </p>
+  </div>
 </div>
 {% endblock %}
 
 {% block content %}
+
+<!-- Accessible Autocomplete CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.css" />
+
+<!-- Accessible Autocomplete JS -->
+<script src="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.js"></script>
 
 {{ backLink({
   "href": "javascript:history.go(-1)",
   "text": "Back"
 }) }}
 
-<div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-full">
+<!-- PAGE TITLE -->
+<h1 class="nhsuk-label-wrapper" style="margin-top: 20px;">
+  <label class="nhsuk-label nhsuk-label--l" for="manage-trust-access-label" style="margin-bottom: 40px;">
+    Select the trust you report treatment costs for
+  </label>
+</h1>
 
-    <form action="/multi-trust-reporting/version-1/new-account-select-trust" method="post">
+<form action="/multi-trust-reporting/version-1/new-account-select-trust" method="post">
+  <div class="nhsuk-grid-row">
 
-     <h1 class="nhsuk-heading-xl" style="margin-top: 20px;">Select a trust</h1>
+    <!-- LEFT COLUMN -->
+    <div class="nhsuk-grid-column-one-half">
+      <p style="margin-top: 0;">If you need to report treatment costs for more than one trust, you can select more than one trust.</p>
 
-     <nav class="nhsuk-nav-a-z" id="nhsuk-nav-a-z" role="navigation" aria-label="A to Z Navigation">
-        <ol class="nhsuk-nav-a-z__list" role="list">
-           <li class="nhsuk-nav-a-z__item">
-              <a id="character_A" class="nhsuk-nav-a-z__link" href="#A">
-                 <span>A</span>
-                 <span class="nhsuk-u-visually-hidden">&nbsp;</span>
-                 <span class="nhsuk-u-visually-hidden">Select a trust name that begins with the letter A</span>
-              </a>
-           </li>
-           <li class="nhsuk-nav-a-z__item">
-              <a id="character_B" class="nhsuk-nav-a-z__link" href="#B">
-                 <span>B</span>
-                 <span class="nhsuk-u-visually-hidden">&nbsp;</span>
-                 <span class="nhsuk-u-visually-hidden">Select a trust name that begins with the letter B</span>
-              </a>
-           </li>
-           <li class="nhsuk-nav-a-z__item">
-              <a id="character_C" class="nhsuk-nav-a-z__link" href="#C">
-                 <span>C</span>
-                 <span class="nhsuk-u-visually-hidden">&nbsp;</span>
-                 <span class="nhsuk-u-visually-hidden">Select a trust name that begins with the letter C</span>
-              </a>
-           </li>
-           <li class="nhsuk-nav-a-z__item">
-              <a id="character_D" class="nhsuk-nav-a-z__link" href="#D">
-                 <span>D</span>
-                 <span class="nhsuk-u-visually-hidden">&nbsp;</span>
-                 <span class="nhsuk-u-visually-hidden">Select a trust name that begins with the letter D</span>
-              </a>
-           </li>
-           <li class="nhsuk-nav-a-z__item">
-              <a id="character_E" class="nhsuk-nav-a-z__link" href="#E">
-                 <span>E</span>
-                 <span class="nhsuk-u-visually-hidden">&nbsp;</span>
-                 <span class="nhsuk-u-visually-hidden">Select a trust name that begins with the letter E</span>
-              </a>
-           </li>
-           <li class="nhsuk-nav-a-z__item">
-              <a id="character_F" class="nhsuk-nav-a-z__link" href="#F">
-                 <span>F</span>
-                 <span class="nhsuk-u-visually-hidden">&nbsp;</span>
-                 <span class="nhsuk-u-visually-hidden">Select a trust name that begins with the letter F</span>
-              </a>
-           </li>
-           <li class="nhsuk-nav-a-z__item">
-              <a id="character_G" class="nhsuk-nav-a-z__link" href="#G">
-                 <span>G</span>
-                 <span class="nhsuk-u-visually-hidden">&nbsp;</span>
-                 <span class="nhsuk-u-visually-hidden">Select a trust name that begins with the letter G</span>
-              </a>
-           </li>
-           <li class="nhsuk-nav-a-z__item">
-              <a id="character_H" class="nhsuk-nav-a-z__link" href="#H">
-                 <span>H</span>
-                 <span class="nhsuk-u-visually-hidden">&nbsp;</span>
-                 <span class="nhsuk-u-visually-hidden">Select a trust name that begins with the letter H</span>
-              </a>
-           </li>
-           <li class="nhsuk-nav-a-z__item">
-              <a id="character_I" class="nhsuk-nav-a-z__link" href="#I">
-                 <span>I</span>
-                 <span class="nhsuk-u-visually-hidden">&nbsp;</span>
-                 <span class="nhsuk-u-visually-hidden">Select a trust name that begins with the letter I</span>
-              </a>
-           </li>
-           <li class="nhsuk-nav-a-z__item">
-              <a id="character_J" class="nhsuk-nav-a-z__link" href="#J">
-                 <span>J</span>
-                 <span class="nhsuk-u-visually-hidden">&nbsp;</span>
-                 <span class="nhsuk-u-visually-hidden">Select a trust name that begins with the letter J</span>
-              </a>
-           </li>
-           <li class="nhsuk-nav-a-z__item">
-              <a id="character_K" class="nhsuk-nav-a-z__link" href="#K">
-                 <span>K</span>
-                 <span class="nhsuk-u-visually-hidden">&nbsp;</span>
-                 <span class="nhsuk-u-visually-hidden">Select a trust name that begins with the letter K</span>
-              </a>
-           </li>
-           <li class="nhsuk-nav-a-z__item">
-              <a id="character_L" class="nhsuk-nav-a-z__link" href="#L">
-                 <span>L</span>
-                 <span class="nhsuk-u-visually-hidden">&nbsp;</span>
-                 <span class="nhsuk-u-visually-hidden">Select a trust name that begins with the letter L</span>
-              </a>
-           </li>
-           <li class="nhsuk-nav-a-z__item">
-              <a id="character_M" class="nhsuk-nav-a-z__link" href="#M">
-                 <span>M</span>
-                 <span class="nhsuk-u-visually-hidden">&nbsp;</span>
-                 <span class="nhsuk-u-visually-hidden">Select a trust name that begins with the letter M</span>
-              </a>
-           </li>
-           <li class="nhsuk-nav-a-z__item">
-              <a id="character_N" class="nhsuk-nav-a-z__link" href="#N">
-                 <span>N</span>
-                 <span class="nhsuk-u-visually-hidden">&nbsp;</span>
-                 <span class="nhsuk-u-visually-hidden">Select a trust name that begins with the letter N</span>
-              </a>
-           </li>
-           <li class="nhsuk-nav-a-z__item">
-              <a id="character_O" class="nhsuk-nav-a-z__link" href="#O">
-                 <span>O</span>
-                 <span class="nhsuk-u-visually-hidden">&nbsp;</span>
-                 <span class="nhsuk-u-visually-hidden">Select a trust name that begins with the letter O</span>
-              </a>
-           </li>
-           <li class="nhsuk-nav-a-z__item">
-              <a id="character_P" class="nhsuk-nav-a-z__link" href="#P">
-                 <span>P</span>
-                 <span class="nhsuk-u-visually-hidden">&nbsp;</span>
-                 <span class="nhsuk-u-visually-hidden">Select a trust name that begins with the letter P</span>
-              </a>
-           </li>
-           <li class="nhsuk-nav-a-z__item">
-              <a id="character_Q" class="nhsuk-nav-a-z__link" href="#Q">
-                 <span>Q</span>
-                 <span class="nhsuk-u-visually-hidden">&nbsp;</span>
-                 <span class="nhsuk-u-visually-hidden">Select a trust name that begins with the letter Q</span>
-              </a>
-           </li>
-           <li class="nhsuk-nav-a-z__item">
-              <a id="character_R" class="nhsuk-nav-a-z__link" href="#R">
-                 <span>R</span>
-                 <span class="nhsuk-u-visually-hidden">&nbsp;</span>
-                 <span class="nhsuk-u-visually-hidden">Select a trust name that begins with the letter R</span>
-              </a>
-           </li>
-           <li class="nhsuk-nav-a-z__item">
-              <a id="character_S" class="nhsuk-nav-a-z__link" href="#S">
-                 <span>S</span>
-                 <span class="nhsuk-u-visually-hidden">&nbsp;</span>
-                 <span class="nhsuk-u-visually-hidden">Select a trust name that begins with the letter S</span>
-              </a>
-           </li>
-           <li class="nhsuk-nav-a-z__item">
-              <a id="character_T" class="nhsuk-nav-a-z__link" href="#T">
-                 <span>T</span>
-                 <span class="nhsuk-u-visually-hidden">&nbsp;</span>
-                 <span class="nhsuk-u-visually-hidden">Select a trust name that begins with the letter T</span>
-              </a>
-           </li>
-           <li class="nhsuk-nav-a-z__item">
-              <a id="character_U" class="nhsuk-nav-a-z__link" href="#U">
-                 <span>U</span>
-                 <span class="nhsuk-u-visually-hidden">&nbsp;</span>
-                 <span class="nhsuk-u-visually-hidden">Select a trust name that begins with the letter U</span>
-              </a>
-           </li>
-           <li class="nhsuk-nav-a-z__item">
-              <a id="character_W" class="nhsuk-nav-a-z__link" href="#W">
-                 <span>W</span>
-                 <span class="nhsuk-u-visually-hidden">&nbsp;</span>
-                 <span class="nhsuk-u-visually-hidden">Select a trust name that begins with the letter W</span>
-              </a>
-           </li>
-           <li class="nhsuk-nav-a-z__item">
-              <a id="character_Y" class="nhsuk-nav-a-z__link" href="#Y">
-                 <span>Y</span>
-                 <span class="nhsuk-u-visually-hidden">&nbsp;</span>
-                 <span class="nhsuk-u-visually-hidden">Select a trust name that begins with the letter Y</span>
-              </a>
-           </li>
-        </ol>
-     </nav>
 
-     <div class="nhsuk-list-panel">
-        <h2 class="nhsuk-list-panel__label" id="A" aria-label="Trusts beginning with A">A</h2>
-        <ul class="nhsuk-list-panel__list nhsuk-list-panel__list--with-label">
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_1" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=1&amp;trustname=Airedale%20NHS%20Foundation%20Trust">Airedale NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_2" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=2&amp;trustname=Alder%20Hey%20Children's%20NHS%20Foundation%20Trust">Alder Hey Children's NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_3" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=3&amp;trustname=Ashford%20and%20St%20Peter's%20Hospitals%20NHS%20Foundation%20Trust">Ashford and St Peter's Hospitals NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_4" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=4&amp;trustname=Aspen%20Healthcare%20-%20Parkside%20Hospital">Aspen Healthcare - Parkside Hospital</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_5" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=5&amp;trustname=Avon%20and%20Wiltshire%20Mental%20Health%20Partnership%20NHS%20Trust">Avon and Wiltshire Mental Health Partnership NHS Trust</a>
-           </li>
-        </ul>
-        <div class="nhsuk-back-to-top">
-           <a class="nhsuk-back-to-top__link" href="#nhsuk-nav-a-z">
-              <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                                      <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
-                                   </svg>
-              Back to top
-           </a>
+      <div class="nhsuk-form-group" style="margin-top: 0px;">
+        <div class="nhsuk-hint" style="margin-bottom: 5px;" id="new-account-trust-hint-label">
+          Begin typing to find a trust
         </div>
-     </div>
+        <div id="new-account-trust-autocomplete-container"></div>
+      </div>
+    </div>
 
-     <div class="nhsuk-list-panel">
-        <h2 class="nhsuk-list-panel__label" id="B" aria-label="Trusts beginning with B">B</h2>
-        <ul class="nhsuk-list-panel__list nhsuk-list-panel__list--with-label">
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_6" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=6&amp;trustname=Barking,%20Havering%20and%20Redbridge%20University%20Hospitals%20NHS%20Trust">Barking, Havering and Redbridge University Hospitals NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_7" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=7&amp;trustname=Barnet,%20Enfield%20and%20Haringey%20Mental%20Health%20NHS%20Trust">Barnet, Enfield and Haringey Mental Health NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_8" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=8&amp;trustname=Barnsley%20Hospital%20NHS%20Foundation%20Trust">Barnsley Hospital NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_9" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=9&amp;trustname=Barts%20Health%20NHS%20Trust">Barts Health NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_10" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=10&amp;trustname=Bedfordshire%20Hospitals%20NHS%20Foundation%20Trust">Bedfordshire Hospitals NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_11" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=11&amp;trustname=Berkshire%20Healthcare%20NHS%20Foundation%20Trust">Berkshire Healthcare NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_13" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=13&amp;trustname=Birmingham%20Community%20Healthcare%20NHS%20Foundation%20Trust">Birmingham Community Healthcare NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_14" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=14&amp;trustname=Birmingham%20Women's%20and%20Children's%20NHS%20Foundation%20Trust">Birmingham Women's and Children's NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_12" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=12&amp;trustname=Birmingham%20and%20Solihull%20Mental%20Health%20NHS%20Foundation%20Trust">Birmingham and Solihull Mental Health NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_15" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=15&amp;trustname=Black%20Country%20Healthcare%20NHS%20Foundation%20Trust">Black Country Healthcare NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_16" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=16&amp;trustname=Blackpool%20Teaching%20Hospitals%20NHS%20Foundation%20Trust">Blackpool Teaching Hospitals NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_17" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=17&amp;trustname=Bolton%20NHS%20Foundation%20Trust">Bolton NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_18" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=18&amp;trustname=Bradford%20District%20Care%20NHS%20Foundation%20Trust">Bradford District Care NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_19" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=19&amp;trustname=Bradford%20Teaching%20Hospitals%20NHS%20Foundation%20Trust">Bradford Teaching Hospitals NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_20" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=20&amp;trustname=Bridgewater%20Community%20Healthcare%20NHS%20Foundation%20Trust">Bridgewater Community Healthcare NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_21" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=21&amp;trustname=Buckinghamshire%20Healthcare%20NHS%20Trust">Buckinghamshire Healthcare NHS Trust</a>
-           </li>
-        </ul>
-        <div class="nhsuk-back-to-top">
-           <a class="nhsuk-back-to-top__link" href="#nhsuk-nav-a-z">
-              <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                                      <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
-                                   </svg>
-              Back to top
-           </a>
-        </div>
-     </div>
+    <!-- RIGHT COLUMN -->
+    <div class="nhsuk-grid-column-one-half">
+      <h3 style="margin-top: 0;">Trusts you have selected which you require access to:</h3>
+      <div class="nhsuk-hint">If you have selected the wrong trust, select X to remove it.</div>
 
-     <div class="nhsuk-list-panel">
-        <h2 class="nhsuk-list-panel__label" id="C" aria-label="Trusts beginning with C">C</h2>
-        <ul class="nhsuk-list-panel__list nhsuk-list-panel__list--with-label">
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_22" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=22&amp;trustname=Calderdale%20and%20Huddersfield%20NHS%20Foundation%20Trust">Calderdale and Huddersfield NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_23" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=23&amp;trustname=Cambridge%20University%20Hospitals%20NHS%20Foundation%20Trust">Cambridge University Hospitals NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_25" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=25&amp;trustname=Cambridgeshire%20Community%20Services%20NHS%20Trust">Cambridgeshire Community Services NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_24" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=24&amp;trustname=Cambridgeshire%20and%20Peterborough%20NHS%20Foundation%20Trust">Cambridgeshire and Peterborough NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_26" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=26&amp;trustname=Camden%20and%20Islington%20NHS%20Foundation%20Trust">Camden and Islington NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_27" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=27&amp;trustname=Care%20UK">Care UK</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_29" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=29&amp;trustname=Central%20London%20Community%20Healthcare%20NHS%20Trust">Central London Community Healthcare NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_28" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=28&amp;trustname=Central%20and%20North%20West%20London%20NHS%20Foundation%20Trust">Central and North West London NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_30" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=30&amp;trustname=Chelsea%20and%20Westminster%20Hospital%20NHS%20Foundation%20Trust">Chelsea and Westminster Hospital NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_31" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=31&amp;trustname=Cheshire%20and%20Wirral%20Partnership%20NHS%20Foundation%20Trust">Cheshire and Wirral Partnership NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_32" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=32&amp;trustname=Chesterfield%20Royal%20Hospital%20NHS%20Foundation%20Trust">Chesterfield Royal Hospital NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_33" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=33&amp;trustname=Cornwall%20Partnership%20NHS%20Foundation%20Trust">Cornwall Partnership NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_34" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=34&amp;trustname=Countess%20of%20Chester%20Hospital%20NHS%20Foundation%20Trust">Countess of Chester Hospital NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_35" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=35&amp;trustname=County%20Durham%20and%20Darlington%20NHS%20Foundation%20Trust">County Durham and Darlington NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_36" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=36&amp;trustname=Coventry%20and%20Warwickshire%20Partnership%20NHS%20Trust">Coventry and Warwickshire Partnership NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_37" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=37&amp;trustname=Croydon%20Health%20Services%20NHS%20Trust">Croydon Health Services NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_38" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=38&amp;trustname=Cumbria,%20Northumberland,%20Tyne%20and%20Wear%20NHS%20Foundation%20Trust">Cumbria, Northumberland, Tyne and Wear NHS Foundation Trust</a>
-           </li>
-        </ul>
-        <div class="nhsuk-back-to-top">
-           <a class="nhsuk-back-to-top__link" href="#nhsuk-nav-a-z">
-              <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                                      <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
-                                   </svg>
-              Back to top
-           </a>
-        </div>
-     </div>
+      <ul id="newAccountSelectedTrustsContainer" class="selected-trusts-container nhsuk-list nhsuk-list--border"></ul>
 
-     <div class="nhsuk-list-panel">
-        <h2 class="nhsuk-list-panel__label" id="D" aria-label="Trusts beginning with D">D</h2>
-        <ul class="nhsuk-list-panel__list nhsuk-list-panel__list--with-label">
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_39" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=39&amp;trustname=Dartford%20and%20Gravesham%20NHS%20Trust">Dartford and Gravesham NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_40" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=40&amp;trustname=Derbyshire%20Community%20Health%20Services%20NHS%20Foundation%20Trust">Derbyshire Community Health Services NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_41" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=41&amp;trustname=Derbyshire%20Healthcare%20NHS%20Foundation%20Trust">Derbyshire Healthcare NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_42" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=42&amp;trustname=Devon%20Partnership%20NHS%20Trust">Devon Partnership NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_43" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=43&amp;trustname=Doncaster%20and%20Bassetlaw%20Teaching%20Hospitals%20NHS%20Foundation%20Trust">Doncaster and Bassetlaw Teaching Hospitals NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_44" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=44&amp;trustname=Dorset%20County%20Hospital%20NHS%20Foundation%20Trust">Dorset County Hospital NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_45" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=45&amp;trustname=Dorset%20Healthcare%20University%20NHS%20Foundation%20Trust">Dorset Healthcare University NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_46" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=46&amp;trustname=Dudley%20Integrated%20Health%20and%20Care%20NHS%20Trust">Dudley Integrated Health and Care NHS Trust</a>
-           </li>
-        </ul>
-        <div class="nhsuk-back-to-top">
-           <a class="nhsuk-back-to-top__link" href="#nhsuk-nav-a-z">
-              <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                                      <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
-                                   </svg>
-              Back to top
-           </a>
-        </div>
-     </div>
+      <!-- hidden container for form data -->
+      <div id="newAccountHiddenTrustInputs"></div>
 
-     <div class="nhsuk-list-panel">
-        <h2 class="nhsuk-list-panel__label" id="E" aria-label="Trusts beginning with E">E</h2>
-        <ul class="nhsuk-list-panel__list nhsuk-list-panel__list--with-label">
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_48" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=48&amp;trustname=East%20Cheshire%20NHS%20Trust">East Cheshire NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_49" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=49&amp;trustname=East%20Kent%20Hospitals%20University%20NHS%20Foundation%20Trust">East Kent Hospitals University NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_50" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=50&amp;trustname=East%20Lancashire%20Hospitals%20NHS%20Trust">East Lancashire Hospitals NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_51" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=51&amp;trustname=East%20London%20NHS%20Foundation%20Trust">East London NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_52" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=52&amp;trustname=East%20Midlands%20Ambulance%20Service%20NHS%20Trust">East Midlands Ambulance Service NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_54" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=54&amp;trustname=East%20Suffolk%20and%20North%20Essex%20NHS%20Foundation%20Trust">East Suffolk and North Essex NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_55" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=55&amp;trustname=East%20Sussex%20Healthcare%20NHS%20Trust">East Sussex Healthcare NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_47" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=47&amp;trustname=East%20and%20North%20Hertfordshire%20NHS%20Trust">East and North Hertfordshire NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_53" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=53&amp;trustname=East%20of%20England%20Ambulance%20Service%20NHS%20Trust">East of England Ambulance Service NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_56" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=56&amp;trustname=Epsom%20and%20St%20Helier%20University%20Hospitals%20NHS%20Trust">Epsom and St Helier University Hospitals NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_57" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=57&amp;trustname=Essex%20Partnership%20University%20NHS%20Foundation%20Trust">Essex Partnership University NHS Foundation Trust</a>
-           </li>
-        </ul>
-        <div class="nhsuk-back-to-top">
-           <a class="nhsuk-back-to-top__link" href="#nhsuk-nav-a-z">
-              <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                                      <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
-                                   </svg>
-              Back to top
-           </a>
-        </div>
-     </div>
-
-     <div class="nhsuk-list-panel">
-        <h2 class="nhsuk-list-panel__label" id="F" aria-label="Trusts beginning with F">F</h2>
-        <ul class="nhsuk-list-panel__list nhsuk-list-panel__list--with-label">
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_58" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=58&amp;trustname=Frimley%20Health%20NHS%20Foundation%20Trust">Frimley Health NHS Foundation Trust</a>
-           </li>
-        </ul>
-        <div class="nhsuk-back-to-top">
-           <a class="nhsuk-back-to-top__link" href="#nhsuk-nav-a-z">
-              <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                                      <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
-                                   </svg>
-              Back to top
-           </a>
-        </div>
-     </div>
-
-     <div class="nhsuk-list-panel">
-        <h2 class="nhsuk-list-panel__label" id="G" aria-label="Trusts beginning with G">G</h2>
-        <ul class="nhsuk-list-panel__list nhsuk-list-panel__list--with-label">
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_59" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=59&amp;trustname=Gateshead%20Health%20NHS%20Foundation%20Trust">Gateshead Health NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_60" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=60&amp;trustname=George%20Eliot%20Hospital%20NHS%20Trust">George Eliot Hospital NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_61" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=61&amp;trustname=Gloucestershire%20Health%20and%20Care%20NHS%20Foundation%20Trust">Gloucestershire Health and Care NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_62" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=62&amp;trustname=Gloucestershire%20Hospitals%20NHS%20Foundation%20Trust">Gloucestershire Hospitals NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_63" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=63&amp;trustname=Great%20Ormond%20Street%20Hospital%20For%20Children%20NHS%20Foundation%20Trust">Great Ormond Street Hospital For Children NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_64" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=64&amp;trustname=Great%20Western%20Hospitals%20NHS%20Foundation%20Trust">Great Western Hospitals NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_65" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=65&amp;trustname=Greater%20Manchester%20Mental%20Health%20NHS%20Foundation%20Trust">Greater Manchester Mental Health NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_66" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=66&amp;trustname=Guy's%20and%20St%20Thomas'%20NHS%20Foundation%20Trust">Guy's and St Thomas' NHS Foundation Trust</a>
-           </li>
-        </ul>
-        <div class="nhsuk-back-to-top">
-           <a class="nhsuk-back-to-top__link" href="#nhsuk-nav-a-z">
-              <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                                      <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
-                                   </svg>
-              Back to top
-           </a>
-        </div>
-     </div>
-
-     <div class="nhsuk-list-panel">
-        <h2 class="nhsuk-list-panel__label" id="H" aria-label="Trusts beginning with H">H</h2>
-        <ul class="nhsuk-list-panel__list nhsuk-list-panel__list--with-label">
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_67" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=67&amp;trustname=Hampshire%20Hospitals%20NHS%20Foundation%20Trust">Hampshire Hospitals NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_68" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=68&amp;trustname=Harrogate%20and%20District%20NHS%20Foundation%20Trust">Harrogate and District NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_69" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=69&amp;trustname=Herefordshire%20and%20Worcestershire%20Health%20and%20Care%20NHS%20Trust">Herefordshire and Worcestershire Health and Care NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_70" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=70&amp;trustname=Hertfordshire%20Community%20NHS%20Trust">Hertfordshire Community NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_71" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=71&amp;trustname=Hertfordshire%20Partnership%20University%20NHS%20Foundation%20Trust">Hertfordshire Partnership University NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_72" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=72&amp;trustname=Homerton%20Healthcare%20NHS%20Foundation%20Trust">Homerton Healthcare NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_73" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=73&amp;trustname=Hounslow%20and%20Richmond%20Community%20Healthcare%20NHS%20Trust">Hounslow and Richmond Community Healthcare NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_74" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=74&amp;trustname=Hull%20University%20Teaching%20Hospitals%20NHS%20Trust">Hull University Teaching Hospitals NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_75" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=75&amp;trustname=Humber%20Teaching%20NHS%20Foundation%20Trust">Humber Teaching NHS Foundation Trust</a>
-           </li>
-        </ul>
-        <div class="nhsuk-back-to-top">
-           <a class="nhsuk-back-to-top__link" href="#nhsuk-nav-a-z">
-              <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                                      <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
-                                   </svg>
-              Back to top
-           </a>
-        </div>
-     </div>
-
-     <div class="nhsuk-list-panel">
-        <h2 class="nhsuk-list-panel__label" id="I" aria-label="Trusts beginning with I">I</h2>
-        <ul class="nhsuk-list-panel__list nhsuk-list-panel__list--with-label">
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_76" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=76&amp;trustname=Imperial%20College%20Healthcare%20NHS%20Trust">Imperial College Healthcare NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_77" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=77&amp;trustname=Isle%20of%20Wight%20NHS%20Trust">Isle of Wight NHS Trust</a>
-           </li>
-        </ul>
-        <div class="nhsuk-back-to-top">
-           <a class="nhsuk-back-to-top__link" href="#nhsuk-nav-a-z">
-              <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                                      <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
-                                   </svg>
-              Back to top
-           </a>
-        </div>
-     </div>
-
-     <div class="nhsuk-list-panel">
-        <h2 class="nhsuk-list-panel__label" id="J" aria-label="Trusts beginning with J">J</h2>
-        <ul class="nhsuk-list-panel__list nhsuk-list-panel__list--with-label">
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_78" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=78&amp;trustname=James%20Paget%20University%20Hospitals%20NHS%20Foundation%20Trust">James Paget University Hospitals NHS Foundation Trust</a>
-           </li>
-        </ul>
-        <div class="nhsuk-back-to-top">
-           <a class="nhsuk-back-to-top__link" href="#nhsuk-nav-a-z">
-              <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                                      <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
-                                   </svg>
-              Back to top
-           </a>
-        </div>
-     </div>
-
-     <div class="nhsuk-list-panel">
-        <h2 class="nhsuk-list-panel__label" id="K" aria-label="Trusts beginning with K">K</h2>
-        <ul class="nhsuk-list-panel__list nhsuk-list-panel__list--with-label">
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_80" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=80&amp;trustname=Kent%20Community%20Health%20NHS%20Foundation%20Trust">Kent Community Health NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_79" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=79&amp;trustname=Kent%20and%20Medway%20NHS%20and%20Social%20Care%20Partnership%20Trust">Kent and Medway NHS and Social Care Partnership Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_81" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=81&amp;trustname=Kettering%20General%20Hospital%20NHS%20Foundation%20Trust">Kettering General Hospital NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_82" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=82&amp;trustname=King's%20College%20Hospital%20NHS%20Foundation%20Trust">King's College Hospital NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_83" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=83&amp;trustname=Kingston%20Hospital%20NHS%20Foundation%20Trust">Kingston Hospital NHS Foundation Trust</a>
-           </li>
-        </ul>
-        <div class="nhsuk-back-to-top">
-           <a class="nhsuk-back-to-top__link" href="#nhsuk-nav-a-z">
-              <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                                      <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
-                                   </svg>
-              Back to top
-           </a>
-        </div>
-     </div>
-
-     <div class="nhsuk-list-panel">
-        <h2 class="nhsuk-list-panel__label" id="L" aria-label="Trusts beginning with L">L</h2>
-        <ul class="nhsuk-list-panel__list nhsuk-list-panel__list--with-label">
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_85" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=85&amp;trustname=Lancashire%20Teaching%20Hospitals%20NHS%20Foundation%20Trust">Lancashire Teaching Hospitals NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_84" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=84&amp;trustname=Lancashire%20and%20South%20Cumbria%20NHS%20Foundation%20Trust">Lancashire and South Cumbria NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_87" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=87&amp;trustname=Leeds%20Community%20Healthcare%20NHS%20Trust">Leeds Community Healthcare NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_88" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=88&amp;trustname=Leeds%20Teaching%20Hospitals%20NHS%20Trust">Leeds Teaching Hospitals NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_86" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=86&amp;trustname=Leeds%20and%20York%20Partnership%20NHS%20Foundation%20Trust">Leeds and York Partnership NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_89" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=89&amp;trustname=Leicestershire%20Partnership%20NHS%20Trust">Leicestershire Partnership NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_90" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=90&amp;trustname=Lewisham%20and%20Greenwich%20NHS%20Trust">Lewisham and Greenwich NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_91" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=91&amp;trustname=Lincolnshire%20Community%20Health%20Services%20NHS%20Trust">Lincolnshire Community Health Services NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_92" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=92&amp;trustname=Lincolnshire%20Partnership%20NHS%20Foundation%20Trust">Lincolnshire Partnership NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_93" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=93&amp;trustname=Liverpool%20Heart%20and%20Chest%20Hospital%20NHS%20Foundation%20Trust">Liverpool Heart and Chest Hospital NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_94" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=94&amp;trustname=Liverpool%20University%20Hospitals%20NHS%20Foundation%20Trust">Liverpool University Hospitals NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_95" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=95&amp;trustname=Liverpool%20Women's%20NHS%20Foundation%20Trust">Liverpool Women's NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_96" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=96&amp;trustname=London%20Ambulance%20Service%20NHS%20Trust">London Ambulance Service NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_97" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=97&amp;trustname=London%20North%20West%20University%20Healthcare%20NHS%20Trust">London North West University Healthcare NHS Trust</a>
-           </li>
-        </ul>
-        <div class="nhsuk-back-to-top">
-           <a class="nhsuk-back-to-top__link" href="#nhsuk-nav-a-z">
-              <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                                      <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
-                                   </svg>
-              Back to top
-           </a>
-        </div>
-     </div>
-
-     <div class="nhsuk-list-panel">
-        <h2 class="nhsuk-list-panel__label" id="M" aria-label="Trusts beginning with M">M</h2>
-        <ul class="nhsuk-list-panel__list nhsuk-list-panel__list--with-label">
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_98" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=98&amp;trustname=Maidstone%20and%20Tunbridge%20Wells%20NHS%20Trust">Maidstone and Tunbridge Wells NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_99" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=99&amp;trustname=Manchester%20University%20NHS%20Foundation%20Trust">Manchester University NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_100" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=100&amp;trustname=Medway%20NHS%20Foundation%20Trust">Medway NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_101" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=101&amp;trustname=Mersey%20Care%20NHS%20Foundation%20Trust">Mersey Care NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_247" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=247&amp;trustname=Mersey%20and%20West%20Lancashire%20Teaching%20Hospitals%20NHS%20Trust">Mersey and West Lancashire Teaching Hospitals NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_102" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=102&amp;trustname=Mid%20Cheshire%20Hospitals%20NHS%20Foundation%20Trust">Mid Cheshire Hospitals NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_104" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=104&amp;trustname=Mid%20Yorkshire%20Hospitals%20NHS%20Trust">Mid Yorkshire Hospitals NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_103" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=103&amp;trustname=Mid%20and%20South%20Essex%20NHS%20Foundation%20Trust">Mid and South Essex NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_105" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=105&amp;trustname=Midlands%20Partnership%20University%20NHS%20Foundation%20Trust">Midlands Partnership University NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_106" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=106&amp;trustname=Milton%20Keynes%20University%20Hospital%20NHS%20Foundation%20Trust">Milton Keynes University Hospital NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_107" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=107&amp;trustname=Moorfields%20Eye%20Hospital%20NHS%20Foundation%20Trust">Moorfields Eye Hospital NHS Foundation Trust</a>
-           </li>
-        </ul>
-        <div class="nhsuk-back-to-top">
-           <a class="nhsuk-back-to-top__link" href="#nhsuk-nav-a-z">
-              <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                                      <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
-                                   </svg>
-              Back to top
-           </a>
-        </div>
-     </div>
-
-     <div class="nhsuk-list-panel">
-        <h2 class="nhsuk-list-panel__label" id="N" aria-label="Trusts beginning with N">N</h2>
-        <ul class="nhsuk-list-panel__list nhsuk-list-panel__list--with-label">
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_110" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=110&amp;trustname=Norfolk%20Community%20Health%20and%20Care%20NHS%20Trust">Norfolk Community Health and Care NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_108" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=108&amp;trustname=Norfolk%20and%20Norwich%20University%20Hospitals%20NHS%20Foundation%20Trust">Norfolk and Norwich University Hospitals NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_109" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=109&amp;trustname=Norfolk%20and%20Suffolk%20NHS%20Foundation%20Trust">Norfolk and Suffolk NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_111" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=111&amp;trustname=North%20Bristol%20NHS%20Trust">North Bristol NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_112" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=112&amp;trustname=North%20Cumbria%20Integrated%20Care%20NHS%20Foundation%20Trust">North Cumbria Integrated Care NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_113" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=113&amp;trustname=North%20East%20Ambulance%20Service%20NHS%20Foundation%20Trust">North East Ambulance Service NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_114" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=114&amp;trustname=North%20East%20London%20NHS%20Foundation%20Trust">North East London NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_115" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=115&amp;trustname=North%20Middlesex%20University%20Hospital%20NHS%20Trust">North Middlesex University Hospital NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_116" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=116&amp;trustname=North%20Staffordshire%20Combined%20Healthcare%20NHS%20Trust">North Staffordshire Combined Healthcare NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_117" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=117&amp;trustname=North%20Tees%20and%20Hartlepool%20NHS%20Foundation%20Trust">North Tees and Hartlepool NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_118" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=118&amp;trustname=North%20West%20Ambulance%20Service%20NHS%20Trust">North West Ambulance Service NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_119" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=119&amp;trustname=North%20West%20Anglia%20NHS%20Foundation%20Trust">North West Anglia NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_120" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=120&amp;trustname=North%20West%20Boroughs%20Healthcare%20NHS%20Foundation%20Trust">North West Boroughs Healthcare NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_251" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=251&amp;trustname=Northampton%20General%20Hospital%20NHS%20Trust">Northampton General Hospital NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_122" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=122&amp;trustname=Northamptonshire%20Healthcare%20NHS%20Foundation%20Trust">Northamptonshire Healthcare NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_123" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=123&amp;trustname=Northern%20Care%20Alliance%20NHS%20Foundation%20Trust">Northern Care Alliance NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_125" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=125&amp;trustname=Northern%20Lincolnshire%20and%20Goole%20NHS%20Foundation%20Trust">Northern Lincolnshire and Goole NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_126" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=126&amp;trustname=Northumbria%20Healthcare%20NHS%20Foundation%20Trust">Northumbria Healthcare NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_127" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=127&amp;trustname=Nottingham%20University%20Hospitals%20NHS%20Trust">Nottingham University Hospitals NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_128" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=128&amp;trustname=Nottinghamshire%20Healthcare%20NHS%20Foundation%20Trust">Nottinghamshire Healthcare NHS Foundation Trust</a>
-           </li>
-        </ul>
-        <div class="nhsuk-back-to-top">
-           <a class="nhsuk-back-to-top__link" href="#nhsuk-nav-a-z">
-              <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                                      <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
-                                   </svg>
-              Back to top
-           </a>
-        </div>
-     </div>
-
-     <div class="nhsuk-list-panel">
-        <h2 class="nhsuk-list-panel__label" id="O" aria-label="Trusts beginning with O">O</h2>
-        <ul class="nhsuk-list-panel__list nhsuk-list-panel__list--with-label">
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_129" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=129&amp;trustname=Oxford%20Health%20NHS%20Foundation%20Trust">Oxford Health NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_130" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=130&amp;trustname=Oxford%20University%20Hospitals%20NHS%20Foundation%20Trust">Oxford University Hospitals NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_131" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=131&amp;trustname=Oxleas%20NHS%20Foundation%20Trust">Oxleas NHS Foundation Trust</a>
-           </li>
-        </ul>
-        <div class="nhsuk-back-to-top">
-           <a class="nhsuk-back-to-top__link" href="#nhsuk-nav-a-z">
-              <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                                      <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
-                                   </svg>
-              Back to top
-           </a>
-        </div>
-     </div>
-
-     <div class="nhsuk-list-panel">
-        <h2 class="nhsuk-list-panel__label" id="P" aria-label="Trusts beginning with P">P</h2>
-        <ul class="nhsuk-list-panel__list nhsuk-list-panel__list--with-label">
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_133" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=133&amp;trustname=Pennine%20Care%20NHS%20Foundation%20Trust">Pennine Care NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_134" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=134&amp;trustname=Portsmouth%20Hospitals%20University%20NHS%20Trust">Portsmouth Hospitals University NHS Trust</a>
-           </li>
-        </ul>
-        <div class="nhsuk-back-to-top">
-           <a class="nhsuk-back-to-top__link" href="#nhsuk-nav-a-z">
-              <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                                      <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
-                                   </svg>
-              Back to top
-           </a>
-        </div>
-     </div>
-
-     <div class="nhsuk-list-panel">
-        <h2 class="nhsuk-list-panel__label" id="Q" aria-label="Trusts beginning with Q">Q</h2>
-        <ul class="nhsuk-list-panel__list nhsuk-list-panel__list--with-label">
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_135" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=135&amp;trustname=Queen%20Victoria%20Hospital%20NHS%20Foundation%20Trust">Queen Victoria Hospital NHS Foundation Trust</a>
-           </li>
-        </ul>
-        <div class="nhsuk-back-to-top">
-           <a class="nhsuk-back-to-top__link" href="#nhsuk-nav-a-z">
-              <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                                      <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
-                                   </svg>
-              Back to top
-           </a>
-        </div>
-     </div>
-
-     <div class="nhsuk-list-panel">
-        <h2 class="nhsuk-list-panel__label" id="R" aria-label="Trusts beginning with R">R</h2>
-        <ul class="nhsuk-list-panel__list nhsuk-list-panel__list--with-label">
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_136" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=136&amp;trustname=Rotherham%20Doncaster%20and%20South%20Humber%20NHS%20Foundation%20Trust">Rotherham Doncaster and South Humber NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_137" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=137&amp;trustname=Royal%20Berkshire%20NHS%20Foundation%20Trust">Royal Berkshire NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_138" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=138&amp;trustname=Royal%20Cornwall%20Hospitals%20NHS%20Trust">Royal Cornwall Hospitals NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_139" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=139&amp;trustname=Royal%20Devon%20University%20Healthcare%20NHS%20Foundation%20Trust">Royal Devon University Healthcare NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_140" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=140&amp;trustname=Royal%20Free%20London%20NHS%20Foundation%20Trust">Royal Free London NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_141" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=141&amp;trustname=Royal%20National%20Orthopaedic%20Hospital%20NHS%20Trust">Royal National Orthopaedic Hospital NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_142" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=142&amp;trustname=Royal%20Papworth%20Hospital%20NHS%20Foundation%20Trust">Royal Papworth Hospital NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_143" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=143&amp;trustname=Royal%20Surrey%20NHS%20Foundation%20Trust">Royal Surrey NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_144" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=144&amp;trustname=Royal%20United%20Hospitals%20Bath%20NHS%20Foundation%20Trust">Royal United Hospitals Bath NHS Foundation Trust</a>
-           </li>
-        </ul>
-        <div class="nhsuk-back-to-top">
-           <a class="nhsuk-back-to-top__link" href="#nhsuk-nav-a-z">
-              <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                                      <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
-                                   </svg>
-              Back to top
-           </a>
-        </div>
-     </div>
-
-     <div class="nhsuk-list-panel">
-        <h2 class="nhsuk-list-panel__label" id="S" aria-label="Trusts beginning with S">S</h2>
-        <ul class="nhsuk-list-panel__list nhsuk-list-panel__list--with-label">
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_145" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=145&amp;trustname=Salisbury%20NHS%20Foundation%20Trust">Salisbury NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_146" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=146&amp;trustname=Sandwell%20and%20West%20Birmingham%20Hospitals%20NHS%20Trust">Sandwell and West Birmingham Hospitals NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_147" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=147&amp;trustname=Sheffield%20Children's%20NHS%20Foundation%20Trust">Sheffield Children's NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_248" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=248&amp;trustname=Sheffield%20Health%20and%20Social%20Care%20NHS%20Foundation%20Trust">Sheffield Health and Social Care NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_148" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=148&amp;trustname=Sheffield%20Teaching%20Hospitals%20NHS%20Foundation%20Trust">Sheffield Teaching Hospitals NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_149" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=149&amp;trustname=Sherwood%20Forest%20Hospitals%20NHS%20Foundation%20Trust">Sherwood Forest Hospitals NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_186" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=186&amp;trustname=Shrewsbury%20and%20Telford%20Hospital%20NHS%20Trust">Shrewsbury and Telford Hospital NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_150" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=150&amp;trustname=Shropshire%20Community%20Health%20NHS%20Trust">Shropshire Community Health NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_151" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=151&amp;trustname=Solent%20NHS%20Trust">Solent NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_152" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=152&amp;trustname=Somerset%20NHS%20Foundation%20Trust">Somerset NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_153" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=153&amp;trustname=South%20Central%20Ambulance%20Service%20NHS%20Foundation%20Trust">South Central Ambulance Service NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_154" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=154&amp;trustname=South%20East%20Coast%20Ambulance%20Service%20NHS%20Foundation%20Trust">South East Coast Ambulance Service NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_155" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=155&amp;trustname=South%20London%20and%20Maudsley%20NHS%20Foundation%20Trust">South London and Maudsley NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_156" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=156&amp;trustname=South%20Tees%20Hospitals%20NHS%20Foundation%20Trust">South Tees Hospitals NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_157" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=157&amp;trustname=South%20Tyneside%20and%20Sunderland%20NHS%20Foundation%20Trust">South Tyneside and Sunderland NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_158" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=158&amp;trustname=South%20Warwickshire%20University%20NHS%20Foundation%20Trust">South Warwickshire University NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_159" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=159&amp;trustname=South%20West%20London%20and%20St%20George's%20Mental%20Health%20NHS%20Trust">South West London and St George's Mental Health NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_160" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=160&amp;trustname=South%20West%20Yorkshire%20Partnership%20NHS%20Foundation%20Trust">South West Yorkshire Partnership NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_161" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=161&amp;trustname=South%20Western%20Ambulance%20Service%20NHS%20Foundation%20Trust">South Western Ambulance Service NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_162" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=162&amp;trustname=Southern%20Health%20NHS%20Foundation%20Trust">Southern Health NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_164" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=164&amp;trustname=St%20George's%20University%20Hospitals%20NHS%20Foundation%20Trust">St George's University Hospitals NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_166" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=166&amp;trustname=Stockport%20NHS%20Foundation%20Trust">Stockport NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_167" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=167&amp;trustname=Surrey%20and%20Borders%20Partnership%20NHS%20Foundation%20Trust">Surrey and Borders Partnership NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_168" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=168&amp;trustname=Surrey%20and%20Sussex%20Healthcare%20NHS%20Trust">Surrey and Sussex Healthcare NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_169" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=169&amp;trustname=Sussex%20Community%20NHS%20Foundation%20Trust">Sussex Community NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_170" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=170&amp;trustname=Sussex%20Partnership%20NHS%20Foundation%20Trust">Sussex Partnership NHS Foundation Trust</a>
-           </li>
-        </ul>
-        <div class="nhsuk-back-to-top">
-           <a class="nhsuk-back-to-top__link" href="#nhsuk-nav-a-z">
-              <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                                      <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
-                                   </svg>
-              Back to top
-           </a>
-        </div>
-     </div>
-
-     <div class="nhsuk-list-panel">
-        <h2 class="nhsuk-list-panel__label" id="T" aria-label="Trusts beginning with T">T</h2>
-        <ul class="nhsuk-list-panel__list nhsuk-list-panel__list--with-label">
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_171" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=171&amp;trustname=Tameside%20and%20Glossop%20Integrated%20Care%20NHS%20Foundation%20Trust">Tameside and Glossop Integrated Care NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_173" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=173&amp;trustname=Tees,%20Esk%20and%20Wear%20Valleys%20NHS%20Foundation%20Trust">Tees, Esk and Wear Valleys NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_174" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=174&amp;trustname=The%20Christie%20NHS%20Foundation%20Trust">The Christie NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_175" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=175&amp;trustname=The%20Clatterbridge%20Cancer%20Centre%20NHS%20Foundation%20Trust">The Clatterbridge Cancer Centre NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_176" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=176&amp;trustname=The%20Dudley%20Group%20NHS%20Foundation%20Trust">The Dudley Group NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_177" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=177&amp;trustname=The%20Hillingdon%20Hospitals%20NHS%20Foundation%20Trust">The Hillingdon Hospitals NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_178" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=178&amp;trustname=The%20Newcastle%20Upon%20Tyne%20Hospitals%20NHS%20Foundation%20Trust">The Newcastle Upon Tyne Hospitals NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_179" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=179&amp;trustname=The%20Princess%20Alexandra%20Hospital%20NHS%20Trust">The Princess Alexandra Hospital NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_180" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=180&amp;trustname=The%20Queen%20Elizabeth%20Hospital%20King's%20Lynn%20NHS%20Foundation%20Trust">The Queen Elizabeth Hospital King's Lynn NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_181" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=181&amp;trustname=The%20Robert%20Jones%20and%20Agnes%20Hunt%20Orthopaedic%20Hospital%20NHS%20Foundation%20Trust">The Robert Jones and Agnes Hunt Orthopaedic Hospital NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_182" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=182&amp;trustname=The%20Rotherham%20NHS%20Foundation%20Trust">The Rotherham NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_183" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=183&amp;trustname=The%20Royal%20Marsden%20NHS%20Foundation%20Trust">The Royal Marsden NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_184" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=184&amp;trustname=The%20Royal%20Orthopaedic%20Hospital%20NHS%20Foundation%20Trust">The Royal Orthopaedic Hospital NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_185" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=185&amp;trustname=The%20Royal%20Wolverhampton%20NHS%20Trust">The Royal Wolverhampton NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_172" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=172&amp;trustname=The%20Tavistock%20and%20Portman%20NHS%20Foundation%20Trust">The Tavistock and Portman NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_187" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=187&amp;trustname=The%20Walton%20Centre%20NHS%20Foundation%20Trust">The Walton Centre NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_188" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=188&amp;trustname=Torbay%20and%20South%20Devon%20NHS%20Foundation%20Trust">Torbay and South Devon NHS Foundation Trust</a>
-           </li>
-        </ul>
-        <div class="nhsuk-back-to-top">
-           <a class="nhsuk-back-to-top__link" href="#nhsuk-nav-a-z">
-              <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                                      <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
-                                   </svg>
-              Back to top
-           </a>
-        </div>
-     </div>
-
-     <div class="nhsuk-list-panel">
-        <h2 class="nhsuk-list-panel__label" id="U" aria-label="Trusts beginning with U">U</h2>
-        <ul class="nhsuk-list-panel__list nhsuk-list-panel__list--with-label">
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_189" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=189&amp;trustname=United%20Lincolnshire%20Hospitals%20NHS%20Trust">United Lincolnshire Hospitals NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_190" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=190&amp;trustname=University%20College%20London%20Hospitals%20NHS%20Foundation%20Trust">University College London Hospitals NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_191" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=191&amp;trustname=University%20Hospital%20Southampton%20NHS%20Foundation%20Trust">University Hospital Southampton NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_192" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=192&amp;trustname=University%20Hospitals%20Birmingham%20NHS%20Foundation%20Trust">University Hospitals Birmingham NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_193" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=193&amp;trustname=University%20Hospitals%20Bristol%20and%20Weston%20NHS%20Foundation%20Trust">University Hospitals Bristol and Weston NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_194" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=194&amp;trustname=University%20Hospitals%20Coventry%20and%20Warwickshire%20NHS%20Trust">University Hospitals Coventry and Warwickshire NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_195" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=195&amp;trustname=University%20Hospitals%20Dorset%20NHS%20Foundation%20Trust">University Hospitals Dorset NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_200" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=200&amp;trustname=University%20Hospitals%20Plymouth%20NHS%20Trust">University Hospitals Plymouth NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_201" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=201&amp;trustname=University%20Hospitals%20Sussex%20NHS%20Foundation%20Trust">University Hospitals Sussex NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_196" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=196&amp;trustname=University%20Hospitals%20of%20Derby%20and%20Burton%20NHS%20Foundation%20Trust">University Hospitals of Derby and Burton NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_197" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=197&amp;trustname=University%20Hospitals%20of%20Leicester%20NHS%20Trust">University Hospitals of Leicester NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_198" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=198&amp;trustname=University%20Hospitals%20of%20Morecambe%20Bay%20NHS%20Foundation%20Trust">University Hospitals of Morecambe Bay NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_199" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=199&amp;trustname=University%20Hospitals%20of%20North%20Midlands%20NHS%20Trust">University Hospitals of North Midlands NHS Trust</a>
-           </li>
-        </ul>
-        <div class="nhsuk-back-to-top">
-           <a class="nhsuk-back-to-top__link" href="#nhsuk-nav-a-z">
-              <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                                      <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
-                                   </svg>
-              Back to top
-           </a>
-        </div>
-     </div>
-
-     <div class="nhsuk-list-panel">
-        <h2 class="nhsuk-list-panel__label" id="W" aria-label="Trusts beginning with W">W</h2>
-        <ul class="nhsuk-list-panel__list nhsuk-list-panel__list--with-label">
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_202" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=202&amp;trustname=Walsall%20Healthcare%20NHS%20Trust">Walsall Healthcare NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_203" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=203&amp;trustname=Warrington%20and%20Halton%20Teaching%20Hospitals%20NHS%20Foundation%20Trust">Warrington and Halton Teaching Hospitals NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_204" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=204&amp;trustname=West%20Hertfordshire%20Teaching%20Hospitals%20NHS%20Trust">West Hertfordshire Teaching Hospitals NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_205" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=205&amp;trustname=West%20London%20NHS%20Trust">West London NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_206" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=206&amp;trustname=West%20Midlands%20Ambulance%20Service%20University%20NHS%20Foundation%20Trust">West Midlands Ambulance Service University NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_207" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=207&amp;trustname=West%20Suffolk%20NHS%20Foundation%20Trust">West Suffolk NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_208" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=208&amp;trustname=Whittington%20Health%20NHS%20Trust">Whittington Health NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_209" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=209&amp;trustname=Wirral%20Community%20Health%20and%20Care%20NHS%20Foundation%20Trust">Wirral Community Health and Care NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_210" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=210&amp;trustname=Wirral%20University%20Teaching%20Hospital%20NHS%20Foundation%20Trust">Wirral University Teaching Hospital NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_211" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=211&amp;trustname=Worcestershire%20Acute%20Hospitals%20NHS%20Trust">Worcestershire Acute Hospitals NHS Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_212" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=212&amp;trustname=Wrightington,%20Wigan%20and%20Leigh%20Teaching%20Hospitals%20NHS%20Foundation%20Trust">Wrightington, Wigan and Leigh Teaching Hospitals NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_213" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=213&amp;trustname=Wye%20Valley%20NHS%20Trust">Wye Valley NHS Trust</a>
-           </li>
-        </ul>
-        <div class="nhsuk-back-to-top">
-           <a class="nhsuk-back-to-top__link" href="#nhsuk-nav-a-z">
-              <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                                      <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
-                                   </svg>
-              Back to top
-           </a>
-        </div>
-     </div>
-
-     <div class="nhsuk-list-panel">
-        <h2 class="nhsuk-list-panel__label" id="Y" aria-label="Trusts beginning with Y">Y</h2>
-        <ul class="nhsuk-list-panel__list nhsuk-list-panel__list--with-label">
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_214" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=214&amp;trustname=Yeovil%20District%20Hospital%20NHS%20Foundation%20Trust">Yeovil District Hospital NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_215" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=215&amp;trustname=York%20and%20Scarborough%20Teaching%20Hospitals%20NHS%20Foundation%20Trust">York and Scarborough Teaching Hospitals NHS Foundation Trust</a>
-           </li>
-           <li class="nhsuk-list-panel__item">
-              <a id="trustId_216" class="nhsuk-list-panel__link" href="/multi-trust-reporting/version-1/new-account-cya?trustid=216&amp;trustname=Yorkshire%20Ambulance%20Service%20NHS%20Trust">Yorkshire Ambulance Service NHS Trust</a>
-           </li>
-        </ul>
-        <div class="nhsuk-back-to-top">
-           <a class="nhsuk-back-to-top__link" href="#nhsuk-nav-a-z">
-              <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                                      <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
-                                   </svg>
-              Back to top
-           </a>
-        </div>
-     </div>
-
-     <p><a href="new-account-cancel-confirmation">Cancel</a></p>
-
-    </form>
+      <!-- Buttons stay on the right-hand side -->
+      <button class="nhsuk-button" style="margin-top: 20px;" type="submit">Continue</button>
+      <p><a href="sign-in">Cancel</a></p>
+    </div>
 
   </div>
-</div>
+</form>
+
+{% endblock %}
+
+
+{% block pageScripts %}
+<!-- autocomplete js -->
+<script>
+	const trusts = [
+    "Airedale NHS Foundation Trust",
+    "Alder Hey Children's NHS Foundation Trust",
+    "Ashford and St Peter's Hospitals NHS Foundation Trust",
+    "Aspen Healthcare - Parkside Hospital",
+    "Avon and Wiltshire Mental Health Partnership NHS Trust",
+
+
+    "Barking, Havering and Redbridge University Hospitals NHS Trust",
+    "Barnet, Enfield and Haringey Mental Health NHS Trust",
+    "Barnsley Hospital NHS Foundation Trust",
+    "Barts Health NHS Trust",
+    "Bedfordshire Hospitals NHS Foundation Trust",
+    "Berkshire Healthcare NHS Foundation Trust",
+    "Birmingham Community Healthcare NHS Foundation Trust",
+    "Birmingham Women's and Children's NHS Foundation Trust",
+    "Birmingham and Solihull Mental Health NHS Foundation Trust",
+    "Black Country Healthcare NHS Foundation Trust",
+    "Blackpool Teaching Hospitals NHS Foundation Trust",
+    "Bolton NHS Foundation Trust",
+    "Bradford District Care NHS Foundation Trust",
+    "Bradford Teaching Hospitals NHS Foundation Trust",
+    "Bridgewater Community Healthcare NHS Foundation Trust",
+    "Buckinghamshire Healthcare NHS Trust",
+
+
+    "Calderdale and Huddersfield NHS Foundation Trust",
+    "Cambridge University Hospitals NHS Foundation Trust",
+    "Cambridgeshire Community Services NHS Trust",
+    "Cambridgeshire and Peterborough NHS Foundation Trust",
+    "Camden and Islington NHS Foundation Trust",
+    "Care UK",
+    "Central London Community Healthcare NHS Trust",
+    "Central and North West London NHS Foundation Trust",
+    "Chelsea and Westminster Hospital NHS Foundation Trust",
+    "Cheshire and Wirral Partnership NHS Foundation Trust",
+    "Chesterfield Royal Hospital NHS Foundation Trust",
+    "Cornwall Partnership NHS Foundation Trust",
+    "Countess of Chester Hospital NHS Foundation Trust",
+    "County Durham and Darlington NHS Foundation Trust",
+    "Coventry and Warwickshire Partnership NHS Trust",
+    "Croydon Health Services NHS Trust",
+    "Cumbria, Northumberland, Tyne and Wear NHS Foundation Trust",
+
+
+    "Dartford and Gravesham NHS Trust",
+    "Derbyshire Community Health Services NHS Foundation Trust",
+    "Derbyshire Healthcare NHS Foundation Trust",
+    "Devon Partnership NHS Trust",
+    "Doncaster and Bassetlaw Teaching Hospitals NHS Foundation Trust",
+    "Dorset County Hospital NHS Foundation Trust",
+    "Dorset Healthcare University NHS Foundation Trust",
+    "Dudley Integrated Health and Care NHS Trust",
+
+
+    "East Cheshire NHS Trust",
+    "East Kent Hospitals University NHS Foundation Trust",
+    "East Lancashire Hospitals NHS Trust",
+    "East London NHS Foundation Trust",
+    "East Midlands Ambulance Service NHS Trust",
+    "East Suffolk and North Essex NHS Foundation Trust",
+    "East Sussex Healthcare NHS Trust",
+    "East and North Hertfordshire NHS Trust",
+    "East of England Ambulance Service NHS Trust",
+    "Epsom and St Helier University Hospitals NHS Trust",
+    "Essex Partnership University NHS Foundation Trust",
+
+
+    "Frimley Health NHS Foundation Trust",
+
+
+    "Gateshead Health NHS Foundation Trust",
+    "George Eliot Hospital NHS Trust",
+    "Gloucestershire Health and Care NHS Foundation Trust",
+    "Gloucestershire Hospitals NHS Foundation Trust",
+    "Great Ormond Street Hospital For Children NHS Foundation Trust",
+    "Great Western Hospitals NHS Foundation Trust",
+    "Greater Manchester Mental Health NHS Foundation Trust",
+    "Guy's and St Thomas' NHS Foundation Trust",
+
+
+    "Hampshire Hospitals NHS Foundation Trust",
+    "Harrogate and District NHS Foundation Trust",
+    "Herefordshire and Worcestershire Health and Care NHS Trust",
+    "Hertfordshire Community NHS Trust",
+    "Hertfordshire Partnership University NHS Foundation Trust",
+    "Homerton Healthcare NHS Foundation Trust",
+    "Hounslow and Richmond Community Healthcare NHS Trust",
+    "Hull University Teaching Hospitals NHS Trust",
+    "Humber Teaching NHS Foundation Trust",
+
+
+    "Imperial College Healthcare NHS Trust",
+    "Isle of Wight NHS Trust",
+
+
+    "James Paget University Hospitals NHS Foundation Trust",
+
+
+    "Kent and Medway NHS and Social Care Partnership Trust",
+    "Kent Community Health NHS Foundation Trust",
+    "Kettering General Hospital NHS Foundation Trust",
+    "King's College Hospital NHS Foundation Trust",
+    "Kingston Hospital NHS Foundation Trust",
+
+
+    "Lancashire and South Cumbria NHS Foundation Trust",
+    "Lancashire Teaching Hospitals NHS Foundation Trust",
+    "Leeds and York Partnership NHS Foundation Trust",
+    "Leeds Community Healthcare NHS Trust",
+    "Leeds Teaching Hospitals NHS Trust",
+    "Leicestershire Partnership NHS Trust",
+    "Lewisham and Greenwich NHS Trust",
+    "Lincolnshire Community Health Services NHS Trust",
+    "Lincolnshire Partnership NHS Foundation Trust",
+    "Liverpool Heart and Chest Hospital NHS Foundation Trust",
+    "Liverpool University Hospitals NHS Foundation Trust",
+    "Liverpool Women's NHS Foundation Trust",
+    "London Ambulance Service NHS Trust",
+    "London North West University Healthcare NHS Trust",
+
+
+    "Maidstone and Tunbridge Wells NHS Trust",
+    "Manchester University NHS Foundation Trust",
+    "Medway NHS Foundation Trust",
+    "Mersey Care NHS Foundation Trust",
+    "Mersey and West Lancashire Teaching Hospitals NHS Trust",
+    "Mid Cheshire Hospitals NHS Foundation Trust",
+    "Mid and South Essex NHS Foundation Trust",
+    "Mid Yorkshire Hospitals NHS Trust",
+    "Midlands Partnership University NHS Foundation Trust",
+    "Milton Keynes University Hospital NHS Foundation Trust",
+    "Moorfields Eye Hospital NHS Foundation Trust",
+
+
+    "Norfolk Community Health and Care NHS Trust",
+    "Norfolk and Norwich University Hospitals NHS Foundation Trust",
+    "Norfolk and Suffolk NHS Foundation Trust",
+    "North Bristol NHS Trust",
+    "North Cumbria Integrated Care NHS Foundation Trust",
+    "North East Ambulance Service NHS Foundation Trust",
+    "North East London NHS Foundation Trust",
+    "North Middlesex University Hospital NHS Trust",
+    "North Staffordshire Combined Healthcare NHS Trust",
+    "North Tees and Hartlepool NHS Foundation Trust",
+    "North West Ambulance Service NHS Trust",
+    "North West Anglia NHS Foundation Trust",
+    "North West Boroughs Healthcare NHS Foundation Trust",
+    "Northampton General Hospital NHS Trust",
+    "Northamptonshire Healthcare NHS Foundation Trust",
+    "Northern Care Alliance NHS Foundation Trust",
+    "Northern Lincolnshire and Goole NHS Foundation Trust",
+    "Northumbria Healthcare NHS Foundation Trust",
+    "Nottingham University Hospitals NHS Trust",
+    "Nottinghamshire Healthcare NHS Foundation Trust",
+
+
+    "Oxford Health NHS Foundation Trust",
+    "Oxford University Hospitals NHS Foundation Trust",
+    "Oxleas NHS Foundation Trust",
+
+
+    "Pennine Care NHS Foundation Trust",
+    "Portsmouth Hospitals University NHS Trust",
+
+
+    "Queen Victoria Hospital NHS Foundation Trust",
+
+
+    "Rotherham Doncaster and South Humber NHS Foundation Trust",
+    "Royal Berkshire NHS Foundation Trust",
+    "Royal Cornwall Hospitals NHS Trust",
+    "Royal Devon University Healthcare NHS Foundation Trust",
+    "Royal Free London NHS Foundation Trust",
+    "Royal National Orthopaedic Hospital NHS Trust",
+    "Royal Papworth Hospital NHS Foundation Trust",
+    "Royal Surrey NHS Foundation Trust",
+    "Royal United Hospitals Bath NHS Foundation Trust",
+
+
+    "Salisbury NHS Foundation Trust",
+    "Sandwell and West Birmingham Hospitals NHS Trust",
+    "Sheffield Children's NHS Foundation Trust",
+    "Sheffield Health and Social Care NHS Foundation Trust",
+    "Sheffield Teaching Hospitals NHS Foundation Trust",
+    "Sherwood Forest Hospitals NHS Foundation Trust",
+    "Shrewsbury and Telford Hospital NHS Trust",
+    "Shropshire Community Health NHS Trust",
+    "Solent NHS Trust",
+    "Somerset NHS Foundation Trust",
+    "South Central Ambulance Service NHS Foundation Trust",
+    "South East Coast Ambulance Service NHS Foundation Trust",
+    "South London and Maudsley NHS Foundation Trust",
+    "South Tees Hospitals NHS Foundation Trust",
+    "South Tyneside and Sunderland NHS Foundation Trust",
+    "South Warwickshire University NHS Foundation Trust",
+    "South West London and St George's Mental Health NHS Trust",
+    "South West Yorkshire Partnership NHS Foundation Trust",
+    "South Western Ambulance Service NHS Foundation Trust",
+    "Southern Health NHS Foundation Trust",
+    "St George's University Hospitals NHS Foundation Trust",
+    "Stockport NHS Foundation Trust",
+    "Surrey and Borders Partnership NHS Foundation Trust",
+    "Surrey and Sussex Healthcare NHS Trust",
+    "Sussex Community NHS Foundation Trust",
+    "Sussex Partnership NHS Foundation Trust",
+
+
+    "Tameside and Glossop Integrated Care NHS Foundation Trust",
+    "Tees, Esk and Wear Valleys NHS Foundation Trust",
+    "The Christie NHS Foundation Trust",
+    "The Clatterbridge Cancer Centre NHS Foundation Trust",
+    "The Dudley Group NHS Foundation Trust",
+    "The Hillingdon Hospitals NHS Foundation Trust",
+    "The Newcastle Upon Tyne Hospitals NHS Foundation Trust",
+    "The Princess Alexandra Hospital NHS Trust",
+    "The Queen Elizabeth Hospital King's Lynn NHS Foundation Trust",
+    "The Robert Jones and Agnes Hunt Orthopaedic Hospital NHS Foundation Trust",
+    "The Rotherham NHS Foundation Trust",
+    "The Royal Marsden NHS Foundation Trust",
+    "The Royal Orthopaedic Hospital NHS Foundation Trust",
+    "The Royal Wolverhampton NHS Trust",
+    "The Tavistock and Portman NHS Foundation Trust",
+    "The Walton Centre NHS Foundation Trust",
+    "Torbay and South Devon NHS Foundation Trust",
+    
+
+    "United Lincolnshire Hospitals NHS Trust",
+    "University College London Hospitals NHS Foundation Trust",
+    "University Hospital Southampton NHS Foundation Trust",
+    "University Hospitals Birmingham NHS Foundation Trust",
+    "University Hospitals Bristol and Weston NHS Foundation Trust",
+    "University Hospitals Coventry and Warwickshire NHS Trust",
+    "University Hospitals Dorset NHS Foundation Trust",
+    "University Hospitals Plymouth NHS Trust",
+    "University Hospitals Sussex NHS Foundation Trust",
+    "University Hospitals of Derby and Burton NHS Foundation Trust",
+    "University Hospitals of Leicester NHS Trust",
+    "University Hospitals of Morecambe Bay NHS Foundation Trust",
+    "University Hospitals of North Midlands NHS Trust",
+
+
+    "Walsall Healthcare NHS Trust",
+    "Warrington and Halton Teaching Hospitals NHS Foundation Trust",
+    "West Hertfordshire Teaching Hospitals NHS Trust",
+    "West London NHS Trust",
+    "West Midlands Ambulance Service University NHS Foundation Trust",
+    "West Suffolk NHS Foundation Trust",
+    "Whittington Health NHS Trust",
+    "Wirral Community Health and Care NHS Foundation Trust",
+    "Wirral University Teaching Hospital NHS Foundation Trust",
+    "Worcestershire Acute Hospitals NHS Trust",
+    "Wrightington, Wigan and Leigh Teaching Hospitals NHS Foundation Trust",
+    "Wye Valley NHS Trust",
+
+
+    "Yeovil District Hospital NHS Foundation Trust",
+    "York and Scarborough Teaching Hospitals NHS Foundation Trust",
+    "Yorkshire Ambulance Service NHS Trust"
+	];
+  
+  accessibleAutocomplete({
+  element: document.querySelector('#new-account-trust-autocomplete-container'),
+  id: 'new-account-trust-autocomplete',
+  name: 'new-account-trust-name',
+  source: trusts,
+  confirmOnBlur: false,
+  autoselect: true
+});
+
+
+  // Wait for autocomplete to render input
+  setTimeout(() => {
+    const input = document.getElementById('new-account-trust-autocomplete');
+    const container = document.getElementById('newAccountSelectedTrustsContainer');
+    const hiddenInputs = document.getElementById('newAccountHiddenTrustInputs');
+    const newAccountSelectedTrusts = new Set();
+
+    if (!input || !container || !hiddenInputs) return;
+
+    function addTrustTag(trustName) {
+      const cleaned = trustName.trim();
+      if (!cleaned || newAccountSelectedTrusts.has(cleaned)) return;
+
+      newAccountSelectedTrusts.add(cleaned);
+
+      // Visual tag
+      const li = document.createElement('li');
+      li.style.display = 'inline-block';
+      li.style.margin = '4px';
+
+      const button = document.createElement('button');
+      button.className = 'nhsuk-tag nhsuk-tag--grey';
+      button.style.cursor = 'pointer';
+      button.setAttribute('aria-label', `Remove ${cleaned} from the list`);
+
+      const text = document.createElement('span');
+      text.textContent = cleaned;
+      button.appendChild(text);
+
+      // Hidden input for form submission
+      const hidden = document.createElement('input');
+      hidden.type = 'hidden';
+      hidden.name = 'new-account-trust-name';
+      hidden.value = cleaned;
+      hiddenInputs.appendChild(hidden);
+
+      // Remove tag + hidden input
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        newAccountSelectedTrusts.delete(cleaned);
+        li.remove();
+        hidden.remove();
+      });
+
+      li.appendChild(button);
+      container.appendChild(li);
+
+      // Clear input
+      setTimeout(() => { input.value = ''; }, 50);
+    }
+
+    // Keyboard / Enter selection
+    input.addEventListener('autocomplete:select', (event) => {
+      const trustName = event.detail || input.value.trim();
+      addTrustTag(trustName);
+    });
+
+    // Mouse click selection
+    const autocompleteWrapper = document.querySelector('#new-account-trust-autocomplete-container');
+    autocompleteWrapper.addEventListener('click', (e) => {
+      const option = e.target.closest('.autocomplete__option');
+      if (option) {
+        const trustName = option.textContent.trim();
+        addTrustTag(trustName);
+      }
+    });
+
+    // Manual typing + Enter
+    input.addEventListener('change', () => {
+      const trustName = input.value.trim();
+      addTrustTag(trustName);
+    });
+
+  }, 200);
+</script>
 {% endblock %}

@@ -41,8 +41,8 @@
             Trusts you currently have access to
           </dt>
           <dd class="nhsuk-summary-list__value">
-            North Tees and Hartlepool NHS Foundation Trust<br>
-            Tees, Esk and Wear Valleys NHS Foundation Trust
+            <div style="margin-bottom: 0.5rem;">North Tees and Hartlepool NHS Foundation Trust</div>
+            <div style="margin-bottom: 0.5rem;">Tees, Esk and Wear Valleys NHS Foundation Trust</div>
           </dd>
           <dd class="nhsuk-summary-list__actions">
 
@@ -55,10 +55,10 @@
           <dd class="nhsuk-summary-list__value">
             {% if data['required-trust-name'] and data['required-trust-name'] | length > 0 %}
               {% for trust in data['required-trust-name'] %}
-                {{ trust }}
+              <div style="margin-bottom: 0.5rem;">{{ trust }}</div>
               {% endfor %}
             {% else %}
-              The Newcastle Upon Tyne Hospitals NHS Foundation Trust<br>
+            <div style="margin-bottom: 0.5rem;">The Newcastle Upon Tyne Hospitals NHS Foundation Trust</div>
               Gateshead Health NHS Foundation Trust
             {% endif %}
           </dd>

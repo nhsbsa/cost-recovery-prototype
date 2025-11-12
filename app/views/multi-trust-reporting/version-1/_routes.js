@@ -39,6 +39,23 @@ router.post('/request-new-account', function (req, res) {
   res.redirect('/multi-trust-reporting/version-1/new-account-select-trust');
 });
 
+router.post('/new-account-select-trust', function (req, res) {
+  // Extract selected trusts from session data
+  let trusts = req.body['new-account-trust-name'];
+
+  // Ensure it's always an array
+  if (!Array.isArray(trusts)) {
+    trusts = trusts ? [trusts] : [];
+  }
+
+  console.log('Trusts received:', trusts);
+
+  // Save selected trusts in session data
+  req.session.data['new-account-trust-name'] = trusts;
+
+  res.redirect('/multi-trust-reporting/version-1/new-account-cya');
+});
+
 // Check your answers before submitting an account request
 router.post('/new-account-cya', function (req, res) {
 

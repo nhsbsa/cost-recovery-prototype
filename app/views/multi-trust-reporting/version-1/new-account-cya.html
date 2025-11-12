@@ -3,6 +3,20 @@
 Check these details before requesting account - Report overseas visitor treatments - NHSBSA
 {% endblock %}
 
+{% block beforeContent %}
+<div class="app-phase-banner">
+  <div class="nhsuk-width-container app-phase-banner__container">
+     <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+        Beta
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a new service - your <a href="#">feedback</a> will help us improve it.
+        </span>
+     </p>
+  </div>
+</div>
+{% endblock %}
 
 {% block content %}
 
@@ -102,15 +116,22 @@ Check these details before requesting account - Report overseas visitor treatmen
 
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Trust name
+          Trusts you require access to
         </dt>
         <dd class="nhsuk-summary-list__value">
-          {{ data['trust'] or 'Airedale NHS Foundation Trust' }}
+          {% if data['new-account-trust-name'] and data['new-account-trust-name'] | length > 0 %}
+            {% for trust in data['new-account-trust-name'] %}
+            <div style="margin-bottom: 0.5rem;">{{ trust }}</div>
+            {% endfor %}
+          {% else %}
+          <div style="margin-bottom: 0.5rem;">The Newcastle Upon Tyne Hospitals NHS Foundation Trust</div>
+            Gateshead Health NHS Foundation Trust
+          {% endif %}
         </dd>
 
         <dd class="nhsuk-summary-list__actions">
-          <a href="select-trust">
-            Change<span class="nhsuk-u-visually-hidden"> trust name</span>
+          <a href="new-account-select-trust#new-account-trust-autocomplete">
+            Change<span class="nhsuk-u-visually-hidden"> trusts you require access to</span>
           </a>
         </dd>
       </div>

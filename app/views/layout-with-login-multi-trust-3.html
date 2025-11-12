@@ -34,6 +34,10 @@
   {% endif %}
 {% endset %}
 
+{% set first_name = data['new-account-first-name'] or 'Joe' %}
+{% set last_name = data['new-account-last-name'] or 'Bloggs' %}
+{% set trust_display = trust_name | trim %}
+
 {{ header({
   logo: {
     href: "#",
@@ -46,7 +50,7 @@
   account: {
     items: [
       {
-        text: "Joe Bloggs (" + trust_name | trim + ")",
+        text: first_name + " " + last_name + " (" + trust_display + ")",
         icon: true
       },
       {

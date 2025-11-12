@@ -3,6 +3,20 @@
 Check these details before requesting account - Report overseas visitor treatments - NHSBSA
 {% endblock %}
 
+{% block beforeContent %}
+<div class="app-phase-banner">
+  <div class="nhsuk-width-container app-phase-banner__container">
+     <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+        Beta
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a new service - your <a href="#">feedback</a> will help us improve it.
+        </span>
+     </p>
+  </div>
+</div>
+{% endblock %}
 
 {% block content %}
 <div class="nhsuk-grid-row">
@@ -10,11 +24,11 @@ Check these details before requesting account - Report overseas visitor treatmen
 
     <form action="/multi-trust-reporting/version-1/confirmation-account-request-received" method="post">
 
-    <h1 class="nhsuk-label-wrapper">
-      <label class="nhsuk-label nhsuk-label--l" style="margin-top: 20px;" for="cya-label">
-        Your request has been received
-      </label>
-    </h1>
+    <div class="nhsuk-panel nhsuk-panel--confirmation nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-4">
+      <h1 style="font-size:40px;" class="nhsuk-panel__title">
+        Confirmation - Your request has been received
+      </h1>
+    </div>
 
     <p>You will receive a confirmation email for the account requested.</p>
 
