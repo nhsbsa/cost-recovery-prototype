@@ -20,7 +20,7 @@
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-two-thirds">
         <div class="nhsuk-hero__wrapper app-hero__wrapper">
-          <h2 class="nhsuk-heading-s" style="margin-bottom: 10px">
+          <span class="nhsuk-caption-xl" style="margin-top: 10px; color: white;">
             {% if data['change-trust-view'] == 'yes' %}
               {{ data['trust-name'] }}
             {% elif data['sign-into-trust-name'] == 'Tees, Esk and Wear Valleys NHS Foundation Trust' %}
@@ -30,7 +30,7 @@
             {% else %}
               North Tees and Hartlepool NHS Foundation Trust
             {% endif %}
-          </h2>
+          </span>
           <h1 class="nhsuk-heading-l">Submit treatment costs for patients from the EU, Switzerland, Norway, Iceland and Liechtenstein, as well as those with a Malta Quota number or covered by other reciprocal healthcare agreements</h1>
           <h2 class="nhsuk-body-m nhsuk-u-margin-bottom-3">Add details of an EHIC, PRC, S2/E112 or Malta Quota  or Non-EU Reciprocal Healthcare Treatment</h2>
             <button onclick="window.location.href='add-treatment';" class="nhsuk-button nhsuk-button--reverse" href="add-treatment" style="margin-bottom:0" >Add treatment</button>
