@@ -20,37 +20,49 @@ Select all trusts you require access to - Report overseas visitor treatments - N
 {% endblock %}
 
 {% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
 
-<!-- Accessible Autocomplete CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.css" />
+  <!-- Accessible Autocomplete CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.css" />
 
-<!-- Accessible Autocomplete JS -->
-<script src="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.js"></script>
+  <!-- Accessible Autocomplete JS -->
+  <script src="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.js"></script>
 
-{{ backLink({
-  "href": "javascript:history.go(-1)",
-  "text": "Back"
-}) }}
+  {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Back"
+  }) }}
 
-<!-- PAGE TITLE -->
-<h1 class="nhsuk-label-wrapper" style="margin-top: 20px;">
-  <label class="nhsuk-label nhsuk-label--l" for="manage-trust-access-label" style="margin-bottom: 40px;">
-    Select all trusts you require access to
-  </label>
-</h1>
+
+  <!-- PAGE TITLE -->
+  <h1 class="nhsuk-label-wrapper" style="margin-top: 20px;">
+    <label class="nhsuk-label nhsuk-label--l" for="manage-trust-access-label" style="margin-bottom: 40px;">
+      Request access to other trusts
+    </label>
+  </h1>
+
+
+  <p style="margin-bottom: 40px;">If you need to report treatment costs for more than one trust, you can request access to multiple trusts.  Once you have submitted an access request, it will be reviewed by a member of the Cost Recovery Operations team.</p>
+  
+  </div>
+</div>
 
 <form action="/multi-trust-reporting/version-1/request-access-to-other-trusts" method="post">
   <div class="nhsuk-grid-row">
 
     <!-- LEFT COLUMN -->
     <div class="nhsuk-grid-column-one-half">
-      <h3 style="margin-top: 0;">Trusts you currently have access to</h3>
+      <h2 class="nhsuk-heading-m" style="margin-top: 0;">Trusts you currently have access to:</h2>
       <ul>
         <li>North Tees and Hartlepool NHS Foundation Trust</li>
         <li>Tees, Esk and Wear Valleys NHS Foundation Trust</li>
       </ul>
 
       <div class="nhsuk-form-group" style="margin-top: 20px;">
+        <label class="nhsuk-label" for="required-trust-autocomplete-label">
+          Select all trusts you require access to
+        </label>
         <div class="nhsuk-hint" style="margin-bottom: 5px;" id="required-trust-hint-label">
           Begin typing to find a trust
         </div>
@@ -60,7 +72,7 @@ Select all trusts you require access to - Report overseas visitor treatments - N
 
     <!-- RIGHT COLUMN -->
     <div class="nhsuk-grid-column-one-half">
-      <h3 style="margin-top: 0;">Trusts you have selected which you require access to:</h3>
+      <h2 class="nhsuk-heading-m" style="margin-top: 0;">Trusts you have selected that you require access to:</h2>
       <div class="nhsuk-hint">If you have selected the wrong trust, select X to remove it.</div>
 
       <ul id="selectedTrustsContainer" class="selected-trusts-container nhsuk-list nhsuk-list--border"></ul>
@@ -226,7 +238,7 @@ Select all trusts you require access to - Report overseas visitor treatments - N
     "North East London NHS Foundation Trust",
     "North Middlesex University Hospital NHS Trust",
     "North Staffordshire Combined Healthcare NHS Trust",
-    "North Tees and Hartlepool NHS Foundation Trust",
+
     "North West Ambulance Service NHS Trust",
     "North West Anglia NHS Foundation Trust",
     "North West Boroughs Healthcare NHS Foundation Trust",
@@ -291,7 +303,7 @@ Select all trusts you require access to - Report overseas visitor treatments - N
 
 
     "Tameside and Glossop Integrated Care NHS Foundation Trust",
-    "Tees, Esk and Wear Valleys NHS Foundation Trust",
+
     "The Christie NHS Foundation Trust",
     "The Clatterbridge Cancer Centre NHS Foundation Trust",
     "The Dudley Group NHS Foundation Trust",

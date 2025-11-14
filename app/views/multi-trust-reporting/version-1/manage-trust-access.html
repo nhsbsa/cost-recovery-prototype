@@ -50,27 +50,51 @@ Manage trust access - Report overseas visitor treatments - NHSBSA
         {% endif %}
       </h3>
 
-      <p>Sign into another trust you currently have access to</p>
+      <p>Switch to another trust by selecting one of the trusts you have access to.</p>
 
       <div class="nhsuk-form-group">
         <div class="nhsuk-radios">
-          
-          <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="trust-name-north-tees" name="trust-name" type="radio" value="North Tees and Hartlepool NHS Foundation Trust" aria-controls="conditional-contact-1" aria-expanded="false">
-            <label class="nhsuk-label nhsuk-radios__label" for="trust-name-north-tees">North Tees and Hartlepool NHS Foundation Trust</label>
-          </div>
+
+          <!-- Preselect radio which the user has chosen to sign into or switch to -->
+          {% set current_trust = data['trust-name'] or data['sign-into-trust-name'] or 'North Tees and Hartlepool NHS Foundation Trust' %}
+
 
           <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="trust-name-tees-esk-hartlepool" name="trust-name" type="radio" value="Tees, Esk and Wear Valleys NHS Foundation Trust" aria-controls="conditional-contact-2" aria-expanded="false">
-            <label class="nhsuk-label nhsuk-radios__label" for="trust-name-tees-esk-hartlepool">Tees, Esk and Wear Valleys NHS Foundation Trust</label>
+            <input
+              class="nhsuk-radios__input" id="trust-name-north-tees" name="trust-name" type="radio"
+              value="North Tees and Hartlepool NHS Foundation Trust"
+              aria-controls="conditional-contact-1"
+              aria-expanded="false"
+              {% if current_trust == 'North Tees and Hartlepool NHS Foundation Trust' %}checked{% endif %}>
+            <label class="nhsuk-label nhsuk-radios__label" for="trust-name-north-tees">
+              North Tees and Hartlepool NHS Foundation Trust
+            </label>
           </div>
+          
+          <div class="nhsuk-radios__item">
+            <input
+              class="nhsuk-radios__input"
+              id="trust-name-tees-esk-hartlepool"
+              name="trust-name"
+              type="radio"
+              value="Tees, Esk and Wear Valleys NHS Foundation Trust"
+              aria-controls="conditional-contact-2"
+              aria-expanded="false"
+              {% if current_trust == 'Tees, Esk and Wear Valleys NHS Foundation Trust' %}checked{% endif %}>
+            <label class="nhsuk-label nhsuk-radios__label" for="trust-name-tees-esk-hartlepool">
+              Tees, Esk and Wear Valleys NHS Foundation Trust
+            </label>
+          </div>
+          
+          
+
           
         </div>
       </div>
 
       <div class="button-container" style="margin-top: 40px;">
         <button class="nhsuk-button" type="submit" style="margin-right:20px;">
-          Sign in to selected trust
+          Switch trust
         </button>
         <a href="request-access-to-other-trusts" class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button">
           Request access to another trust
