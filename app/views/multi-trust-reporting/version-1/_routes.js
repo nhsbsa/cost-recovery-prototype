@@ -7,6 +7,71 @@ router.use(bodyParser.urlencoded({ extended: true })); // to support URL-encoded
 
 // Request a new ROVT account //
 
+//
+// DEMO - POST ACTION
+// Used to add the items
+// 
+router.post(['/demo/','/demo/index'], function( req, res ){
+
+  const toAdd = req.session.data.trustName;
+
+  if( toAdd ){
+
+    // Here we're basically creating a pipe separated list of everything that's been selected...
+    const selectedTrusts = req.session.data.selectedTrusts;
+
+    if( !selectedTrusts ){
+      // The variable is blank
+      req.session.data.selectedTrusts = toAdd;
+    } else {
+      // The variable is already populated, so add to it if the trust doesn't already exist in the list...
+      if( selectedTrusts.indexOf( toAdd ) === -1 ){
+        req.session.data.selectedTrusts += '|'+toAdd;
+      }
+    }
+    
+  }
+
+  res.redirect('/multi-trust-reporting/version-1/demo/');
+
+});
+
+//
+// DEMO - GET ACTION
+// Used to remove the items
+//
+router.get(['/demo/','/demo/index'], function( req, res ){
+
+  if( req.originalUrl.indexOf('?removeItem=') > -1 ){
+
+    // There's an item to remove...
+    const urlSplit = req.originalUrl.split('?');
+    const searchParams = new URLSearchParams( urlSplit[urlSplit.length-1] );
+    const toRemove = parseInt( searchParams.get('removeItem') );
+
+    // Get the selected trusts and turn them into an array
+    const selectedTrusts = ( req.session.data.selectedTrusts ) ? req.session.data.selectedTrusts.split('|') : [];
+
+    if( !Number.isNaN( toRemove ) && toRemove < selectedTrusts.length  ){
+
+      // Remove the item, and turn back into pipe list and put back into the variable
+      selectedTrusts.splice( toRemove, 1 );
+      req.session.data.selectedTrusts = selectedTrusts.join('|');
+    }
+
+    res.redirect('/multi-trust-reporting/version-1/demo/');
+
+  } else {
+
+    // Render as usual
+    res.render( 'multi-trust-reporting/version-1/demo/index' );
+  }
+
+});
+
+
+
+
 // Enter account details
 router.post('/request-new-account', function (req, res) {
 

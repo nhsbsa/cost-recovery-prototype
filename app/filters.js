@@ -7,6 +7,33 @@ module.exports = function (env) {
    */
   var filters = {}
 
+  //
+  // DRAW SELECTED TRUSTS EXAMPLE
+  //
+  filters.drawSelectedTrusts = function( selectedTrusts ){
+
+    // Either turn the selected trusts into an array, or use an empty one...
+    const selectedTrustsArray = ( selectedTrusts ) ? selectedTrusts.split('|') : [];
+
+    let html = '';
+
+    // Gonna just output this as mucky HTML 'cause I'm a wrong 'un...
+    if( selectedTrustsArray.length > 0 ){
+       
+      selectedTrustsArray.forEach(function( trust, i ){
+        html += '<p><span class="nhsuk-tag nhsuk-tag--blue nhsuk-u-margin-right-3">' + trust + '</span><a href="?removeItem='+i+'">Remove</a></p>';
+       });
+
+      html += '<a class="nhsuk-button" href="">Next page</a>'
+
+    } else {
+      html = '<p><span class="nhsuk-tag nhsuk-tag--red">No trusts selected</span></p>';
+    }
+
+    return html;
+
+  };
+
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:
     @example:

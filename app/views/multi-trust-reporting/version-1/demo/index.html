@@ -1,0 +1,76 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+            <h1 class="nhsuk-heading-l">Post to page demo</h1>
+        </div>
+    </div>
+
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-one-half">
+            
+            <form action="index" method="post" novalidate>
+
+                <!-- 
+                
+                    SELECT A TRUST 
+                    This is handled by the _routes.js file within this folder (multi-trust-reporting/version-1)
+                
+                -->
+                {{ select({
+                    label: {
+                        text: 'Select a trust',
+                        classes: 'nhsuk-label--m'
+                    },
+                    id: 'trustName',
+                    name: 'trustName',
+                    items: [
+                        {
+                            value: '',
+                            text: 'Please select'
+                        },
+                        {
+                            value: 'Trust One',
+                            text: 'Trust One'
+                        },
+                        {
+                            value: 'Trust Two',
+                            text: 'Trust Two'
+                        },
+                        {
+                            value: 'Trust Three',
+                            text: 'Trust Three'
+                        }
+                    ]
+                }) }}
+
+                {{ button({
+                    text: 'Add trust',
+                    classes: 'nhsuk-button--secondary'
+                }) }}
+
+            </form>
+
+        </div>
+
+        <div class="nhsuk-grid-column-one-half">
+
+
+            
+            <!-- 
+            
+                SELECTED TRUSTS 
+                If you visit the filters.js file, you'll see the very rough code...
+            
+            -->
+
+            <h2 class="nhsuk-heading-m">Selected trusts</h2>
+            {{ data.selectedTrusts | drawSelectedTrusts | safe }}
+
+        </div>
+
+    </div>
+
+{% endblock %}
