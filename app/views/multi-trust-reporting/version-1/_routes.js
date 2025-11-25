@@ -104,29 +104,77 @@ router.post('/request-new-account', function (req, res) {
   res.redirect('/multi-trust-reporting/version-1/new-account-select-trust');
 });
 
-router.post('/new-account-select-trust', function (req, res) {
-  // Extract selected trusts from session data
-  let trusts = req.body['new-account-trust-name'];
+// POST: Add selected trust to session
+router.post('/new-account-select-trust', function(req, res) {
 
-  // Ensure it's always an array
-  if (!Array.isArray(trusts)) {
-    trusts = trusts ? [trusts] : [];
+  const toAdd = req.body['newAccountTrustName']; // matches select name
+
+  if (toAdd) {
+    const current = req.session.data.selectedTrustsNewAccount;
+
+    if (!current) {
+      req.session.data.selectedTrustsNewAccount = toAdd;
+    } else if (!current.split('|').includes(toAdd)) {
+      req.session.data.selectedTrustsNewAccount += '|' + toAdd;
+    }
   }
 
-  console.log('Trusts received:', trusts);
-
-  // Save selected trusts in session data
-  req.session.data['new-account-trust-name'] = trusts;
-
-  res.redirect('/multi-trust-reporting/version-1/new-account-cya');
+  res.redirect('/multi-trust-reporting/version-1/new-account-select-trust');
 });
 
-// Check your answers before submitting an account request
-router.post('/new-account-cya', function (req, res) {
+// GET: Remove trust from selected list
+router.get('/new-account-select-trust', function(req, res) {
 
-  // Redirect to Confirmation account request received screen
+  if (req.originalUrl.includes('?removeItem=')) {
+    const urlSplit = req.originalUrl.split('?');
+    const searchParams = new URLSearchParams(urlSplit[urlSplit.length - 1]);
+    const toRemove = parseInt(searchParams.get('removeItem'));
+
+    const selected = req.session.data.selectedTrustsNewAccount
+      ? req.session.data.selectedTrustsNewAccount.split('|')
+      : [];
+
+    if (!Number.isNaN(toRemove) && toRemove < selected.length) {
+      selected.splice(toRemove, 1);
+      req.session.data.selectedTrustsNewAccount = selected.join('|');
+    }
+
+    res.redirect('/multi-trust-reporting/version-1/new-account-select-trust');
+    return;
+  }
+
+  // Normal render
+  res.render('multi-trust-reporting/version-1/new-account-select-trust', {
+    data: {
+      ...req.session.data,
+      selectedTrustsNewAccount: req.session.data.selectedTrustsNewAccount || ''
+    }
+  });
+});
+
+
+// GET: CYA (Check Your Answers) for new account
+router.get('/new-account-cya', function(req, res) {
+
+  const selected = req.session.data.selectedTrustsNewAccount || '';
+  const selectedTrustsArray = selected ? selected.split('|') : [];
+
+  res.render('multi-trust-reporting/version-1/new-account-cya', {
+    data: {
+      ...req.session.data,
+      selectedTrustsArray: selectedTrustsArray
+    }
+  });
+});
+
+// POST: Submit new account request
+router.post('/new-account-cya', function(req, res) {
+  // Set flag that a new account request was submitted
+  req.session.data['new-account-request-submitted'] = 'yes';
+  // Redirect to confirmation new account request received screen
   res.redirect('/multi-trust-reporting/version-1/confirmation-account-request-received');
 });
+
 
 // Confirmation account request received
 router.post('/confirmation-account-request-received', function (req, res) {
@@ -176,33 +224,95 @@ router.post('/manage-trust-access', function (req, res) {
   res.redirect('/multi-trust-reporting/version-1/home');
 });
 
-router.post('/request-access-to-other-trusts', function (req, res) {
-  // Extract selected trusts from session data
-  let trusts = req.body['required-trust-name'];
 
-  // Ensure it's always an array
-  if (!Array.isArray(trusts)) {
-    trusts = trusts ? [trusts] : [];
+// POST: Select trusts you require access to - Used to add the items
+router.post(['/request-access-to-other-trusts','/request-access-to-other-trusts'], function( req, res ){
+
+  const toAdd = req.session.data.trustName;
+
+  if( toAdd ){
+
+    // Here we're basically creating a pipe separated list of everything that's been selected...
+    const selectedTrusts = req.session.data.selectedTrusts;
+
+    if( !selectedTrusts ){
+      // The variable is blank
+      req.session.data.selectedTrusts = toAdd;
+    } else {
+      // The variable is already populated, so add to it if the trust doesn't already exist in the list...
+      if( selectedTrusts.indexOf( toAdd ) === -1 ){
+        req.session.data.selectedTrusts += '|'+toAdd;
+      }
+    }
+    
   }
 
-  console.log('Trusts received:', trusts);
+  res.redirect('/multi-trust-reporting/version-1/request-access-to-other-trusts');
 
-  // Save selected trusts in session data
-  req.session.data['required-trust-name'] = trusts;
-
-  res.redirect('/multi-trust-reporting/version-1/cya-request-access-to-other-trusts');
 });
 
+
+// GET: Select trusts you require access to - Used to remove the items
+router.get('/request-access-to-other-trusts', function(req, res) {
+
+  // Check if there is an item to remove
+  if (req.originalUrl.includes('?removeItem=')) {
+    const urlSplit = req.originalUrl.split('?');
+    const searchParams = new URLSearchParams(urlSplit[urlSplit.length - 1]);
+    const toRemove = parseInt(searchParams.get('removeItem'));
+
+    // Get the selected trusts as array
+    const selectedTrusts = req.session.data.selectedTrusts
+      ? req.session.data.selectedTrusts.split('|')
+      : [];
+
+    if (!Number.isNaN(toRemove) && toRemove < selectedTrusts.length) {
+      selectedTrusts.splice(toRemove, 1);
+      req.session.data.selectedTrusts = selectedTrusts.join('|');
+    }
+
+    // Redirect back to the same page
+    res.redirect('/multi-trust-reporting/version-1/request-access-to-other-trusts');
+    return;
+  }
+
+  // Normal render if no removeItem query
+  res.render('multi-trust-reporting/version-1/request-access-to-other-trusts', {
+    data: {
+      ...req.session.data,
+      selectedTrusts: req.session.data.selectedTrusts || ''
+    }
+  });
+});
+
+
+router.get('/cya-request-access-to-other-trusts', function(req, res) {
+
+  // Get selected trusts as pipe-separated string from session
+  const selectedTrusts = req.session.data.selectedTrusts || '';
+
+  // Split into an array for the template
+  const selectedTrustsArray = selectedTrusts ? selectedTrusts.split('|') : [];
+
+  // Render template and pass array
+  res.render('multi-trust-reporting/version-1/cya-request-access-to-other-trusts', {
+    data: {
+      ...req.session.data,
+      selectedTrustsArray: selectedTrustsArray
+    }
+  });
+});
 
 // Check before submitting trust access request
 router.post('/cya-request-access-to-other-trusts', function (req, res) {
 
-  // Set flag that the user switched their view to a different trust
-  req.session.data['trust-access-request-submitted'] = 'yes'
+  // Set flag that the user submitted the request
+  req.session.data['trust-access-request-submitted'] = 'yes';
 
-  // Redirect to the Confirmation - your request has been submitted screen
+  // Redirect to the confirmation screen
   res.redirect('/multi-trust-reporting/version-1/confirmation-trust-access-request-submitted');
 });
+
 
 // Confirmation trust access request submitted
 router.post('/confirmation-trust-access-request-submitted', function (req, res) {

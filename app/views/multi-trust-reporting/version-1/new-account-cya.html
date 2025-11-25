@@ -119,18 +119,18 @@ Check these details before requesting account - Report overseas visitor treatmen
           Trusts you require access to
         </dt>
         <dd class="nhsuk-summary-list__value">
-          {% if data['new-account-trust-name'] and data['new-account-trust-name'] | length > 0 %}
-            {% for trust in data['new-account-trust-name'] %}
-            <div style="margin-bottom: 0.5rem;">{{ trust }}</div>
+          {% if data.selectedTrustsArray.length > 0 %}
+            {% for trust in data.selectedTrustsArray %}
+              <div style="margin-bottom: 0.5rem;">{{ trust }}</div>
             {% endfor %}
           {% else %}
-          <div style="margin-bottom: 0.5rem;">North Tees and Hartlepool NHS Foundation Trust</div>
-          Tees, Esk and Wear Valleys NHS Foundation Trust
+            <div style="margin-bottom: 0.5rem;">North Tees and Hartlepool NHS Foundation Trust</div>
+            <div>Tees, Esk and Wear Valleys NHS Foundation Trust</div>
           {% endif %}
         </dd>
 
         <dd class="nhsuk-summary-list__actions">
-          <a href="new-account-select-trust#new-account-trust-autocomplete">
+          <a href="new-account-select-trust#newAccountTrustName">
             Change<span class="nhsuk-u-visually-hidden"> trusts you require access to</span>
           </a>
         </dd>

@@ -29,10 +29,8 @@
 
     <form action="/multi-trust-reporting/version-1/cya-request-access-to-other-trusts" method="post">
 
-      <h1 class="nhsuk-label-wrapper">
-        <label class="nhsuk-label nhsuk-label--l" for="manage-trust-access-label" style="margin-top: 20px;">
-          Check your answers before submitting your access request
-        </label>
+      <h1 class="nhsuk-heading-l" style="margin-top: 20px;">
+        Check your answers before submitting your access request
       </h1>
 
       <dl class="nhsuk-summary-list">
@@ -53,17 +51,17 @@
             Trusts you require access to
           </dt>
           <dd class="nhsuk-summary-list__value">
-            {% if data['required-trust-name'] and data['required-trust-name'] | length > 0 %}
-              {% for trust in data['required-trust-name'] %}
-              <div style="margin-bottom: 0.5rem;">{{ trust }}</div>
+            {% if data.selectedTrustsArray.length > 0 %}
+              {% for trust in data.selectedTrustsArray %}
+                <div style="margin-bottom: 0.5rem;">{{ trust }}</div>
               {% endfor %}
             {% else %}
-            <div style="margin-bottom: 0.5rem;">The Newcastle Upon Tyne Hospitals NHS Foundation Trust</div>
-              Gateshead Health NHS Foundation Trust
+              <div style="margin-bottom: 0.5rem;">The Newcastle Upon Tyne Hospitals NHS Foundation Trust</div>
+              <div>Gateshead Health NHS Foundation Trust</div>
             {% endif %}
           </dd>
           <dd class="nhsuk-summary-list__actions">
-            <a href="request-access-to-other-trusts#trust-autocomplete">Change<span class="nhsuk-u-visually-hidden"> trusts you require access to</span></a>
+            <a href="request-access-to-other-trusts#trustName">Change<span class="nhsuk-u-visually-hidden"> trusts you require access to</span></a>
           </dd>  
         </div>
       </dl>

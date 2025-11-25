@@ -8,15 +8,113 @@ module.exports = function (env) {
   var filters = {}
 
   //
-  // DRAW SELECTED TRUSTS EXAMPLE
+  // DRAW SELECTED TRUSTS (Request new account journey)
   //
-  filters.drawSelectedTrusts = function( selectedTrusts ){
+  filters.drawNewAccountSelectedTrusts = function(selectedTrustsNewAccount) {
 
-    // Either turn the selected trusts into an array, or use an empty one...
-    const selectedTrustsArray = ( selectedTrusts ) ? selectedTrusts.split('|') : [];
+    const selectedTrustsArray = selectedTrustsNewAccount
+      ? selectedTrustsNewAccount.split('|')
+      : [];
+  
+    let html = '';
+  
+    if (selectedTrustsArray.length > 0) {
+  
+      selectedTrustsArray.forEach(function(trust, i) {
+  
+        html += `
+          <div class="trust-row">
+            <span class="nhsuk-tag nhsuk-tag--blue trust-name" style="margin-bottom: 10px;">
+              ${trust}
+            </span>
+            <a class="remove-link" href="new-account-select-trust?removeItem=${i}">
+              Remove
+            </a>
+          </div>
+        `;
+      });
+  
+      html += `
+        <a class="nhsuk-button" style="margin-top: 20px;" href="new-account-cya">
+          Continue
+        </a>
+      `;
+  
+    } else {
+      html = `
+        <p>
+          <span class="nhsuk-tag nhsuk-tag--red">No trusts selected</span>
+        </p>
+      `;
+    }
+  
+    return html;
+  };
+  
 
+
+  //
+  // DRAW SELECTED TRUSTS (Manage trust access journey)
+  //
+  filters.drawSelectedTrusts = function(selectedTrusts) {
+
+    // Convert pipe-separated string into array
+    const selectedTrustsArray = selectedTrusts 
+    ? selectedTrusts.split('|')
+    : [];
+    
     let html = '';
 
+    if (selectedTrustsArray.length > 0) {
+  
+      selectedTrustsArray.forEach(function(trust, i) {
+  
+        html += `
+          <div class="trust-row">
+            <span class="nhsuk-tag nhsuk-tag--blue trust-name" style="margin-bottom: 10px;">
+              ${trust}
+            </span>
+            <a class="remove-link" href="request-access-to-other-trusts?removeItem=${i}">
+              Remove
+            </a>
+          </div>
+        `;
+      });
+  
+      html += `
+        <a class="nhsuk-button" style="margin-top: 20px;" href="cya-request-access-to-other-trusts">
+          Continue
+        </a>
+      `;
+
+    } else {
+      html = `
+        <p>
+          <span class="nhsuk-tag nhsuk-tag--red">No trusts selected</span>
+        </p>
+      `;
+    }
+
+    return html;
+  };
+
+
+
+
+
+  //
+  // DRAW SELECTED TRUSTS EXAMPLE
+  //
+  filters.drawSelectedTrusts = function( selectedTrusts ) {
+
+    // Either turn the selected trusts into an array, or use an empty one...
+    const selectedTrustsArray = selectedTrusts
+      ? selectedTrusts.split('|')
+      : [];
+  
+    let html = '';
+    
+  
     // Gonna just output this as mucky HTML 'cause I'm a wrong 'un...
     if( selectedTrustsArray.length > 0 ){
        
@@ -24,7 +122,7 @@ module.exports = function (env) {
         html += '<p><span class="nhsuk-tag nhsuk-tag--blue nhsuk-u-margin-right-3">' + trust + '</span><a href="?removeItem='+i+'">Remove</a></p>';
        });
 
-      html += '<a class="nhsuk-button" href="">Next page</a>'
+      html += '<a class="nhsuk-button" style="margin-top: 20px;" href="cya-request-access-to-other-trusts">Continue</a>'
 
     } else {
       html = '<p><span class="nhsuk-tag nhsuk-tag--red">No trusts selected</span></p>';

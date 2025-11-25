@@ -1,4 +1,4 @@
-{% extends 'layout.html' %}
+{% extends 'layout-with-login-multi-trust-3.html' %}
 
 {% block pageTitle %}
 Select all trusts you require access to - Report overseas visitor treatments - NHSBSA
@@ -23,43 +23,50 @@ Select all trusts you require access to - Report overseas visitor treatments - N
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
 
-    <!-- Accessible Autocomplete CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.css" />
+  <!-- Accessible Autocomplete CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.css" />
 
-    <!-- Accessible Autocomplete JS -->
-    <script src="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.js"></script>
+  <!-- Accessible Autocomplete JS -->
+  <script src="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.js"></script>
 
-    {{ backLink({
-      "href": "javascript:history.go(-1)",
-      "text": "Back"
-    }) }}
+  {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Back"
+  }) }}
 
-    <!-- PAGE TITLE -->
-    <h1 class="nhsuk-label-wrapper" style="margin-top: 20px;">
-      <label class="nhsuk-label nhsuk-label--l" for="manage-trust-access-label" style="margin-bottom: 40px;">
-        Select the trust you report treatment costs for
-      </label>
-    </h1>
 
-    <p style="margin-bottom: 40px;">If you need to report treatment costs for more than one trust, you can request access to multiple trusts.  Once you have submitted an account request, it will be reviewed by a member of the Cost Recovery Operations team.</p>
+  <!-- PAGE TITLE -->
+  <h1 class="nhsuk-label-wrapper" style="margin-top: 20px;">
+    <label class="nhsuk-label nhsuk-label--l" for="manage-trust-access-label" style="margin-bottom: 40px;">
+      Request access to other trusts
+    </label>
+  </h1>
+
+
+  <p style="margin-bottom: 40px;">If you need to report treatment costs for more than one trust, you can request access to multiple trusts.  Once you have submitted an access request, it will be reviewed by a member of the Cost Recovery Operations team.</p>
   
   </div>
 </div>
 
-<form action="/multi-trust-reporting/version-1/new-account-select-trust" method="post">
+<form action="/multi-trust-reporting/version-1/request-access-to-other-trusts-2" method="post">
   <div class="nhsuk-grid-row">
 
     <!-- LEFT COLUMN -->
     <div class="nhsuk-grid-column-one-half">
+      <h2 class="nhsuk-heading-m" style="margin-top: 0;">Trusts you currently have access to:</h2>
+      <ul>
+        <li>North Tees and Hartlepool NHS Foundation Trust</li>
+        <li>Tees, Esk and Wear Valleys NHS Foundation Trust</li>
+      </ul>
 
-      <div class="nhsuk-form-group" style="margin-top: 0px;">
-        
-        <h2 class="nhsuk-heading-m" style="margin-top: 0;">Select all trusts you require access to</h2>
-
-        <div class="nhsuk-hint" style="margin-bottom: 5px;" id="new-account-trust-hint-label">
+      <div class="nhsuk-form-group" style="margin-top: 20px;">
+        <label class="nhsuk-label" for="required-trust-autocomplete-label">
+          Select all trusts you require access to
+        </label>
+        <div class="nhsuk-hint" style="margin-bottom: 5px;" id="required-trust-hint-label">
           Begin typing to find a trust
         </div>
-        <div id="new-account-trust-autocomplete-container"></div>
+        <div id="required-trust-autocomplete-container"></div>
       </div>
     </div>
 
@@ -68,14 +75,14 @@ Select all trusts you require access to - Report overseas visitor treatments - N
       <h2 class="nhsuk-heading-m" style="margin-top: 0;">Trusts you have selected that you require access to:</h2>
       <div class="nhsuk-hint">If you have selected the wrong trust, select X to remove it.</div>
 
-      <ul id="newAccountSelectedTrustsContainer" class="selected-trusts-container nhsuk-list nhsuk-list--border"></ul>
+      <ul id="selectedTrustsContainer" class="selected-trusts-container nhsuk-list nhsuk-list--border"></ul>
 
       <!-- hidden container for form data -->
-      <div id="newAccountHiddenTrustInputs"></div>
+      <div id="hiddenTrustInputs"></div>
 
       <!-- Buttons stay on the right-hand side -->
       <button class="nhsuk-button" style="margin-top: 20px;" type="submit">Continue</button>
-      <p><a href="sign-in">Cancel</a></p>
+      <p><a href="manage-trust-access">Cancel</a></p>
     </div>
 
   </div>
@@ -231,7 +238,7 @@ Select all trusts you require access to - Report overseas visitor treatments - N
     "North East London NHS Foundation Trust",
     "North Middlesex University Hospital NHS Trust",
     "North Staffordshire Combined Healthcare NHS Trust",
-    "North Tees and Hartlepool NHS Foundation Trust",
+
     "North West Ambulance Service NHS Trust",
     "North West Anglia NHS Foundation Trust",
     "North West Boroughs Healthcare NHS Foundation Trust",
@@ -296,7 +303,7 @@ Select all trusts you require access to - Report overseas visitor treatments - N
 
 
     "Tameside and Glossop Integrated Care NHS Foundation Trust",
-    "Tees, Esk and Wear Valleys NHS Foundation Trust",
+
     "The Christie NHS Foundation Trust",
     "The Clatterbridge Cancer Centre NHS Foundation Trust",
     "The Dudley Group NHS Foundation Trust",
@@ -349,9 +356,9 @@ Select all trusts you require access to - Report overseas visitor treatments - N
 	];
   
   accessibleAutocomplete({
-  element: document.querySelector('#new-account-trust-autocomplete-container'),
-  id: 'new-account-trust-autocomplete',
-  name: 'new-account-trust-name',
+  element: document.querySelector('#required-trust-autocomplete-container'),
+  id: 'trust-autocomplete',
+  name: 'required-trust-name',
   source: trusts,
   confirmOnBlur: false,
   autoselect: true
@@ -360,18 +367,18 @@ Select all trusts you require access to - Report overseas visitor treatments - N
 
   // Wait for autocomplete to render input
   setTimeout(() => {
-    const input = document.getElementById('new-account-trust-autocomplete');
-    const container = document.getElementById('newAccountSelectedTrustsContainer');
-    const hiddenInputs = document.getElementById('newAccountHiddenTrustInputs');
-    const newAccountSelectedTrusts = new Set();
+    const input = document.getElementById('trust-autocomplete');
+    const container = document.getElementById('selectedTrustsContainer');
+    const hiddenInputs = document.getElementById('hiddenTrustInputs');
+    const selectedTrusts = new Set();
 
     if (!input || !container || !hiddenInputs) return;
 
     function addTrustTag(trustName) {
       const cleaned = trustName.trim();
-      if (!cleaned || newAccountSelectedTrusts.has(cleaned)) return;
+      if (!cleaned || selectedTrusts.has(cleaned)) return;
 
-      newAccountSelectedTrusts.add(cleaned);
+      selectedTrusts.add(cleaned);
 
       // Visual tag
       const li = document.createElement('li');
@@ -390,14 +397,14 @@ Select all trusts you require access to - Report overseas visitor treatments - N
       // Hidden input for form submission
       const hidden = document.createElement('input');
       hidden.type = 'hidden';
-      hidden.name = 'new-account-trust-name';
+      hidden.name = 'required-trust-name';
       hidden.value = cleaned;
       hiddenInputs.appendChild(hidden);
 
       // Remove tag + hidden input
       button.addEventListener('click', (e) => {
         e.preventDefault();
-        newAccountSelectedTrusts.delete(cleaned);
+        selectedTrusts.delete(cleaned);
         li.remove();
         hidden.remove();
       });
@@ -416,7 +423,7 @@ Select all trusts you require access to - Report overseas visitor treatments - N
     });
 
     // Mouse click selection
-    const autocompleteWrapper = document.querySelector('#new-account-trust-autocomplete-container');
+    const autocompleteWrapper = document.querySelector('#required-trust-autocomplete-container');
     autocompleteWrapper.addEventListener('click', (e) => {
       const option = e.target.closest('.autocomplete__option');
       if (option) {

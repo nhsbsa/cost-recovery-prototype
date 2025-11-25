@@ -14,11 +14,32 @@
 
             <p style="margin-bottom: 40px;">If you need to report treatment costs for more than one trust, you can request access to multiple trusts.  Once you have submitted an access request, it will be reviewed by a member of the Cost Recovery Operations team.</p>
         
+            {% from "inset-text/macro.njk" import insetText %}
+
+            {% set insetTextHtml %}
+            <p>Trusts you have access to:</p>
+            <ul>
+                <li>North Tees and Hartlepool NHS Foundation Trust</li>
+                <li>Tees, Esk and Wear Valleys NHS Foundation Trust</li>
+            </ul>
+            {% endset %}
+
+            {{ insetText({
+            html: insetTextHtml
+            }) }}
+        
+           
+            
+            
         </div>
     </div>
 
+    <hr style="margin-top: 10px;">
+    
     <div class="nhsuk-grid-row">
         <div class="nhsuk-grid-column-one-half">
+
+            
             
             <form action="request-access-to-other-trusts" method="post" novalidate>
 
@@ -28,22 +49,13 @@
                     This is handled by the _routes.js file within this folder (multi-trust-reporting/version-1)
                 
                 -->
-                {{ label({
-                    text: 'Trusts you currently have access to:',
-                    classes: 'nhsuk-label--m'
-                }) }}
                 
-                <ul>
-                  <li>North Tees and Hartlepool NHS Foundation Trust</li>
-                  <li>Tees, Esk and Wear Valleys NHS Foundation Trust</li>
-                </ul>
                 
+                
+                <h2 class="nhsuk-heading-m">Select all trusts that you require access to</h2>
                 
                 {{ select({
-                    label: {
-                        text: 'Select all trusts you require access to',
-                        classes: 'nhsuk-label'
-                    },
+                    
 
                     id: 'trustName',
                     name: 'trustName',
