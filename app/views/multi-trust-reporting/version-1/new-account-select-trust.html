@@ -27,7 +27,7 @@
               
             <h1 class="nhsuk-heading-l" style="margin-top: 20px;">Select the trust you report treatment costs for</h1>
 
-            <p style="margin-bottom: 40px;">If you need to report treatment costs for more than one trust, you can request access to multiple trusts.  Once you have submitted an access request, it will be reviewed by a member of the Cost Recovery Operations team.</p>
+            <p style="margin-bottom: 40px;">If you need to report treatment costs for more than one trust, you can request access to multiple trusts.  Once you have submitted an account request, it will be reviewed by a member of the Cost Recovery Operations team.</p>
         
         </div>
     </div>
@@ -44,9 +44,13 @@
                 
                 -->
                 {{ label({
-                    text: 'Select all trusts you require access to',
+                    text: 'Select a trust',
                     classes: 'nhsuk-label--m'
                 }) }}
+
+                {{ hint({
+                    html: 'You can make multiple selections'
+                  }) }}
                 
                 {{ select({
                     
