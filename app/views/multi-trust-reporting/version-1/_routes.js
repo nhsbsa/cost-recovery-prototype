@@ -230,25 +230,29 @@ router.post(['/request-access-to-other-trusts','/request-access-to-other-trusts'
 
   const toAdd = req.session.data.trustName;
 
-  if( toAdd ){
+  // Initialize selectedTrusts as an array
+  let selectedTrusts = req.session.data.selectedTrusts
+    ? req.session.data.selectedTrusts.split('|')
+    : [];
 
-    // Here we're basically creating a pipe separated list of everything that's been selected...
-    const selectedTrusts = req.session.data.selectedTrusts;
-
-    if( !selectedTrusts ){
-      // The variable is blank
-      req.session.data.selectedTrusts = toAdd;
-    } else {
-      // The variable is already populated, so add to it if the trust doesn't already exist in the list...
-      if( selectedTrusts.indexOf( toAdd ) === -1 ){
-        req.session.data.selectedTrusts += '|'+toAdd;
-      }
-    }
-    
+  // Add the trust if not already in the list
+  if (toAdd && !selectedTrusts.includes(toAdd)) {
+    selectedTrusts.push(toAdd);
+    req.session.data.selectedTrusts = selectedTrusts.join('|');
   }
 
-  res.redirect('/multi-trust-reporting/version-1/request-access-to-other-trusts');
+  // Set error flag if Gateshead
+  if (toAdd === 'Gateshead Health NHS Foundation Trust') {
+    req.session.data.errorTrust = true;  // store flag in session
+  } else {
+    req.session.data.errorTrust = false; // clear previous error
+  }
 
+  // Save the trust the user just added, for pre-selection
+  req.session.data.selectedTrust = toAdd;
+
+  // Always redirect
+  res.redirect('/multi-trust-reporting/version-1/request-access-to-other-trusts');
 });
 
 
