@@ -1,0 +1,303 @@
+{% extends 'layout-with-login-multi-trust-4.html' %}
+{% block pageTitle %}
+Check these details before submitting the treatment form - Report overseas visitor treatments - NHSBSA
+{% endblock %}
+
+
+{% block content %}
+
+{{ backLink({
+  "href": "javascript:history.go(-1)",
+  "text": "Back"
+}) }}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-three-quarters">
+
+    <form action="/pin-surfacing/new-s2-details-cya" method="post">
+
+    <h1 class="nhsuk-label-wrapper">
+      <label class="nhsuk-label nhsuk-label--l" style="margin-top: 20px;" for="cya-label">
+        Check these details before submitting the treatment form
+      </label>
+    </h1>
+
+    <h3>Treatment details</h3>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Treatment start date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['treatment-start-date'] or '01/01/2025' }}
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Treatment end date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['treatment-end-date'] or '01/02/2025' }}
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Treatment cost (£)
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['treatment-cost'] or '200.00' }}
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+
+        </dd>
+      </div>
+    </dl>
+
+
+    <h3>S2/E112 details</h3>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Issuing member state
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['entitlement-registration-country'] or 'Austria (AT)' }}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="entitlement-registration-country#entitlement-registration-country">
+            Change<span class="nhsuk-u-visually-hidden"> issuing member state</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['s2-last-name'] or 'Doe' }}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="s2-search-for-person-results#s2-last-name">
+            Change<span class="nhsuk-u-visually-hidden"> Name</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Given names
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['s2-first-names'] or 'John' }}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="s2-search-for-person-results#s2-first-names">
+            Change<span class="nhsuk-u-visually-hidden"> Given names</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+         Date of birth
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['s2-date-of-birth'] or '13/12/1994' }}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="s2-search-for-person-results#s2-date-of-birth-day">
+            Change<span class="nhsuk-u-visually-hidden"> Date of birth</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Do you have copy of the S2/E112 page
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['s2-have-copy'] or 'Yes' }}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="s2-have-copy">
+            Change<span class="nhsuk-u-visually-hidden"> copy of the S2/E112 page</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Personal identification number
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['new-s2-pin'] or '1234567890' }}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="add-person-s2#new-s2-pin">
+            Change<span class="nhsuk-u-visually-hidden"> Personal identification number</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          S2/E112 start date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['new-s2-start-date'] or '01/10/2025' }}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="add-person-s2#new-s2-start-date-day">
+            Change<span class="nhsuk-u-visually-hidden"> the S2/E112 start date</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          S2/E112 end date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['new-s2-end-date'] or '01/10/2025' }}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="add-person-s2#new-s2-end-date-day">
+            Change<span class="nhsuk-u-visually-hidden"> the S2/E112 end date</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          S2/E112 issue date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['new-s2-issue-date'] or '30/09/2024' }}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="add-person-s2#new-s2-issue-date-day">
+            Change<span class="nhsuk-u-visually-hidden"> the S2/E112 issue date</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Institution ID
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          1A00 - KFA WIEN
+        </dd>
+ 
+        <dd class="nhsuk-summary-list__actions">
+          <a href="s2-search-for-institution-id-results#s2-institution-id">
+            Change<span class="nhsuk-u-visually-hidden"> Identification number of the institution</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Institution name
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Health Care institution of the municipal civil servants of the City of Vienna
+        </dd>
+ 
+        <dd class="nhsuk-summary-list__actions">
+          
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Institution address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Schlesingerplatz 5, 1081 Vienna
+        </dd>
+ 
+        <dd class="nhsuk-summary-list__actions">
+
+        </dd>
+      </div>
+    </dl>
+
+
+    <h3>Location of treatment</h3>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Trust name
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          North Tees and Hartlepool NHS Foundation Trust
+        </dt>
+        <dd class="nhsuk-summary-list__actions">
+
+        </dd>
+      </div>
+    </dl>
+
+
+    <h3>Address details</h3>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Home address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          1 Test Lane<br>
+          {{ data['entitlement-registration-country'] or 'Austria (AT)' }}
+        </dd>
+    
+        <dd class="nhsuk-summary-list__actions">
+          <a href="s2-enter-address#new-s2-address-line-1">
+            Change<span class="nhsuk-u-visually-hidden"> home address</span>
+          </a>
+        </dd>
+      </div>
+
+    </dl>
+
+  </dl>
+
+  <p>If you select submit, you are confirming that these details are correct to the best of your knowledge.</p>
+  
+  <div class="button-container" style="margin-top: 40px;">
+    <button style="margin-right:20px;" class="nhsuk-button" type="submit">Submit</button>
+    <a href="save-as-draft-confirmation" class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" role="button">Save as draft</a>
+  </div>
+    
+  <p><a href="cancel-confirmation">Cancel</a></p>
+
+  </form>
+
+ </div>
+</div>
+{% endblock %}

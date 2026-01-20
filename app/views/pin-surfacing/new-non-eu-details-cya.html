@@ -1,0 +1,140 @@
+{% extends 'layout-with-login-multi-trust-4.html' %}
+{% block pageTitle %}
+Check these details before submitting the treatment form - Report overseas visitor treatments - NHSBSA
+{% endblock %}
+
+
+{% block content %}
+
+{{ backLink({
+  "href": "javascript:history.go(-1)",
+  "text": "Back"
+}) }}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-three-quarters">
+
+    <form action="/pin-surfacing/new-non-eu-details-cya" method="post">
+
+    <h1 class="nhsuk-label-wrapper">
+      <label class="nhsuk-label nhsuk-label--l" style="margin-top: 20px;" for="cya-label">
+        Check these details before submitting the treatment form
+      </label>
+    </h1>
+
+    <h3>Treatment details</h3>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Treatment start date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['treatment-start-date'] or '01/01/2025' }}
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="treatment-start-date#treatment-start-date-day">Change<span class="nhsuk-u-visually-hidden">the treatment start date</span></a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Treatment end date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['treatment-end-date'] or '01/02/2025' }}
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="treatment-end-date#treatment-end-date-day">Change<span class="nhsuk-u-visually-hidden">the treatment end date</span></a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Treatment cost (£)
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['treatment-cost'] or '200.00' }}
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="treatment-cost#treatment-cost">Change<span class="nhsuk-u-visually-hidden">the treatment cost</span></a>
+        </dd>
+      </div>
+    </dl>
+
+
+    <h3>Non-EU Reciprocal Healthcare details</h3>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Country
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['entitlement-registration-country'] or 'Norway (NO)' }}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="entitlement-registration-country#entitlement-registration-country">
+            Change<span class="nhsuk-u-visually-hidden"> country</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['non-eu-last-name'] or 'Doe' }}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="non-eu-enter-patient-details#new-non-eu-last-name">
+            Change<span class="nhsuk-u-visually-hidden"> Name</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Given names
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['non-eu-first-names'] or 'John' }}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="non-eu-enter-patient-details#new-non-eu-first-names">
+            Change<span class="nhsuk-u-visually-hidden"> Given names</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+         Date of birth
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['non-eu-date-of-birth'] or '13/12/1994' }}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="non-eu-enter-patient-details#new-non-eu-date-of-birth-day">
+            Change<span class="nhsuk-u-visually-hidden"> Date of birth</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+  <p>If you select submit, you are confirming that these details are correct to the best of your knowledge.</p>
+  
+  <button style="margin-right:20px;" class="nhsuk-button" type="submit">Submit</button>
+    
+  <p><a href="cancel-confirmation">Cancel</a></p>
+
+  </form>
+
+ </div>
+</div>
+{% endblock %}

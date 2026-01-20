@@ -1,0 +1,329 @@
+{% extends 'layout-with-login-multi-trust-4.html' %}
+{% block pageTitle %}
+Check these details before submitting the treatment form - Report overseas visitor treatments - NHSBSA
+{% endblock %}
+
+
+{% block content %}
+
+{{ backLink({
+  "href": "javascript:history.go(-1)",
+  "text": "Back"
+}) }}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-three-quarters">
+
+    <form action="/pin-surfacing/new-prc-details-cya" method="post">
+
+    <h1 class="nhsuk-label-wrapper">
+      <label class="nhsuk-label nhsuk-label--l" style="margin-top: 20px;" for="cya-label">
+        Check these details before submitting the treatment form
+      </label>
+    </h1>
+
+    <h3>Treatment details</h3>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Treatment start date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['treatment-start-date'] or '01/11/2025' }}
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Treatment end date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['treatment-end-date'] or '07/11/2025' }}
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Treatment cost (£)
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['treatment-cost'] or '120.00' }}
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+
+        </dd>
+      </div>
+    </dl>
+
+
+    <h3>PRC details</h3>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Issuing member state
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['entitlement-registration-country'] or 'Austria (AT)' }}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="entitlement-registration-country#entitlement-registration-country">
+            Change<span class="nhsuk-u-visually-hidden"> issuing member state</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['prc-last-name'] or 'Doe' }}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="prc-search-for-person-results#prc-last-name">
+            Change<span class="nhsuk-u-visually-hidden"> Name</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Given names
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['prc-first-names'] or 'John' }}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="prc-search-for-person-results#prc-first-names">
+            Change<span class="nhsuk-u-visually-hidden"> Given names</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+         Date of birth
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['prc-date-of-birth'] or '13/12/1994' }}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="prc-search-for-person-results#prc-date-of-birth-day">
+            Change<span class="nhsuk-u-visually-hidden"> Date of birth</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Personal identification number
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['new-prc-pin'] or '1234567890' }}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="add-person-prc#new-prc-pin">
+            Change<span class="nhsuk-u-visually-hidden"> Personal identification number</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          EHIC card number (optional)
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['new-prc-ehic-card-number'] or '6543211110' }}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="add-person-prc#new-prc-ehic-card-number">
+            Change<span class="nhsuk-u-visually-hidden"> EHIC card number</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          EHIC expiry date 
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['new-prc-ehic-expiry-date'] or '31/12/2025' }}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="add-person-prc#new-prc-ehic-expiry-date-day">
+            Change<span class="nhsuk-u-visually-hidden"> EHIC expiry date</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Valid from
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['new-prc-start-date'] or '01/11/2025' }}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="add-person-prc#new-prc-start-date-day">
+            Change<span class="nhsuk-u-visually-hidden"> the date the PRC is valid from</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Valid to
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['new-prc-end-date'] or '07/11/2025' }}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="add-person-prc#new-prc-end-date-day">
+            Change<span class="nhsuk-u-visually-hidden"> the date the PRC is valid to</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          PRC issue date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['new-prc-issue-date'] or '01/11/2025' }}
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+          <a href="add-person-prc#new-prc-issue-date-day">
+            Change<span class="nhsuk-u-visually-hidden"> PRC issue date</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          {{ data['prc-first-names'] or 'John' }} {{ data['prc-last-name'] or 'Doe' }} is a student
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['new-prc-student'] or 'No' }} 
+        </dd>
+    
+        <dd class="nhsuk-summary-list__actions">
+          <a href="add-person-prc#new-prc-student">
+            Change<span class="nhsuk-u-visually-hidden"> John Doe is a student</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Identification number of the institution 
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          1A00 - KFA WIEN
+        </dd>
+ 
+        <dd class="nhsuk-summary-list__actions">
+          <a href="prc-search-for-institution-id-results#prc-institution-id">
+            Change<span class="nhsuk-u-visually-hidden"> Identification number of the institution</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Institution name
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Health Care institution of the municipal civil servants of the City of Vienna
+        </dd>
+ 
+        <dd class="nhsuk-summary-list__actions">
+          
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Copy of the PRC
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          example.png
+        </dd>
+ 
+        <dd class="nhsuk-summary-list__actions">
+          <a href="upload-prc">
+            Change<span class="nhsuk-u-visually-hidden">copy of the PRC</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+
+    <h3>Address details</h3>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Do you have {{ data['prc-first-names'] or 'John' }} {{ data['prc-last-name'] or 'Doe' }}'s address in {{ data['entitlement-registration-country'] or 'Austria (AT)' }}?
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Yes
+        </dt>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="prc-known-address">
+            Change<span class="nhsuk-u-visually-hidden"> if address is known</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Home address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          1 Test Lane<br>
+          {{ data['entitlement-registration-country'] or 'Austria (AT)' }}
+        </dd>
+    
+        <dd class="nhsuk-summary-list__actions">
+          <a href="prc-enter-address#new-prc-address-line-1">
+            Change<span class="nhsuk-u-visually-hidden"> home address</span>
+          </a>
+        </dd>
+      </div>
+
+    </dl>
+
+  </dl>
+
+  <p>If you select submit, you are confirming that these details are correct to the best of your knowledge.</p>
+  
+  <div class="button-container" style="margin-top: 40px;">
+    <button style="margin-right:20px;" class="nhsuk-button" type="submit">Submit</button>
+    <a href="save-as-draft-confirmation" class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" role="button">Save as draft</a>
+  </div>
+    
+  <p><a href="cancel-confirmation">Cancel</a></p>
+
+  </form>
+
+ </div>
+</div>
+{% endblock %}

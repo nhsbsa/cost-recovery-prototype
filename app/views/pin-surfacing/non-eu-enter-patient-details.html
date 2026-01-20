@@ -1,0 +1,102 @@
+{% extends 'layout-with-login-multi-trust-4.html' %}
+{% block pageTitle %}
+What are the patient's details? - Report overseas visitor treatments - NHSBSA
+{% endblock %}
+
+
+
+{% block content %}
+
+{{ backLink({
+  "href": "javascript:history.go(-1)",
+  "text": "Back"
+}) }}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/pin-surfacing/non-eu-enter-patient-details" method="post">
+
+    <span class="nhsuk-caption-l" style="margin-top: 20px;">
+      Non-EU Reciprocal Healthcare agreement details
+    </span>
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          What are the patient's details?
+        </h1>
+      </legend>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="new-non-eu-issuing-country-label">
+          Country
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="new-non-eu-issuing-country" name="new-non-eu-issuing-country" type="text" value="Norway (NO)" disabled >
+      </div>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="new-non-eu-last-name-label">
+          Name
+        </label>
+        <div class="nhsuk-hint">
+          This is the patient's last name (family name or surname). For example, Smith
+        </div>
+        <input class="nhsuk-input nhsuk-input--width-20" id="new-non-eu-last-name" name="new-non-eu-last-name" type="text">
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="new-non-eu-first-names-label">
+          Given names
+        </label>
+        <div class="nhsuk-hint">
+          These are the patient's first names. For example, Philip John.
+        </div>
+        <input class="nhsuk-input nhsuk-input--width-20" id="new-non-eu-first-names" name="new-non-eu-first-names" type="text">
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="dateOfBirth">
+          Date of birth
+        </label>
+        <div class="nhsuk-hint">
+          For example, 15 12 1984
+        </div>
+    
+        <div class="nhsuk-date-input" id="example">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-non-eu-date-of-birth-label">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="new-non-eu-date-of-birth-day" name="new-non-eu-date-of-birth-day" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-non-eu-date-of-birth-month-label">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="new-non-eu-date-of-birth-month" name="new-non-eu-date-of-birth-month" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="new-non-eu-date-of-birth-year-label">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="year" name="new-non-eu-date-of-birth-year" type="number" pattern="[0-9]*">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+    <button class="nhsuk-button" style="margin-top: 10px;" data-module="nhsuk-button" type="submit">Continue</button>
+        
+    <p><a href="cancel-confirmation">Cancel</a></p>
+
+  </form>
+
+ </div>
+</div>
+{% endblock %}

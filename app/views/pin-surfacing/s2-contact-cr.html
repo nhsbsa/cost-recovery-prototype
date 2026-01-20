@@ -1,0 +1,39 @@
+{% extends 'layout-with-login-multi-trust-4.html' %}
+{% block pageTitle %}
+What are the EHIC details? - Report overseas visitor treatments - NHSBSA
+{% endblock %}
+
+
+
+{% block content %}
+
+{{ backLink({
+  "href": "javascript:history.go(-1)",
+  "text": "Back"
+}) }}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/pin-surfacing/s2-contact-cr" method="post">
+
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading" style="margin-top: 20px;">
+          Contact the Cost Recovery Operations team
+        </h1>
+      </legend>
+
+      <p>As you do not have a copy of the S2/E112 you cannot enter the details needed to continue. Contact the Cost Recovery Operations team at nhsbsa.ovmqueries@nhsbsa.nhs.uk</p>
+
+      <p>Data entered within the journey is not saved.</p>
+      
+    </fieldset>
+
+    <button class="nhsuk-button" style="margin-top: 10px;" data-module="nhsuk-button" type="submit">Back to home</button>
+
+  </form>
+
+ </div>
+</div>
+{% endblock %}

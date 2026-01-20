@@ -1,0 +1,181 @@
+{% extends 'layout-with-login-multi-trust-4.html' %}
+{% block pageTitle %}
+Search for a person - Report overseas visitor treatments - NHSBSA
+{% endblock %}
+
+{% block beforeContent %}
+<div class="app-phase-banner">
+  <div class="nhsuk-width-container app-phase-banner__container">
+     <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+        Beta
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a new service - your <a href="#">feedback</a> will help us improve it.
+        </span>
+     </p>
+  </div>
+</div>
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__list-item"><a class="nhsuk-breadcrumb__link" href="home">Home</a></li>
+      <li class="nhsuk-breadcrumb__list-item"><a class="nhsuk-breadcrumb__link" href="search-person">Search (Person)</a></li>
+      <li class="nhsuk-breadcrumb__list-item"><a class="nhsuk-breadcrumb__link" href="treatment-record-johndoe">View record</a></li>
+      <li class="nhsuk-breadcrumb__list-item">EHIC details</li>
+    </ol>
+    <a class="nhsuk-back-link" href="treatment-record-johndoe">
+      <span class="nhsuk-u-visually-hidden">Back to </span>
+      View record (John Doe)
+    </a>
+  </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <form action="/pin-surfacing/view-ehic-details-johndoe" method="post">
+
+      
+      <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          EHIC details for John Doe
+        </h1>
+      </legend>
+
+
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Issuing member state
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['entitlement-registration-country'] or 'Austria (AT)' }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+
+          </dd>
+        </div>
+      </dl>
+
+
+      <h3>Card holder related information</h3>
+
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['ehic-last-name'] or 'Doe' }}
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Given names
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['ehic-first-names'] or 'John' }}
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+          Date of birth
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['ehic-date-of-birth'] or '13/12/1994' }}
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Personal identification number
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['new-ehic-pin'] or '1234567890' }}
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            
+          </dd>
+        </div>
+      </dl>
+
+
+      <h3>Competent institution related information</h3>
+
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Identification number of the institution
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+           1A00 - KFA WIEN
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            
+          </dd>
+        </div>
+      </dl>
+
+
+      <h3>Entitlement related information</h3>
+
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            EHIC card number	 
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['new-ehic-card-number'] or '6543211110' }}
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            EHIC expiry date 
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['new-ehic-expiry-date'] or '31/12/2025' }}
+          </dd>
+
+          <dd class="nhsuk-summary-list__actions">
+            
+          </dd>
+        </div>
+      </dl>
+
+  
+      <div class="button-container" style="margin-top: 40px;">
+        <button style="margin-right:20px;" class="nhsuk-button" type="submit">Back to record</button>
+        <a href="upload-ehic-copy" class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" role="button">Upload EHIC copy</a>
+      </div>
+
+      </fieldset>
+
+    </form>
+
+</div>
+{% endblock %}

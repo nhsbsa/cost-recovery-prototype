@@ -1,0 +1,47 @@
+{% extends 'layout-with-login-multi-trust-4.html' %}
+{% block pageTitle %}
+What is the Malta Quota number for this patient? - Report overseas visitor treatments - NHSBSA
+{% endblock %}
+
+
+
+{% block content %}
+
+{{ backLink({
+  "href": "javascript:history.go(-1)",
+  "text": "Back"
+}) }}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/pin-surfacing/malta-quota-number" method="post">
+
+    <div class="nhsuk-form-group">
+      <span class="nhsuk-caption-l" style="margin-top: 20px;">
+        Malta Quota agreement details
+      </span>
+      <h1 class="nhsuk-label-wrapper">
+        <label class="nhsuk-label nhsuk-label--l" for="country">
+          What is the Malta Quota number for this patient?
+        </label>
+      </h1>
+
+      <div class="nhsuk-form-group">
+        <div class="nhsuk-hint" style="margin-bottom: 5px;" id="malta-quota-number-hint-label" for="malta-quota-number-hint-label" class="form-label">
+          The format should be YY/YY-NNN. For example, 2021-001
+        </div>
+        <input class="nhsuk-input nhsuk-input--width-20" id="malta-quota-number" name="malta-quota-number">         
+     </div>
+
+    </div>
+
+    <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
+        
+    <p><a href="cancel-confirmation">Cancel</a></p>
+
+    </form>
+
+ </div>
+</div>
+{% endblock %}

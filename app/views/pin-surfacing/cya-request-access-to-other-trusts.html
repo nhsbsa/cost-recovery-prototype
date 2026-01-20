@@ -1,0 +1,79 @@
+{% extends 'layout-with-login-multi-trust-4.html' %}
+
+{% block pageTitle %}Check your answers before submitting your access request{% endblock %}
+
+{% block beforeContent %}
+<div class="app-phase-banner">
+  <div class="nhsuk-width-container app-phase-banner__container">
+     <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+        Beta
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a new service - your <a href="#">feedback</a> will help us improve it.
+        </span>
+     </p>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+{{ backLink({
+  "href": "javascript:history.go(-1)",
+  "text": "Back"
+}) }}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/pin-surfacing/cya-request-access-to-other-trusts" method="post">
+
+      <h1 class="nhsuk-heading-l" style="margin-top: 20px;">
+        Check your answers before submitting your access request
+      </h1>
+
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Trusts you currently have access to
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <div style="margin-bottom: 0.5rem;">North Tees and Hartlepool NHS Foundation Trust</div>
+            <div style="margin-bottom: 0.5rem;">Tees, Esk and Wear Valleys NHS Foundation Trust</div>
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Trusts you require access to
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {% if data.selectedTrustsArray.length > 0 %}
+              {% for trust in data.selectedTrustsArray %}
+                <div style="margin-bottom: 0.5rem;">{{ trust }}</div>
+              {% endfor %}
+            {% else %}
+              <div style="margin-bottom: 0.5rem;">The Newcastle Upon Tyne Hospitals NHS Foundation Trust</div>
+              <div>Gateshead Health NHS Foundation Trust</div>
+            {% endif %}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="request-access-to-other-trusts#trustName">Change<span class="nhsuk-u-visually-hidden"> trusts you require access to</span></a>
+          </dd>  
+        </div>
+      </dl>
+
+      <button style="margin-right:20px;" class="nhsuk-button" type="submit">
+        Submit request
+      </button>
+      
+      <p><a href="manage-trust-access">Cancel</a></p>
+
+    </form>
+
+ </div>
+</div>
+{% endblock %}

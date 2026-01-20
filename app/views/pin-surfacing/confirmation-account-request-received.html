@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+{% block pageTitle %}
+Check these details before requesting account - Report overseas visitor treatments - NHSBSA
+{% endblock %}
+
+{% block beforeContent %}
+<div class="app-phase-banner">
+  <div class="nhsuk-width-container app-phase-banner__container">
+     <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+        Beta
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a new service - your <a href="#">feedback</a> will help us improve it.
+        </span>
+     </p>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/pin-surfacing/confirmation-account-request-received" method="post">
+
+    <div class="nhsuk-panel nhsuk-panel--confirmation nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-4">
+      <h1 style="font-size:40px;" class="nhsuk-panel__title">
+        Your request for an account has been sent
+      </h1>
+    </div>
+
+    <h2 class="nhsuk-heading-m">What happens next</h2>
+
+    <p>You will receive an email confirming we have received your request for a Report overseas visitor treatments (ROVT) account.</p>
+
+    <p>A member of the Cost Recovery Operations team will contact you within 3 working days to approve your request.</p>
+
+    <p>You will receive a final email confirming that your account has been created with a link to the ROVT portal.</p>
+    
+    <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Back to Sign in</button>
+
+    </form>
+
+ </div>
+</div>
+{% endblock %}

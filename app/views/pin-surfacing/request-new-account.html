@@ -1,0 +1,144 @@
+{% extends 'layout.html' %}
+{% block pageTitle %}
+Request account - Report overseas visitor treatments - NHSBSA
+{% endblock %}
+
+{% block beforeContent %}    
+<div class="app-phase-banner">
+   <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+         <strong class="nhsuk-tag app-phase-banner__tag">
+         Beta
+         </strong>
+         <span class="app-phase-banner__text">
+         This is a new service - your <a href="#">feedback</a> will help us improve it.
+         </span>
+      </p>
+   </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+   <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/pin-surfacing/request-new-account" method="post">
+
+    <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="nhsuk-error-summary" id="error-summary" style="display: none;">
+      <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+        There is a problem
+      </h2>
+      <div class="nhsuk-error-summary__body">
+        <ul class="nhsuk-list nhsuk-error-summary__list" role="list" id="error-summary-list">
+          <li><a href="#new-account-email-address">An account for joe.bloggs@nhsbsa.nhs.uk already exists</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          Request an account 
+        </h1>
+      </legend>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="new-account-first-name-label">
+          First name
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="new-account-first-name" name="new-account-first-name" type="text">
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="new-account-last-name-label">
+          Last name
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="new-account-last-name" name="new-account-last-name" type="text"> <br>
+      </div>
+
+      <div class="nhsuk-form-group" id="email-address-new-account-form-group">
+        <label class="nhsuk-label" for="new-account-email-address-label">
+          Email address
+        </label>
+        <span class="nhsuk-error-message" id="existing-account-error-message" style="display: none;">
+          <span class="nhsuk-u-visually-hidden">Error:</span> An account for joe.bloggs@nhsbsa.nhs.uk already exists
+        </span>
+        <input class="nhsuk-input nhsuk-input--width-20" id="new-account-email-address" name="new-account-email-address" type="text"> <br>
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="new-account-phone-number-label">
+         UK mobile telephone number
+        </label>
+        <div class="nhsuk-hint">
+          We need a UK mobile telephone number because we may need to send you confirmation via text message.
+        </div>
+        <input class="nhsuk-input nhsuk-input--width-20" id="new-account-phone-number" name="new-account-phone-number" type="text"> <br>
+      </div>
+      
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="new-account-region-label">
+          Region name
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-20" list="new-account-regions" id="new-account-region" name="new-account-region">
+          <datalist id="new-account-regions">
+            <option value="" selected>Select region</option>
+            <option value="England">England</option>
+            <option value="Scotland">Scotland</option>
+            <option value="Wales">Wales</option>
+            <option value="Northern Ireland">Northern Ireland</option>
+            <option value="Gibraltar">Gibraltar</option>
+          </datalist>
+      </div>
+     
+    </fieldset>
+
+    <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
+        
+    <p><a href="new-account-cancel-confirmation">Cancel</a></p>
+
+    </form>
+
+   </div>
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+<!-- Error message if user enters an email address which is associated with an existing account -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector("form");
+    const emailInput = document.getElementById("new-account-email-address");
+    const emailFormGroup = document.getElementById("email-address-new-account-form-group");
+    const errorMessage = document.getElementById("existing-account-error-message");
+    const errorSummary = document.getElementById("error-summary");
+
+    form.addEventListener("submit", function (e) {
+      const emailValue = emailInput.value.trim().toLowerCase();
+
+      if (emailValue === "joe.bloggs@nhsbsa.nhs.uk") {
+        e.preventDefault(); // Stop form submission
+
+        // Add error styles
+        emailFormGroup.classList.add("nhsuk-form-group--error");
+        errorMessage.style.display = "block";
+        errorSummary.style.display = "block";
+
+        // Focus on error summary
+        errorSummary.focus();
+
+        // Focus the first link in the error summary for accessibility
+        const firstErrorLink = errorSummary.querySelector("a");
+        if (firstErrorLink) {
+          firstErrorLink.focus();
+        }
+      } else {
+        // Clear errors if the email is valid
+        emailFormGroup.classList.remove("nhsuk-form-group--error");
+        errorMessage.style.display = "none";
+        errorSummary.style.display = "none";
+      }
+    });
+  });
+</script>
+{% endblock %}

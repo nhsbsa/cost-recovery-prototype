@@ -1,0 +1,162 @@
+{% extends 'layout-with-login-multi-trust-4.html' %}
+{% block pageTitle %}
+Search for a person - Report overseas visitor treatments - NHSBSA
+{% endblock %}
+
+
+
+{% block content %}
+
+{{ backLink({
+  "href": "javascript:history.go(-1)",
+  "text": "Back"
+}) }}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/pin-surfacing/s2-search-for-person-results" method="post">
+
+      <span class="nhsuk-caption-l" style="margin-top: 20px;">
+        S2/E112 details
+      </span>
+      <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          Search for a person
+        </h1>
+      </legend>
+
+      <span class="nhsuk-hint">
+        Enter these details as they are on the S2/E112
+      </span>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="s2-last-name-label">
+          Name
+        </label>
+        <span class="nhsuk-hint">
+          For example, Smith
+        </span>
+        <input class="nhsuk-input nhsuk-input--width-20" id="s2-last-name" name="s2-last-name" type="text" value="John">
+      </div>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="s2-first-names-label">
+          Given names
+        </label>
+        <span class="nhsuk-hint">
+          For example, Phillip John
+        </span>
+        <input class="nhsuk-input nhsuk-input--width-20" id="s2-first-names" name="s2-first-names" type="text" value="Doe">
+      </div>
+    
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="dateOfBirth">
+          Date of birth
+        </label>
+
+        <div class="nhsuk-hint" id="hint">
+          For example, 15 03 1984
+        </div>
+    
+        <div class="nhsuk-date-input" id="s2-date-of-birth">
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="s2-date-of-birth-day">
+                Day
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="s2-date-of-birth-day" name="s2-date-of-birth-day" type="number" pattern="[0-9]*" value="13">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="s2-date-of-birth-month">
+                Month
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="s2-date-of-birth-month" name="s2-date-of-birth-month" type="number" pattern="[0-9]*" value="12">
+            </div>
+          </div>
+          <div class="nhsuk-date-input__item">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-date-input__label" for="s2-date-of-birth-year">
+                Year
+              </label>
+              <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="s2-date-of-birth-year" name="s2-date-of-birth-year" type="number" pattern="[0-9]*" value="1994">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </fieldset>
+
+    <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Search</button>
+        
+    <p style="margin-bottom: 40px;"><a href="cancel-confirmation">Cancel</a></p>
+
+  </div>
+</div>
+
+    <!-- If records found results table appears -->
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+    
+      <div id="result">
+        <div role="alert" class="nhsuk-label--m" id="search-results-label">
+          <h2 class="nhsuk-label--m">1 result found</h2>
+        </div>
+      </div>
+
+      <div class="nhsuk-hint" style="margin-top: 20px;">Select the correct person to continue.</div>
+
+      <table role="table" class="nhsuk-table-responsive" id="institution-table">
+        <caption class="nhsuk-table__caption"></caption>
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" scope="col">Name</th>
+            <th role="columnheader" scope="col">Given names</th>
+            <th role="columnheader" scope="col">Date of birth</th>
+            <th role="columnheader" scope="col">Entitlement country</th>
+            <th role="columnheader" scope="col">Personal identification number (PIN)</th>
+            <th role="columnheader" scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Name</span>
+              <p id="last-name">Doe</p>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Given names</span>
+              <p id="first-names">John</p>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Date of birth</span>
+              <p id="date-of-birth">13/12/1994</p>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Entitlement country</span>
+              <p id="entitlement-country">Austria (AT)</p>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Personal identification number (PIN)</span>
+              <p id="personal-identification-number">1234567890</p>
+            </td>
+            <td role="cell" class="nhsuk-table__cell">
+              <span class="nhsuk-table-responsive__heading">Action</span>
+              <a href="copy-of-s2">Select</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top: 40px;">If none of the results match <a href="copy-of-s2">add a person</a> </p>
+    
+    </div>
+
+    </form>
+
+ </div>
+</div>
+{% endblock %}

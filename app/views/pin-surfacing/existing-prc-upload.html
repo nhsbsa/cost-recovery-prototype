@@ -1,0 +1,52 @@
+{% extends 'layout-with-login-multi-trust-4.html' %}
+{% block pageTitle %}
+Upload a copy of the PRC - Report overseas visitor treatments - NHSBSA
+{% endblock %}
+
+
+
+{% block content %}
+
+{{ backLink({
+  "href": "javascript:history.go(-1)",
+  "text": "Back"
+}) }}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/pin-surfacing/existing-prc-upload" method="post">
+
+    <span class="nhsuk-caption-l" style="margin-top: 20px;">
+      PRC details
+    </span>
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          Upload a copy of the PRC (optional)
+        </h1>
+      </legend>
+
+      <div class="nhsuk-inset-text" style="margin-top: 30px; margin-bottom: 25px;">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>A copy of the entitlement may be needed if the member state requests it. Uploading it now will save time later if a copy is requested.</p>
+      </div>
+
+      <div class="nhsuk-hint">
+        The selected file must be a PDF, BMP, PNG, JPG or JPEG and must be smaller than 10MB.
+      </div>
+
+      <input class="file-upload" id="existing-prc-file-upload" name="existing-prc-file-upload" type="file" aria-describedby="existing-prc-file-upload">
+    </fieldset> 
+
+    <br>
+      
+    <button class="nhsuk-button" style="margin-top: 20px;" data-module="nhsuk-button" type="submit">Continue</button>
+
+    <p><a href="cancel-confirmation">Cancel</a></p>
+
+    </form>
+
+ </div>
+</div>
+{% endblock %}
