@@ -19,14 +19,22 @@ Treatment form processed - Report overseas visitor treatments - NHSBSA
         <div class="nhsuk-panel__body">
           Treatment ID
           <br>
-          <strong>558761002</strong>
+          {% if data['add-new-treatment-to-person-record'] == 'Yes' %}
+            <strong>558003243</strong>
+          {% else %}
+            <strong>558761002</strong>
+          {% endif %}
         </div>
       </div>
 
+      {% if data['add-new-treatment-to-person-record'] == 'Yes' %}
+      <p>The treatment form has been processed and sent to the operations team.</p>
+      {% else %}
       <ul>
         <li>The treatment form has been processed and sent to the operations team.</li>
         <li>The operation team will be informed that you have submitted additional cost.</li>
       </ul>
+      {% endif %}
       
       <div class="nhsuk-form-group">
 

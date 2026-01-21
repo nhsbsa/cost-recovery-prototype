@@ -101,6 +101,39 @@ Search for a person - Report overseas visitor treatments - NHSBSA
                         </tr>
                       </thead>
                       <tbody class="nhsuk-table__body">
+                        {% if data['add-new-treatment-to-person-record'] == 'Yes' and data['new-ehic-treatment'] == 'yes' %}
+                        <tr role="row" class="nhsuk-table__row">
+                          <td role="cell" class="nhsuk-table__cell">
+                            <span class="nhsuk-table-responsive__heading">Treatment ID</span>
+                            <p id="treatment-id">558003243</p>
+                          </td>
+                          <td role="cell" class="nhsuk-table__cell">
+                            <span class="nhsuk-table-responsive__heading">Start date</span>
+                            <p id="treatment-start-date">{{ data['treatment-start-date'] or '01/06/2025' }} </p>
+                          </td>
+                          <td role="cell" class="nhsuk-table__cell">
+                            <span class="nhsuk-table-responsive__heading">End date</span>
+                            <p id="treatment-end-date">{{ data['treatment-end-date'] or '03/06/2025' }}</p>
+                          </td>
+                          <td role="cell" class="nhsuk-table__cell">
+                            <span class="nhsuk-table-responsive__heading">Cost (£)</span>
+                            <p id="treatment-cost">
+                              {{ data['treatment-cost'] or '75.00' }}
+                            </p>
+                          </td>
+                          <td role="cell" class="nhsuk-table__cell">
+                            <span class="nhsuk-table-responsive__heading">Status</span>
+                            <strong id="treatment-status" class="nhsuk-tag no-caps nhsuk-tag--green">Processed</strong>
+                          </td>
+                          <td role="cell" class="nhsuk-table__cell">
+                            <span class="nhsuk-table-responsive__heading">Processed date</span>
+                            <p id="treatment-processed-date">13/06/2025</p>
+                          </td>
+                          <td role="cell" class="nhsuk-table__cell">
+                            <span class="nhsuk-table-responsive__heading">Action</span>
+                          </td>
+                        </tr>
+                        {% endif %}
                         <tr role="row" class="nhsuk-table__row">
                             <td role="cell" class="nhsuk-table__cell">
                               <span class="nhsuk-table-responsive__heading">Treatment ID</span>
@@ -108,15 +141,21 @@ Search for a person - Report overseas visitor treatments - NHSBSA
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                               <span class="nhsuk-table-responsive__heading">Start date</span>
-                              <p id="treatment-start-date">01/11/2025</p>
+                              <p id="treatment-start-date">{{ data['treatment-start-date'] or '01/01/2025' }} </p>
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                               <span class="nhsuk-table-responsive__heading">End date</span>
-                              <p id="treatment-end-date">30/11/2025</p>
+                              <p id="treatment-end-date">{{ data['treatment-end-date'] or '01/02/2025' }}</p>
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                               <span class="nhsuk-table-responsive__heading">Cost (£)</span>
-                              <p id="treatment-cost">200.00</p>
+                              <p id="treatment-cost">
+                                {% if data['ehic-additional-cost-correct'] == 'No' %} 
+                                  50.00
+                                {% else %}
+                                  {{ data['treatment-cost'] or '150.00' }}
+                                {% endif %}
+                              </p>
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                               <span class="nhsuk-table-responsive__heading">Status</span>
@@ -124,7 +163,7 @@ Search for a person - Report overseas visitor treatments - NHSBSA
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                               <span class="nhsuk-table-responsive__heading">Processed date</span>
-                              <p id="treatment-processed-date">01/12/2025</p>
+                              <p id="treatment-processed-date">04/02/2025</p>
                             </td>
                             <td role="cell" class="nhsuk-table__cell">
                               <span class="nhsuk-table-responsive__heading">Action</span>

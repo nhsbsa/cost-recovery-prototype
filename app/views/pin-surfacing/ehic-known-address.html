@@ -30,6 +30,23 @@ Do you have the patients address? - Report overseas visitor treatments - NHSBSA
           The home address is important for the processing of claims.
         </div>
       
+        {% if data['add-new-treatment-to-person-record'] == 'Yes' %}
+        <div class="nhsuk-form-group">
+          <div class="nhsuk-radios">
+            
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="ehic-know-address-yes" name="ehic-know-address" type="radio" value="Yes" aria-controls="conditional-contact-1" aria-expanded="false" checked="checked">
+              <label class="nhsuk-label nhsuk-radios__label" for="ehic-know-address-yes-label">Yes</label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="ehic-know-address-no" name="ehic-know-address" type="radio" value="No" aria-controls="conditional-contact-2" aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="ehic-know-address-no-label">No</label>
+            </div>
+            
+          </div>
+        </div>
+        {% else %}
         <div class="nhsuk-form-group">
           <div class="nhsuk-radios">
             
@@ -45,6 +62,7 @@ Do you have the patients address? - Report overseas visitor treatments - NHSBSA
             
           </div>
         </div>
+        {% endif %}
 
       </fieldset>
 

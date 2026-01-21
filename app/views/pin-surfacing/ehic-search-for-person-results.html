@@ -146,7 +146,11 @@ Search for a person - Report overseas visitor treatments - NHSBSA
             </td>
             <td role="cell" class="nhsuk-table__cell">
               <span class="nhsuk-table-responsive__heading">Action</span>
-              <a href="ehic-view-person-record-johndoe">Select</a>
+              {% if data['add-new-treatment-to-person-record'] == 'Yes' %}
+                <a href="add-person-ehic">Select</a>
+              {% else %}
+                <a href="ehic-view-person-record-johndoe">Select</a>
+              {% endif %}
             </td>
           </tr>
         </tbody>

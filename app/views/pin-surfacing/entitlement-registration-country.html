@@ -16,7 +16,6 @@ Which country is the patient's entitlement issued in? - Report overseas visitor 
   <div class="nhsuk-grid-column-two-thirds">
 
     <form action="/pin-surfacing/entitlement-registration-country" method="post">
-
     
     <div class="nhsuk-form-group">
 
@@ -58,8 +57,80 @@ Which country is the patient's entitlement issued in? - Report overseas visitor 
         </h1>
       {% endif %}
       
+      {% if data['add-new-treatment-to-person-record'] == 'Yes' and data['entitlement-type'] == 'EHIC' or data['entitlement-type'] == 'PRC' or data['entitlement-type'] == 'S2/E112' %}
+      <div class="nhsuk-form-group">
+        <div class="nhsuk-hint" style="margin-bottom: 5px;" id="entitlement-registration-country-label" for="entitlement-registration-country-label" class="form-label">
+          Enter country
+        </div>
+        <input class="nhsuk-input nhsuk-input--width-20" list="countries" id="entitlement-registration-country-drop" name="entitlement-registration-country" value="Austria (AT)">
+        <datalist id="countries">
+          <option value="Austria (AT)">Austria (AT)</option>
+          <option value="Belgium (BE)">Belgium (BE)</option>
+          <option value="Bulgaria (BG)">Bulgaria (BG)</option>
+          <option value="Croatia (HR)">Croatia (HR)</option>
+          <option value="Cyprus (CY)">Cyprus (CY)</option>
+          <option value="Czech Republic (CZ)">Czech Republic (CZ)</option>
+          <option value="Denmark (DK)">Denmark (DK)</option>
+          <option value="Estonia (EE)">Estonia (EE)</option>
+          <option value="Finland (FI)">Finland (FI)</option>
+          <option value="France (FR)">France (FR)</option>
+          <option value="Germany (DE)">Germany (DE)</option>
+          <option value="Gibraltar (GI)">Gibraltar (GI)</option>
+          <option value="Greece (GR)">Greece (GR)</option>
+          <option value="Hungary (HU)">Hungary (HU)</option>
+          <option value="Iceland (IS)">Iceland (IS)</option>
+          <option value="Ireland (IE)">Ireland (IE)</option>
+          <option value="Italy (IT)">Italy (IT)</option>
+          <option value="Latvia (LV)">Latvia (LV)</option>
+          <option value="Liechtenstein (LI)">Liechtenstein (LI)</option>
+          <option value="Lithuania (LT)">Lithuania (LT)</option>
+          <option value="Luxembourg (LU)">Luxembourg (LU)</option>
+          <option value="Malta (MT)">Malta (MT)</option>
+          <option value="Netherlands (NL)">Netherlands (NL)</option>
+          <option value="Norway (NO)">Norway (NO)</option>
+          <option value="Poland (PL)">Poland (PL)</option>
+          <option value="Portugal (PT)">Portugal (PT)</option>
+          <option value="Romania (RO)">Romania (RO)</option>
+          <option value="Slovakia (SK)">Slovakia (SK)</option>
+          <option value="Slovenia (SI)">Slovenia (SI)</option>
+          <option value="Spain (ES)">Spain (ES)</option>
+          <option value="Sweden (SE)">Sweden (SE)</option>
+          <option value="Switzerland (CH)">Switzerland (CH)</option>
+          <option value="United Kingdom (UK)">United Kingdom (UK)</option>
+        </datalist>            
+      </div>
 
-      {% if data['entitlement-type'] == 'EHIC' or data['entitlement-type'] == 'PRC' or data['entitlement-type'] == 'S2/E112' %}
+      {% elif data['add-new-treatment-to-person-record'] == 'Yes' and data['entitlement-type'] == 'Malta Quota' or data['entitlement-type'] == 'PRC' or data['entitlement-type'] == 'Non EU Reciprocal Healthcare' %}
+      <div class="nhsuk-form-group">
+        <div class="nhsuk-hint" style="margin-bottom: 5px;" id="entitlement-registration-country-label" for="entitlement-registration-country-label" class="form-label">
+          Enter country
+        </div>
+        <input class="nhsuk-input nhsuk-input--width-20" list="countries" id="entitlement-registration-country-drop" name="entitlement-registration-country">
+          <datalist id="countries">
+           <option value=""></option>
+           <option value="Gibraltar (GI)">Gibraltar (GI)</option>
+           <option value="Norway (NO)">Norway (NO)</option>
+           <option value="Australia (AU)">Australia (AU)</option>
+           <option value="Bosnia and Herzegovina (BA)">Bosnia and Herzegovina (BA)</option>
+           <option value="Faroe Islands (FO)">Faroe Islands (FO)</option>
+           <option value="Isle of Man (IM)">Isle of Man (IM)</option>
+           <option value="Israel (IL)">Israel (IL)</option>
+           <option value="Jersey (JE)">Jersey (JE)</option>
+           <option value="Kosovo (XK)">Kosovo (XK)</option>
+           <option value="Montenegro (ME)">Montenegro (ME)</option>
+           <option value="New Zealand (NZ)">New Zealand (NZ)</option>
+           <option value="North Macedonia (MK)">North Macedonia (MK)</option>
+           <option value="Serbia (RS)">Serbia (RS)</option>
+           <option value="Falkland Islands (FK)">Falkland Islands (FK)</option>
+           <option value="Anguilla (AI)">Anguilla (AI)</option>
+           <option value="British Virgin Islands (VG)">British Virgin Islands (VG)</option>
+           <option value="Montserrat (MS)">Montserrat (MS)</option>
+           <option value="St Helena (SH)">St Helena (SH)</option>
+           <option value="Turks and Caicos Islands (TC)">Turks and Caicos Islands (TC)</option>
+          </datalist>
+     </div>
+
+      {% elif data['entitlement-type'] == 'EHIC' or data['entitlement-type'] == 'PRC' or data['entitlement-type'] == 'S2/E112' %}
       <div class="nhsuk-form-group">
         <div class="nhsuk-hint" style="margin-bottom: 5px;" id="entitlement-registration-country-label" for="entitlement-registration-country-label" class="form-label">
           Enter country

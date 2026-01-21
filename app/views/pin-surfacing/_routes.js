@@ -1246,4 +1246,15 @@ router.post('/view-ehic-details-johndoe', function (req, res) {
   // Redirect to treatment record
   res.redirect('/pin-surfacing/treatment-record-johndoe');
 });
+
+
+// View John Doe's treatment record
+router.post('/treatment-record-johndoe', function (req, res) {
+  
+  // Set flag that user wants to add a new treatment to John Doe's record
+  req.session.data['add-new-treatment-to-person-record'] = 'Yes';
+
+  // Redirect to person search by treatment ID results
+  res.redirect('/pin-surfacing/add-treatment');
+});
 module.exports = router
