@@ -1,0 +1,93 @@
+{% extends 'layout-with-login-multi-trust-4.html' %}
+{% block pageTitle %}
+Adjusted overlapping treatment costs - Report overseas visitor treatments - NHSBSA
+{% endblock %}
+
+
+
+{% block content %}
+
+{{ backLink({
+  "href": "javascript:history.go(-1)",
+  "text": "Back"
+}) }}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/pin-surfacing/ehic-adjusted-additional-costs" method="post">
+
+    
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading" style="margin-top: 20px;">
+          Adjusted overlapping treatment costs
+        </h1>
+      </legend>
+
+      <p>We have changed the total cost from £450.00 to £400.00. This means the cost of the treatment just entered has been changed to £150.00</p>
+
+      <table class="nhsuk-table">
+        <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">
+          Adjusted treatment costs
+        </caption>
+        <thead class="nhsuk-table__head">
+          <tr class="nhsuk-table__row">
+            <th scope="col" class="nhsuk-table__header">
+              Treatment
+            </th>
+            <th scope="col" class="nhsuk-table__header">
+              Start date
+            </th>
+            <th scope="col" class="nhsuk-table__header">
+              End date
+            </th>
+            <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
+              Cost (£)
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">
+              Treatment just added
+            </td>
+            <td class="nhsuk-table__cell">
+              04/11/2025
+            </td>
+            <td class="nhsuk-table__cell">
+              05/11/2025
+            </td>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+              150.00
+            </td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">
+              Existing treatment
+            </td>
+            <td class="nhsuk-table__cell">
+              01/11/2025
+            </td>
+            <td class="nhsuk-table__cell">
+              06/11/2025
+            </td>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+              250.00
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
+    <div class="button-container" style="margin-top: 10px;">
+      <button class="nhsuk-button" style="margin-right: 20px;" data-module="nhsuk-button" type="submit">Continue</button>
+      <a href="save-as-draft-confirmation" class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" role="button">Save as draft</a>
+    </div>
+
+    <p><a href="cancel-confirmation">Cancel</a></p>
+
+    </form>
+
+ </div>
+</div>
+{% endblock %}

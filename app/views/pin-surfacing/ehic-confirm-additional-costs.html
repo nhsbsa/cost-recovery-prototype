@@ -1,0 +1,120 @@
+{% extends 'layout-with-login-multi-trust-4.html' %}
+{% block pageTitle %}
+Confirm overlapping treatment costs - Report overseas visitor treatments - NHSBSA
+{% endblock %}
+
+
+
+{% block content %}
+
+{{ backLink({
+  "href": "javascript:history.go(-1)",
+  "text": "Back"
+}) }}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/pin-surfacing/ehic-confirm-additional-costs" method="post">
+
+    
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading" style="margin-top: 20px;">
+          Confirm overlapping treatment costs for {% if data['ehic-first-names'] %}{{ data['ehic-first-names'] }}{% else %}John{% endif %} {% if data['ehic-last-name'] %}{{ data['ehic-last-name'] }}{% else %}Doe{% endif %}
+        </h1>
+      </legend>
+
+      <p>You have added a treatment that overlaps the dates of an existing treatment for this person. Confirm the total costs are correct.</p>
+
+      <table class="nhsuk-table">
+        <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">
+          Overlapping treatment costs
+        </caption>
+        <thead class="nhsuk-table__head">
+          <tr class="nhsuk-table__row">
+            <th scope="col" class="nhsuk-table__header">
+              Treatment
+            </th>
+            <th scope="col" class="nhsuk-table__header">
+              Start date
+            </th>
+            <th scope="col" class="nhsuk-table__header">
+              End date
+            </th>
+            <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric">
+              Cost (£)
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">
+              Treatment just added
+            </td>
+            <td class="nhsuk-table__cell">
+              04/11/2025
+            </td>
+            <td class="nhsuk-table__cell">
+              05/11/2025
+            </td>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+              {{ data['treatment-cost'] or '200.00' }}
+            </td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">
+              Existing treatment
+            </td>
+            <td class="nhsuk-table__cell">
+              01/11/2025
+            </td>
+            <td class="nhsuk-table__cell">
+              06/11/2025
+            </td>
+            <td class="nhsuk-table__cell nhsuk-table__cell--numeric">
+              250.00
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+            <h2 class="nhsuk-fieldset__heading">
+             The total cost of these treatments is £450.00. Is this correct?
+            </h2>
+          </legend>
+
+        <div class="nhsuk-radios">
+          
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="ehic-additional-cost-correct-yes" name="ehic-additional-cost-correct" type="radio" value="Yes" aria-controls="conditional-contact-1" aria-expanded="false">
+            <label class="nhsuk-label nhsuk-radios__label" for="ehic-additional-cost-correct-yes-label">Yes</label>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="ehic-additional-cost-correct-no" name="ehic-additional-cost-correct" type="radio" value="No" aria-controls="conditional-contact-2" aria-expanded="false">
+            <label class="nhsuk-label nhsuk-radios__label" for="ehic-additional-cost-correct-no-label">No</label>
+          </div>
+          
+        </div>
+        </fieldset>
+      </div>
+
+    </fieldset> 
+      
+    <div class="button-container" style="margin-top: 10px;">
+      <button class="nhsuk-button" style="margin-right: 20px;" data-module="nhsuk-button" type="submit">Continue</button>
+      <a href="save-as-draft-confirmation" class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" role="button">Save as draft</a>
+    </div>
+
+    <p><a href="cancel-confirmation">Cancel</a></p>
+
+    </form>
+
+ </div>
+</div>
+{% endblock %}

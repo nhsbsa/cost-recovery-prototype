@@ -54,12 +54,59 @@ Check these details before submitting the treatment form - Report overseas visit
           Treatment cost (£)
         </dt>
         <dd class="nhsuk-summary-list__value">
-          {{ data['treatment-cost'] or '200.00' }}
+          {% if data['ehic-additional-cost-correct'] == 'No' %} 
+            50.00
+          {% else %}
+            {{ data['treatment-cost'] or '150.00' }}
+          {% endif %}
         </dd>
         <dd class="nhsuk-summary-list__actions">
 
         </dd>
       </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Is total cost of this treatment correct
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['ehic-additional-cost-correct'] or 'Yes' }}
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="ehic-confirm-additional-costs">
+            Change<span class="nhsuk-u-visually-hidden"> total cost of this treatment correct</span>
+          </a>
+        </dd>
+      </div>
+
+      {% if data['ehic-additional-cost-correct'] == 'No' %}
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          New total cost of this treatment (£)
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          {{ data['ehic-new-total-treatment-cost'] or '400.00'}}
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="ehic-confirm-additional-costs">
+            Change<span class="nhsuk-u-visually-hidden"> new total cost of this treatment</span>
+          </a>
+        </dd>
+      </div>
+      {% endif %}
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Is an additional cost
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Yes
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          
+        </dd>
+      </div>
+
     </dl>
 
 

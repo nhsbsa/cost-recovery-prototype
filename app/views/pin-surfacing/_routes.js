@@ -431,6 +431,59 @@ router.post('/ehic-search-for-person', function (req, res) {
   res.redirect('/pin-surfacing/ehic-search-for-person-results');
 });
 
+// View existing EHIC details
+router.post('/ehic-view-person-record-johndoe', function (req, res) {
+
+  // Redirect to search for institution results page
+  res.redirect('/pin-surfacing/upload-existing-ehic');
+});
+
+// Upload a copy of the EHIC (optional)
+router.post('/upload-existing-ehic', function (req, res) {
+
+  // Redirect to review the uploaded file (EHIC)
+  res.redirect('/pin-surfacing/review-uploaded-ehic');
+});
+
+// Review the uploaded file (EHIC)
+router.post('/review-uploaded-ehic', function (req, res) {
+
+  // Redirect to confirm if the treatment cost just added, is an additional cost
+  res.redirect('/pin-surfacing/ehic-confirm-additional-costs');
+});
+
+// Confirm if the treatment cost just added, is an additional cost
+router.post('/ehic-confirm-additional-costs', function (req, res) {
+
+  var ehicAdditionalCostsCorrect = req.session.data['ehic-additional-cost-correct'];
+  
+  if (ehicAdditionalCostsCorrect === 'Yes') {
+    res.redirect('/pin-surfacing/ehic-known-address');
+  } else {
+    res.redirect('/pin-surfacing/ehic-new-total-treatment-cost');
+  }
+
+});
+
+// Enter the new total treatment cost (EHIC)
+router.post('/ehic-new-total-treatment-cost', function (req, res) {
+
+  // Extract the new total treatment cost (EHIC)
+  const ehicNewTotalTreatmentCost = req.body['ehic-new-total-treatment-cost'];
+  // Store the the new total treatment cost (EHIC) in the session data
+  req.session.data['ehic-new-total-treatment-cost'] = ehicNewTotalTreatmentCost;
+
+  // Redirect to view the adjusted additional treatment costs (EHIC)
+  res.redirect('/pin-surfacing/ehic-adjusted-additional-costs');
+});
+
+// View the adjusted additional treatment costs (EHIC)
+router.post('/ehic-adjusted-additional-costs', function (req, res) {
+
+  // Redirect to 'Do you know the patient's address?' screen
+  res.redirect('/pin-surfacing/ehic-known-address');
+});
+
 
 // Add a new person (EHIC)
 router.post('/add-person-ehic', function (req, res) {
@@ -615,66 +668,74 @@ router.post('/prc-search-for-person', function (req, res) {
 });
 
 
-// Upload a copy of the existing PRC
-router.post('/existing-prc-upload', function (req, res) {
-  // Redirect to review the uploaded file
-  res.redirect('/pin-surfacing/review-uploaded-existing-prc');
+// View existing PRC details
+router.post('/prc-view-person-record-johndoe', function (req, res) {
+
+  // Redirect to upload existing PRC
+  res.redirect('/pin-surfacing/upload-existing-prc');
 });
 
-// Review the uploaded file of the copy of the existing PRC (PRC)
-router.post('/review-uploaded-existing-prc', function (req, res) {
+// Upload a copy of the PRC (optional)
+router.post('/upload-existing-prc', function (req, res) {
 
-  // Redirect to review the uploaded copy of the PRC
-  res.redirect('/pin-surfacing/existing-prc-known-address');
+  // Redirect to review the uploaded file (PRC)
+  res.redirect('/pin-surfacing/review-uploaded-prc');
+});
+
+// Review the uploaded file (PRC)
+router.post('/review-uploaded-prc', function (req, res) {
+
+  // Redirect to 'Do you know the patient's address?' screen
+  res.redirect('/pin-surfacing/prc-known-address');
 });
 
 // Do you know the patient's address?
-router.post('/existing-prc-known-address', function (req, res) {
+router.post('/prc-known-address', function (req, res) {
 
-  var existingPRCKnowAddress = req.session.data['existing-prc-know-address'];
+  var prcKnowAddress = req.session.data['prc-know-address'];
   
-  if (existingPRCKnowAddress === 'Yes') {
-    res.redirect('/pin-surfacing/existing-prc-enter-address');
+  if (prcKnowAddress === 'Yes') {
+    res.redirect('/pin-surfacing/prc-enter-address');
   } else {
-    res.redirect('/pin-surfacing/existing-prc-details-cya');
+    res.redirect('/pin-surfacing/prc-details-cya');
   }
 });
 
 // Enter the person's address
-router.post('/existing-prc-enter-address', function (req, res) {
+router.post('/prc-enter-address', function (req, res) {
 
   // Extract Address Line 1 from the form
-  const existingPRCAddressLine1 = req.body['existing-prc-address-line-1'];
+  const prcAddressLine1 = req.body['prc-address-line-1'];
   // Store Address Line 1 in the session data
-  req.session.data['existing-prc-address-line-1'] = existingPRCAddressLine1;
+  req.session.data['prc-address-line-1'] = prcAddressLine1;
 
   // Extract Address Line 2 from the form
-  const existingPRCAddressLine2 = req.body['existing-prc-address-line-2'];
+  const prcAddressLine2 = req.body['prc-address-line-2'];
   // Store Address Line 2 in the session data
-  req.session.data['existing-prc-address-line-2'] = existingPRCAddressLine2;
+  req.session.data['prc-address-line-2'] = prcAddressLine2;
 
   // Extract Address Line 3 from the form
-  const existingPRCAddressLine3 = req.body['existing-prc-address-line-3'];
+  const prcAddressLine3 = req.body['prc-address-line-3'];
   // Store Address Line 3 in the session data
-  req.session.data['existing-prc-address-line-3'] = existingPRCAddressLine3;
+  req.session.data['prc-address-line-3'] = prcAddressLine3;
 
   // Extract Country from the form
-  const existingPRCAddressCountry = req.body['existing-prc-address-country'];
+  const prcAddressCountry = req.body['prc-address-country'];
   // Store Address Line 1 in the session data
-  req.session.data['existing-prc-address-country'] = existingPRCAddressCountry;
+  req.session.data['prc-address-country'] = prcAddressCountry;
 
   // Redirect to search for institution results page
-  res.redirect('/pin-surfacing/existing-prc-details-cya');
+  res.redirect('/pin-surfacing/prc-details-cya');
 });
 
 // Check treatment, PRC and person details
-router.post('/existing-prc-details-cya', function (req, res) {
+router.post('/prc-details-cya', function (req, res) {
 
   // Set flag that a new treatment was added to an existing PRC
   req.session.data['add-new-treatment-to-existing-prc'] = 'yes'
 
   // Redirect to confirmation treatment form processed screen
-  res.redirect('/pin-surfacing/existing-confirmation-prc-treatment-processed');
+  res.redirect('/pin-surfacing/confirmation-prc-treatment-processed');
 });
 
 // Add another treatment (PRC)
