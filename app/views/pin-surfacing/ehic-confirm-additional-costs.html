@@ -21,11 +21,13 @@ Confirm overlapping treatment costs - Report overseas visitor treatments - NHSBS
     <fieldset class="nhsuk-fieldset">
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
         <h1 class="nhsuk-fieldset__heading" style="margin-top: 20px;">
-          Confirm overlapping treatment costs for {% if data['ehic-first-names'] %}{{ data['ehic-first-names'] }}{% else %}John{% endif %} {% if data['ehic-last-name'] %}{{ data['ehic-last-name'] }}{% else %}Doe{% endif %}
+          Confirm this is an additional cost for {% if data['ehic-first-names'] %}{{ data['ehic-first-names'] }}{% else %}John{% endif %} {% if data['ehic-last-name'] %}{{ data['ehic-last-name'] }}{% else %}Doe{% endif %}
         </h1>
       </legend>
 
-      <p>You have added a treatment that overlaps the dates of an existing treatment for this person. Confirm the total costs are correct.</p>
+      <p>You have added a treatment that overlaps the dates of an existing treatment for this person.</p>
+
+      <p>Confirm the dates and the total costs are correct to ensure you are not adding a duplicate cost.</p>
 
       <table class="nhsuk-table">
         <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">
