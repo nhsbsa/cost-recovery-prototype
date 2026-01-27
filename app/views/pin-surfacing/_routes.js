@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
 
+const trustsByRegion = require('../../data/trusts-by-region');
+
 router.use(bodyParser.json()); // to support JSON bodies
 router.use(bodyParser.urlencoded({ extended: true })); // to support URL-encoded bodies
 
@@ -57,9 +59,9 @@ router.post('/new-account-select-trust', function(req, res) {
   res.redirect('/pin-surfacing/new-account-select-trust');
 });
 
-// GET: Remove trust from selected list
 router.get('/new-account-select-trust', function(req, res) {
 
+  // Handle removal logic (unchanged)
   if (req.originalUrl.includes('?removeItem=')) {
     const urlSplit = req.originalUrl.split('?');
     const searchParams = new URLSearchParams(urlSplit[urlSplit.length - 1]);
@@ -78,14 +80,25 @@ router.get('/new-account-select-trust', function(req, res) {
     return;
   }
 
-  // Normal render
+  const region = req.session.data['new-account-region'];
+  const trusts = trustsByRegion[region] || [];
+
+  const selectedTrusts = req.session.data.selectedTrustsNewAccount
+    ? req.session.data.selectedTrustsNewAccount.split('|')
+    : [];
+
+  const allTrusts = [...trusts, ...selectedTrusts.map(val => ({ value: val, text: val }))];
+
   res.render('pin-surfacing/new-account-select-trust', {
     data: {
       ...req.session.data,
       selectedTrustsNewAccount: req.session.data.selectedTrustsNewAccount || ''
-    }
+    },
+    trusts: allTrusts
   });
+
 });
+
 
 
 // GET: CYA (Check Your Answers) for new account
