@@ -17,29 +17,27 @@ Upload a copy of the EHIC - Report overseas visitor treatments - NHSBSA
 
     <form action="/pin-surfacing/upload-ehic" method="post">
 
-    <span class="nhsuk-caption-l" style="margin-top: 20px;">
-      EHIC details
-    </span>
-    <fieldset class="nhsuk-fieldset">
-      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-        <h1 class="nhsuk-fieldset__heading">
-          Upload a copy of the EHIC (optional)
+      <div class="nhsuk-form-group nhsuk-file-upload" data-module="nhsuk-file-upload">
+        <span class="nhsuk-caption-l" style="margin-top: 20px;">
+          EHIC details
+        </span>
+        <h1 class="nhsuk-label-wrapper">
+          <label class="nhsuk-label nhsuk-label--l" for="file-hint">
+            Upload a copy of the EHIC (optional)
+          </label>
         </h1>
-      </legend>
 
-      <div class="nhsuk-inset-text" style="margin-top: 30px; margin-bottom: 25px;">
-        <span class="nhsuk-u-visually-hidden">Information: </span>
-        <p>A copy of the entitlement may be needed if the member state requests it. Uploading it now will save time later if a copy is requested.</p>
+        <div class="nhsuk-inset-text" style="margin-top: 40px; margin-bottom: 40px;">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p>A copy of the entitlement may be needed if the member state requests it. Uploading it now will save time later if a copy is requested.</p>
+        </div>
+  
+        <div class="nhsuk-hint">
+          The selected file must be a PDF, BMP, PNG, JPG or JPEG and must be smaller than 10MB.
+        </div>
+
+        <input class="nhsuk-file-upload__input" id="file-hint" name="file-hint" type="file">
       </div>
-
-      <div class="nhsuk-hint">
-        The selected file must be a PDF, BMP, PNG, JPG or JPEG and must be smaller than 10MB.
-      </div>
-
-      <input class="file-upload" id="ehic-file-upload" name="ehic-file-upload" type="file" aria-describedby="ehic-file-upload">
-    </fieldset> 
-
-    <br>
       
     <button class="nhsuk-button" style="margin-top: 20px;" data-module="nhsuk-button" type="submit">Continue</button>
 
