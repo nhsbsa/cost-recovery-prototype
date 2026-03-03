@@ -594,7 +594,7 @@ router.post('/ehic-known-address', function (req, res) {
   if (ehicKnowAddress === 'Yes') {
     res.redirect('/pin-surfacing/ehic-enter-address');
   } else {
-    res.redirect('/pin-surfacing/ehic-details-cya');
+    res.redirect('/pin-surfacing/new-ehic-details-cya');
   }
 });
 
