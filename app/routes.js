@@ -89,4 +89,6 @@ router.use('/multi-trust-reporting/version-1', require('./views/multi-trust-repo
 
 router.use('/pin-surfacing', require('./views/pin-surfacing/_routes'));
 
+router.use('/hide-add-treatment-button', require('./views/hide-add-treatment-button/_routes'));
+
 module.exports = router;

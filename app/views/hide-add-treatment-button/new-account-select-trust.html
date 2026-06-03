@@ -1,0 +1,128 @@
+{% extends 'layout.html' %}
+
+{% block beforeContent %}    
+<div class="app-phase-banner">
+   <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+         <strong class="nhsuk-tag app-phase-banner__tag">
+         Beta
+         </strong>
+         <span class="app-phase-banner__text">
+         This is a new service - your <a href="#">feedback</a> will help us improve it.
+         </span>
+      </p>
+   </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+
+            {{ backLink({
+                "href": "javascript:history.go(-1)",
+                "text": "Back"
+              }) }}
+              
+            <h1 class="nhsuk-heading-l" style="margin-top: 20px;">Select the trust you report treatment costs for</h1>
+
+            <p style="margin-bottom: 40px;">If you need to report treatment costs for more than one trust, you can request access to multiple trusts.  Once you have submitted an account request, it will be reviewed by a member of the Cost Recovery Operations team.</p>
+        
+        </div>
+    </div>
+
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-one-half">
+            
+            <form action="new-account-select-trust" method="post" novalidate autocomplete="off">
+
+                <!-- 
+                
+                    SELECT A TRUST 
+                    This is handled by the _routes.js file within this folder (hide-add-treatment-button)
+                
+                -->
+
+                {{ label({
+                    text: 'Select a trust',
+                    classes: 'nhsuk-label--m'
+                }) }}
+    
+                {{ hint({
+                    html: 'You can make multiple selections'
+                }) }}
+    
+                {# Build the items array from trusts #}
+                {% set selectItems = [
+                    { value: '', text: '', selected: true }
+                ] %}
+                
+                {% for trust in trusts %}
+                    {% set _ = selectItems.push({ value: trust.value, text: trust.text }) %}
+                {% endfor %}
+                
+                
+                {{ select({
+                    id: 'newAccountTrustName',
+                    name: 'newAccountTrustName',
+                    classes: 'nhsuk-select--width-100',
+                    autocomplete: 'off',
+                    items: selectItems
+                }) }}
+                
+                                             
+
+                {{ button({
+                    text: 'Select trust',
+                    classes: 'nhsuk-button--secondary'
+                }) }}
+
+                <p><a href="sign-in">Cancel</a></p>
+                
+            </form>
+
+        </div>
+
+
+
+        <div class="nhsuk-grid-column-one-half">
+
+
+            
+            <!-- 
+            
+                SELECTED TRUSTS 
+                If you visit the filters.js file, you'll see the very rough code...
+            
+            -->
+
+            <h2 class="nhsuk-heading-m">Trusts you have selected for this new account:</h2>
+            {{ data.selectedTrustsNewAccount | drawNewAccountSelectedTrusts | safe }}
+
+
+        </div>
+
+    </div>
+
+<style>
+.trust-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* allows wrapping */
+  margin-bottom: 0.5rem;
+}
+
+.new-account-trust-name {
+  max-width: 70%;
+  overflow-wrap: break-word; /* modern equivalent to word-break */
+}
+
+.remove-link {
+  flex-shrink: 0;
+  margin-left: 30px;
+  white-space: nowrap;     /* keep Remove on one line */
+}
+</style>
+
+{% endblock %}
