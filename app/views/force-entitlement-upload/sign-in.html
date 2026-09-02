@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+{% block pageTitle %}
+Sign in - Report overseas visitor treatments - NHSBSA
+{% endblock %}
+
+{% block beforeContent %}    
+<div class="app-phase-banner">
+   <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+         <strong class="nhsuk-tag app-phase-banner__tag">
+         Beta
+         </strong>
+         <span class="app-phase-banner__text">
+         This is a new service - your <a href="#">feedback</a> will help us improve it.
+         </span>
+      </p>
+   </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+   <div class="nhsuk-grid-column-two-thirds">
+
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading" style="margin-bottom: 10px;">
+          Sign in to Report overseas visitor treatments
+        </h1>
+      </legend>
+
+      <div class="button-container">
+        <a href="sign-in-select-trust" class="nhsuk-button" style="margin-right:20px;" role="button" type="submit">Sign in</button>
+        <a href="request-new-account" class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" role="button">Request account</a>
+      </div>
+
+      <details class="nhsuk-details">
+         <summary class="nhsuk-details__summary">
+           <span class="nhsuk-details__summary-text">
+              Do you need to report on treatments for more than one trust?
+           </span>
+         </summary>
+         <div class="nhsuk-details__text">
+           <p>To request access to more than one trust:
+            <ol>
+              <li>sign in to your existing account or, if you don't have an account request an account</li>
+              <li>once you have signed in, use the 'Manage trust access' link at the top of the homepage</li>
+            </ol>
+           </p>
+         </div>
+       </details>
+
+   </div>
+</div>
+{% endblock %}

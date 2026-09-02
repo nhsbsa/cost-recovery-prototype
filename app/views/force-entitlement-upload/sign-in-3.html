@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+{% block pageTitle %}
+Sign in - Report overseas visitor treatments - NHSBSA
+{% endblock %}
+
+{% block beforeContent %}    
+<div class="app-phase-banner">
+   <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+         <strong class="nhsuk-tag app-phase-banner__tag">
+         Beta
+         </strong>
+         <span class="app-phase-banner__text">
+         This is a new service - your <a href="#">feedback</a> will help us improve it.
+         </span>
+      </p>
+   </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+   <div class="nhsuk-grid-column-two-thirds">
+
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading" style="margin-bottom: 10px;">
+          Sign in to report overseas visitor treatments
+        </h1>
+      </legend>
+
+      <p>Already have an account?</p>
+
+      <a class="nhsuk-button nhsuk-button" style="margin-bottom: 2px;" href="sign-in-select-trust">Sign in</a>
+
+      <hr>
+ 
+      <p>Don't have an account?</p>
+
+      <a class="nhsuk-button nhsuk-button--secondary" href="request-new-account">Request account</a>
+
+   </div>
+</div>
+{% endblock %}

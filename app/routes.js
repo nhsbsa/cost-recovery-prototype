@@ -91,4 +91,6 @@ router.use('/pin-surfacing', require('./views/pin-surfacing/_routes'));
 
 router.use('/hide-add-treatment-button', require('./views/hide-add-treatment-button/_routes'));
 
+router.use('/force-entitlement-upload', require('./views/force-entitlement-upload/_routes'));
+
 module.exports = router;

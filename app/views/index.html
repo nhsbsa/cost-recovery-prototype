@@ -25,11 +25,47 @@ Report overseas visitor treatments prototype
 OHS Cost Recovery - Report Overseas Visitor Treatments (ROVT) prototype
 </h1>
 
-<!-- Hiding the 'Add treatment' button when a person has an S1 entitlement in the Search for a person entrance by Megan Bell (January 2025) -->
+<!-- Forcing OVMs to upload a copy of the EHIC if the EHIC card number they have added is not 20 digits exactly by Megan Bell (September 2026) -->
 <details class="nhsuk-details nhsuk-expander" open>
    <summary class="nhsuk-details__summary">
       <span class="nhsuk-details__summary-text">
-         Hiding the 'Add treatment' button when a person has an S1 entitlement (June 2025)
+         Forcing OVMs to upload a copy of the EHIC if the EHIC card number they have added is not 20 digits exactly (September 2026)
+      </span>
+   </summary>
+   <div class="nhsuk-details__text">
+      <h3 class="nhsuk-heading-s" style="margin-bottom: 10px;">What was changed or created:</h3>
+      
+      <p>
+         <ul>
+            <li>If the OVM adds an EHIC card number that is not 20 digits exactly, users will be forced to <a href="/force-entitlement-upload/upload-ehic?new-ehic-card-number=123456789">upload a copy of the EHIC</a>. The '(optional)' content is removed from the H1, and new inset text which explains to the user they must upload a copy of the EHIC because the number they have entered is not 20 digits, ensures users understand uploading a copy of the EHIC is mandatory. This change ensures that Claims Officers can check the 'Evidence' tab within Actual Cost claims and resubmissions to make a decision on what digits to add or remove to meet RINA 20-character EHIC card number validation.</li>
+            <li>Similar to the above, if the OVM adds an EHIC card number when uploading a treatment for a PRC, the OVM will be forced to <a href="/force-entitlement-upload/upload-prc?new-prc-ehic-card-number=123456789">upload a copy of the PRC</a> showing the EHIC details.</li>
+         </ul>
+         <a href="/force-entitlement-upload/sign-in">Sign in to ROVT (prototype)</a> or access the <a href="/force-entitlement-upload/home">ROVT homepage</a>.
+      </p>
+
+
+      <hr>
+
+      
+      
+      <h3 class="nhsuk-heading-s" style="margin-bottom: 10px;">What was tested:</h3>
+      <ul class="nhsuk-list nhsuk-list--bullet">
+         <li>...</li>
+      </ul>
+
+      <h3 class="nhsuk-heading-s" style="margin-bottom: 10px;">Any known issues:</h3>
+      <ul class="nhsuk-list nhsuk-list--bullet">
+         <li>...</li>
+      </ul>
+   </div>
+</details>
+
+
+<!-- Hiding the 'Add treatment' button when a person has an S1 entitlement in the Search for a person entrance by Megan Bell (June 2026) -->
+<details class="nhsuk-details nhsuk-expander">
+   <summary class="nhsuk-details__summary">
+      <span class="nhsuk-details__summary-text">
+         Hiding the 'Add treatment' button when a person has an S1 entitlement (June 2026)
       </span>
    </summary>
    <div class="nhsuk-details__text">
